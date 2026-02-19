@@ -8,9 +8,10 @@ def obtener_conexion():
             port="5432", 
             database="GestionFundacion", 
             user="postgres", 
-            password="matemat1cas"
+            password=""
         )
         return conexion
     except Exception as e:
         print(f"Error conectando a la base de datos: {e}")
+
         return None
