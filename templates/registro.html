@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Fundación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">Registro de Personal Multidisciplinario</h2>
+        <form action="/registrar-empleado" method="POST">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Nombre(s)</label>
+                    <input type="text" name="nombre" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Apellido Paterno</label>
+                    <input type="text" name="apellidoP" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Apellido Materno</label>
+                    <input type="text" name="apellidoM" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>CURP</label>
+                    <input type="text" name="curp" class="form-control" maxlength="18" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Cédula Profesional</label>
+                    <input type="text" name="cedula" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Rol en la Fundación</label>
+                    <select name="rol" class="form-select" required>
+                        <option value="Medico">Médico</option>
+                        <option value="Psicologo">Psicólogo</option>
+                        <option value="Abogado">Abogado</option>
+                        <option value="trabajadorSocial">Trabajador Social</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Correo Electrónico</label>
+                    <input type="email" name="correo" class="form-control">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label>Teléfono</label>
+                <input type="text" name="telefono" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Guardar en Base de Datos</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
