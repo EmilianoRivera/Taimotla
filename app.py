@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from database import obtener_conexion
 
 app = Flask(__name__)
-
+@app.route('/')
+def inicio():
+    
+    return redirect(url_for('consultar_personal'))
 @app.route('/registrar-empleado', methods=['GET', 'POST'])
 
 
@@ -10,7 +13,7 @@ app = Flask(__name__)
 def registrar():
     if request.method == 'POST':
         try:
-            # Tu lógica de conexión y ejecución aquí...
+            
             conn = obtener_conexion()
             cur = conn.cursor()
             
@@ -28,14 +31,13 @@ def registrar():
             cur.close()
             conn.close()
 
-            # IMPORTANTE: Debes retornar algo aquí si el registro es exitoso
             return "<h1>¡Registro exitoso!</h1><a href='/registrar-empleado'>Volver</a>"
 
         except Exception as e:
-            # Y también aquí si algo falla
+            
             return f"<h1>Error al registrar</h1><p>{e}</p><a href='/registrar-empleado'>Intentar de nuevo</a>"
 
-    # Este es el return para cuando entras por primera vez a la página (GET)
+   
     return render_template('registro.html')
 
 

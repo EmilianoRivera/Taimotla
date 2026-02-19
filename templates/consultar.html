@@ -1,45 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Personal Registrado - Fundación Futuro con Derechos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-<div class="container mt-5">
-    <div class="card shadow p-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Personal Multidisciplinario Registrado</h2>
-            <a href="/registrar-empleado" class="btn btn-success">+ Nuevo Registro</a>
-        </div>
-        
-        <table class="table table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th>Cédula Profesional</th>
-                    <th>Rol / Especialidad</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for emp in empleados %}
-                <tr>
-                    <td>{{ emp[0] }} {{ emp[1] }} {{ emp[2] }}</td>
-                    <td>{{ emp[3] }}</td>
-                    <td><span class="badge bg-primary">{{ emp[4] }}</span></td>
-                    <td>
-                        <button class="btn btn-sm btn-outline-secondary">Editar</button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
-        {% if not empleados %}
-        <div class="alert alert-info text-center">No hay personal registrado todavía.</div>
-        {% endif %}
-    </div>
-</div>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Listado de Personal</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Rol</th>
+                <th>Nombre Completo</th>
+                <th>Cédula</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td><strong>{{ empleado[4] }}</strong></td> 
+                
+                <td>{{ empleado[0] }} {{ empleado[1] }} {{ empleado[2] }}</td>
+                
+                <td>{{ empleado[3] }}</td>
+                
+                <td>
+                    <a href="#" style="color: #897F40; text-decoration: none;">Editar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No hay personal registrado en la base de datos.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
