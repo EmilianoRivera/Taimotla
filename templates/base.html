@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Futuro con Derechos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="header-titles">
+            <h1>Panel de Administración</h1>
+            <p>Gestión de Equipo Multidisciplinario</p>
+        </div>
+        <div class="header-logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Fundación">
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/dashboard">Listado de Personal</a></li>
+            <li><a href="/registrar-personal">Registrar Nuevo Personal</a></li>
+        </ul>
+        <div class="user-info">
+            <span>Sesión iniciada como: <strong>Director</strong></span>
+            <a href="/logout" class="btn-logout">Salir</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alerta alerta-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
