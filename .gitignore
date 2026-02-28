@@ -1,0 +1,21 @@
+# Entornos virtuales (ocupan mucho espacio y no se suben)
+.venv/
+env/
+venv/
+ENV/
+
+# Archivos de configuración sensible (¡Importante!)
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Carpetas de editores (VS Code / PyCharm)
+.vscode/
+.idea/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
