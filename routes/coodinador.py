@@ -1,13 +1,14 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash, request
-from models.director import user_register, consult_lawyers, consult_social, consult_medic, consult_psico, consult_director, delete_user, desable_user, consult_unable_users, able_user, search_one_user, update_user
+from models.director import user_register, consult_lawyers, consult_social, consult_medic, consult_psico, delete_user, desable_user, consult_unable_users, able_user, search_one_user, update_user
+
+from models.coordinador import  consult_coordinador
 
 
+bp_coordinador = Blueprint('coordinador', __name__, url_prefix='/coordinador')
 
-bp_director = Blueprint('director', __name__, url_prefix='/director')
-
-@bp_director.route('/dashboard', methods=['GET'])
+@bp_coordinador.route('/dashboard', methods=['GET'])
 def dashboard():
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method=='GET':
@@ -21,38 +22,38 @@ def dashboard():
         print(data_social)
         print(data_lawyers)
 
-    return render_template('director/dashboard.html', nombre=session['nombre'], users_lawyers=data_lawyers, users_social = data_social, users_psico = data_psico, users_medics = data_medics, users_unable = data_users_unable)
+    return render_template('coordinador/dashboard.html', nombre=session['nombre'], users_lawyers=data_lawyers, users_social = data_social, users_psico = data_psico, users_medics = data_medics, users_unable = data_users_unable)
 
-@bp_director.route('/logout')
+@bp_coordinador.route('/logout')
 def logout():
     session.clear()
     flash("Has cerrado sesión correctamente", "success")
     return redirect(url_for('main.index'))
 
-@bp_director.route('/cuenta', methods=['GET'])
+@bp_coordinador.route('/cuenta', methods=['GET'])
 def cuenta():
-    if session.get('rol') != 'director' :
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method == 'GET':
         curp = session.get('user_id')
-        data_director = consult_director(str(curp))
-        print(data_director)
-    return render_template('director/cuenta.html', nombre=session['nombre'], user_director = data_director)
+        data_coordinador = consult_coordinador(str(curp))
+        print(data_coordinador)
+    return render_template('coordinador/cuenta.html', nombre=session['nombre'], user_coordinador = data_coordinador)
 
-@bp_director.route('/editar/<curp>', methods=['GET', 'POST'])
+@bp_coordinador.route('/editar/<curp>', methods=['GET', 'POST'])
 def editar(curp):
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         return redirect(url_for("main.index"))
     user_found = None
     if request.method == "GET":
         print(curp)
         user_found = search_one_user(curp)
-    return render_template('director/editar.html', user= user_found)
+    return render_template('coordinador/editar.html', user= user_found)
 
-@bp_director.route('/actualizar/<curp>', methods=['GET', 'POST'])
+@bp_coordinador.route('/actualizar/<curp>', methods=['GET', 'POST'])
 def actualizar(curp):
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         return redirect(url_for("main.index"))
     form_data = {
         'correo': request.form.get('correo'),
@@ -66,26 +67,22 @@ def actualizar(curp):
     else:
         flash("Hubo un error al intentar actualizar.", "error")
 
-    # 3. Redirigir al dashboard para ver los cambios
-    return redirect(url_for('director.dashboard'))
+    return redirect(url_for('coordinador.dashboard'))
 
 
-
-
-
-@bp_director.route('/eliminar/<curp>', methods=["POST"])
+@bp_coordinador.route('/eliminar/<curp>', methods=["POST"])
 def eliminar(curp):
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method == 'POST':
    
         eliminar = delete_user(curp)
-    return redirect(url_for("director.dashboard"))
+    return redirect(url_for("coordinador.dashboard"))
 
-@bp_director.route('/registrar', methods=['GET','POST'])
+@bp_coordinador.route('/registrar', methods=['GET','POST'])
 def registrar():
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method=='POST':
@@ -122,29 +119,29 @@ def registrar():
         user_register(data)
         flash("Usuario registrado con exito", "success")
 
-        return redirect(url_for("director.dashboard"))
-    return render_template('director/registrar.html')
+        return redirect(url_for("coordinador.dashboard"))
+    return render_template('coordinador/registrar.html')
 
 
-@bp_director.route('/desable/<curp>', methods=['POST'])
+@bp_coordinador.route('/desable/<curp>', methods=['POST'])
 def desable(curp):
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for("main.index"))
     
     if request.method == "POST":
         state = desable_user(curp)
         print(state)
-    return redirect(url_for("director.dashboard"))
+    return redirect(url_for("coordinador.dashboard"))
 
 
-@bp_director.route('/able/<curp>', methods=['POST'])
+@bp_coordinador.route('/able/<curp>', methods=['POST'])
 def able(curp):
-    if session.get('rol') != 'director':
+    if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for("main.index"))
     
     if request.method == "POST":
         state = able_user(curp)
         print(state)
-    return redirect(url_for("director.dashboard"))
+    return redirect(url_for("coordinador.dashboard"))
