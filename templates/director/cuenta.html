@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-container">
+    <div class="section-header">
+        <h2>Mi Perfil de Usuario</h2>
+        <p>Información administrativa de la cuenta</p>
+    </div>
+
+    <div class="profile-card">
+        <div class="profile-header">
+
+            <div class="profile-main-info">
+                <h3>{{ nombre }}</h3>
+                <span class="badge-rol">Director de la Fundación</span>
+            </div>
+        </div>
+
+        <div class="profile-details">
+            {% for u in user_director %}
+            <div class="detail-group">
+                <label>Clave Única (CURP):</label>
+                <p>{{ u[0] }}</p>
+            </div>
+
+            <div class="detail-group">
+                <label>Fecha de Ingreso a la Institución:</label>
+                <p>{{ u[1].strftime('%d/%m/%Y') if u[1] else 'No registrada' }}</p>
+            </div>
+
+            <div class="detail-group">
+                <label>Estado de la Cuenta:</label>
+                <p>
+                    <span class="status-badge {{ u[3] | lower }}">
+                        {{ u[3] }}
+                    </span>
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="profile-actions">
+            <a href="{{ url_for('director.dashboard') }}" class="btn-secondary">Volver al Panel</a>
+            <button class="btn-edit" onclick="alert('Funcionalidad de cambio de contraseña próximamente')">Cambiar Contraseña</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

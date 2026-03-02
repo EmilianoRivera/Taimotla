@@ -1,0 +1,114 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="dashboard-wrapper">
+    <header class="dashboard-header">
+        <div class="welcome-text">
+            <h1>Bienvenido, <span>{{ nombre }}</span></h1>
+            <p>Panel de Gestión de Personal | Fundación Futuro con Derechos</p>
+        </div>
+        <div class="header-stats">
+            <a href="{{ url_for('director.registrar') }}" class="btn-primary">+ Nuevo Registro</a>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <section class="actives-section">
+        <div class="section-title">
+            <i class="icon-user-check"></i>
+            <h2>Personal Operativo</h2>
+        </div>
+
+        {% set roles = [
+            {'title': 'Abogados', 'data': users_lawyers, 'extra': 'Especialidad'},
+            {'title': 'Trabajadores Sociales', 'data': users_social, 'extra': ''},
+            {'title': 'Médicos', 'data': users_medics, 'extra': 'Especialidad'},
+            {'title': 'Psicólogos', 'data': users_psico, 'extra': 'Enfoque'}
+        ] %}
+
+        {% for role in roles %}
+        <div class="role-card">
+            <div class="card-header">
+                <h3>{{ role.title }}</h3>
+                <span class="count">{{ role.data|length }} registrados</span>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>CURP</th>
+                            <th>Nombre</th>
+                            {% if role.extra %} <th>{{ role.extra }}</th> {% endif %}
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in role.data %}
+                        {% if u[4] == 'Activo' or u[3] == 'Activo' %}
+                        <tr>
+                            <td><strong>{{ u[0] }}</strong></td>
+                            <td>{{ u[1] }}</td>
+                            <td>{{ u[2] }}</td>
+                            {% if role.extra %} <td>{{ u[3] }}</td> {% endif %}
+                            <td><span class="badge badge-active">Activo</span></td>
+                            <td class="actions">
+                                <a href="{{ url_for('director.editar', curp=u[1]) }}" class="btn-icon btn-edit" title="Editar">✎</a>
+                                
+                                <form action="{{ url_for('director.desable', curp=u[1]) }}" method="POST" class="inline-form">
+                                    <button type="submit" class="btn-icon btn-disable" onclick="return confirm('¿Deshabilitar cuenta?')">🚫</button>
+                                </form>
+
+                                <form action="{{ url_for('director.eliminar', curp=u[1]) }}" method="POST" class="inline-form">
+                                    <button type="submit" class="btn-icon btn-delete" onclick="return confirm('¿Eliminar permanentemente?')">🗑</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="inactives-section">
+        <div class="section-title">
+            <h2 class="text-muted">Historial / Inactivos</h2>
+        </div>
+        <div class="role-card card-inactive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>CURP</th>
+                        <th>Rol Original</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in users_unable %}
+                    {% if u[3] == 'Inactivo' %}
+                    <tr>
+                        <td>{{ u[0] }}</td>
+                        <td>{{ u[1] }}</td>
+                        <td>{{ u[2] }}</td>
+                        <td><span class="badge badge-inactive">Inactivo</span></td>
+                        <td class="actions">
+                            <form action="{{ url_for('director.able', curp=u[1]) }}" method="POST" class="inline-form">
+                                <button type="submit" class="btn-text btn-enable">Habilitar Cuenta</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}

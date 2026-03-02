@@ -1,0 +1,249 @@
+{% extends 'base.html' %} {% block content %}
+<div class="section-header">
+  <h2>Registrar Nuevo Personal</h2>
+</div>
+
+<form action="/director/registrar" method="POST" class="registro-form">
+  <fieldset>
+    <legend>Datos Personales Generales</legend>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>CURP *</label>
+        <input type="text" name="curp" required maxlength="18" />
+      </div>
+      <div class="form-group">
+        <label>RFC</label>
+        <input type="text" name="rfc" maxlength="13" />
+      </div>
+      <div class="form-group">
+        <label>Primer Nombre *</label>
+        <input type="text" name="p_nombre" required />
+      </div>
+      <div class="form-group">
+        <label>Segundo Nombre</label>
+        <input type="text" name="s_nombre" />
+      </div>
+      <div class="form-group">
+        <label>Primer Apellido *</label>
+        <input type="text" name="p_apellido" required />
+      </div>
+      <div class="form-group">
+        <label>Segundo Apellido *</label>
+        <input type="text" name="s_apellido" required />
+      </div>
+      <div class="form-group">
+        <label>Fecha de Nacimiento *</label>
+        <input type="date" name="fecha_nacimiento" required />
+      </div>
+      <div class="form-group">
+        <label>Sexo</label>
+        <select name="sexo">
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contacto y Dirección</legend>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="required">Correo Electrónico</label>
+        <input
+          type="email"
+          name="correo"
+          required
+          placeholder="ejemplo@correo.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Teléfono</label>
+        <input type="text" name="telefono" placeholder="Ej: 555-123-4567" />
+      </div>
+
+      <div class="form-group">
+        <label>Calle</label>
+        <input type="text" name="calle" placeholder="Nombre de la calle" />
+      </div>
+
+      <div class="form-group">
+        <label>Número Exterior</label>
+        <input type="text" name="num_ext" placeholder="Ej: 123, 45-A" />
+      </div>
+
+      <div class="form-group">
+        <label>Colonia</label>
+        <input type="text" name="colonia" placeholder="Nombre de la colonia" />
+      </div>
+
+      <div class="form-group">
+        <label>Código Postal</label>
+        <input
+          type="text"
+          name="cp"
+          maxlength="5"
+          placeholder="#####"
+          pattern="[0-9]{5}"
+          title="El código postal debe tener 5 dígitos"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="municipio">Municipio:</label>
+        <select name="municipio" id="municipio" required>
+          <option value="" disabled selected>Selecciona el municipio...</option>
+
+          <optgroup label="Zona Metropolitana (ZMM)">
+            <option value="Apodaca">Apodaca</option>
+            <option value="Cadereyta Jimenez">Cadereyta Jiménez</option>
+            <option value="Garcia">García</option>
+            <option value="General Escobedo">General Escobedo</option>
+            <option value="Guadalupe">Guadalupe</option>
+            <option value="Juarez">Juárez</option>
+            <option value="Monterrey">Monterrey</option>
+            <option value="San Nicolas de los Garza">
+              San Nicolás de los Garza
+            </option>
+            <option value="San Pedro Garza Garcia">
+              San Pedro Garza García
+            </option>
+            <option value="Santa Catarina">Santa Catarina</option>
+            <option value="Santiago">Santiago</option>
+          </optgroup>
+
+          <optgroup label="Otros Municipios">
+            <option value="Allende">Allende</option>
+            <option value="Linares">Linares</option>
+            <option value="Montemorelos">Montemorelos</option>
+            <option value="Salinas Victoria">Salinas Victoria</option>
+            <option value="Sabinas Hidalgo">Sabinas Hidalgo</option>
+            <option value="Otro">Otro (Especificar en observaciones)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Estado/República</label>
+        <select name="estado_rep">
+          <option value="">Selecciona un estado</option>
+          <option value="Nuevo León">Nuevo León</option>
+          <!--<option value="Aguascalientes">Aguascalientes</option>
+          <option value="Baja California">Baja California</option>
+          <option value="Baja California Sur">Baja California Sur</option>
+         <option value="Campeche">Campeche</option>
+          <option value="Chiapas">Chiapas</option>
+          <option value="Chihuahua">Chihuahua</option>
+          <option value="CDMX">Ciudad de México</option>
+          <option value="Coahuila">Coahuila</option>
+          <option value="Colima">Colima</option>
+          <option value="Durango">Durango</option>
+          <option value="Guanajuato">Guanajuato</option>
+          <option value="Guerrero">Guerrero</option>
+          <option value="Hidalgo">Hidalgo</option>
+          <option value="Jalisco">Jalisco</option>
+          <option value="México">Estado de México</option>
+          <option value="Michoacán">Michoacán</option>
+          <option value="Morelos">Morelos</option>
+          <option value="Nayarit">Nayarit</option>
+          <option value="Oaxaca">Oaxaca</option>
+          <option value="Puebla">Puebla</option>
+          <option value="Querétaro">Querétaro</option>
+          <option value="Quintana Roo">Quintana Roo</option>
+          <option value="San Luis Potosí">San Luis Potosí</option>
+          <option value="Sinaloa">Sinaloa</option>
+          <option value="Sonora">Sonora</option>
+          <option value="Tabasco">Tabasco</option>
+          <option value="Tamaulipas">Tamaulipas</option>
+          <option value="Tlaxcala">Tlaxcala</option>
+          <option value="Veracruz">Veracruz</option>
+          <option value="Yucatán">Yucatán</option>
+          <option value="Zacatecas">Zacatecas</option> -->
+        </select>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Rol y Acceso al Sistema</legend>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="rol">Rol de Trabajador:</label>
+        <select
+          name="rol"
+          id="rol"
+          onchange="mostrarCamposEspeciales()"
+          required
+        >
+          <option value="" disabled selected>Selecciona un rol...</option>
+          <option value="director">Director</option>
+          <option value="trabajadorsocial">Trabajador Social</option>
+          <option value="abogado">Abogado</option>
+          <option value="psicologo">Psicólogo</option>
+          <option value="medico">Médico</option>
+        </select>
+
+        <div id="campo-abogado" style="display: none; margin-top: 10px">
+          <label for="esp_abogado">Especialidad Legal:</label>
+          <select name="esp_abogado">
+            <option value="Familiar">Derecho Familiar</option>
+            <option value="Penal">Derecho Penal</option>
+            <option value="Derechos Humanos">Derechos Humanos</option>
+            <option value="Civil">Derecho Civil</option>
+          </select>
+        </div>
+
+        <div id="campo-medico" style="display: none; margin-top: 10px">
+          <label for="esp_medico">Especialidad Médica:</label>
+          <select name="esp_medico">
+            <option value="General">Médico General</option>
+            <option value="Pediatria">Pediatría</option>
+            <option value="Ginecologia">Ginecología</option>
+            <option value="Psiquiatria">Psiquiatría</option>
+          </select>
+        </div>
+
+        <div id="campo-psicologo" style="display: none; margin-top: 10px">
+          <label for="enfoque_psicologo">Enfoque Terapéutico:</label>
+          <select name="enfoque_psicologo">
+            <option value="Cognitivo Conductual">
+              Cognitivo Conductual (TCC)
+            </option>
+            <option value="Sistemico">Sistémico / Familiar</option>
+            <option value="Humanista">Humanista / Gestalt</option>
+            <option value="Psicoanalisis">Psicoanálisis</option>
+            <option value="Infantil">Psicología Infantil</option>
+          </select>
+        </div>
+      </div>
+      <!-- Este campo se tiene que agregar a la base de datos-->
+      <div class="form-group">
+        <label>Tipo de trabajador</label>
+        <select name="tipo" required>
+          <option value="trabajador">Trabajador</option>
+          <option value="voluntario">Voluntario</option>
+          <!--Aqui podria ser voluntario y no pertenecer al equipo multidisciplinario, en ese caso requerira cedula? preguntar al profe-->
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Cédula Profesional</label>
+        <input type="text" name="cedula" />
+      </div>
+      <div class="form-group">
+        <label>Contraseña Provisional *</label>
+        <input type="password" name="contrasena" required />
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <button type="submit" class="btn-principal">
+      Guardar Registro Completo
+    </button>
+  </div>
+</form>
+
+<script src="../../static//js/validaciones.js"></script>
+{% endblock %}
