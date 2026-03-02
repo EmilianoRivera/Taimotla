@@ -1,443 +1,114 @@
-{% extends "base.html" %} {% block content %}
-<div class="section-header">
-  <h2>Bienvenido, {{ nombre }}</h2>
-  <p>Gestión de personal de la fundación</p>
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="dashboard-wrapper">
+    <header class="dashboard-header">
+        <div class="welcome-text">
+            <h1>Bienvenido, <span>{{ nombre }}</span></h1>
+            <p>Panel de Gestión de Personal | Fundación Futuro con Derechos</p>
+        </div>
+        <div class="header-stats">
+            <a href="{{ url_for('director.registrar') }}" class="btn-primary">+ Nuevo Registro</a>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <section class="actives-section">
+        <div class="section-title">
+            <i class="icon-user-check"></i>
+            <h2>Personal Operativo</h2>
+        </div>
+
+        {% set roles = [
+            {'title': 'Abogados', 'data': users_lawyers, 'extra': 'Especialidad'},
+            {'title': 'Trabajadores Sociales', 'data': users_social, 'extra': ''},
+            {'title': 'Médicos', 'data': users_medics, 'extra': 'Especialidad'},
+            {'title': 'Psicólogos', 'data': users_psico, 'extra': 'Enfoque'}
+        ] %}
+
+        {% for role in roles %}
+        <div class="role-card">
+            <div class="card-header">
+                <h3>{{ role.title }}</h3>
+                <span class="count">{{ role.data|length }} registrados</span>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>CURP</th>
+                            <th>Nombre</th>
+                            {% if role.extra %} <th>{{ role.extra }}</th> {% endif %}
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in role.data %}
+                        {% if u[4] == 'Activo' or u[3] == 'Activo' %}
+                        <tr>
+                            <td><strong>{{ u[0] }}</strong></td>
+                            <td>{{ u[1] }}</td>
+                            <td>{{ u[2] }}</td>
+                            {% if role.extra %} <td>{{ u[3] }}</td> {% endif %}
+                            <td><span class="badge badge-active">Activo</span></td>
+                            <td class="actions">
+                                <a href="{{ url_for('director.editar', curp=u[1]) }}" class="btn-icon btn-edit" title="Editar">✎</a>
+                                
+                                <form action="{{ url_for('director.desable', curp=u[1]) }}" method="POST" class="inline-form">
+                                    <button type="submit" class="btn-icon btn-disable" onclick="return confirm('¿Deshabilitar cuenta?')">🚫</button>
+                                </form>
+
+                                <form action="{{ url_for('director.eliminar', curp=u[1]) }}" method="POST" class="inline-form">
+                                    <button type="submit" class="btn-icon btn-delete" onclick="return confirm('¿Eliminar permanentemente?')">🗑</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="inactives-section">
+        <div class="section-title">
+            <h2 class="text-muted">Historial / Inactivos</h2>
+        </div>
+        <div class="role-card card-inactive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>CURP</th>
+                        <th>Rol Original</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in users_unable %}
+                    {% if u[3] == 'Inactivo' %}
+                    <tr>
+                        <td>{{ u[0] }}</td>
+                        <td>{{ u[1] }}</td>
+                        <td>{{ u[2] }}</td>
+                        <td><span class="badge badge-inactive">Inactivo</span></td>
+                        <td class="actions">
+                            <form action="{{ url_for('director.able', curp=u[1]) }}" method="POST" class="inline-form">
+                                <button type="submit" class="btn-text btn-enable">Habilitar Cuenta</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 </div>
-
-<h2>Consultar</h2>
-
-<h2>Abogados</h2>
-
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>CEDULA</th>
-      <th>CURP</th>
-      <th>Nombre</th>
-      <th>Especialidad</th>
-      <th>Estado</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for u in users_lawyers %}
-    {% if u[4] == 'Activo' %}
-    <tr>
-      <td>{{ u[0] }}</td>
-      <td>{{ u[1] }}</td>
-      <td>{{ u[2] }}</td>
-      <td>{{ u[3] }}</td>
-      <td> {{ u[4] }} </td>
-      <td>{{u[5]}}</td>
-      <td>
-          <form
-            action="{{ url_for('director.editar', curp=u[1]) }}"
-            method="GET"
-            style="display: inline"
-          >
-            <button
-              type="submit"
-              class="btn-update"
-            >
-              Editar
-            </button>
-          </form>
-        </td>
-      </td>
-      <td>
-        {% if u[1] %}
-          <form
-            action="{{ url_for('director.eliminar', curp=u[1]) }}"
-            method="POST"
-            style="display: inline"
-          >
-            <button
-              type="submit"
-              class="btn-delete"
-              onclick="
-                return confirm(
-                  '¿Estás seguro de eliminar a esta persona? Esta acción no se puede deshacer.',
-                );
-              "
-            >
-              Eliminar
-            </button>
-          </form>
-        {%else %}
-        <span style="color:red;">Error: Sin CURP</span>
-        {% endif %}
-      </td>
-      <td>
-        <form
-          action="{{ url_for('director.desable', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de dehabilitar esta cuenta? ',
-              );
-            "
-          >
-            Deshabilitar
-          </button>
-        </form>
-      </td>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="5">No hay usuarios registrados todavía.</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-<h2>Trabajadores Sociales</h2>
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>CEDULA</th>
-      <th>CURP</th>
-      <th>Nombre</th>
-      <th>Estado</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for u in users_social %}
-    {% if u[3] == 'Activo'%}
-    <tr>
-      <td>{{ u[0] }}</td>
-      <td>{{ u[1] }}</td>
-      <td>{{ u[2] }}</td>
-      <td>{{ u[3] }}</td>
-      <td> {{ u[4] }} </td>
-      <td>{{u[5]}}</td>
-           <td>
-          <form
-            action="{{ url_for('director.editar', curp=u[1]) }}"
-            method="GET"
-            style="display: inline"
-          >
-            <button
-              type="submit"
-              class="btn-update"
-            >
-              Editar
-            </button>
-          </form>
-        </td>
-      <td>
-        
-       
-        {% if u[1] %}
-        <form
-          action="{{ url_for('director.eliminar', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de eliminar a esta persona? Esta acción no se puede deshacer.',
-              );
-            "
-          >
-            Eliminar
-          </button>
-        </form>
-        {%else %}
-        <span style="color:red;">Error: Sin CURP</span>
-        {% endif %}
-      </td>
-      <td>
-        <form
-          action="{{ url_for('director.desable', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de dehabilitar esta cuenta? ',
-              );
-            "
-          >
-            Deshabilitar
-          </button>
-        </form>
-      </td>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="5">No hay usuarios registrados todavía.</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-<h2>Medicos</h2>
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>CEDULA</th>
-      <th>CURP</th>
-      <th>Nombre</th>
-      <th>Especialidad</th>
-      <th>Estado</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for u in users_medics %}
-    {%if u[4] == 'Activo'%}
-    <tr>
-      <td>{{ u[0] }}</td>
-      <td>{{ u[1] }}</td>
-      <td>{{ u[2] }}</td>
-      <td>{{ u[3] }}</td>
-      <td>{{ u[4] }}</td>
-      <td> {{ u[5] }} </td>
-      <td>
-          <form
-            action="{{ url_for('director.editar', curp=u[1]) }}"
-            method="GET"
-            style="display: inline"
-          >
-            <button
-              type="submit"
-              class="btn-update"
-            >
-              Editar
-            </button>
-          </form>
-        </td>
-      <td>
-        
-        {% if u[1] %}
-        <form
-          action="{{ url_for('director.eliminar', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de eliminar a esta persona? Esta acción no se puede deshacer.',
-              );
-            "
-          >
-            Eliminar
-          </button>
-        </form>
-        {%else %}
-        <span style="color:red;">Error: Sin CURP</span>
-        {% endif %}
-      </td>
-      <td>
-        <form
-          action="{{ url_for('director.desable', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de dehabilitar esta cuenta? ',
-              );
-            "
-          >
-            Deshabilitar
-          </button>
-        </form>
-      </td>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="5">No hay usuarios registrados todavía.</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-<h2>Psicologos</h2>
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>CEDULA</th>
-      <th>CURP</th>
-      <th>Nombre</th>
-      <th>Enfoque Terapeutico</th>
-      <th>Estado</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for u in users_psico %}
-    {%if u[4] == 'Activo'%}
-    <tr>
-      <td>{{ u[0] }}</td>
-      <td>{{ u[1] }}</td>
-      <td>{{ u[2] }}</td>
-      <td>{{ u[3] }}</td>
-      <td>{{ u[4] }}</td>
-      <td> {{ u[5] }} </td>
-      <td>
-          <form
-            action="{{ url_for('director.editar', curp=u[1]) }}"
-            method="GET"
-            style="display: inline"
-          >
-            <button
-              type="submit"
-              class="btn-update"
-            >
-              Editar
-            </button>
-          </form>
-       </td>
-      <td>
-        
-        {% if u[1] %}
-        <form
-          action="{{ url_for('director.eliminar', curp=u[1])}}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de eliminar a esta persona? Esta acción no se puede deshacer.',
-              );
-            "
-          >
-            Eliminar
-          </button>
-        </form>
-        {%else %}
-        <span style="color:red;">Error: Sin CURP</span>
-        {% endif %}
-      </td>
-      <td>
-        <form
-          action="{{ url_for('director.desable', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de dehabilitar esta cuenta? ',
-              );
-            "
-          >
-            Deshabilitar
-          </button>
-        </form>
-      </td>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="5">No hay usuarios registrados todavía.</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-
-<h3>Usuario Inactivos</h3>
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>CURP</th>
-      <th>Rol</th>
-      <th>Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for u in users_unable %}
-    {% if u[3] == 'Inactivo'%}
-    <tr>
-      <td>{{ u[0] }}</td>
-      <td>{{ u[1] }}</td>
-      <td>{{ u[2] }}</td>
-      <td>
-        <span class="status-badge {{ u[3] | lower }}"> {{ u[3] }} </span>
-      </td>
-      <td>
-        
-        {% if u[1] %}
-        <form
-          action="{{ url_for('director.eliminar', curp=u[1])}}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Estás seguro de eliminar a esta persona? Esta acción no se puede deshacer.',
-              );
-            "
-          >
-            Eliminar
-          </button>
-        </form>
-        {%else %}
-
-
-        <span style="color:red;">Error: Sin CURP</span>
-        {% endif %}
-      </td>
-
-      <td> 
-        <form
-          action="{{ url_for('director.able', curp=u[1]) }}"
-          method="POST"
-          style="display: inline"
-        >
-          <button
-            type="submit"
-            class="btn-delete"
-            onclick="
-              return confirm(
-                '¿Deseas habilitar esta cuenta? ',
-              );
-            "
-          >
-            Habilitar
-          </button>
-      </td>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="5">No hay usuarios registrados todavía.</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-
 {% endblock %}
