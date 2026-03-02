@@ -7,7 +7,7 @@ def sembrar_director():
         "host": "localhost",
         "database": "nna_v2",
         "user": "postgres",
-        "password": "4skay$@"
+        "password": ""
     }
 
     # 2. Generamos el hash para 'admin123'
