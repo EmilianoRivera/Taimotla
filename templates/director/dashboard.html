@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="section-header">
+        <h2>Bienvenido, {{ nombre }}</h2>
+        <p>Gestión de personal de la fundación</p>
+    </div>
+
+
+    <h2>Abogados</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>CEDULA</th>
+                <th>CURP</th>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Estado</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users_lawyers %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td> {{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>
+                    <span class="status-badge {{ u.estado | lower }}">
+                        {{ u[4] }}
+                    </span>
+                </td>
+                <td>{{u[5]}}</td>
+                <td>
+                    <a href="{{url_for('director.editar')}}" class="btn-edit">Editar</a>
+                    <a href="{{url_for('director.eliminar')}}" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No hay usuarios registrados todavía.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <h2>Trabajadores Sociales</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>CEDULA</th>
+                <th>CURP</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users_social %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td> {{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>
+                    <span class="status-badge {{ u.estado | lower }}">
+                        {{ u[4] }}
+                    </span>
+                </td>
+                <td>{{u[5]}}</td>
+                <td>
+                    <a href="{{url_for('director.editar')}}" class="btn-edit">Editar</a>
+                    <a href="{{url_for('director.eliminar')}}" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No hay usuarios registrados todavía.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+    
+    <h2>Medicos</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>CEDULA</th>
+                <th>CURP</th>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Estado</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users_medics %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td> {{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>
+                    <span class="status-badge {{ u.estado | lower }}">
+                        {{ u[5] }}
+                    </span>
+                </td>
+                <td>{{u[6]}}</td>
+                <td>
+                    <a href="{{url_for('director.editar')}}" class="btn-edit">Editar</a>
+                    <a href="{{url_for('director.eliminar')}}" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No hay usuarios registrados todavía.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Psicologos</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>CEDULA</th>
+                <th>CURP</th>
+                <th>Nombre</th>
+                <th>Enfoque Terapeutico</th>
+                <th>Estado</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users_psico %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td> {{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>
+                    <span class="status-badge {{ u.estado | lower }}">
+                        {{ u[5] }}
+                    </span>
+                </td>
+                <td>{{u[6]}}</td>
+                <td>
+                    <a href="{{url_for('director.editar')}}" class="btn-edit">Editar</a>
+                    <a href="{{url_for('director.eliminar')}}" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No hay usuarios registrados todavía.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

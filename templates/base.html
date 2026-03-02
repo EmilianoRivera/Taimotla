@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración - Futuro con Derechos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <title>Fundación - Futuro con Derechos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
 <body>
 
-    <header class="top-header">
-        <div class="header-titles">
-            <h1>Panel de Administración</h1>
-            <p>Gestión de Equipo Multidisciplinario</p>
+    <header class="header-logo">
+        <div class="brand">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            <h1>FUTURO CON DERECHOS</h1>
         </div>
-        <div class="header-logo">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Fundación">
-        </div>
+        <nav class="nav-links">
+            {%if session.get('rol') == 'director'%}
+            <a href="{{ url_for('main.index') }}">Inicio</a>
+            <a href="{{ url_for('main.conocenos') }}">Conócenos</a>
+            <a href="{{ url_for('director.logout')}}">Cerrar Sesi&oacute;n</a>
+            <a href="{{ url_for('director.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('director.registrar') }}">Registrar Usuario</a>
+            <a href="{{ url_for('director.cuenta')}}" class="btn-edit">Cuenta</a>
+            {%else%}
+            <a href="{{ url_for('main.index') }}">Inicio</a>
+            <a href="{{ url_for('main.conocenos') }}">Conócenos</a>
+            <a href="{{ url_for('main.login') }}">Iniciar Sesi&oacute;n</a>
+
+            {% endif %}
+
+        </nav>
     </header>
 
-    {% if session.get('curp') %}
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="/dashboard">Listado de Personal</a></li>
-            <li><a href="/registrar-personal">Registrar Nuevo Personal</a></li>
-        </ul>
-        <div class="user-info">
-            <span>Sesión iniciada como: <strong>{{ session.get('rol') }} ({{ session.get('nombre') }})</strong></span>
-            <a href="/logout" class="btn-logout">Salir</a>
-        </div>
-    </nav>
-    {% endif %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alerta alerta-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
 
-    <div class="container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alerta alerta-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-        {% block content %}{% endblock %}
-    </div>
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
 
 </body>
 </html>

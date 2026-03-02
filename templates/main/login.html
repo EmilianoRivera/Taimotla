@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-card">
+    <h2>Acceso al Sistema</h2>
+    
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" name="correo" placeholder="usuario@fundacion.org" required>
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" name="contrasena" placeholder="********" required>
+        </div>
+        <button type="submit" class="btn-ingresar">Ingresar</button>
+    </form>
+</div>
+{% endblock %}

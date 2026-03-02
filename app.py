@@ -1,6 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
+from routes.main import bp_main
+from routes.director import bp_director
 
-@app.route("/")
-def hola_mundo():
-    return "<p>Hola mundo</p>"
+app = Flask(__name__)
+app.secret_key = 'your_very_secret_and_unique_key' 
+app.register_blueprint(bp_main)
+app.register_blueprint(bp_director)
+if __name__ == '__main__':
+    app.run(debug=True)
