@@ -1,17 +1,17 @@
 import psycopg2
 from werkzeug.security import generate_password_hash
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 def sembrar_director():
-    # 1. Configura tus datos de conexión aquí
     conn_params = {
-        "host": "localhost",
-        "database": "nna_v2",
-        "user": "postgres",
-        "password": "4skay$@"
+        "host": os.getenv('DB_HOST'),
+        "database": os.getenv('DB_NAME'),
+        "user": os.getenv('DB_USER'),
+        "password": os.getenv('DB_PASSWORD')
     }
 
-    # 2. Generamos el hash para 'admin123'
-    # Esto es lo que Flask podrá leer después
     password_plana = 'admin123'
     password_hashed = generate_password_hash(password_plana)
 
@@ -33,7 +33,7 @@ def sembrar_director():
             'Av. Instituto Politécnico Nacional', '2508'
         )
 
-        # Query 2: Insertar Director (Usando el HASH)
+
         query_director = """
         INSERT INTO public.director (
             "CURP", "fecha_ingreso", "contrasena", "estado"
