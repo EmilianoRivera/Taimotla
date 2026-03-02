@@ -39,7 +39,7 @@ source .venv/bin/activate
 
 ## 4. Instalar las Dependencias
 pip install flask psycopg2-binary
-
+pip install python-dotenv
 ## 5. Conexión con la Base de Datos 
 # database.py / app.py
 password="TU_CONTRASEÑA_DE_POSTGRES"
