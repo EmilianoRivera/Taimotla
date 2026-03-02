@@ -10,6 +10,7 @@ def sembrar_director():
         "database": os.getenv('DB_NAME'),
         "user": os.getenv('DB_USER'),
         "password": os.getenv('DB_PASSWORD')
+
     }
 
     password_plana = 'admin123'
