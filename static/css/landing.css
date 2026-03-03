@@ -3,7 +3,7 @@
     position: relative;
     height: 80vh;
     min-height: 500px;
-    background-image: url('../img/hero-bg.jpg'); /* Asegúrate de tener una imagen bonita aquí */
+    background-image: url('../img/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     border-radius: 15px;
@@ -68,7 +68,6 @@
 .btn-primary-hero:hover { background-color: #1d4ed8; transform: translateY(-2px); }
 .btn-secondary-hero:hover { background-color: #f1f5f9; transform: translateY(-2px); }
 
-/* Features Grid con CSS Grid Puro */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

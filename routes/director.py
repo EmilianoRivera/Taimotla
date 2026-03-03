@@ -76,7 +76,6 @@ def actualizar(curp):
     else:
         flash("Hubo un error al intentar actualizar.", "error")
 
-    # 3. Redirigir al dashboard para ver los cambios
     return redirect(url_for('director.dashboard'))
 
 
@@ -99,7 +98,6 @@ def registrar():
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method=='POST':
-        #extraemos especialidad
         data = {
             'curp': request.form.get("curp").upper(),
             'rfc': request.form.get("rfc").upper(),

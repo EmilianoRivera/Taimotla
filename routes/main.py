@@ -3,7 +3,9 @@ from werkzeug.security import check_password_hash
 from models.auth import verify_director, verify_coordinador
 
 bp_main = Blueprint("main", __name__)
-
+@bp_main.route("/")
+def index():
+    return redirect(url_for("main.login"))
 
 @bp_main.route("/login", methods=["GET", "POST"])
 def login():

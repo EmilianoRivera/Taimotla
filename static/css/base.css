@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
 
@@ -14,7 +14,6 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-
 .nav-menu a { text-decoration: none; color: #4a5568; font-weight: 500; transition: color 0.3s; }
 .nav-menu a:hover { color: #2b6cb0; }
 
-/* Botones con estilo puro */
 .link-login, .link-cuenta { background: #2b6cb0; color: #fff !important; padding: 8px 16px; border-radius: 5px; }
 .link-logout { background: #fff; color: #e53e3e !important; border: 1px solid #e53e3e; padding: 7px 15px; border-radius: 5px; }
 .link-logout:hover { background: #fff5f5; }
