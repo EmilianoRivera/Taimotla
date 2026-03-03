@@ -23,13 +23,17 @@
             </div>
 
             <nav class="nav-menu">
-                <a href="{{ url_for('main.index') }}">Inicio</a>
-                <a href="{{ url_for('main.conocenos') }}">Conócenos</a>
+               
                 {% if session.get('rol') == 'director' %}
                     <a href="{{ url_for('director.dashboard') }}">Dashboard</a>
                     <a href="{{ url_for('director.registrar') }}">Registrar</a>
                     <a href="{{ url_for('director.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
                     <a href="{{ url_for('director.logout') }}" class="link-logout">Cerrar Sesión</a>
+                {%elif session.get('rol') == 'coordinador' %}
+                    <a href="{{ url_for('coordinador.dashboard') }}">Dashboard</a>
+                    <a href="{{ url_for('coordinador.registrar') }}">Registrar</a>
+                    <a href="{{ url_for('coordinador.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
+                    <a href="{{ url_for('coordinador.logout') }}" class="link-logout">Cerrar Sesión</a>
                 {% else %}
                     <a href="{{ url_for('main.login') }}" class="link-login">Iniciar Sesión</a>
                 {% endif %}

@@ -340,25 +340,34 @@ def search_one_user(curp):
             for tabla in tablas_roles:
                 query_get_user = f"""
                 SELECT 
-                    a."CURP" as curp,
-                    p.p_nombre || ' ' || p.p_apellido as nombre_completo, 
-                    p.telefono, 
-                    p.calle,
-                    p.correo
-
+                    p."CURP", p."RFC", p.p_nombre, p.s_nombre, p.p_apellido, p.s_apellido,
+                    p.sexo, p.fecha_nacimiento, p.calle, p.num_ext, p.colonia, p.cp,
+                    p.municipio, p.estado_rep, p.telefono, p.correo
                 FROM public.{tabla} a 
                 JOIN public.persona p ON a."CURP" = p."CURP" 
                 WHERE p."CURP" = %s
                 """
-                res = cur.execute(query_get_user, (curp,))
+                cur.execute(query_get_user, (curp,))
                 res = cur.fetchone()
+                
                 if res:
                     return {
                         'curp': res[0],
-                        'nombre': res[1],
-                        'telefono': res[2],
-                        'calle': res[3],
-                        'correo': res[4],
+                        'rfc': res[1],
+                        'p_nombre': res[2],
+                        's_nombre': res[3],
+                        'p_apellido': res[4],
+                        's_apellido': res[5],
+                        'sexo': res[6],
+                        'fecha_nacimiento': res[7],
+                        'calle': res[8],
+                        'num_ext': res[9],
+                        'colonia': res[10],
+                        'cp': res[11],
+                        'municipio': res[12],
+                        'estado_rep': res[13],
+                        'telefono': res[14],
+                        'correo': res[15],
                         'rol': tabla
                     }
             
@@ -374,26 +383,61 @@ def search_one_user(curp):
 
 
 def update_user(curp, data):
+    conn = None
+    cur = None
     try:
         conn = obtener_conexion()
         with conn.cursor() as cur:
             query = """
                 UPDATE public.persona 
-                SET correo = %s, telefono = %s, calle = %s 
+                SET 
+                    "RFC" = %s, 
+                    p_nombre = %s, 
+                    s_nombre = %s, 
+                    p_apellido = %s, 
+                    s_apellido = %s,
+                    sexo = %s, 
+                    fecha_nacimiento = %s, 
+                    calle = %s, 
+                    num_ext = %s, 
+                    colonia = %s, 
+                    cp = %s, 
+                    municipio = %s, 
+                    estado_rep = %s, 
+                    telefono = %s, 
+                    correo = %s
                 WHERE "CURP" = %s
             """
-            cur.execute(query, (
-                data.get('correo'), 
-                data.get('telefono'), 
-                data.get('calle'), 
-                curp
-            ))
+            
+            # Es vital que este orden coincida EXACTAMENTE con los %s de arriba
+            valores = (
+                data.get('rfc'),
+                data.get('p_nombre'),
+                data.get('s_nombre'),
+                data.get('p_apellido'),
+                data.get('s_apellido'),
+                data.get('sexo'),
+                data.get('fecha_nacimiento') if data.get('fecha_nacimiento') else None, # Maneja fecha vacía
+                data.get('calle'),
+                data.get('num_ext'),
+                data.get('colonia'),
+                data.get('cp'),
+                data.get('municipio'),
+                data.get('estado_rep'),
+                data.get('telefono'),
+                data.get('correo'),
+                curp  # El valor para el WHERE "CURP" = %s
+            )
+            
+            cur.execute(query, valores)
             conn.commit()
             return True
-    except psycopg2.Error as e:
+
+    except Exception as e:
         print(f"❌ Error al actualizar al usuario: {e}")
         if conn:
             conn.rollback()
+        return False
     finally:
         if cur: cur.close()
-        if conn: conn.close()  
+        if conn: conn.close() 

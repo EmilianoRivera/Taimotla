@@ -15,3 +15,17 @@ def verify_director(email):
     except psycopg2.Error as e:
         print(f"Ocurrio un error: {e}")
 
+def verify_coordinador (email):
+    try: 
+        conn =obtener_conexion()
+        with conn.cursor() as cur:
+            query = """SELECT d."CURP" as curp, d.contrasena as contrasena, p.p_nombre as Pnombre from public.persona p JOIN public.coordinador d on p."CURP" = d."CURP" WHERE p.correo = %s"""
+            
+            cur.execute(query, (email,))
+
+            return cur.fetchone()
+        cur.close()
+        conn.close()
+    except psycopg2.Error as e:
+        print(f"Ocurrio un error: {e}")
+
