@@ -23,8 +23,7 @@
             </div>
 
             <nav class="nav-menu">
-                <a href="{{ url_for('main.index') }}">Inicio</a>
-                <a href="{{ url_for('main.conocenos') }}">Conócenos</a>
+               
                 {% if session.get('rol') == 'director' %}
                     <a href="{{ url_for('director.dashboard') }}">Dashboard</a>
                     <a href="{{ url_for('director.registrar') }}">Registrar</a>

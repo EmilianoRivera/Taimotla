@@ -1,38 +1,108 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="section-header">
-        <h2>Modificar Datos de Contacto</h2>
-    </div>
+<div class="section-header">
+    <h2>Modificar Perfil de Personal</h2>
+    <p>Editando a: <strong>{{ user.p_nombre }} {{ user.p_apellido }}</strong> ({{ user.rol | capitalize }})</p>
+</div>
 
-    {% if user %}
-    <form  action="{{url_for('director.actualizar', curp=user.curp)}}"  method="POST" class="registro-form">
-        <fieldset>
-            <legend>Actualizando datos de: {{ user.p_nombre }} {{ user.p_apellido }}</legend>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Correo Electrónico *</label>
-                    <input type="email" name="correo" value="{{ user.correo }}" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Teléfono</label>
-                    <input type="text" name="telefono" value="{{ user.telefono }}">
-                </div>
-                
-                <div class="form-group">
-                    <label>Calle</label>
-                    <input type="text" name="calle" value="{{ user.calle }}">
-                </div>
-                
+{% if user %}
+<form action="{{ url_for('director.actualizar', curp=user.curp) }}" method="POST" class="registro-form">
+    
+    <fieldset>
+        <legend>Datos de Identificación</legend>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>CURP (No editable)</label>
+                <input type="text" value="{{ user.curp }}" disabled style="background-color: #f0f0f0; color: #666;">
+                <input type="hidden" name="curp" value="{{ user.curp }}">
             </div>
-        </fieldset>
-
-        <div class="form-actions">
-            <button type="submit" class="btn-principal">Guardar Cambios</button>
+            <div class="form-group">
+                <label>RFC</label>
+                <input type="text" name="rfc" value="{{ user.rfc }}" maxlength="13">
+            </div>
+            <div class="form-group">
+                <label>Sexo</label>
+                <select name="sexo">
+                    <option value="Masculino" {% if user.sexo == 'Masculino' %}selected{% endif %}>Masculino</option>
+                    <option value="Femenino" {% if user.sexo == 'Femenino' %}selected{% endif %}>Femenino</option>
+                    <option value="Otro" {% if user.sexo == 'Otro' %}selected{% endif %}>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Nacimiento</label>
+                <input type="date" name="fecha_nacimiento" value="{{ user.fecha_nacimiento }}">
+            </div>
         </div>
-    </form>
-    {% else %}
-        <p>Usuario no encontrado.</p>
-    {% endif %}
+    </fieldset>
+
+    <fieldset>
+        <legend>Nombre Completo</legend>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Primer Nombre *</label>
+                <input type="text" name="p_nombre" value="{{ user.p_nombre }}" required>
+            </div>
+            <div class="form-group">
+                <label>Segundo Nombre</label>
+                <input type="text" name="s_nombre" value="{{ user.s_nombre }}">
+            </div>
+            <div class="form-group">
+                <label>Primer Apellido *</label>
+                <input type="text" name="p_apellido" value="{{ user.p_apellido }}" required>
+            </div>
+            <div class="form-group">
+                <label>Segundo Apellido</label>
+                <input type="text" name="s_apellido" value="{{ user.s_apellido }}">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Contacto y Dirección</legend>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Correo Electrónico *</label>
+                <input type="email" name="correo" value="{{ user.correo }}" required>
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="text" name="telefono" value="{{ user.telefono }}">
+            </div>
+            <div class="form-group">
+                <label>Calle</label>
+                <input type="text" name="calle" value="{{ user.calle }}">
+            </div>
+            <div class="form-group">
+                <label>Número Exterior</label>
+                <input type="text" name="num_ext" value="{{ user.num_ext }}">
+            </div>
+            <div class="form-group">
+                <label>Colonia</label>
+                <input type="text" name="colonia" value="{{ user.colonia }}">
+            </div>
+            <div class="form-group">
+                <label>Código Postal</label>
+                <input type="text" name="cp" value="{{ user.cp }}" maxlength="5">
+            </div>
+            <div class="form-group">
+                <label>Municipio</label>
+                <input type="text" name="municipio" value="{{ user.municipio }}">
+            </div>
+            <div class="form-group">
+                <label>Estado / República</label>
+                <input type="text" name="estado_rep" value="{{ user.estado_rep }}">
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-actions">
+        <a href="{{ url_for('director.dashboard') }}" class="btn-secondary" style="text-decoration: none; padding: 12px 25px;">Cancelar</a>
+        <button type="submit" class="btn-principal">Guardar Todos los Cambios</button>
+    </div>
+</form>
+{% else %}
+    <div class="alert alert-warning">No se encontró la información del usuario solicitado.</div>
+{% endif %}
+
 {% endblock %}

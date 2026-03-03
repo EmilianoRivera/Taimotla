@@ -4,13 +4,6 @@ from models.auth import verify_director, verify_coordinador
 
 bp_main = Blueprint("main", __name__)
 
-@bp_main.route("/")
-def index() :
-    return render_template("main/index.html")
-
-@bp_main.route("/conocenos")
-def conocenos():
-    return render_template("main/conocenos.html")
 
 @bp_main.route("/login", methods=["GET", "POST"])
 def login():

@@ -27,7 +27,7 @@ def dashboard():
 def logout():
     session.clear()
     flash("Has cerrado sesión correctamente", "success")
-    return redirect(url_for('main.index'))
+    return redirect(url_for('main.login'))
 
 @bp_director.route('/cuenta', methods=['GET'])
 def cuenta():
@@ -43,24 +43,34 @@ def cuenta():
 @bp_director.route('/editar/<curp>', methods=['GET', 'POST'])
 def editar(curp):
     if session.get('rol') != 'director':
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     user_found = None
     if request.method == "GET":
-        print(curp)
         user_found = search_one_user(curp)
     return render_template('director/editar.html', user= user_found)
 
 @bp_director.route('/actualizar/<curp>', methods=['GET', 'POST'])
 def actualizar(curp):
     if session.get('rol') != 'director':
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     form_data = {
-        'correo': request.form.get('correo'),
+        'rfc': request.form.get('rfc'),
+        'p_nombre': request.form.get('p_nombre'),
+        's_nombre': request.form.get('s_nombre'),
+        'p_apellido': request.form.get('p_apellido'),
+        's_apellido': request.form.get('s_apellido'),
+        'sexo': request.form.get('sexo'),
+        'fecha_nacimiento': request.form.get('fecha_nacimiento'),
+        'calle': request.form.get('calle'),
+        'num_ext': request.form.get('num_ext'),
+        'colonia': request.form.get('colonia'),
+        'cp': request.form.get('cp'),
+        'municipio': request.form.get('municipio'),
+        'estado_rep': request.form.get('estado_rep'),
         'telefono': request.form.get('telefono'),
-        'calle': request.form.get('calle')
+        'correo': request.form.get('correo')
     }
 
-    # 2. Llamar a la función de actualización
     if update_user(curp, form_data):
         flash("¡Datos actualizados correctamente!", "success")
     else:
@@ -130,7 +140,7 @@ def registrar():
 def desable(curp):
     if session.get('rol') != 'director':
         flash("Acceso restringido a Directivos.", "error")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     
     if request.method == "POST":
         state = desable_user(curp)
@@ -142,7 +152,7 @@ def desable(curp):
 def able(curp):
     if session.get('rol') != 'director':
         flash("Acceso restringido a Directivos.", "error")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     
     if request.method == "POST":
         state = able_user(curp)
