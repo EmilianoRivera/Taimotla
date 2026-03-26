@@ -29,3 +29,24 @@ def consult_coordinador(curp):
     finally:
         if cur: cur.close()
         if conn: conn.close()
+
+
+def consult_teams():
+    try:
+        conn = obtener_conexion()
+        with conn.cursor() as cur:
+            query_coordinador = """
+                SELECT * from equipo
+            """
+            
+            cur.execute(query_coordinador)
+            
+            datos = cur.fetchall() 
+            return datos
+    except psycopg2.Error as e:
+        print(f"❌ Error al consultar equipos: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cur: cur.close()
+        if conn: conn.close()

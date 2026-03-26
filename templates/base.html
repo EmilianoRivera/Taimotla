@@ -31,7 +31,8 @@
                     <a href="{{ url_for('director.logout') }}" class="link-logout">Cerrar Sesión</a>
                 {%elif session.get('rol') == 'coordinador' %}
                     <a href="{{ url_for('coordinador.dashboard') }}">Dashboard</a>
-                    <a href="{{ url_for('coordinador.registrar') }}">Registrar</a>
+                    <a href="{{ url_for('coordinador.registrar') }}">Registrar Personal</a>
+                    <a href="{{ url_for('coordinador.equipos') }}">Registrar Equipos</a>
                     <a href="{{ url_for('coordinador.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
                     <a href="{{ url_for('coordinador.logout') }}" class="link-logout">Cerrar Sesión</a>
                 {% else %}

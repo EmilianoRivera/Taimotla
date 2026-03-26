@@ -5,6 +5,12 @@ from models.auth import verify_director, verify_coordinador
 bp_main = Blueprint("main", __name__)
 
 
+# Agrego esta ruta para que en la raiz del proyecto lo redireccione al login
+@bp_main.route("/", methods = ["GET"])
+def main():
+    if request.method == "GET":
+        return render_template("main/login.html")
+
 @bp_main.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":

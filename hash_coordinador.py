@@ -28,7 +28,7 @@ def crear_coordinador_sistema():
                 INSERT INTO persona 
                 ("CURP", "RFC", p_nombre, s_nombre, p_apellido, s_apellido, sexo, 
                  fecha_nacimiento, calle, num_ext, colonia, cp, municipio, 
-                 estado_rep, telefono, correo) 
+                 estado_rep, telefono, correo ) 
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             val_persona = (

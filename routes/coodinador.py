@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash, request
 from models.director import user_register, consult_lawyers, consult_social, consult_medic, consult_psico, delete_user, desable_user, consult_unable_users, able_user, search_one_user, update_user
 
-from models.coordinador import  consult_coordinador
+
+from models.coordinador import  consult_coordinador, consult_teams
 
 
 bp_coordinador = Blueprint('coordinador', __name__, url_prefix='/coordinador')
@@ -17,10 +18,6 @@ def dashboard():
         data_medics = consult_medic()
         data_psico = consult_psico()
         data_users_unable = consult_unable_users()
-        print(data_medics)
-        print(data_psico)
-        print(data_social)
-        print(data_lawyers)
 
     return render_template('coordinador/dashboard.html', nombre=session['nombre'], users_lawyers=data_lawyers, users_social = data_social, users_psico = data_psico, users_medics = data_medics, users_unable = data_users_unable)
 
@@ -145,3 +142,27 @@ def able(curp):
         state = able_user(curp)
         print(state)
     return redirect(url_for("coordinador.dashboard"))
+
+@bp_coordinador.route("/equipos", methods = ['GET'])
+def equipos():
+    if session.get('rol') != 'coordinador':
+        flash("Acceso restringido a Directivos.", "error")
+        return redirect(url_for("main.login"))
+    if request.method == 'GET':
+        equipos = consult_teams()
+        print(equipos)
+    return render_template('coordinador/equipos.html')
+
+@bp_coordinador.route("/nuevos_equipos", methods = ['GET', 'POST'])
+def nuevos_equipos():
+    if session.get('rol') != 'coordinador':
+        flash("Acceso restringido a Directivos.", "error")
+        return redirect(url_for("main.login"))
+    if request.method == 'GET':
+        data_lawyers = consult_lawyers()
+        data_social =consult_social()
+        data_medics = consult_medic()
+        data_psico = consult_psico()
+        data_users_unable = consult_unable_users()
+        print("Hola")
+    return render_template('coordinador/registrar_equipo.html', users_lawyers=data_lawyers, users_social = data_social, users_psico = data_psico, users_medics = data_medics, users_unable = data_users_unable)
