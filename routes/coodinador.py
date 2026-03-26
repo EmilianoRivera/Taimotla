@@ -61,7 +61,6 @@ def actualizar(curp):
         'calle': request.form.get('calle')
     }
 
-    # 2. Llamar a la función de actualización
     if update_user(curp, form_data):
         flash("¡Datos actualizados correctamente!", "success")
     else:
@@ -86,7 +85,6 @@ def registrar():
         flash("Acceso restringido a Directivos.", "error")
         return redirect(url_for('main.login'))
     if request.method=='POST':
-        #extraemos especialidad
         data = {
             'curp': request.form.get("curp").upper(),
             'rfc': request.form.get("rfc").upper(),
@@ -127,7 +125,7 @@ def registrar():
 def desable(curp):
     if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     
     if request.method == "POST":
         state = desable_user(curp)
@@ -139,7 +137,7 @@ def desable(curp):
 def able(curp):
     if session.get('rol') != 'coordinador':
         flash("Acceso restringido a Directivos.", "error")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.login"))
     
     if request.method == "POST":
         state = able_user(curp)

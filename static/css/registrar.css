@@ -8,7 +8,7 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Fieldsets (Los bloques de secciones) */
+
 fieldset {
     border: 1px solid #e2e8f0;
     border-radius: 10px;
@@ -26,14 +26,14 @@ legend {
     letter-spacing: 1px;
 }
 
-/* La Grilla Mágica */
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-/* Grupos de Input */
+/*  Input */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ legend {
     background: #fff;
 }
 
-/* Selects Especiales */
+
 select {
     background-color: white;
     cursor: pointer;
@@ -97,7 +97,7 @@ select {
     transform: translateY(0);
 }
 
-/* Responsive para pantallas pequeñas */
+
 @media (max-width: 600px) {
     .form-grid {
         grid-template-columns: 1fr;
@@ -108,5 +108,5 @@ select {
     }
 }
 
-label:contains('*') { color: #e53e3e; } /* Nota: contains no es CSS puro, usa una clase mejor */
+label:contains('*') { color: #e53e3e; } 
 .required-hint { color: #e53e3e; font-weight: bold; }

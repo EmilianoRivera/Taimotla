@@ -110,10 +110,8 @@ def consult_lawyers():
                 JOIN public.persona p ON p."CURP" = a."CURP";
             """
             
-            # 2. Ejecutamos solo una consulta a la vez o usamos UNION
             cur.execute(query_abogados)
             
-            # 3. USA fetchall() para traer a TODOS, no solo a uno
             datos = cur.fetchall() 
             return datos
     except psycopg2.Error as e:
@@ -140,10 +138,8 @@ def consult_psico():
                 JOIN public.persona p ON p."CURP" = a."CURP";
             """
             
-            # 2. Ejecutamos solo una consulta a la vez o usamos UNION
             cur.execute(query_psico)
             
-            # 3. USA fetchall() para traer a TODOS, no solo a uno
             datos = cur.fetchall() 
             return datos
     except psycopg2.Error as e:
@@ -409,7 +405,6 @@ def update_user(curp, data):
                 WHERE "CURP" = %s
             """
             
-            # Es vital que este orden coincida EXACTAMENTE con los %s de arriba
             valores = (
                 data.get('rfc'),
                 data.get('p_nombre'),
@@ -426,7 +421,7 @@ def update_user(curp, data):
                 data.get('estado_rep'),
                 data.get('telefono'),
                 data.get('correo'),
-                curp  # El valor para el WHERE "CURP" = %s
+                curp  
             )
             
             cur.execute(query, valores)
