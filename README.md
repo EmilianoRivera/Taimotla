@@ -64,4 +64,6 @@ La aplicación estará disponible en el puerto 5000 en el localhost, ingrese a s
 ```localhost:5000 ```
 Para iniciar sesión el correo del director es: director@fundacion.org con contraseña: admin123 y para iniciar sesión como coordinador : m.villagomez@fundacion.org con contraseña: coor123
 
+## 8. Base de Datos
+La base de datos se encuentra disponible en la carpeta de script_models, copiar el código y ejecutarlo en PostgreSQL  para tener acceso.
 
