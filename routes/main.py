@@ -14,10 +14,12 @@ def login():
         password = request.form.get("contrasena")
 
         response_director = verify_director(email)
-        if response_director and check_password_hash(response_director[1], password):
+        print(response_director)
+
+        if response_director and check_password_hash(response_director[2], password):
             session['user_id'] = response_director[0] # EL USER_ID no es un numero es el CURP!
             session['rol']='director'
-            session['nombre']=response_director[2]
+            session['nombre']=response_director[1]
             return redirect(url_for("director.dashboard"))
 
         response_coordinador = verify_coordinador(email)

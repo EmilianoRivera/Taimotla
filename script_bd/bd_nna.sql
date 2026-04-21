@@ -3,7 +3,6 @@
 BEGIN;
 
 
-
 CREATE TABLE IF NOT EXISTS public.abogado
 (
     "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
@@ -19,7 +18,7 @@ CREATE TABLE IF NOT EXISTS public.acta_nacimiento
     id_documento_nna integer NOT NULL,
     fecha_expedicion date,
     id_estado_documento integer,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_acta_nacimiento_pkey PRIMARY KEY (id_acta_nacimiento),
     CONSTRAINT acta_nacimiento_id_documento_nna_key UNIQUE (id_documento_nna)
 );
@@ -31,7 +30,7 @@ CREATE TABLE IF NOT EXISTS public.actores
     nombre character varying(150) COLLATE pg_catalog."default" NOT NULL,
     nombre_corto character varying(50) COLLATE pg_catalog."default",
     id_sector integer,
-    descripcion VARCHAR(100) ,
+    descripcion character varying(100) COLLATE pg_catalog."default",
     pagina_web character varying(255) COLLATE pg_catalog."default",
     id_email_principal integer,
     id_telefono_principal integer,
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS public.actores
     id_red_social_principal integer,
     horario_atencion character varying(100) COLLATE pg_catalog."default",
     id_domicilio_servicio integer,
-    referencias_ubicacion VARCHAR(100) ,
+    referencias_ubicacion character varying(100) COLLATE pg_catalog."default",
     id_estado_actor integer,
     fecha_registro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     registrado_por character varying(18) COLLATE pg_catalog."default",
@@ -54,7 +53,7 @@ CREATE TABLE IF NOT EXISTS public.cartilla_medica
     fecha_vencimiento date,
     id_institucion_medica integer,
     id_estado_documento integer,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_cartilla_medica_pkey PRIMARY KEY (id_cartilla_medica),
     CONSTRAINT cartilla_medica_id_documento_nna_key UNIQUE (id_documento_nna)
 );
@@ -128,7 +127,7 @@ CREATE TABLE IF NOT EXISTS public.documentos
     id_documento serial NOT NULL,
     id_tipo_documento_nna integer,
     nombre_documento character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    descripcion VARCHAR(100) ,
+    descripcion character varying(100) COLLATE pg_catalog."default",
     fecha_creacion timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT id_documento_pkey PRIMARY KEY (id_documento)
 );
@@ -141,7 +140,7 @@ CREATE TABLE IF NOT EXISTS public.documentos_nna
     id_tipo_documento_nna integer NOT NULL,
     ruta_archivo character varying(255) COLLATE pg_catalog."default",
     fecha_subida timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_documento_nna_pkey PRIMARY KEY (id_documento_nna),
     CONSTRAINT documentos_nna_id_nna_key UNIQUE (id_nna),
     CONSTRAINT documentos_nna_unico_tipo_por_nna UNIQUE (id_nna, id_tipo_documento_nna)
@@ -238,7 +237,7 @@ CREATE TABLE IF NOT EXISTS public.estado_expediente
 (
     id_estado_expediente serial NOT NULL,
     nombre_estado character varying(30) COLLATE pg_catalog."default" NOT NULL,
-    descripcion VARCHAR(100) ,
+    descripcion character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_estado_expediente_pkey PRIMARY KEY (id_estado_expediente),
     CONSTRAINT estado_expediente_nombre_estado_key UNIQUE (nombre_estado)
 );
@@ -275,7 +274,7 @@ CREATE TABLE IF NOT EXISTS public.familiares
     id_familiar serial NOT NULL,
     id_persona_exp integer NOT NULL,
     parentesco character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_familiar_pkey PRIMARY KEY (id_familiar)
 );
 
@@ -320,8 +319,8 @@ CREATE TABLE IF NOT EXISTS public.hecho_victimal
     nombre_caso character varying(100) COLLATE pg_catalog."default" NOT NULL,
     fecha_detencion date NOT NULL,
     nombre_victima_madre character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    descripcion_delito VARCHAR(100) ,
-    narracion_sucedido VARCHAR(100) ,
+    descripcion_delito character varying(100) COLLATE pg_catalog."default",
+    narracion_sucedido character varying(100) COLLATE pg_catalog."default",
     id_tipo_detector integer,
     id_direccion_delito integer,
     CONSTRAINT id_hecho_pkey PRIMARY KEY (id_hecho)
@@ -383,7 +382,7 @@ CREATE TABLE IF NOT EXISTS public.nna
     id_persona_exp_nna integer NOT NULL,
     id_expediente integer,
     apodo character varying(50) COLLATE pg_catalog."default",
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     id_etnia integer,
     id_historial_escolar_actual integer,
     id_documentos_nna integer,
@@ -398,10 +397,10 @@ CREATE TABLE IF NOT EXISTS public.nna_discapacidad
     nombre_comun character varying(100) COLLATE pg_catalog."default" NOT NULL,
     id_tipo_discapacidad integer,
     id_grado_dependencia integer,
-    descripcion VARCHAR(100) ,
+    descripcion character varying(100) COLLATE pg_catalog."default",
     requiere_aditamento boolean DEFAULT false,
     cuenta_con_aditamento boolean DEFAULT false,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_nna_discapacidad_pkey PRIMARY KEY (id_nna_discapacidad)
 );
 
@@ -417,7 +416,7 @@ CREATE TABLE IF NOT EXISTS public.nna_historial_escolar
     en_curso boolean NOT NULL DEFAULT false,
     ha_asistido_escuela boolean NOT NULL DEFAULT false,
     asiste_escuela_actual boolean NOT NULL DEFAULT false,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_historial_escolar_pkey PRIMARY KEY (id_historial_escolar)
 );
 
@@ -435,7 +434,7 @@ CREATE TABLE IF NOT EXISTS public.nna_padecimientos
     id_nna integer NOT NULL,
     id_padecimiento integer NOT NULL,
     fecha_diagnostico date,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     bajo_control boolean DEFAULT false,
     cronico boolean DEFAULT false,
     CONSTRAINT nna_padecimientos_pkey PRIMARY KEY (id_nna, id_padecimiento)
@@ -449,7 +448,7 @@ CREATE TABLE IF NOT EXISTS public.nna_seguro_medico
     fecha_inicio date DEFAULT CURRENT_DATE,
     fecha_fin date,
     vigente boolean NOT NULL DEFAULT true,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_nna_seguro_pkey PRIMARY KEY (id_nna_seguro)
 );
 
@@ -622,7 +621,7 @@ CREATE TABLE IF NOT EXISTS public.tipo_documento_nna
 (
     id_tipo_documento_nna serial NOT NULL,
     tipo_documento character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    descripcion VARCHAR(100) ,
+    descripcion character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT id_tipo_documento_nna_pkey PRIMARY KEY (id_tipo_documento_nna),
     CONSTRAINT tipo_documento_nna_tipo_documento_key UNIQUE (tipo_documento)
 );
@@ -641,9 +640,667 @@ CREATE TABLE IF NOT EXISTS public.tutores
     id_persona_exp integer NOT NULL,
     ocupacion character varying(50) COLLATE pg_catalog."default" NOT NULL,
     es_sosten_economico boolean NOT NULL DEFAULT true,
-    observaciones VARCHAR(100) ,
+    observaciones character varying(100) COLLATE pg_catalog."default",
     escolaridad character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    patron_migracion VARCHAR(100) ,
+    patron_migracion character varying(100) COLLATE pg_catalog."default",
+    id_telefono integer,
+    id_correo integer,
+    id_parentesco integer,
+    id_grado_negacion integer,
+    id_grado_afectacion_emocional integer,
+    CONSTRAINT id_tutor_pkey PRIMARY KEY (id_tutor)
+);
+
+CREATE TABLE IF NOT EXISTS public.variante_idioma
+(
+    id_variante serial NOT NULL,
+    nombre_variante character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    id_idioma integer,
+    CONSTRAINT id_variante_pkey PRIMARY KEY (id_variante),
+    CONSTRAINT variante_idioma_nombre_variante_key UNIQUE (nombre_variante)
+);
+
+CREATE TABLE IF NOT EXISTS public.abogado
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    cedula character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    especialidad character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT abogado_pkey PRIMARY KEY ("CURP"),
+    CONSTRAINT abogado_cedula_key UNIQUE (cedula)
+);
+
+CREATE TABLE IF NOT EXISTS public.acta_nacimiento
+(
+    id_acta_nacimiento serial NOT NULL,
+    id_documento_nna integer NOT NULL,
+    fecha_expedicion date,
+    id_estado_documento integer,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_acta_nacimiento_pkey PRIMARY KEY (id_acta_nacimiento),
+    CONSTRAINT acta_nacimiento_id_documento_nna_key UNIQUE (id_documento_nna)
+);
+
+CREATE TABLE IF NOT EXISTS public.actores
+(
+    id_actor serial NOT NULL,
+    id_tipo_actor integer NOT NULL,
+    nombre character varying(150) COLLATE pg_catalog."default" NOT NULL,
+    nombre_corto character varying(50) COLLATE pg_catalog."default",
+    id_sector integer,
+    descripcion character varying(100) COLLATE pg_catalog."default",
+    pagina_web character varying(255) COLLATE pg_catalog."default",
+    id_email_principal integer,
+    id_telefono_principal integer,
+    id_telefono_secundario integer,
+    id_red_social_principal integer,
+    horario_atencion character varying(100) COLLATE pg_catalog."default",
+    id_domicilio_servicio integer,
+    referencias_ubicacion character varying(100) COLLATE pg_catalog."default",
+    id_estado_actor integer,
+    fecha_registro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    registrado_por character varying(18) COLLATE pg_catalog."default",
+    CONSTRAINT id_actor_pkey PRIMARY KEY (id_actor)
+);
+
+CREATE TABLE IF NOT EXISTS public.cartilla_medica
+(
+    id_cartilla_medica serial NOT NULL,
+    id_documento_nna integer NOT NULL,
+    fecha_emision date,
+    fecha_vencimiento date,
+    id_institucion_medica integer,
+    id_estado_documento integer,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_cartilla_medica_pkey PRIMARY KEY (id_cartilla_medica),
+    CONSTRAINT cartilla_medica_id_documento_nna_key UNIQUE (id_documento_nna)
+);
+
+CREATE TABLE IF NOT EXISTS public.codigo_postal
+(
+    id_cp serial NOT NULL,
+    codigo_postal character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_cp_pkey PRIMARY KEY (id_cp),
+    CONSTRAINT codigo_postal_unique UNIQUE (codigo_postal)
+);
+
+CREATE TABLE IF NOT EXISTS public.colonia
+(
+    id_colonia serial NOT NULL,
+    colonia character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    id_cp_colonia integer,
+    id_municipios_colonia integer,
+    CONSTRAINT id_colonia_pkey PRIMARY KEY (id_colonia)
+);
+
+CREATE TABLE IF NOT EXISTS public.colonias_servicios
+(
+    id_colonia_servicio serial NOT NULL,
+    nombre_colonia character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    id_cp integer,
+    id_municipio integer,
+    CONSTRAINT id_colonia_servicio_pkey PRIMARY KEY (id_colonia_servicio)
+);
+
+CREATE TABLE IF NOT EXISTS public.composicion_equipo
+(
+    id_asignacion serial NOT NULL,
+    id_equipo integer NOT NULL,
+    curp_profesional character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    fecha_inicio date NOT NULL DEFAULT CURRENT_DATE,
+    fecha_fin date,
+    CONSTRAINT id_asignacion_pkey PRIMARY KEY (id_asignacion)
+);
+
+CREATE TABLE IF NOT EXISTS public.coordinador
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    id_director_cargo character varying(18) COLLATE pg_catalog."default",
+    CONSTRAINT coordinador_pkey PRIMARY KEY ("CURP")
+);
+
+CREATE TABLE IF NOT EXISTS public.correos
+(
+    id_correo serial COLLATE pg_catalog."default" NOT NULL,
+    correo character varying(100) NOT NULL,
+    CONSTRAINT correo_pkey PRIMARY KEY (id_correo)
+);
+
+CREATE TABLE IF NOT EXISTS public.correos_tutores
+(
+    id_correo serial NOT NULL,
+    direccion_correo character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    tipo_correo character varying(20) COLLATE pg_catalog."default" DEFAULT 'personal'::character varying,
+    CONSTRAINT id_correo_pkey PRIMARY KEY (id_correo),
+    CONSTRAINT correos_tutores_direccion_correo_key UNIQUE (direccion_correo)
+);
+
+CREATE TABLE IF NOT EXISTS public.director
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT director_pkey PRIMARY KEY ("CURP")
+);
+
+CREATE TABLE IF NOT EXISTS public.documentos
+(
+    id_documento serial NOT NULL,
+    id_tipo_documento_nna integer,
+    nombre_documento character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    descripcion character varying(100) COLLATE pg_catalog."default",
+    fecha_creacion timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT id_documento_pkey PRIMARY KEY (id_documento)
+);
+
+CREATE TABLE IF NOT EXISTS public.documentos_nna
+(
+    id_documento_nna serial NOT NULL,
+    id_nna integer NOT NULL,
+    id_documento integer,
+    id_tipo_documento_nna integer NOT NULL,
+    ruta_archivo character varying(255) COLLATE pg_catalog."default",
+    fecha_subida timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_documento_nna_pkey PRIMARY KEY (id_documento_nna),
+    CONSTRAINT documentos_nna_id_nna_key UNIQUE (id_nna),
+    CONSTRAINT documentos_nna_unico_tipo_por_nna UNIQUE (id_nna, id_tipo_documento_nna)
+);
+
+CREATE TABLE IF NOT EXISTS public.domicilio
+(
+    id_domicilio serial NOT NULL,
+    num_ext character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    num_int character varying(10) COLLATE pg_catalog."default",
+    calle character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    id_colonia_domicilio integer,
+    CONSTRAINT id_domicilio_pkey PRIMARY KEY (id_domicilio)
+);
+
+CREATE TABLE IF NOT EXISTS public.domicilio_servicios
+(
+    id_domicilio_servicio serial NOT NULL,
+    calle character varying(100) COLLATE pg_catalog."default",
+    num_ext character varying(20) COLLATE pg_catalog."default",
+    num_int character varying(20) COLLATE pg_catalog."default",
+    id_colonia_servicio integer,
+    CONSTRAINT id_domicilio_servicio_pkey PRIMARY KEY (id_domicilio_servicio)
+);
+
+CREATE TABLE IF NOT EXISTS public.dominio_idioma
+(
+    id_dominio serial NOT NULL,
+    dominio character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_dominio_pkey PRIMARY KEY (id_dominio),
+    CONSTRAINT dominio_idioma_dominio_key UNIQUE (dominio)
+);
+
+CREATE TABLE IF NOT EXISTS public.email_servicios
+(
+    id_email_servicio serial NOT NULL,
+    correo_email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    tipo_email character varying(20) COLLATE pg_catalog."default" DEFAULT 'principal'::character varying,
+    CONSTRAINT id_email_servicio_pkey PRIMARY KEY (id_email_servicio),
+    CONSTRAINT email_servicios_correo_email_key UNIQUE (correo_email)
+);
+
+CREATE TABLE IF NOT EXISTS public.equipo
+(
+    id_equipo serial NOT NULL,
+    nombre_equipo character varying(50) COLLATE pg_catalog."default",
+    fecha_creacion date DEFAULT CURRENT_DATE,
+    curp_coordinador character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    id_estado_equipo integer,
+    CONSTRAINT id_equipo_pkey PRIMARY KEY (id_equipo)
+);
+
+CREATE TABLE IF NOT EXISTS public.escuela
+(
+    id_escuela serial NOT NULL,
+    nombre_escuela character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    id_domicilio integer,
+    CONSTRAINT id_escuela_pkey PRIMARY KEY (id_escuela),
+    CONSTRAINT escuela_nombre_escuela_key UNIQUE (nombre_escuela)
+);
+
+CREATE TABLE IF NOT EXISTS public.estado_actor
+(
+    id_estado_actor serial NOT NULL,
+    estado character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_estado_actor_pkey PRIMARY KEY (id_estado_actor),
+    CONSTRAINT estado_actor_estado_key UNIQUE (estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.estado_cuenta
+(
+    id_estado serial NOT NULL,
+    estado character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_estado_pkey PRIMARY KEY (id_estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.estado_documento
+(
+    id_estado_documento serial NOT NULL,
+    estado character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_estado_documento_pkey PRIMARY KEY (id_estado_documento),
+    CONSTRAINT estado_documento_estado_key UNIQUE (estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.estado_equipo
+(
+    id_estado_equipo serial NOT NULL,
+    nombre_estado character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_estado_equipo_pkey PRIMARY KEY (id_estado_equipo),
+    CONSTRAINT estado_equipo_nombre_estado_key UNIQUE (nombre_estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.estado_expediente
+(
+    id_estado_expediente serial NOT NULL,
+    nombre_estado character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    descripcion character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_estado_expediente_pkey PRIMARY KEY (id_estado_expediente),
+    CONSTRAINT estado_expediente_nombre_estado_key UNIQUE (nombre_estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.estados
+(
+    id_estado serial NOT NULL,
+    nombre_estado character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_estado PRIMARY KEY (id_estado),
+    CONSTRAINT nombre_estado_unique UNIQUE (nombre_estado)
+);
+
+CREATE TABLE IF NOT EXISTS public.etnia
+(
+    id_etnia serial NOT NULL,
+    nombre_etnia character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_etnia_pkey PRIMARY KEY (id_etnia),
+    CONSTRAINT etnia_nombre_etnia_key UNIQUE (nombre_etnia)
+);
+
+CREATE TABLE IF NOT EXISTS public.expediente
+(
+    id_expediente serial NOT NULL,
+    num_expediente character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    fecha_apertura timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    id_equipo_responsable integer,
+    id_estado_expediente integer,
+    CONSTRAINT id_expediente_pkey PRIMARY KEY (id_expediente),
+    CONSTRAINT expediente_num_expediente_key UNIQUE (num_expediente)
+);
+
+CREATE TABLE IF NOT EXISTS public.familiares
+(
+    id_familiar serial NOT NULL,
+    id_persona_exp integer NOT NULL,
+    parentesco character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_familiar_pkey PRIMARY KEY (id_familiar)
+);
+
+CREATE TABLE IF NOT EXISTS public.grado_afectacion_emocional
+(
+    id_grado_afectacion_emocional serial NOT NULL,
+    descripcion character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_grado_afectacion_emocional_pkey PRIMARY KEY (id_grado_afectacion_emocional),
+    CONSTRAINT grado_afectacion_emocional_descripcion_key UNIQUE (descripcion)
+);
+
+CREATE TABLE IF NOT EXISTS public.grado_dependencia
+(
+    id_grado_dependencia serial NOT NULL,
+    descripcion_grado character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_grado_dependencia_pkey PRIMARY KEY (id_grado_dependencia),
+    CONSTRAINT grado_dependencia_descripcion_grado_key UNIQUE (descripcion_grado)
+);
+
+CREATE TABLE IF NOT EXISTS public.grado_escolar
+(
+    id_grado_escolar serial NOT NULL,
+    nombre_grado character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    orden integer NOT NULL,
+    CONSTRAINT id_grado_escolar_pkey PRIMARY KEY (id_grado_escolar),
+    CONSTRAINT grado_escolar_nombre_grado_key UNIQUE (nombre_grado)
+);
+
+CREATE TABLE IF NOT EXISTS public.grado_negacion
+(
+    id_grado_negacion serial NOT NULL,
+    descripcion character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_grado_negacion_pkey PRIMARY KEY (id_grado_negacion),
+    CONSTRAINT grado_negacion_descripcion_key UNIQUE (descripcion)
+);
+
+CREATE TABLE IF NOT EXISTS public.hecho_victimal
+(
+    id_hecho serial NOT NULL,
+    id_nna integer,
+    num_reporte character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    nombre_caso character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    fecha_detencion date NOT NULL,
+    nombre_victima_madre character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    descripcion_delito character varying(100) COLLATE pg_catalog."default",
+    narracion_sucedido character varying(100) COLLATE pg_catalog."default",
+    id_tipo_detector integer,
+    id_direccion_delito integer,
+    CONSTRAINT id_hecho_pkey PRIMARY KEY (id_hecho)
+);
+
+CREATE TABLE IF NOT EXISTS public.idiomas
+(
+    id_idioma serial NOT NULL,
+    codigo character varying(4) COLLATE pg_catalog."default" NOT NULL,
+    nombre_idioma character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_idioma_pkey PRIMARY KEY (id_idioma),
+    CONSTRAINT idiomas_nombre_idioma_key UNIQUE (nombre_idioma)
+);
+
+CREATE TABLE IF NOT EXISTS public.institucion_medica
+(
+    id_institucion_medica serial NOT NULL,
+    nombre_institucion character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_institucion_medica_pkey PRIMARY KEY (id_institucion_medica),
+    CONSTRAINT institucion_medica_nombre_institucion_key UNIQUE (nombre_institucion)
+);
+
+CREATE TABLE IF NOT EXISTS public.medico
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    cedula character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    especialidad character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT medico_pkey PRIMARY KEY ("CURP"),
+    CONSTRAINT medico_cedula_key UNIQUE (cedula)
+);
+
+CREATE TABLE IF NOT EXISTS public.municipios
+(
+    id_municipio serial NOT NULL,
+    nombre_municipio character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    id_estados_municipio integer,
+    CONSTRAINT id_municipio_pkey PRIMARY KEY (id_municipio)
+);
+
+CREATE TABLE IF NOT EXISTS public.nacionalidad
+(
+    id_nacionalidad serial NOT NULL,
+    nombre_nacionalidad character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_nacionalidad_pkey PRIMARY KEY (id_nacionalidad),
+    CONSTRAINT nacionalidad_nombre_nacionalidad_key UNIQUE (nombre_nacionalidad)
+);
+
+CREATE TABLE IF NOT EXISTS public.nivel_educativo
+(
+    id_nivel_educativo serial NOT NULL,
+    nombre_nivel character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_nivel_educativo_pkey PRIMARY KEY (id_nivel_educativo),
+    CONSTRAINT nivel_educativo_nombre_nivel_key UNIQUE (nombre_nivel)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna
+(
+    id_nna serial NOT NULL,
+    id_persona_exp_nna integer NOT NULL,
+    id_expediente integer,
+    apodo character varying(50) COLLATE pg_catalog."default",
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    id_etnia integer,
+    id_historial_escolar_actual integer,
+    id_documentos_nna integer,
+    id_nacionalidad integer,
+    CONSTRAINT id_nna_pkey PRIMARY KEY (id_nna)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna_discapacidad
+(
+    id_nna_discapacidad serial NOT NULL,
+    id_nna integer NOT NULL,
+    nombre_comun character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    id_tipo_discapacidad integer,
+    id_grado_dependencia integer,
+    descripcion character varying(100) COLLATE pg_catalog."default",
+    requiere_aditamento boolean DEFAULT false,
+    cuenta_con_aditamento boolean DEFAULT false,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_nna_discapacidad_pkey PRIMARY KEY (id_nna_discapacidad)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna_historial_escolar
+(
+    id_historial_escolar serial NOT NULL,
+    id_nna integer NOT NULL,
+    id_escuela integer,
+    id_nivel_educativo integer,
+    id_grado_escolar integer,
+    fecha_inicio date,
+    fecha_fin date,
+    en_curso boolean NOT NULL DEFAULT false,
+    ha_asistido_escuela boolean NOT NULL DEFAULT false,
+    asiste_escuela_actual boolean NOT NULL DEFAULT false,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_historial_escolar_pkey PRIMARY KEY (id_historial_escolar)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna_idiomas
+(
+    id_nna integer NOT NULL,
+    id_idioma integer NOT NULL,
+    id_variante integer,
+    id_dominio integer NOT NULL,
+    CONSTRAINT nna_idiomas_pkey PRIMARY KEY (id_nna, id_idioma)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna_padecimientos
+(
+    id_nna integer NOT NULL,
+    id_padecimiento integer NOT NULL,
+    fecha_diagnostico date,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    bajo_control boolean DEFAULT false,
+    cronico boolean DEFAULT false,
+    CONSTRAINT nna_padecimientos_pkey PRIMARY KEY (id_nna, id_padecimiento)
+);
+
+CREATE TABLE IF NOT EXISTS public.nna_seguro_medico
+(
+    id_nna_seguro serial NOT NULL,
+    id_nna integer NOT NULL,
+    id_seguro_medico integer NOT NULL,
+    fecha_inicio date DEFAULT CURRENT_DATE,
+    fecha_fin date,
+    vigente boolean NOT NULL DEFAULT true,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_nna_seguro_pkey PRIMARY KEY (id_nna_seguro)
+);
+
+CREATE TABLE IF NOT EXISTS public.padecimiento
+(
+    id_padecimiento serial NOT NULL,
+    nombre_padecimiento character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    codigo_padecimiento character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_padecimiento_pkey PRIMARY KEY (id_padecimiento)
+);
+
+CREATE TABLE IF NOT EXISTS public.parentesco
+(
+    id_parentesco serial NOT NULL,
+    tipo_parentes character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT id_parentesco_pkey PRIMARY KEY (id_parentesco)
+);
+
+CREATE TABLE IF NOT EXISTS public.persona
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    "RFC" character varying(13) COLLATE pg_catalog."default" NOT NULL,
+    p_nombre character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_nombre character varying(50) COLLATE pg_catalog."default",
+    p_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    fecha_nacimiento date NOT NULL,
+    id_sexo_persona integer,
+    id_domicilio_persona integer,
+    id_correo character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT persona_pkey PRIMARY KEY ("CURP"),
+    CONSTRAINT "persona_RFC_key" UNIQUE ("RFC")
+);
+
+CREATE TABLE IF NOT EXISTS public.personal
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    fecha_alta date NOT NULL,
+    voluntario boolean NOT NULL,
+    contrasena character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    estado integer,
+    CONSTRAINT personal_pkey PRIMARY KEY ("CURP")
+);
+
+CREATE TABLE IF NOT EXISTS public.personas_expediente
+(
+    id_persona_exp serial NOT NULL,
+    "CURP" character varying(18) COLLATE pg_catalog."default",
+    p_nombre character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_nombre character varying(50) COLLATE pg_catalog."default",
+    p_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    fecha_nacimiento date NOT NULL,
+    id_sexo_persona integer,
+    id_domicilio integer,
+    CONSTRAINT id_persona_exp_pkey PRIMARY KEY (id_persona_exp)
+);
+
+CREATE TABLE IF NOT EXISTS public.personas_servicios
+(
+    id_persona_servicio serial NOT NULL,
+    p_nombre character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_nombre character varying(50) COLLATE pg_catalog."default",
+    p_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    s_apellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    fecha_nacimiento date,
+    id_sexo_persona integer,
+    CONSTRAINT id_persona_servicio_pkey PRIMARY KEY (id_persona_servicio)
+);
+
+CREATE TABLE IF NOT EXISTS public.psicologo
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    cedula character varying(20) COLLATE pg_catalog."default",
+    enfoque_terapeutico character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT psicologo_pkey PRIMARY KEY ("CURP"),
+    CONSTRAINT psicologo_cedula_key UNIQUE (cedula)
+);
+
+CREATE TABLE IF NOT EXISTS public.red_social
+(
+    id_red_social serial NOT NULL,
+    nombre_red character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_red_social_pkey PRIMARY KEY (id_red_social),
+    CONSTRAINT red_social_nombre_red_key UNIQUE (nombre_red)
+);
+
+CREATE TABLE IF NOT EXISTS public.redes_sociales_servicios
+(
+    id_red_social_servicio serial NOT NULL,
+    id_red_social integer NOT NULL,
+    url_red_social character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_red_social_servicio_pkey PRIMARY KEY (id_red_social_servicio)
+);
+
+CREATE TABLE IF NOT EXISTS public.sector_servicio
+(
+    id_sector serial NOT NULL,
+    nombre_sector character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_sector_pkey PRIMARY KEY (id_sector),
+    CONSTRAINT sector_servicio_nombre_sector_key UNIQUE (nombre_sector)
+);
+
+CREATE TABLE IF NOT EXISTS public.seguro_medico
+(
+    id_seguro serial NOT NULL,
+    nombre_institucion character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_seguro_pkey PRIMARY KEY (id_seguro),
+    CONSTRAINT seguro_medico_nombre_institucion_key UNIQUE (nombre_institucion)
+);
+
+CREATE TABLE IF NOT EXISTS public.sexo
+(
+    id_sexo serial NOT NULL,
+    sexo character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_sexo PRIMARY KEY (id_sexo),
+    CONSTRAINT sexo_unique UNIQUE (sexo)
+);
+
+CREATE TABLE IF NOT EXISTS public.telefonos
+(
+    numero_telefono character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    tipo character varying(20) COLLATE pg_catalog."default",
+    CONSTRAINT telefono_pkey PRIMARY KEY (numero_telefono)
+);
+
+CREATE TABLE IF NOT EXISTS public.telefonos_servicios
+(
+    id_telefono_servicio serial NOT NULL,
+    numero_telefono character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    tipo_telefono character varying(20) COLLATE pg_catalog."default" DEFAULT 'principal'::character varying,
+    CONSTRAINT id_telefono_servicio_pkey PRIMARY KEY (id_telefono_servicio),
+    CONSTRAINT telefonos_servicios_numero_telefono_key UNIQUE (numero_telefono)
+);
+
+CREATE TABLE IF NOT EXISTS public.telefonos_tutores
+(
+    id_telefono serial NOT NULL,
+    numero_telefono character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    tipo_telefono character varying(20) COLLATE pg_catalog."default" DEFAULT 'celular'::character varying,
+    CONSTRAINT id_telefono_pkey PRIMARY KEY (id_telefono),
+    CONSTRAINT telefonos_tutores_numero_telefono_key UNIQUE (numero_telefono)
+);
+
+CREATE TABLE IF NOT EXISTS public.tipo_actor
+(
+    id_tipo_actor serial NOT NULL,
+    tipo_actor character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_tipo_actor_pkey PRIMARY KEY (id_tipo_actor),
+    CONSTRAINT tipo_actor_tipo_actor_key UNIQUE (tipo_actor)
+);
+
+CREATE TABLE IF NOT EXISTS public.tipo_detector
+(
+    id_tipo_detector serial NOT NULL,
+    tipo_detector character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_tipo_detector_pkey PRIMARY KEY (id_tipo_detector),
+    CONSTRAINT tipo_detector_tipo_detector_key UNIQUE (tipo_detector)
+);
+
+CREATE TABLE IF NOT EXISTS public.tipo_discapacidad
+(
+    id_tipo_discapacidad serial NOT NULL,
+    nombre_tipo character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT id_tipo_discapacidad_pkey PRIMARY KEY (id_tipo_discapacidad),
+    CONSTRAINT tipo_discapacidad_nombre_tipo_key UNIQUE (nombre_tipo)
+);
+
+CREATE TABLE IF NOT EXISTS public.tipo_documento_nna
+(
+    id_tipo_documento_nna serial NOT NULL,
+    tipo_documento character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    descripcion character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT id_tipo_documento_nna_pkey PRIMARY KEY (id_tipo_documento_nna),
+    CONSTRAINT tipo_documento_nna_tipo_documento_key UNIQUE (tipo_documento)
+);
+
+CREATE TABLE IF NOT EXISTS public.trabajadorsocial
+(
+    "CURP" character varying(18) COLLATE pg_catalog."default" NOT NULL,
+    cedula character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT trabajadorsocial_pkey PRIMARY KEY ("CURP"),
+    CONSTRAINT trabajadorsocial_cedula_key UNIQUE (cedula)
+);
+
+CREATE TABLE IF NOT EXISTS public.tutores
+(
+    id_tutor serial NOT NULL,
+    id_persona_exp integer NOT NULL,
+    ocupacion character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    es_sosten_economico boolean NOT NULL DEFAULT true,
+    observaciones character varying(100) COLLATE pg_catalog."default",
+    escolaridad character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    patron_migracion character varying(100) COLLATE pg_catalog."default",
     id_telefono integer,
     id_correo integer,
     id_parentesco integer,
@@ -1104,7 +1761,7 @@ ALTER TABLE IF EXISTS public.nna_seguro_medico
 
 ALTER TABLE IF EXISTS public.persona
     ADD CONSTRAINT fk_id_correo_persona FOREIGN KEY (id_correo)
-    REFERENCES public.correos (correo) MATCH SIMPLE
+    REFERENCES public.correos (id_correo) MATCH SIMPLE
     ON UPDATE CASCADE
     ON DELETE SET NULL;
 
