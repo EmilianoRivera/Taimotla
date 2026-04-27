@@ -6,10 +6,22 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
 app = Flask(__name__)
-app.secret_key =  os.getenv('SECRET_KEY')
+
+# ── Diagnóstico temporal ──────────────────────────────────
+secret = os.getenv('SECRET_KEY')
+print(f"DEBUG SECRET_KEY → '{secret}'")  # Si imprime None, el .env no se lee
+# ─────────────────────────────────────────────────────────
+
+if not secret:
+    raise RuntimeError("SECRET_KEY no encontrada en .env — revisa el archivo")
+
+app.secret_key = secret
+
 app.register_blueprint(bp_main)
 app.register_blueprint(bp_director)
 app.register_blueprint(bp_coordinador)
+
 if __name__ == '__main__':
     app.run(debug=True)
