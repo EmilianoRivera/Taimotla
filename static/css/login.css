@@ -1,96 +1,127 @@
-/* Contenedor para centrar la tarjeta en el medio de la página */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    padding: 20px;
-}
+:root {
+        --color-primario: #372C4B; /* Nuevo color morado */
+        --color-fondo: #f4f5f7;    /* Gris muy claro del fondo, según diseño */
+        --color-texto-principal: #2d2a32;
+        --color-texto-secundario: #6b6b6b;
+        --color-borde: #e0e0e0;
+    }
 
-.login-card {
-    background: #ffffff;
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #2b6cb0; 
-}
+    /* Asumiendo que el body no tiene ya este fondo en base.html */
+    body {
+        background-color: var(--color-fondo);
+        font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
 
-.login-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Ajusta el alto dependiendo del tamaño de tu navbar en base.html */
+        min-height: calc(100vh - 80px); 
+        padding: 20px;
+    }
 
-.login-header h2 {
-    color: #1a365d;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
+    .login-card {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 400px;
+        padding: 40px 35px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        position: relative;
+    }
 
-.login-header p {
-    color: #718096;
-    font-size: 0.9rem;
-}
+    /* Estilo para el logo del búho */
+    .logo-fundacion {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 45px; /* Ajusta según el tamaño real de tu imagen */
+        height: auto;
+    }
 
-/* Estilo de los Inputs */
-.form-group {
-    margin-bottom: 20px;
-}
+    .login-header {
+        text-align: center;
+        margin-bottom: 35px;
+        margin-top: 10px;
+    }
 
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #4a5568;
-    font-size: 0.9rem;
-}
+    .login-header h2 {
+        color: var(--color-texto-principal);
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
 
-.form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    outline: none;
-}
+    .login-header p {
+        color: var(--color-texto-secundario);
+        font-size: 13px;
+        margin: 0;
+    }
 
-.form-group input:focus {
-    border-color: #2b6cb0;
-    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
-}
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
 
-/* Botón de Ingreso */
-.btn-ingresar {
-    width: 100%;
-    background-color: #2b6cb0;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 10px;
-}
+    .form-group label {
+        display: block;
+        color: var(--color-texto-principal);
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
 
-.btn-ingresar:hover {
-    background-color: #1a365d;
-}
+    .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--color-borde);
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+        color: var(--color-texto-principal);
+        transition: border-color 0.3s ease;
+    }
 
-.login-footer {
-    text-align: center;
-    margin-top: 25px;
-}
+    .form-group input:focus {
+        outline: none;
+        border-color: var(--color-primario);
+    }
 
-.login-footer a {
-    color: #2b6cb0;
-    text-decoration: none;
-    font-size: 0.85rem;
-}
+    .form-group input::placeholder {
+        color: #999999;
+    }
 
-.login-footer a:hover {
-    text-decoration: underline;
-}
+    .btn-ingresar {
+        width: 100%;
+        padding: 13px;
+        background-color: var(--color-primario);
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .btn-ingresar:hover {
+        background-color: #242036; /* Un tono más oscuro para el hover */
+    }
+
+    .login-footer {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .login-footer a {
+        color: var(--color-texto-secundario);
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    .login-footer a:hover {
+        text-decoration: underline;
+    }

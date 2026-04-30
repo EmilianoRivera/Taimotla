@@ -1,0 +1,202 @@
+.equipos-wrapper {
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #372C4B;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.equipo-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.equipo-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 15px;
+}
+
+.equipo-header h3 {
+    color: #372C4B;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.coordinador-text {
+    color: #333;
+    font-size: 1rem;
+}
+
+.equipo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.equipo-table th {
+    text-align: center;
+    color: #372C4B;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.equipo-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.equipo-table tr:last-child td {
+    border-bottom: none;
+}
+
+.action-cell {
+    vertical-align: middle;
+}
+
+.btn-icon {
+    background-color: #372C4B;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-icon:hover {
+    background-color: #241e30;
+}
+
+.btn-edit {
+    background-color: #372C4B;
+}
+
+.btn-remove {
+    background-color: transparent;
+    color: #ef4444;
+    font-size: 1.3rem;
+    background: none;
+}
+.btn-remove:hover {
+    background-color: #fee2e2;
+}
+
+/* Modo Edicion */
+.equipo-header-edit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 15px;
+}
+
+.equipo-header-edit h3 {
+    color: #372C4B;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.form-coordinador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #372C4B;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+}
+
+.select-coord {
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+.select-coord option {
+    color: black;
+}
+
+.edicion-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.table-edit {
+    flex: 1;
+}
+
+.eliminar-equipo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-danger {
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.btn-danger:hover {
+    background-color: #cc2e26;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #f1f5f9;
+}
+
+/* Disponibles Box */
+.disponibles-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid #372C4B;
+}
+
+.disponibles-box h3 {
+    color: #372C4B;
+    margin-bottom: 15px;
+}
+
+.table-disp th {
+    text-align: center;
+}

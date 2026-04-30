@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block content %}
 <div class="dashboard-wrapper">
@@ -8,7 +8,7 @@
             <p>Panel de Gestión de Personal | Fundación Futuro con Derechos</p>
         </div>
         <div class="header-stats">
-            <a href="{{ url_for('coordinador.registrar') }}" class="btn-primary">+ Nuevo Registro</a>
+
         </div>
     </header>
 
@@ -21,10 +21,10 @@
         </div>
 
         {% set roles = [
-            {'title': 'Abogados', 'data': users_lawyers, 'extra': 'Especialidad'},
-            {'title': 'Trabajadores Sociales', 'data': users_social, 'extra': ''},
-            {'title': 'Médicos', 'data': users_medics, 'extra': 'Especialidad'},
-            {'title': 'Psicólogos', 'data': users_psico, 'extra': 'Enfoque'}
+        {'title': 'Abogados', 'data': users_lawyers, 'extra': 'Especialidad'},
+        {'title': 'Trabajadores Sociales', 'data': users_social, 'extra': ''},
+        {'title': 'Médicos', 'data': users_medics, 'extra': 'Especialidad'},
+        {'title': 'Psicólogos', 'data': users_psico, 'extra': 'Enfoque'}
         ] %}
 
         {% for role in roles %}
@@ -55,14 +55,19 @@
                             {% if role.extra %} <td>{{ u[3] }}</td> {% endif %}
                             <td><span class="badge badge-active">Activo</span></td>
                             <td class="actions">
-                                <a href="{{ url_for('coordinador.editar', curp=u[1]) }}" class="btn-icon btn-edit" title="Editar">✎</a>
-                                
-                                <form action="{{ url_for('coordinador.desable', curp=u[1]) }}" method="POST" class="inline-form">
-                                    <button type="submit" class="btn-icon btn-disable" onclick="return confirm('¿Deshabilitar cuenta?')">🚫</button>
+                                <a href="{{ url_for('coordinador.editar', curp=u[1]) }}" class="btn-icon btn-edit"
+                                    title="Editar">✎</a>
+
+                                <form action="{{ url_for('coordinador.desable', curp=u[1]) }}" method="POST"
+                                    class="inline-form">
+                                    <button type="submit" class="btn-icon btn-disable"
+                                        onclick="return confirm('¿Deshabilitar cuenta?')">🚫</button>
                                 </form>
 
-                                <form action="{{ url_for('coordinador.eliminar', curp=u[1]) }}" method="POST" class="inline-form">
-                                    <button type="submit" class="btn-icon btn-delete" onclick="return confirm('¿Eliminar permanentemente?')">🗑</button>
+                                <form action="{{ url_for('coordinador.eliminar', curp=u[1]) }}" method="POST"
+                                    class="inline-form">
+                                    <button type="submit" class="btn-icon btn-delete"
+                                        onclick="return confirm('¿Eliminar permanentemente?')">🗑</button>
                                 </form>
                             </td>
                         </tr>
@@ -99,7 +104,8 @@
                         <td>{{ u[2] }}</td>
                         <td><span class="badge badge-inactive">Inactivo</span></td>
                         <td class="actions">
-                            <form action="{{ url_for('coordinador.able', curp=u[1]) }}" method="POST" class="inline-form">
+                            <form action="{{ url_for('coordinador.able', curp=u[1]) }}" method="POST"
+                                class="inline-form">
                                 <button type="submit" class="btn-text btn-enable">Habilitar Cuenta</button>
                             </form>
                         </td>

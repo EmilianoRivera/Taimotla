@@ -8,12 +8,12 @@ def insertar_catalogos():
     cur = conn.cursor()
     try:
         #Catalogo de sexo
-        query_sexo = """ INSERT INTO public.sexo (sexo) VALUES (%s)"""
-        val_sexo = [("Masculino",), ("Femenino",),]
-        cur.executemany(query_sexo, val_sexo)
+        #query_sexo = """ INSERT INTO public.sexo (sexo) VALUES (%s)"""
+        #val_sexo = [("Masculino",), ("Femenino",),]
+        #cur.executemany(query_sexo, val_sexo)
 
         #Catalogo de estados de la republica
-        query_estados_republica = """ INSERT INTO public.estados (nombre_estado) VALUES (%s) """
+        #query_estados_republica = """ INSERT INTO public.estados (nombre_estado) VALUES (%s) """
         val_estados_republica = [
             ("Ciudad de México",),
             ("Aguascalientes",),
@@ -49,11 +49,11 @@ def insertar_catalogos():
             ("Zacatecas",)
         ]
         
-        cur.executemany(query_estados_republica, val_estados_republica)
+        #cur.executemany(query_estados_republica, val_estados_republica)
         
         #Catalogo de Municipios
-        query_municipios = """  INSERT INTO public.municipios (nombre_municipio, id_estados_municipio)
-        VALUES ( %s,  (SELECT id_estado FROM public.estados WHERE nombre_estado = 'Nuevo León' LIMIT 1) )"""
+        #query_municipios = """  INSERT INTO public.municipios (nombre_municipio, id_estados_municipio)
+        #VALUES ( %s,  (SELECT id_estado FROM public.estados WHERE nombre_estado = 'Nuevo León' LIMIT 1) )"""
             
         val_municipios = [
             ("Monterrey",),
@@ -110,7 +110,7 @@ def insertar_catalogos():
         ]
         
         #Catalogo de Codigo postal
-        query_cp = """ INSERT INTO public.codigo_postal (codigo_postal) VALUES (%s)  """
+        #query_cp = """ INSERT INTO public.codigo_postal (codigo_postal) VALUES (%s)  """
         val_cp =["64000",            
             "64010",
             "64018",
@@ -1205,8 +1205,8 @@ def insertar_catalogos():
             "67990",
             "67996"]
        
-        val_tupla_cp = [(cp,) for cp in val_cp]
-        cur.executemany(query_cp, val_tupla_cp)
+        #val_tupla_cp = [(cp,) for cp in val_cp]
+        #cur.executemany(query_cp, val_tupla_cp)
         
         #Catalogo de Colonias
         

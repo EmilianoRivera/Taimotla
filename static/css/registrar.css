@@ -19,7 +19,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #2b6cb0;
+    color: #372C4B;
     padding: 0 15px;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -58,8 +58,8 @@ legend {
 .form-group input:focus, 
 .form-group select:focus {
     outline: none;
-    border-color: #2b6cb0;
-    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+    border-color: #372C4B;
+    box-shadow: 0 0 0 3px rgba(55, 44, 75, 0.1);
     background: #fff;
 }
 
@@ -76,7 +76,7 @@ select {
 }
 
 .btn-principal {
-    background-color: #2b6cb0;
+    background-color: #372C4B;
     color: white;
     padding: 15px 50px;
     border: none;
@@ -85,11 +85,11 @@ select {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
-    box-shadow: 0 4px 6px rgba(43, 108, 176, 0.2);
+    box-shadow: 0 4px 6px rgba(55, 44, 75, 0.2);
 }
 
 .btn-principal:hover {
-    background-color: #1a365d;
+    background-color: #241e30;
     transform: translateY(-2px);
 }
 

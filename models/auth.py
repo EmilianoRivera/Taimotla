@@ -1,4 +1,4 @@
-from models.database import obtener_conexion
+from models.database import get_db_cursor
 import psycopg2
 
 
@@ -8,8 +8,7 @@ def verify_director(email):
     pertenece a un director activo, o None si no existe.
     """
     try:
-        conn = obtener_conexion()
-        with conn.cursor() as cur:
+        with get_db_cursor() as (cur, conn):
             query = """
                 SELECT p."CURP",
                        p.p_nombre,
@@ -26,8 +25,6 @@ def verify_director(email):
     except psycopg2.Error as e:
         print(f"[auth] Error en verify_director: {e}")
         return None
-    finally:
-        conn.close()
 
 
 def verify_coordinador(email):
@@ -36,8 +33,7 @@ def verify_coordinador(email):
     pertenece a un coordinador activo, o None si no existe.
     """
     try:
-        conn = obtener_conexion()
-        with conn.cursor() as cur:
+        with get_db_cursor() as (cur, conn):
             query = """
                 SELECT p."CURP",
                        p.p_nombre,
@@ -54,5 +50,3 @@ def verify_coordinador(email):
     except psycopg2.Error as e:
         print(f"[auth] Error en verify_coordinador: {e}")
         return None
-    finally:
-        conn.close()

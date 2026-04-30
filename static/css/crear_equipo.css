@@ -1,0 +1,227 @@
+.crear-equipo-wrapper {
+    padding: 20px 0;
+}
+
+/* Encabezado del Formulario */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    background: transparent;
+}
+
+.title-group h2 {
+    color: #372C4B;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.input-equipo {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #a0a0a0;
+    color: white;
+    font-size: 1.1rem;
+    width: 350px;
+    outline: none;
+    margin-bottom: 15px;
+    display: block;
+}
+.input-equipo::placeholder {
+    color: #e2e8f0;
+}
+
+.coordinador-group label {
+    display: block;
+    color: #372C4B;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.select-coordinador {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+
+.select-coordinador:focus {
+    border-color: #372C4B;
+}
+
+.btn-primary {
+    background-color: #372C4B;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background-color: #241e30;
+}
+
+/* Grid Layout */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+h3 {
+    color: #372C4B;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Columna Izquierda: Personal Disponible */
+.role-section {
+    margin-bottom: 25px;
+}
+
+.role-section h4 {
+    color: #372C4B;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.role-list {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.staff-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.staff-card:last-child {
+    border-bottom: none;
+}
+
+.staff-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-add {
+    background-color: #372C4B;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #5a4b7a;
+}
+
+.empty-msg {
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Busy Staff Section */
+.busy-staff-section {
+    margin-top: 40px;
+}
+
+.busy-list {
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px dashed #cbd5e1;
+}
+
+.busy-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+.busy-card:last-child { border-bottom: none; }
+.busy-name { font-weight: 600; color: #475569; }
+.busy-team { color: #64748b; font-size: 0.9rem; }
+
+/* Columna Derecha: Integrantes */
+.team-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    min-height: 200px;
+}
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.team-table th {
+    text-align: left;
+    color: #64748b;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.team-table td {
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #333;
+}
+
+.team-table tr:last-child td {
+    border-bottom: none;
+}
+
+.btn-remove {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-remove:hover {
+    background-color: #fca5a5;
+    color: white;
+}
+
+.empty-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px 0;
+    font-style: italic;
+}

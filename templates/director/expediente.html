@@ -1,0 +1,415 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/expediente.css') }}">
+
+<div class="expediente-wrapper">
+    <div class="header-actions">
+        <h2 class="page-title">Expediente</h2>
+        <div class="expediente-buttons">
+            <button type="button" class="btn-pill btn-agregar active" onclick="setMode('edit')">Agregar
+                informacion</button>
+            <button type="button" class="btn-pill btn-visualizar" onclick="setMode('view')">Visualizar</button>
+        </div>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+        <div style="display: flex; align-items: center; gap: 15px; flex-grow: 1;">
+            <label for="search-nna">Buscar niño</label>
+            <div class="search-input-wrapper">
+                <input type="text" id="search-nna" placeholder="Nombre del niño..." autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+        <button type="button" class="btn-pill btn-editar" id="btn-editar" onclick="toggleEditMode()"
+            style="display: none; background-color: #D1CCA0; color: white;">Editar Información</button>
+    </div>
+
+    <!-- Sub-Menú Morado Oscuro -->
+    <nav class="subnav-expediente">
+        <button type="button" class="tab-btn active" onclick="openTab(event, 'sec-personales')">Datos
+            personales</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-victimal')">Hecho victimal</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-entorno')">Entorno familiar</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-contacto')">Datos de contacto</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-medicos')">Datos medicos</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-familiares')">Datos familiares</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'sec-tutor')">Datos del tutor</button>
+    </nav>
+
+    <form id="form-expediente" method="POST" action="{{ url_for('director.guardar_expediente') }}">
+        <input type="hidden" id="id_nna" name="id_nna" value="">
+
+        <div class="expediente-content">
+            <!-- 1. Datos Personales -->
+            <section id="sec-personales" class="tab-content active-content">
+                <h3>Datos Personales del NNA</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Primer Nombre:</label>
+                        <input type="text" name="p_nombre" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Segundo Nombre:</label>
+                        <input type="text" name="s_nombre" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Primer Apellido:</label>
+                        <input type="text" name="p_apellido" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Segundo Apellido:</label>
+                        <input type="text" name="s_apellido" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apodo:</label>
+                        <input type="text" name="apodo" class="input-form data-field" placeholder="Ej. Python">
+                    </div>
+                    <div class="form-group">
+                        <label>CURP:</label>
+                        <input type="text" name="curp" class="input-form data-field" maxlength="18" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <select name="id_sexo" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            {% for sexo in sexos %}
+                            <option value="{{ sexo[0] }}">{{ sexo[1] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fecha_nacimiento" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Etnia:</label>
+                        <select name="id_etnia" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            {% for etnia in etnias %}
+                            <option value="{{ etnia[0] }}">{{ etnia[1] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nacionalidad:</label>
+                        <select name="id_nacionalidad" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            {% for nac in nacionalidades %}
+                            <option value="{{ nac[0] }}">{{ nac[1] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Hecho Victimal -->
+            <section id="sec-victimal" class="tab-content">
+                <h3>Datos del Hecho Victimal</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Fecha del hecho:</label>
+                        <input type="date" name="fecha_hecho" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Lugar del hecho:</label>
+                        <input type="text" name="lugar_hecho" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Descripción detallada:</label>
+                        <textarea name="relato_hechos" class="input-form data-field" rows="4"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Derechos vulnerados / Riesgo identificado:</label>
+                        <textarea name="derechos_vulnerados" class="input-form data-field" rows="3"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Entorno Familiar -->
+            <section id="sec-entorno" class="tab-content">
+                <h3>Entorno Familiar</h3>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Dinámica Familiar (Breve descripción):</label>
+                        <textarea name="dinamica_familiar" class="input-form data-field" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Condiciones de vivienda:</label>
+                        <input type="text" name="condiciones_vivienda" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Ingreso mensual aproximado:</label>
+                        <input type="text" name="ingreso_mensual" class="input-form data-field">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Datos de Contacto -->
+            <section id="sec-contacto" class="tab-content">
+                <h3>Datos de Contacto (Domicilio Actual)</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Calle:</label>
+                        <input type="text" name="calle" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Número Ext/Int:</label>
+                        <input type="text" name="numero" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Colonia:</label>
+                        <input type="text" name="colonia" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono de Contacto:</label>
+                        <input type="text" name="telefono" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" name="correo" class="input-form data-field">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Datos Médicos -->
+            <section id="sec-medicos" class="tab-content">
+                <h3>Datos Médicos</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Peso (kg):</label>
+                        <input type="text" name="peso" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Estatura (m):</label>
+                        <input type="text" name="estatura" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Sangre:</label>
+                        <input type="text" name="tipo_sangre" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Seguro Médico / Institución:</label>
+                        <input type="text" name="seguro_medico" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Presenta alguna discapacidad?:</label>
+                        <input type="text" name="discapacidad" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Alergias o padecimientos:</label>
+                        <input type="text" name="alergias" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Cartilla de vacunación:</label>
+                        <select name="cartilla_vacunacion" class="input-form data-field" style="width: auto;">
+                            <option value="">Seleccione...</option>
+                            <option value="Al corriente">Al corriente</option>
+                            <option value="Faltan vacunas">Faltan vacunas</option>
+                            <option value="Sin información">Sin información</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Datos Familiares -->
+            <section id="sec-familiares" class="tab-content">
+                <h3>Datos Familiares (Principal)</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre del Familiar:</label>
+                        <input type="text" name="nombre_familiar" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Parentesco:</label>
+                        <input type="text" name="parentesco_familiar" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Observaciones:</label>
+                        <input type="text" name="observaciones_familiar" class="input-form data-field">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Datos del Tutor -->
+            <section id="sec-tutor" class="tab-content">
+                <h3>Datos del Tutor Principal</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre del Tutor:</label>
+                        <input type="text" name="nombre_tutor" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Ocupación:</label>
+                        <input type="text" name="ocupacion_tutor" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Escolaridad:</label>
+                        <input type="text" name="escolaridad_tutor" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Observaciones:</label>
+                        <input type="text" name="observaciones_tutor" class="input-form data-field">
+                    </div>
+                </div>
+            </section>
+
+            <div class="actions-footer" id="footer-actions">
+                <button type="submit" class="btn-primary" id="btn-submit">Guardar Información</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Navegación por pestañas
+    function openTab(evt, sectionId) {
+        var tabContents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].style.display = "none";
+            tabContents[i].classList.remove("active-content");
+        }
+
+        var tabBtns = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+
+        document.getElementById(sectionId).style.display = "block";
+        document.getElementById(sectionId).classList.add("active-content");
+        evt.currentTarget.classList.add("active");
+    }
+
+    document.getElementById("sec-personales").style.display = "block";
+
+    // Modo Edición / Visualización
+    function setMode(mode) {
+        const fields = document.querySelectorAll('.data-field');
+        const submitBtn = document.getElementById('btn-submit');
+        const btnAgregar = document.querySelector('.btn-agregar');
+        const btnVisualizar = document.querySelector('.btn-visualizar');
+        const btnEditar = document.getElementById('btn-editar');
+        const form = document.getElementById('form-expediente');
+        const searchContainer = document.querySelector('.search-container');
+
+        if (mode === 'view') {
+            btnVisualizar.classList.add('active-mode');
+            btnAgregar.classList.remove('active-mode');
+            submitBtn.style.display = 'none';
+            searchContainer.style.display = 'flex'; // Mostrar barra de búsqueda
+
+            // Si hay un NNA seleccionado, mostrar el botón de Editar
+            if (document.getElementById('id_nna').value !== "") {
+                btnEditar.style.display = 'block';
+            } else {
+                btnEditar.style.display = 'none';
+            }
+
+            fields.forEach(f => {
+                f.setAttribute('readonly', true);
+                if (f.tagName === 'SELECT') f.setAttribute('disabled', true);
+                f.classList.add('readonly-mode');
+            });
+        } else {
+            btnAgregar.classList.add('active-mode');
+            btnVisualizar.classList.remove('active-mode');
+            submitBtn.style.display = 'block';
+            submitBtn.textContent = 'Guardar Información';
+            searchContainer.style.display = 'none'; // Ocultar barra de búsqueda
+            btnEditar.style.display = 'none';
+
+            // Si estábamos viendo a un niño y pasamos a agregar, limpiamos todo
+            form.reset();
+            document.getElementById('id_nna').value = "";
+            document.getElementById('search-nna').value = "";
+
+            fields.forEach(f => {
+                f.removeAttribute('readonly');
+                if (f.tagName === 'SELECT') f.removeAttribute('disabled');
+                f.classList.remove('readonly-mode');
+            });
+        }
+    }
+
+    function toggleEditMode() {
+        // Modo Edición de un registro existente
+        const fields = document.querySelectorAll('.data-field');
+        const submitBtn = document.getElementById('btn-submit');
+        const btnEditar = document.getElementById('btn-editar');
+
+        submitBtn.style.display = 'block';
+        submitBtn.textContent = 'Actualizar Información';
+        btnEditar.style.display = 'none';
+
+        fields.forEach(f => {
+            f.removeAttribute('readonly');
+            if (f.tagName === 'SELECT') f.removeAttribute('disabled');
+            f.classList.remove('readonly-mode');
+        });
+    }
+
+    // Inicializar modo (Agregar)
+    setMode('edit');
+
+    // Búsqueda en vivo de NNA
+    const searchInput = document.getElementById('search-nna');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', function () {
+        const query = this.value.trim();
+        if (query.length < 2) {
+            searchResults.style.display = 'none';
+            return;
+        }
+
+        fetch(`/director/api/buscar_nna?q=${query}`)
+            .then(res => res.json())
+            .then(data => {
+                searchResults.innerHTML = '';
+                if (data.length > 0) {
+                    data.forEach(nna => {
+                        const div = document.createElement('div');
+                        div.className = 'search-item';
+                        div.textContent = `${nna.nombre_completo} - CURP: ${nna.curp}`;
+                        div.onclick = () => loadNNA(nna.id_nna, nna.nombre_completo);
+                        searchResults.appendChild(div);
+                    });
+                    searchResults.style.display = 'block';
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            });
+    });
+
+    // Ocultar resultados al hacer click fuera
+    document.addEventListener('click', function (e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+
+    // Cargar datos del NNA seleccionado
+    function loadNNA(id_nna, nombreCompleto) {
+        searchInput.value = nombreCompleto;
+        searchResults.style.display = 'none';
+        document.getElementById('id_nna').value = id_nna;
+
+        // Entrar en modo visualizar
+        setMode('view');
+
+        fetch(`/director/api/obtener_nna/${id_nna}`)
+            .then(res => res.json())
+            .then(data => {
+                // Rellenar campos
+                for (const key in data) {
+                    const el = document.querySelector(`[name="${key}"]`);
+                    if (el) {
+                        el.value = data[key];
+                    }
+                }
+            })
+            .catch(err => console.error("Error cargando NNA", err));
+    }
+</script>
+{% endblock %}

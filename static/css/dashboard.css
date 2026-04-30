@@ -10,8 +10,8 @@
     margin-bottom: 30px;
 }
 
-.welcome-text h1 { font-size: 2rem; color: #1a365d; }
-.welcome-text span { color: #2b6cb0; }
+.welcome-text h1 { font-size: 2rem; color: #372C4B; }
+.welcome-text span { color: #5a4b7a; }
 .separator { border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0; }
 
 /* Cards y Contenedores */
@@ -34,7 +34,7 @@
 }
 
 .card-header h3 { color: #2d3748; font-size: 1.25rem; }
-.count { background: #ebf8ff; color: #2b6cb0; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+.count { background: #f4f0fa; color: #372C4B; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
 
 /* Tablas */
 .table-responsive { overflow-x: auto; }
@@ -69,7 +69,7 @@
 .btn-delete:hover { background: #e53e3e; color: white; }
 
 .btn-enable {
-    background: #2b6cb0;
+    background: #372C4B;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -78,3 +78,31 @@
 }
 
 .card-inactive { border-left: 5px solid #cbd5e0; background: #fafafa; }
+/* Menú Olivo (Dashboard) */
+.subnav-olivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1cca0; /* Color Olivo/Beige de la imagen */
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+    gap: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subnav-olivo a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.subnav-olivo a:hover, .subnav-olivo a.active {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #000;
+}

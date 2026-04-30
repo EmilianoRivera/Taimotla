@@ -16,9 +16,6 @@ def login():
         email    = request.form.get("correo", "").strip()
         password = request.form.get("contrasena", "")
 
-        # ── DIRECTOR ──────────────────────────────────────────────
-        # query devuelve: (CURP, p_nombre, contrasena, estado)
-        #                   [0]     [1]        [2]       [3]
         response_director = verify_director(email)
         print("DEBUG director →", response_director)
 
@@ -35,9 +32,7 @@ def login():
                 session['nombre']  = nombre
                 return redirect(url_for("director.dashboard"))
 
-        # ── COORDINADOR ───────────────────────────────────────────
-        # query devuelve: (CURP, p_nombre, contrasena, estado)
-        #                   [0]     [1]        [2]       [3]
+
         response_coordinador = verify_coordinador(email)
         print("DEBUG coordinador →", response_coordinador)
 

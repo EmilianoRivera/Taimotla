@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/registrar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cuenta.css') }}">
 </head>
+
 <body>
     <header class="main-header">
         <div class="nav-container">
             <div class="logo-section">
-                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
                 <div class="logo-text">
                     <span class="title">FUTURO CON DERECHOS</span>
                     <span class="subtitle">FUNDACIÓN</span>
@@ -23,19 +24,21 @@
             </div>
 
             <nav class="nav-menu">
-               
+
                 {% if session.get('rol') == 'director' %}
-                    <a href="{{ url_for('director.dashboard') }}">Dashboard</a>
-                    <a href="{{ url_for('director.registrar') }}">Registrar</a>
-                    <a href="{{ url_for('director.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
-                    <a href="{{ url_for('director.logout') }}" class="link-logout">Cerrar Sesión</a>
+                <a href="{{ url_for('director.dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('director.registrar') }}">Registrar</a>
+                <a href="{{ url_for('director.crear_equipo') }}">Crear equipo</a>
+                <a href="{{ url_for('director.equipos') }}">Equipos</a>
+                <a href="{{ url_for('director.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
+                <a href="{{ url_for('director.logout') }}" class="link-logout">Cerrar Sesión</a>
                 {%elif session.get('rol') == 'coordinador' %}
-                    <a href="{{ url_for('coordinador.dashboard') }}">Dashboard</a>
-                    <a href="{{ url_for('coordinador.registrar') }}">Registrar</a>
-                    <a href="{{ url_for('coordinador.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
-                    <a href="{{ url_for('coordinador.logout') }}" class="link-logout">Cerrar Sesión</a>
+                <a href="{{ url_for('coordinador.dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('coordinador.registrar') }}">Registrar</a>
+                <a href="{{ url_for('coordinador.cuenta') }}" class="link-cuenta">Mi Cuenta</a>
+                <a href="{{ url_for('coordinador.logout') }}" class="link-logout">Cerrar Sesión</a>
                 {% else %}
-                    <a href="{{ url_for('main.login') }}" class="link-login">Iniciar Sesión</a>
+                <a href="{{ url_for('main.login') }}" class="link-login">Iniciar Sesión</a>
                 {% endif %}
             </nav>
         </div>
@@ -43,11 +46,11 @@
 
     <div class="content-wrapper">
         {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            {% for category, message in messages %}
-              <div class="toast alerta-{{ category }}">{{ message }}</div>
-            {% endfor %}
-          {% endif %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="toast alerta-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
 
         <main class="container">
@@ -56,4 +59,5 @@
         </main>
     </div>
 </body>
+
 </html>

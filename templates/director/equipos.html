@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/equipos.css') }}">
+
+<div class="equipos-wrapper">
+    <h2 class="page-title">Equipos creados: {{ equipos|length }} </h2>
+
+    {% if not equipos %}
+    <p class="empty-msg">No hay equipos activos creados.</p>
+    {% endif %}
+
+    {% for eq in equipos %}
+    <!-- TARJETA DEL EQUIPO -->
+    <div class="equipo-card" id="equipo-{{ eq.id_equipo }}">
+
+        <!-- MODO VISTA -->
+        <div class="modo-vista">
+            <div class="equipo-header">
+                <h3>{{ eq.nombre_equipo }}</h3>
+                <span class="coordinador-text"><strong>Coordinador:</strong> {{ eq.nombre_coordinador }}</span>
+            </div>
+
+            <table class="equipo-table">
+                <thead>
+                    <tr>
+                        <th>Integrantes</th>
+                        <th>Rol</th>
+                        <th>Editar</th>
+                        {% if eq.miembros|length < 4 %} <th>Agregar nuevo<br>personal</th>
+                            {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in eq.miembros %}
+                    <tr>
+                        <td>{{ m.nombre }}</td>
+                        <td style="text-transform: capitalize;">{{ m.rol }}</td>
+                        {% if loop.first %}
+                        <td rowspan="{{ eq.miembros|length }}" class="action-cell">
+                            <button type="button" class="btn-icon btn-edit"
+                                onclick="toggleEdit({{ eq.id_equipo }})">✏️</button>
+                        </td>
+                        {% if eq.miembros|length < 4 %} <td rowspan="{{ eq.miembros|length }}" class="action-cell">
+                            <button type="button" class="btn-icon btn-add-member"
+                                onclick="toggleAddMenu({{ eq.id_equipo }})">+</button>
+                            </td>
+                            {% endif %}
+                            {% endif %}
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="2">No hay integrantes.</td>
+                        <td class="action-cell">
+                            <button type="button" class="btn-icon btn-edit"
+                                onclick="toggleEdit({{ eq.id_equipo }})">✏️</button>
+                        </td>
+                        <td class="action-cell">
+                            <button type="button" class="btn-icon btn-add-member"
+                                onclick="toggleAddMenu({{ eq.id_equipo }})">+</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MODO EDICIÓN -->
+        <div class="modo-edicion" style="display: none;">
+            <div class="equipo-header-edit">
+                <h3>{{ eq.nombre_equipo }}</h3>
+
+                <!-- Formulario cambiar coordinador -->
+                <form method="POST" action="{{ url_for('director.actualizar_coordinador', id_equipo=eq.id_equipo) }}"
+                    class="form-coordinador">
+                    <label><strong>Coordinador:</strong></label>
+                    <select name="curp_coordinador" class="select-coord" onchange="this.form.submit()">
+                        {% for c in coordinadores %}
+                        <option value="{{ c[0] }}" {% if c[0]==eq.curp_coordinador %}selected{% endif %}>{{ c[1] }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+
+            <div class="edicion-content">
+                <table class="equipo-table table-edit">
+                    <thead>
+                        <tr>
+                            <th>Integrantes</th>
+                            <th>Rol</th>
+                            <th>Eliminar miembro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in eq.miembros %}
+                        <tr>
+                            <td>{{ m.nombre }}</td>
+                            <td style="text-transform: capitalize;">{{ m.rol }}</td>
+                            <td class="action-cell">
+                                <form method="POST"
+                                    action="{{ url_for('director.remover_miembro_equipo', id_equipo=eq.id_equipo) }}">
+                                    <input type="hidden" name="curp_miembro" value="{{ m.curp }}">
+                                    <button type="submit" class="btn-icon btn-remove"
+                                        onclick="return confirm('¿Quitar a este miembro del equipo?')">🚫</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="eliminar-equipo-section">
+                    <form method="POST" action="{{ url_for('director.eliminar_equipo', id_equipo=eq.id_equipo) }}">
+                        <button type="submit" class="btn-danger"
+                            onclick="return confirm('¿Estás seguro de querer eliminar el equipo seleccionado?')">
+                            Eliminar<br>Equipo
+                        </button>
+                    </form>
+                    <button type="button" class="btn-cancel" onclick="toggleEdit({{ eq.id_equipo }})">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENÚ PERSONAL DISPONIBLE (OCULTO POR DEFECTO) -->
+    <div class="disponibles-box" id="disp-{{ eq.id_equipo }}" style="display: none;">
+        <h3>Personal Disponible</h3>
+        <table class="equipo-table table-disp">
+            <thead>
+                <tr>
+                    <th>Integrantes</th>
+                    <th>Rol</th>
+                    <th>Añadir</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set has_available = false %}
+                {% for rol, lista in disponibles.items() %}
+                {% for a in lista %}
+                <!-- Regla de negocio: No mostrar si ya hay alguien con ese rol en el equipo -->
+                {% set already_has_role = namespace(value=false) %}
+                {% for m in eq.miembros %}
+                {% if m.rol|replace(' ', '') == rol|replace(' ', '') %}
+                {% set already_has_role.value = true %}
+                {% endif %}
+                {% endfor %}
+
+                {% if not already_has_role.value %}
+                {% set has_available = true %}
+                <tr>
+                    <td>{{ a[1] }}</td>
+                    <td style="text-transform: capitalize;">{{ a[2] }}</td>
+                    <td class="action-cell">
+                        <form method="POST"
+                            action="{{ url_for('director.agregar_miembro_equipo', id_equipo=eq.id_equipo) }}">
+                            <input type="hidden" name="curp_miembro" value="{{ a[0] }}">
+                            <button type="submit" class="btn-icon btn-add-member">+</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
+                {% if not has_available %}
+                <tr>
+                    <td colspan="3" class="empty-msg">No hay personal disponible con roles distintos a los actuales.
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    {% endfor %}
+</div>
+
+<script>
+    function toggleEdit(id_equipo) {
+        const card = document.getElementById('equipo-' + id_equipo);
+        const vista = card.querySelector('.modo-vista');
+        const edicion = card.querySelector('.modo-edicion');
+        const dispBox = document.getElementById('disp-' + id_equipo);
+
+        if (vista.style.display === 'none') {
+            vista.style.display = 'block';
+            edicion.style.display = 'none';
+        } else {
+            vista.style.display = 'none';
+            edicion.style.display = 'block';
+            dispBox.style.display = 'none'; // ocultar box de disp si estaba abierto
+        }
+    }
+
+    function toggleAddMenu(id_equipo) {
+        const dispBox = document.getElementById('disp-' + id_equipo);
+        if (dispBox.style.display === 'none') {
+            dispBox.style.display = 'block';
+        } else {
+            dispBox.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

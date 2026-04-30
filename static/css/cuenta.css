@@ -15,7 +15,7 @@
 
 /* Encabezado con degradado suave */
 .profile-header {
-    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+    background: linear-gradient(135deg, #241e30 0%, #372C4B 100%);
     padding: 40px;
     color: white;
     display: flex;
@@ -97,7 +97,7 @@
 .btn-secondary:hover { background: #edf2f7; }
 
 .btn-edit {
-    background: #2b6cb0;
+    background: #372C4B;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -107,4 +107,4 @@
     transition: 0.3s;
 }
 
-.btn-edit:hover { background: #1a365d; }
+.btn-edit:hover { background: #241e30; }

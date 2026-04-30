@@ -9,10 +9,10 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# ── Diagnóstico temporal ──────────────────────────────────
+
 secret = os.getenv('SECRET_KEY')
-print(f"DEBUG SECRET_KEY → '{secret}'")  # Si imprime None, el .env no se lee
-# ─────────────────────────────────────────────────────────
+print(f"DEBUG SECRET_KEY → '{secret}'")
+
 
 if not secret:
     raise RuntimeError("SECRET_KEY no encontrada en .env — revisa el archivo")
