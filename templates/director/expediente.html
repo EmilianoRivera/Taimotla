@@ -46,13 +46,9 @@
             <section id="sec-personales" class="tab-content active-content">
                 <h3>Datos Personales del NNA</h3>
                 <div class="form-grid">
-                    <div class="form-group">
-                        <label>Primer Nombre:</label>
-                        <input type="text" name="p_nombre" class="input-form data-field" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Segundo Nombre:</label>
-                        <input type="text" name="s_nombre" class="input-form data-field">
+                    <div class="form-group full-width">
+                        <label>Nombre (s):</label>
+                        <input type="text" name="nombres" class="input-form data-field" required>
                     </div>
                     <div class="form-group">
                         <label>Primer Apellido:</label>
@@ -102,34 +98,395 @@
                         </select>
                     </div>
                 </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Documentos</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Está registrado en el Registro Civil?</label>
+                        <select name="registro_civil" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Tiene acta de nacimiento?</label>
+                        <select name="tiene_acta_nacimiento" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de acta:</label>
+                        <input type="text" name="numero_acta" class="input-form data-field">
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Domicilio actual</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Calle:</label>
+                        <input type="text" name="calle" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Número:</label>
+                        <input type="text" name="numero" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado:</label>
+                        <input type="text" name="estado_domicilio" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Municipio:</label>
+                        <input type="text" name="municipio_domicilio" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Colonia:</label>
+                        <input type="text" name="colonia_domicilio" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Código postal:</label>
+                        <input type="text" name="codigo_postal_domicilio" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Referencias de ubicación:</label>
+                        <textarea name="referencias_domicilio" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Idiomas</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Idioma(s) que habla:</label>
+                        <input type="text" name="idioma_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Nivel por idioma:</label>
+                        <select name="nivel_idioma_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="nativo">Nativo</option>
+                            <option value="fluido">Fluido</option>
+                            <option value="basico">Básico</option>
+                            <option value="solo_comprende">Solo comprende</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Observaciones de la entrevista</h4>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Actitud general durante la entrevista:</label>
+                        <textarea name="actitud_entrevista" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Tono de voz y cambios observados:</label>
+                        <textarea name="tono_voz" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Expresión corporal y gestos:</label>
+                        <textarea name="expresion_corporal" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>¿A quién dice temer?:</label>
+                        <input type="text" name="a_quien_teme" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>¿Qué adulto le es significativo?:</label>
+                        <input type="text" name="adulto_significativo" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Observaciones generales:</label>
+                        <textarea name="observaciones_entrevista" class="input-form data-field" rows="3"></textarea>
+                    </div>
+                </div>
             </section>
 
             <!-- 2. Hecho Victimal -->
             <section id="sec-victimal" class="tab-content">
                 <h3>Datos del Hecho Victimal</h3>
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Identificación del reporte</h4>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Fecha del hecho:</label>
-                        <input type="date" name="fecha_hecho" class="input-form data-field">
+                        <label>Número de reporte (consecutivo) <span style="color:red;">*</span>:</label>
+                        <input type="text" name="num_reporte" class="input-form data-field" required>
                     </div>
                     <div class="form-group">
-                        <label>Lugar del hecho:</label>
-                        <input type="text" name="lugar_hecho" class="input-form data-field">
+                        <label>Nombre del caso <span style="color:red;">*</span>:</label>
+                        <input type="text" name="nombre_caso" class="input-form data-field" required
+                            placeholder="Ej: Apellidos + código">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de detección <span style="color:red;">*</span>:</label>
+                        <input type="date" name="fecha_hecho" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciudad / municipio donde se detectó <span style="color:red;">*</span>:</label>
+                        <input type="text" name="ciudad_deteccion" class="input-form data-field" required>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Quién detecta y reporta</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Tipo de quien detecta <span style="color:red;">*</span>:</label>
+                        <select name="tipo_quien_detecta" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Procuraduria">Procuraduría</option>
+                            <option value="Servidor_municipal">Servidor municipal</option>
+                            <option value="Inst_federal">Inst. federal</option>
+                            <option value="OCS">OCS</option>
+                            <option value="Comunidad">Comunidad</option>
+                            <option value="NNA">NNA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de quien elabora el reporte <span style="color:red;">*</span>:</label>
+                        <input type="text" name="nombre_elabora_reporte" class="input-form data-field" required>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Datos del hecho</h4>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Narración textual de lo sucedido <span style="color:red;">*</span>:</label>
+                        <textarea name="relato_hechos" class="input-form data-field" rows="4" required
+                            placeholder="Transcripción de quien reporta"></textarea>
                     </div>
                     <div class="form-group full-width">
-                        <label>Descripción detallada:</label>
-                        <textarea name="relato_hechos" class="input-form data-field" rows="4"></textarea>
+                        <label>Descripción del delito / vulneración <span style="color:red;">*</span>:</label>
+                        <textarea name="descripcion_delito" class="input-form data-field" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de la víctima / madre (Opcional):</label>
+                        <input type="text" name="nombre_victima_madre" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Número de expediente jurídico (Opcional):</label>
+                        <input type="text" name="num_expediente_juridico" class="input-form data-field">
                     </div>
                     <div class="form-group full-width">
-                        <label>Derechos vulnerados / Riesgo identificado:</label>
-                        <textarea name="derechos_vulnerados" class="input-form data-field" rows="3"></textarea>
+                        <label>Referencias de ubicación del NNA (Opcional):</label>
+                        <textarea name="referencias_ubicacion_nna" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Otros datos / observaciones relevantes (Opcional):</label>
+                        <textarea name="observaciones_relevantes" class="input-form data-field" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Medidas urgentes (si aplica)</h4>
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">Solo se llenan si de la entrevista se
+                    desprende riesgo inmediato para la vida, libertad o integridad del NNA.</p>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Se solicitaron medidas urgentes?</label>
+                        <select name="medidas_urgentes_solicitadas" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de solicitud:</label>
+                        <input type="date" name="fecha_solicitud_medidas" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de medida solicitada:</label>
+                        <input type="text" name="tipo_medida" class="input-form data-field"
+                            placeholder="Ej: Separación, Resguardo">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Justificación de la medida:</label>
+                        <textarea name="justificacion_medida" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Opinión de la NNA sobre la medida:</label>
+                        <textarea name="opinion_nna_medida" class="input-form data-field" rows="2"></textarea>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. Entorno Familiar -->
+
+            <!-- 3. Datos Médicos -->
+            <section id="sec-medicos" class="tab-content">
+                <h3>Datos Médicos del NNA</h3>
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Seguro médico y atención</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Tiene servicio médico? <span style="color:red;">*</span>:</label>
+                        <select name="seguro_medico" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="IMSS">IMSS</option>
+                            <option value="ISSSTE">ISSSTE</option>
+                            <option value="Bienestar">Bienestar</option>
+                            <option value="Sin seguro">Sin seguro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de afiliación (Opcional):</label>
+                        <input type="text" name="numero_afiliacion_medico" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de la última visita (Opcional):</label>
+                        <input type="date" name="fecha_ultima_visita_medico" class="input-form data-field">
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Cartilla de vacunación</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Tiene cartilla de vacunación? <span style="color:red;">*</span>:</label>
+                        <select name="cartilla_vacunacion" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿La cartilla está completa? (Opcional):</label>
+                        <select name="cartilla_completa" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                            <option value="parcialmente">Parcialmente</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Vacunas faltantes (Opcional):</label>
+                        <textarea name="vacunas_faltantes" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Enfermedades y padecimientos</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Ha estado enfermo recientemente? (Opcional):</label>
+                        <select name="enfermo_recientemente" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Padecimiento(s) (CIE-10) (Opcional):</label>
+                        <input type="text" name="padecimientos_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Es crónica? (Opcional):</label>
+                        <select name="padecimiento_cronico_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Está controlada? (Opcional):</label>
+                        <select name="padecimiento_controlado_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Recibe atención médica? (Opcional):</label>
+                        <select name="recibe_atencion_medica_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Notas sobre el padecimiento (Opcional):</label>
+                        <textarea name="notas_padecimiento_nna" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Discapacidades</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Tiene alguna discapacidad? (Opcional):</label>
+                        <select name="discapacidad" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de discapacidad (Opcional):</label>
+                        <select name="tipo_discapacidad_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="Motriz">Motriz</option>
+                            <option value="Sensorial">Sensorial</option>
+                            <option value="Intelectual">Intelectual</option>
+                            <option value="Psicosocial">Psicosocial</option>
+                            <option value="Multiple">Múltiple</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado de dependencia (Opcional):</label>
+                        <select name="grado_dependencia_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="Leve">Leve</option>
+                            <option value="Moderado">Moderado</option>
+                            <option value="Severo">Severo</option>
+                            <option value="Total">Total</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Requiere aditamento? (Opcional):</label>
+                        <select name="requiere_aditamento_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Cuenta con el aditamento? (Opcional):</label>
+                        <select name="cuenta_con_aditamento_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Alimentación y descanso</h4>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>¿Qué come normalmente? (Opcional):</label>
+                        <textarea name="alimentacion_nna" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora en que se duerme (Opcional):</label>
+                        <input type="time" name="hora_duerme_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Hora en que se levanta (Opcional):</label>
+                        <input type="time" name="hora_levanta_nna" class="input-form data-field">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Entorno Familiar -->
+
             <section id="sec-entorno" class="tab-content">
                 <h3>Entorno Familiar</h3>
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Dinámica del hogar</h4>
                 <div class="form-grid">
                     <div class="form-group full-width">
                         <label>Dinámica Familiar (Breve descripción):</label>
@@ -143,114 +500,526 @@
                         <label>Ingreso mensual aproximado:</label>
                         <input type="text" name="ingreso_mensual" class="input-form data-field">
                     </div>
-                </div>
-            </section>
-
-            <!-- 4. Datos de Contacto -->
-            <section id="sec-contacto" class="tab-content">
-                <h3>Datos de Contacto (Domicilio Actual)</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Calle:</label>
-                        <input type="text" name="calle" class="input-form data-field">
+                    <div class="form-group full-width">
+                        <label>Sistema de residencia (Opcional):</label>
+                        <textarea name="sistema_residencia" class="input-form data-field" rows="2"
+                            placeholder="¿Vive con familia del padre/madre?"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Número Ext/Int:</label>
-                        <input type="text" name="numero" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Colonia:</label>
-                        <input type="text" name="colonia" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono de Contacto:</label>
-                        <input type="text" name="telefono" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Correo Electrónico:</label>
-                        <input type="email" name="correo" class="input-form data-field">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 5. Datos Médicos -->
-            <section id="sec-medicos" class="tab-content">
-                <h3>Datos Médicos</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Peso (kg):</label>
-                        <input type="text" name="peso" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Estatura (m):</label>
-                        <input type="text" name="estatura" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Tipo de Sangre:</label>
-                        <input type="text" name="tipo_sangre" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Seguro Médico / Institución:</label>
-                        <input type="text" name="seguro_medico" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>¿Presenta alguna discapacidad?:</label>
-                        <input type="text" name="discapacidad" class="input-form data-field">
-                    </div>
-                    <div class="form-group">
-                        <label>Alergias o padecimientos:</label>
-                        <input type="text" name="alergias" class="input-form data-field">
+                        <label>Sostén económico principal (Opcional):</label>
+                        <input type="text" name="sosten_economico_principal" class="input-form data-field"
+                            placeholder="Quién aporta el ingreso">
                     </div>
                     <div class="form-group full-width">
-                        <label>Cartilla de vacunación:</label>
-                        <select name="cartilla_vacunacion" class="input-form data-field" style="width: auto;">
+                        <label>Relación de la madre con su familia de origen (Opcional):</label>
+                        <textarea name="relacion_madre_familia" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Patrón de migración / miembros ausentes (Opcional):</label>
+                        <textarea name="patron_migracion_familia" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Sistema de compadrazgo / vínculos interfamiliares (Opcional):</label>
+                        <textarea name="sistema_compadrazgo" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Espacios de socialización frecuentados (Opcional):</label>
+                        <textarea name="espacios_socializacion" class="input-form data-field" rows="2"
+                            placeholder="Grupos, catequesis, deporte, etc."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Participación de la familia en la comunidad (Opcional):</label>
+                        <textarea name="participacion_comunidad" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Algún hijo/a no vive con la familia? (Opcional):</label>
+                        <select name="hijo_no_vive_con_familia" class="input-form data-field">
                             <option value="">Seleccione...</option>
-                            <option value="Al corriente">Al corriente</option>
-                            <option value="Faltan vacunas">Faltan vacunas</option>
-                            <option value="Sin información">Sin información</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿La opinión de la NNA es considerada? (Opcional):</label>
+                        <select name="opinion_nna_considerada" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿La NNA ha visto peleas o violencia? (Opcional):</label>
+                        <select name="nna_visto_violencia" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿La NNA ha recibido golpes o insultos? (Opcional):</label>
+                        <select name="nna_recibido_violencia" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                 </div>
-            </section>
 
-            <!-- 6. Datos Familiares -->
-            <section id="sec-familiares" class="tab-content">
-                <h3>Datos Familiares (Principal)</h3>
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Evaluación del cuidador principal</h4>
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">Valoraciones que hace el trabajador
+                    social, no preguntas directas al cuidador.</p>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Nombre del Familiar:</label>
-                        <input type="text" name="nombre_familiar" class="input-form data-field">
+                        <label>Grado de negación del cuidador <span style="color:red;">*</span>:</label>
+                        <select name="grado_negacion_cuidador" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Observaciones sobre la negación (Opcional):</label>
+                        <textarea name="observaciones_negacion" class="input-form data-field" rows="2"
+                            placeholder="Argumentos concretos observados"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Parentesco:</label>
-                        <input type="text" name="parentesco_familiar" class="input-form data-field">
+                        <label>Grado de afectación emocional / física del cuidador <span
+                                style="color:red;">*</span>:</label>
+                        <select name="grado_afectacion_cuidador" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Observaciones sobre la afectación (Opcional):</label>
+                        <textarea name="observaciones_afectacion" class="input-form data-field" rows="2"
+                            placeholder="Síntomas o conductas observadas"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Redes familiares y comunitarias</h4>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Descripción de redes de apoyo disponibles (Opcional):</label>
+                        <textarea name="redes_apoyo_disponibles" class="input-form data-field" rows="2"
+                            placeholder="Vecinos, padrinos, amigos, grupos..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Qué dice la familia que necesita para proteger mejor al NNA (Opcional):</label>
+                        <textarea name="necesidad_proteccion_familia" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Familiograma (descripción) (Opcional):</label>
+                        <textarea name="familiograma_desc" class="input-form data-field" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Observaciones:</label>
-                        <input type="text" name="observaciones_familiar" class="input-form data-field">
+                        <label>Fecha acordada para presentar el plan de restitución <span
+                                style="color:red;">*</span>:</label>
+                        <input type="date" name="fecha_plan_restitucion" class="input-form data-field" required>
                     </div>
                 </div>
             </section>
 
-            <!-- 7. Datos del Tutor -->
-            <section id="sec-tutor" class="tab-content">
-                <h3>Datos del Tutor Principal</h3>
+            <!-- 4. Datos Familiares -->
+            <section id="sec-familiares" class="tab-content">
+                <h3>Datos Familiares</h3>
+
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Escolaridad</h4>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Nombre del Tutor:</label>
-                        <input type="text" name="nombre_tutor" class="input-form data-field">
+                        <label>¿Va a la escuela? <span style="color:red;">*</span>:</label>
+                        <select name="va_a_escuela" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>Ocupación:</label>
-                        <input type="text" name="ocupacion_tutor" class="input-form data-field">
+                        <label>Nivel educativo (Opcional):</label>
+                        <select name="nivel_educativo_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="Sin escolaridad">Sin escolaridad</option>
+                            <option value="Preescolar">Preescolar</option>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Bachillerato">Bachillerato</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>Escolaridad:</label>
+                        <label>Grado actual (Opcional):</label>
+                        <input type="number" name="grado_escolar_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Clase favorita (Opcional):</label>
+                        <input type="text" name="clase_favorita_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Clase que más le cuesta (Opcional):</label>
+                        <input type="text" name="clase_cuesta_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Desempeño general (calificaciones) (Opcional):</label>
+                        <textarea name="desempeno_escolar_nna" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Vida cotidiana y recreación</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Quién lo cuida la mayor parte del tiempo? (Opcional):</label>
+                        <input type="text" name="quien_cuida_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Horario en que juega (Opcional):</label>
+                        <input type="text" name="horario_juego_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>¿A qué juega? (Opcional):</label>
+                        <textarea name="a_que_juega_nna" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Se junta con amigos? (Opcional):</label>
+                        <select name="se_junta_amigos_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Hace algún deporte? (Cuál) (Opcional):</label>
+                        <input type="text" name="hace_deporte_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Ha dejado de ver a alguien que quiere? (Opcional):</label>
+                        <select name="dejado_ver_alguien_nna" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Composición del núcleo familiar (familiograma)</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Número de personas en el hogar (Opcional):</label>
+                        <input type="number" name="numero_personas_hogar" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Hay algún hermano/a que no viva con la familia? (Opcional):</label>
+                        <select name="hermano_no_vive_familia" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Descripción de quiénes conviven (Opcional):</label>
+                        <textarea name="descripcion_conviven" class="input-form data-field" rows="2"
+                            placeholder="Nombres, edades, relación con NNA"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Narración general del entorno (Opcional):</label>
+                        <textarea name="narracion_entorno" class="input-form data-field" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Contexto indígena / rural (si aplica)</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nivel de bilingüismo del NNA y familia (Opcional):</label>
+                        <input type="text" name="nivel_bilinguismo_nna" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Participación en asambleas (Opcional):</label>
+                        <input type="text" name="participacion_asambleas" class="input-form data-field">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Parentesco con autoridades locales (Opcional):</label>
+                        <textarea name="parentesco_autoridades" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- 5. Datos de Contacto -->
+            <section id="sec-contacto" class="tab-content">
+                <h3>Datos de Contacto</h3>
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Contacto directo del NNA</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Teléfono celular propio (Opcional):</label>
+                        <input type="text" name="telefono_celular_nna" class="input-form data-field"
+                            placeholder="Aplica para adolescentes">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico (Opcional):</label>
+                        <input type="email" name="correo_nna" class="input-form data-field">
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Contacto del hogar / familia</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Teléfono fijo del hogar (Opcional):</label>
+                        <input type="text" name="telefono_fijo_hogar" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono celular del cuidador principal <span style="color:red;">*</span>:</label>
+                        <input type="text" name="telefono_celular_cuidador" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Tiene WhatsApp? (Opcional):</label>
+                        <select name="cuidador_tiene_whatsapp" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo del cuidador (Opcional):</label>
+                        <input type="email" name="correo_cuidador" class="input-form data-field">
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Contacto de emergencia alternativo</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre del contacto de emergencia (Opcional):</label>
+                        <input type="text" name="nombre_contacto_emergencia" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Parentesco (Opcional):</label>
+                        <input type="text" name="parentesco_contacto_emergencia" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono (Opcional):</label>
+                        <input type="text" name="telefono_contacto_emergencia" class="input-form data-field">
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Preferencias y disponibilidad</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Horario en que se puede contactar (Opcional):</label>
+                        <input type="text" name="horario_contacto_preferido" class="input-form data-field"
+                            placeholder="Ej: solo tardes">
+                    </div>
+                    <div class="form-group">
+                        <label>Medio de contacto preferido (Opcional):</label>
+                        <select name="medio_contacto_preferido" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="Llamada">Llamada</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Visita domiciliaria">Visita domiciliaria</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Notas sobre cómo contactar (Opcional):</label>
+                        <textarea name="notas_contacto" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Datos del Tutor -->
+            <section id="sec-tutor" class="tab-content">
+                <h3>Datos del Tutor</h3>
+
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Identificación del tutor</h4>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Nombre(s) <span style="color:red;">*</span>:</label>
+                        <input type="text" name="nombre_tutor" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Parentesco con el NNA <span style="color:red;">*</span>:</label>
+                        <select name="parentesco_tutor" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Madre">Madre</option>
+                            <option value="Padre">Padre</option>
+                            <option value="Abuelo(a)">Abuelo(a)</option>
+                            <option value="Tío(a)">Tío(a)</option>
+                            <option value="Hermano(a) mayor">Hermano(a) mayor</option>
+                            <option value="Institución">Institución</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Es el tutor legal principal? <span style="color:red;">*</span>:</label>
+                        <select name="es_tutor_legal" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Vive con el NNA? <span style="color:red;">*</span>:</label>
+                        <select name="vive_con_nna" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo <span style="color:red;">*</span>:</label>
+                        <select name="sexo_tutor" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Escolaridad (Opcional):</label>
                         <input type="text" name="escolaridad_tutor" class="input-form data-field">
                     </div>
                     <div class="form-group">
-                        <label>Observaciones:</label>
-                        <input type="text" name="observaciones_tutor" class="input-form data-field">
+                        <label>Ocupación (Opcional):</label>
+                        <input type="text" name="ocupacion_tutor" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Es el sostén económico principal? (Opcional):</label>
+                        <select name="sosten_economico_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Idiomas del tutor</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Idioma(s) que habla <span style="color:red;">*</span>:</label>
+                        <input type="text" name="idioma_tutor" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nivel por idioma <span style="color:red;">*</span>:</label>
+                        <select name="nivel_idioma_tutor" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Nativo">Nativo</option>
+                            <option value="Fluido">Fluido</option>
+                            <option value="Básico">Básico</option>
+                            <option value="Solo comprende">Solo comprende</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Salud del tutor</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>¿Tiene enfermedades o padecimientos? (Opcional):</label>
+                        <select name="tiene_enfermedades_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Padecimiento(s) (CIE-10) (Opcional):</label>
+                        <input type="text" name="padecimientos_tutor" class="input-form data-field">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Es crónica? (Opcional):</label>
+                        <select name="padecimiento_cronico_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Está controlada? (Opcional):</label>
+                        <select name="padecimiento_controlado_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Recibe atención médica actualmente? (Opcional):</label>
+                        <select name="recibe_atencion_medica_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Alcoholismo u otras dependencias en la familia (Opcional):</label>
+                        <textarea name="alcoholismo_dependencias_familia" class="input-form data-field"
+                            rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Valoración del tutor como cuidador</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Grado de negación <span style="color:red;">*</span>:</label>
+                        <select name="grado_negacion_tutor" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado de afectación emocional / física <span style="color:red;">*</span>:</label>
+                        <select name="grado_afectacion_tutor" class="input-form data-field" required>
+                            <option value="">Seleccione...</option>
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Observaciones sobre la negación (Opcional):</label>
+                        <textarea name="observaciones_negacion_tutor" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Patrón de migración (Opcional):</label>
+                        <textarea name="patron_migracion_tutor" class="input-form data-field" rows="2"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Observaciones generales sobre el tutor (Opcional):</label>
+                        <textarea name="observaciones_generales_tutor" class="input-form data-field"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #ccc;">
+                <h4 style="margin-bottom: 10px; color: #582D4B;">Contacto del tutor</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Teléfono celular <span style="color:red;">*</span>:</label>
+                        <input type="text" name="telefono_celular_tutor" class="input-form data-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Tiene WhatsApp? (Opcional):</label>
+                        <select name="tiene_whatsapp_tutor" class="input-form data-field">
+                            <option value="">Seleccione...</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico (Opcional):</label>
+                        <input type="email" name="correo_tutor" class="input-form data-field">
                     </div>
                 </div>
             </section>
