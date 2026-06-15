@@ -1,0 +1,120 @@
+\begin{BussinesRule}{BR-01}{Estructura obligatoria de un equipo multidisciplinario.}
+	\BRitem[Tipo:] Regla de integridad estructural. 
+	\BRitem[Clase:] Habilitadora. 
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Un equipo multidisciplinario de caso debe estar compuesto de forma obligatoria por un Coordinador de Caso y un mínimo de 2 y un máximo de 4 profesionales especialistas activos (un Abogado, un Médico, un Psicólogo o un Trabajador Social).
+	\BRitem[Motivación:] Garantizar el enfoque integral y la mirada interdisciplinaria exigida por el artículo 123 de la LGDNNA para la toma de decisiones.
+	\BRitem[Sentencia:] $\forall e \in Equipo \Rightarrow e.coordinador \neq \emptyset \land 2 \le |e.miembros| \le 4$.
+	\BRitem[Ejemplo positivo:] Un equipo integrado por un Coordinador, un Abogado y un Psicólogo cumple con la regla.
+	\BRitem[Ejemplo negativo:] Un equipo sin coordinador asignado, o que contenga únicamente a un Trabajador Social como miembro, no cumple con la regla.
+	\BRitem[Referenciado por:] \hyperlink{CU-02}{CU-02}, \hyperlink{CU-04}{CU-04}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-02}{Asignación exclusiva a equipos activos.}
+	\BRitem[Tipo:] Regla de integridad estructural. 
+	\BRitem[Clase:] Habilitadora. 
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Un especialista operativo (Abogado, Médico, Psicólogo o Trabajador Social) solo puede estar asignado a un único equipo multidisciplinario activo en el sistema a la vez.
+	\BRitem[Motivación:] Evitar la sobrecarga de trabajo del personal de la Fundación y asegurar la dedicación debida a los expedientes asignados.
+	\BRitem[Sentencia:] $\forall p \in Personal \land e_1, e_2 \in EquiposActivos \Rightarrow p \in e_1 \Rightarrow p \notin e_2$.
+	\BRitem[Ejemplo positivo:] El Abogado Juan Pérez está asignado al Equipo Alfa y no pertenece a ningún otro equipo.
+	\BRitem[Ejemplo negativo:] Intentar agregar al Médico Carlos Gómez al Equipo Beta cuando ya se encuentra registrado y activo en el Equipo Alfa.
+	\BRitem[Referenciado por:] \hyperlink{CU-04}{CU-04}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-03}{Registro de NNA con CURP obligatoria.}
+	\BRitem[Tipo:] Regla de integridad referencial. 
+	\BRitem[Clase:] Habilitadora. 
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] El registro de cualquier Niña, Niño o Adolescente (NNA) en el sistema requiere la captura obligatoria de una Clave Única de Registro de Población (CURP) de 18 caracteres alfanuméricos válidos y que no esté duplicada en la base de datos.
+	\BRitem[Motivación:] Evitar el registro duplicado de menores y asegurar su correcta identificación jurídica.
+	\BRitem[Sentencia:] $\forall n \in NNA \Rightarrow |n.CURP| = 18 \land (n_1.CURP = n_2.CURP \Rightarrow n_1 = n_2)$.
+	\BRitem[Ejemplo positivo:] Registro del menor con CURP válida de 18 dígitos.
+	\BRitem[Ejemplo negativo:] Intentar guardar un expediente dejando el campo CURP vacío, o ingresar una CURP que ya está registrada para otro menor en el sistema.
+	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-04}{Carga obligatoria de documentos de identidad.}
+	\BRitem[Tipo:] Regla de operación. 
+	\BRitem[Clase:] Habilitadora. 
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Un expediente de NNA no puede avanzar del estatus ``Creado'' a ``En Diagnóstico'' si el Abogado asignado no ha cargado al sistema la copia digitalizada del acta de nacimiento o el documento de identidad oficial equivalente.
+	\BRitem[Motivación:] Asegurar la existencia de soporte legal de identidad antes de proceder con el diseño del Plan de Restitución.
+	\BRitem[Sentencia:] $\forall ex \in Expediente \land ex.estado = \mbox{'En Diagnóstico'} \Rightarrow \exists doc \in ex.documentos \land doc.tipo = \mbox{'Acta de Nacimiento'}$.
+	\BRitem[Ejemplo positivo:] El Abogado sube el acta de nacimiento en PDF y el sistema permite iniciar el registro de valoraciones.
+	\BRitem[Ejemplo negativo:] El equipo intenta registrar diagnósticos médicos o psicológicos sin haber cargado el acta de nacimiento previa.
+	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-05}{Pre-autorización y aprobación del Plan de Restitución (PRD).}
+	\BRitem[Tipo:] Regla de inferencia. 
+	\BRitem[Clase:] Habilitadora. 
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Un Plan de Restitución de Derechos (PRD) solo adquirirá el estatus de ``Vigente'' y podrá iniciar su fase de ejecución si ha sido redactado y pre-autorizado por el Coordinador de Caso y posteriormente aprobado y firmado digitalmente por el Director de la Fundación.
+	\BRitem[Motivación:] Mantener el control de calidad institucional sobre las medidas de protección y la coadyuvancia jurídica antes de turnarlas a las dependencias gubernamentales.
+	\BRitem[Sentencia:] $\forall prd \in PRD \Rightarrow (prd.estado = \mbox{'Vigente'} \Leftrightarrow prd.preautorizado = true \land prd.aprobadoDirector = true)$.
+	\BRitem[Ejemplo positivo:] El Coordinador aprueba las valoraciones del equipo, envía el PRD y el Director le da el visto bueno en el sistema, cambiando el estatus del expediente a ``En Seguimiento''.
+	\BRitem[Ejemplo negativo:] Un especialista intenta registrar el inicio de ejecución de una medida sin que el PRD cuente con la aprobación formal en el panel del Director.
+	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-06}{Estructura y validación de la CURP.}
+	\BRitem[Tipo:] Regla de integridad de dominio.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] La Clave Única de Registro de Población (CURP) capturada en el sistema para cualquier persona o NNA debe constar exactamente de 18 caracteres alfanuméricos válidos en mayúsculas que sigan el estándar oficial mexicano.
+	\BRitem[Motivación:] Asegurar la validez de los identificadores principales del menor y el personal.
+	\BRitem[Sentencia:] $\forall p \in Persona \Rightarrow |p.CURP| = 18 \land p.CURP \in formato\_curp$.
+	\BRitem[Ejemplo positivo:] CURP válida: \texttt{AAAA000000XXXXXX00}.
+	\BRitem[Ejemplo negativo:] Capturar \texttt{CURP123} (corta) o incluir caracteres especiales.
+	\BRitem[Referenciado por:] \hyperlink{CU-02}{CU-02}, \hyperlink{CU-03}{CU-03}, \hyperlink{CU-11}{CU-11}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-07}{Estructura y validación del RFC.}
+	\BRitem[Tipo:] Regla de integridad de dominio.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] El Registro Federal de Contribuyentes (RFC) ingresado en el sistema para el personal debe constar de exactamente 13 caracteres alfanuméricos en mayúsculas que sigan la estructura oficial tributaria.
+	\BRitem[Motivación:] Validar la información laboral y fiscal de los empleados.
+	\BRitem[Sentencia:] $\forall p \in Persona \Rightarrow |p.RFC| = 13$.
+	\BRitem[Ejemplo positivo:] RFC válido: \texttt{ABCD123456XYZ}.
+	\BRitem[Ejemplo negativo:] Capturar un RFC de 10 o 12 dígitos, o con minúsculas.
+	\BRitem[Referenciado por:] \hyperlink{CU-02}{CU-02}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-08}{Cédula profesional obligatoria para personal especialista.}
+	\BRitem[Tipo:] Regla de integridad estructural.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] El registro del personal con roles técnicos o clínicos (Abogado, Médico, Psicólogo, Trabajador Social) exige la captura obligatoria de su respectiva cédula profesional expedida por la SEP.
+	\BRitem[Motivación:] Garantizar la legalidad y profesionalidad del equipo encargado de diagnosticar e intervenir en la vida de los menores.
+	\BRitem[Sentencia:] $\forall p \in Personal \land p.rol \in \{Abogado, Medico, Psicologo, TS\} \Rightarrow p.cedula \neq \emptyset$.
+	\BRitem[Ejemplo positivo:] Registrar un Abogado ingresando una cédula válida de 8 dígitos.
+	\BRitem[Ejemplo negativo:] Intentar guardar el registro de un Psicólogo dejando en blanco la sección de cédula profesional.
+	\BRitem[Referenciado por:] \hyperlink{CU-02}{CU-02}, \hyperlink{CU-09}{CU-09}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-09}{Unicidad del expediente de NNA.}
+	\BRitem[Tipo:] Regla de integridad de entidad.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] No se permite abrir un nuevo expediente si la CURP de la NNA ingresada ya se encuentra registrada en la base de datos del sistema.
+	\BRitem[Motivación:] Evitar duplicar registros médicos, clínicos o legales sobre un mismo menor de edad.
+	\BRitem[Sentencia:] $\forall n_1, n_2 \in NNA \Rightarrow (n_1.CURP = n_2.CURP \Rightarrow n_1 = n_2)$.
+	\BRitem[Ejemplo positivo:] Ingresar un caso nuevo con una CURP que no figura en el sistema.
+	\BRitem[Ejemplo negativo:] Intentar crear un expediente para un menor que ya fue registrado por otro equipo multidisciplinario en Nuevo León.
+	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
+\end{BussinesRule}
+
+\begin{BussinesRule}{BR-10}{Validación de archivos digitales del expediente.}
+	\BRitem[Tipo:] Regla de operación.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Los archivos digitalizados de los documentos de identidad o salud (ej. acta de nacimiento) deben subirse únicamente en formatos PDF, JPG o PNG, y el tamaño del archivo no debe superar los 5 megabytes (5MB).
+	\BRitem[Motivación:] Optimizar el almacenamiento en servidor y asegurar la compatibilidad visual de lectura.
+	\BRitem[Sentencia:] $\forall d \in Documento \Rightarrow d.formato \in \{PDF, JPG, PNG\} \land d.tamano \le 5MB$.
+	\BRitem[Ejemplo positivo:] Subir la cartilla de vacunación en PDF de 2.4MB.
+	\BRitem[Ejemplo negativo:] Cargar un reporte pericial en formato Word (.docx) o una imagen de 12MB.
+	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
+\end{BussinesRule}
+

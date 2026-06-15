@@ -1,0 +1,45 @@
+%--------------------------------------
+\section{IU26 Pantalla de Expediente Único de NNA}
+
+\subsection{Objetivo}
+	Permitir al personal multidisciplinario visualizar y actualizar toda la información clínica, legal, familiar, social y los documentos digitalizados obligatorios de las NNA asignados a su equipo.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU26}{Pantalla de Expediente Único de NNA} (ver figura~\ref{IU26}) unifica toda la información del caso mediante una interfaz estructurada en pestañas lógicas:
+	\begin{description}
+		\item[Pestaña General (FUD):] Muestra los datos de identidad básica (CURP, nombre, apodo), nacionalidad, etnia y datos del tutor o familiares de la NNA.
+		\item[Pestaña Hecho Victimal:] Registro y consulta del folio de reporte, nombre del caso, fecha de detención, narración del suceso y nombre de la madre víctima del feminicidio.
+		\item[Pestaña Documentación:] Sección para adjuntar y validar los documentos de identidad digitalizados. El Abogado del caso puede cargar archivos PDF/PNG/JPG que son validados bajo las restricciones de la regla \hyperlink{BR-10}{BR-10}.
+		\item[Pestaña Valoración Multidisciplinaria:] Pestañas internas para cada área técnica (Abogado: Legal; Médico: Salud Física; Psicólogo: Salud Emocional; Trabajador Social: Entorno Sociofamiliar). Permite agregar notas de diagnóstico y adjuntar peritajes especializados.
+		\item[Pestaña Plan de Restitución (PRD):] Visualización de las medidas de protección asignadas, su estado de ejecución y alertas visuales de plazos límite de vigencia.
+	\end{description}
+
+\IUfig[.55]{default}{IU26}{Pantalla de Expediente Único de NNA.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Ficha técnica unificada y descargable del menor (FUD unificado).
+		\item Historial cronológico de notas de evolución y valoraciones de los especialistas.
+		\item Lista de documentos validados cargados en el expediente.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Notas diagnósticas y reportes periciales por especialista.
+		\item Archivos digitales digitalizados (Acta de nacimiento, CURP, Cartilla de salud).
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Subir Archivo}: Permite seleccionar y adjuntar un archivo digital. Valida formato y peso máximo según la regla de negocio \hyperlink{BR-10}{BR-10}.
+		\item \IUbutton{Guardar Diagnóstico}: Guarda la valoración redactada en la pestaña de especialidad correspondiente asociando la fecha y firma del especialista activo.
+		\item \IUbutton{Validar Acta}: Comando exclusivo del Abogado para marcar el acta de nacimiento del expediente como "Verificada", cumpliendo la regla \hyperlink{BR-04}{BR-04}.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Confirmación cuando se guarda un diagnóstico o se sube un archivo con éxito.
+		\item {\bf MSG-04} (Error de formato): Alerta si se intenta subir un archivo que excede 5MB o formato no compatible (rompiendo \hyperlink{BR-10}{BR-10}).
+		\item {\bf MSG-02} (Permisos inválidos): Se muestra si un especialista intenta registrar diagnósticos en un caso que no tiene asignado.
+	\end{Citemize}
+%--------------------------------------

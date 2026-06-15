@@ -1,0 +1,79 @@
+
+%=========================================================
+%\chapter{Project Charter}
+
+\newcommand{\ESCOMPchSec}[1]{\rowcolor{colorAgua}\multicolumn{4}{|c|}{\bf #1}\\\hline}
+\newcommand{\ESCOMPchItem}[2]{{\bf {#1}} & \multicolumn{3}{p{.66\textwidth}|}{#2}\\\hline}
+\newcommand{\ESCOMPchSubItem}[3]{{\bf {#1}} & {#2} & \multicolumn{2}{p{.44\textwidth}|}{#3}\\\hline}
+\newcommand{\ESCOMPchSubSubItem}[4]{{\bf {#1}} & {#2} & {#3}& {#4}\\\hline}
+
+\cleardoublepage
+{\centering{\Huge Project Charter}\bigskip\\}
+\begin{table}[hptb!] 
+%\renewcommand\thetable{i}
+\begin{tabular}{|p{.22\textwidth} |p{.22\textwidth} |p{.22\textwidth} |p{.22\textwidth} |}
+	\hline
+	\ESCOMPchItem{Proyecto:}{SIS-RT-2026: Taimotla - Sistema de Gestión para la Restitución de Derechos a NNA}
+	\ESCOMPchItem{Responsable:}{Fundación Futuro con Derechos - Departamento de Coordinación de Casos}
+	\ESCOMPchItem{Autoriza:}{Dirección General de la Fundación Futuro con Derechos}
+	\ESCOMPchItem{Background/Contexto:}{La Fundación atiende casos de NNA en estado de orfandad por motivo de femicidio en Nuevo León. El manejo manual de expedientes físicos y la falta de un sistema centralizado provocan pérdida de información y retrasos críticos en el seguimiento de las medidas de restitución de derechos.}
+	\ESCOMPchItem{Beneficios esperados:}{Centralización y digitalización del 100\% de los expedientes; reducción del 80\% en tiempos de consulta; automatización de alertas de plazos legales y mejora en la coordinación de los equipos multidisciplinarios.}
+	\ESCOMPchItem{Costo estimado:}{\$ 450,000.00 MXN}
+	\ESCOMPchSubSubItem{Fecha de inicio:}{12 de Febrero de 2026}{\bf Fecha de término:}{15 de Junio de 2026.}
+	\ESCOMPchItem{Objetivo:}{Desarrollar un sistema de información web centralizado que optimice y controle la gestión de expedientes digitales, la carga de documentación obligatoria y la asignación de casos para el personal multidisciplinario de la Fundación.}
+	\ESCOMPchSec{Entregables Principales}
+	\ESCOMPchSubItem{}{ENT-01}{Documento de Especificación de Requerimientos de Software (SRS).}
+	\ESCOMPchSubItem{}{ENT-02}{Base de Datos Relacional con catálogos oficiales parametrizados.}
+	\ESCOMPchSubItem{}{ENT-03}{Módulo de Autenticación y Control de Acceso basado en Roles.}
+	\ESCOMPchSubItem{}{ENT-04}{Módulo de Gestión de Expedientes de NNA, Tutores y Hechos.}
+	\ESCOMPchSubItem{}{ENT-05}{Módulo de Configuración y Gestión de Equipos Multidisciplinarios.}
+	\ESCOMPchSubItem{}{ENT-06}{Módulo de Seguimiento del Plan de Restitución y Alertas.}
+	\ESCOMPchSec{Alcance del proyecto}
+	\ESCOMPchItem{Incluye:}{
+		\begin{Titemize}
+			\Titem Autenticación de usuarios por roles (Director, Coordinador, Especialistas).
+			\Titem Registro, edición y consulta de expedientes de NNA, familiares y hechos victimales.
+			\Titem Creación de equipos multidisciplinarios y asignación de casos.
+			\Titem Registro de diagnósticos y planes de restitución de derechos.
+			\Titem Carga de actas de nacimiento y cartillas médicas digitalizadas.
+		\end{Titemize}
+	}
+	\ESCOMPchItem{Excluye:}{
+		\begin{Titemize}
+			\Titem Nómina, contratos o administración de recursos humanos de la Fundación.
+			\Titem Interconexión directa con sistemas externos gubernamentales (DIF, Fiscalía).
+			\Titem Mantenimiento preventivo o correctivo posterior al periodo de garantía.
+		\end{Titemize}
+	}
+	\ESCOMPchItem{Criterio de éxito:}{Instalación del sistema en el servidor de la Fundación, capacitación del 100\% del personal y migración completa de los casos activos sin pérdida de integridad.}
+	\ESCOMPchItem{Metodología:}{Metodología ágil basada en Scrum con entregas incrementales y prototipado rápido en 3 sprints de desarrollo.}
+	\ESCOMPchSec{Datos de contacto}
+	\ESCOMPchItem{Project Manager:}{Edgar Rafael Guerra Salinas (PM / Lead Developer)}
+	\ESCOMPchItem{Project Owner:}{Rivera Segura José Emiliano / Ramírez Cuevas Emiliano (Fundación)}
+	\ESCOMPchItem{Riesgos y peligros:}{
+		\begin{Titemize}
+			\Titem Resistencia al cambio tecnológico por parte del personal operativo.
+			\Titem Fuga o acceso no autorizado a información sensible y protegida de menores.
+			\Titem Retraso en la recopilación de catálogos oficiales para la base de datos.
+		\end{Titemize}
+	}
+	\ESCOMPchItem{Supuestos:}{
+		\begin{Titemize}
+			\Titem La dirección facilitará el acceso a los flujos operativos y expedientes reales.
+			\Titem El personal asistirá a las sesiones de capacitación programadas.
+		\end{Titemize}
+	}
+	\ESCOMPchItem{Restricciones y dependencias:}{
+		\begin{Titemize}
+			\Titem Restricción de tiempo inamovible condicionada por el fin del ciclo escolar.
+			\Titem Dependencia de la entrega oportuna de catálogos geográficos y etnias.
+		\end{Titemize}
+	}
+	\ESCOMPchSec{Supervisión}
+	\ESCOMPchSubItem{Juntas:}{Project Manager y Coordinadores de Caso,}{reportan a Dirección General.}
+	\ESCOMPchSubItem{Dudas:}{Equipo de desarrollo y personal multidisciplinario,}{reportan a Project Manager.}
+	\ESCOMPchSubItem{Avances:}{Project Manager y Dirección General,}{reportan a Junta Directiva.}
+\end{tabular}
+	\caption{Resumen del proyecto}
+	\label{tbl:projectCharter}
+\end{table}

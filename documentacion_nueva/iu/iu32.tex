@@ -1,0 +1,34 @@
+%--------------------------------------
+\section{IU32 Panel del Especialista}
+
+\subsection{Objetivo}
+	Proveer a los especialistas del equipo multidisciplinario (Abogado, Médico, Psicólogo y Trabajador Social) una pantalla de bienvenida informativa que muestre el estado actual de sus asignaciones de expedientes de NNA.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU32}{Panel del Especialista} (ver figura~\ref{IU32}) se presenta como la pantalla inicial para el personal con rol de Especialista una vez que han iniciado sesión en el sistema. Presenta una estructura sencilla con:
+	\begin{itemize}
+		\item \textbf{Encabezado:} Mensaje de bienvenida personalizado al espacio de trabajo del especialista.
+		\item \textbf{Sección ``Resumen de Actividad'':} Informa al especialista el estado de sus asignaciones. Si aún no tiene expedientes asignados, muestra un mensaje indicativo del rol del usuario y explicando que las asignaciones aparecerán una vez que el Coordinador las registre. Si tiene expedientes asignados, presentará la lista de menores con acceso al expediente unificado.
+	\end{itemize}
+
+\IUfig[.45]{default}{IU32}{Panel del Especialista.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Mensaje informativo del estado de asignación de casos para el especialista.
+		\item Listado de expedientes de NNA asignados (cuando estén disponibles).
+	\end{Citemize}
+
+\subsection{Entradas}
+	Ninguna (pantalla informativa/consulta).
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Ver Expediente}: Acceso al \IUref{IU26}{Pantalla de Expediente Único de NNA} del menor seleccionado (visible una vez que existen expedientes asignados al equipo del especialista).
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item Mensaje informativo: ``Actualmente no tienes expedientes de menores asignados a tu perfil de \texttt{<rol>}. Cuando el Coordinador te asigne un caso, aparecerá aquí para que puedas capturar la información correspondiente a tu área.''
+	\end{Citemize}
+%--------------------------------------

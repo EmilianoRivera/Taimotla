@@ -1,0 +1,39 @@
+%--------------------------------------
+\section{IU25 Pantalla de Asignación de Casos}
+
+\subsection{Objetivo}
+	Permitir a los Coordinadores de Caso asociar un expediente digital de NNA recién registrado a un equipo multidisciplinario específico de especialistas para iniciar la fase de diagnósticos clínicos y valoraciones.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU25}{Pantalla de Asignación de Casos} (ver figura~\ref{IU25}) se estructura en dos paneles principales:
+	\begin{enumerate}
+		\item **Panel Izquierdo (Casos Pendientes):** Muestra el listado de expedientes en estado "Creado" con el folio del caso y la fecha de apertura.
+		\item **Panel Derecho (Equipos Multidisciplinarios):** Presenta una lista de los equipos configurados por la Dirección, mostrando su nombre y la lista de especialistas (Médico, Psicólogo, Abogado, Trabajador Social) asignados.
+	\end{enumerate}
+	El Coordinador de Caso debe seleccionar un expediente del panel izquierdo y un equipo del panel derecho para habilitar el botón de asignación.
+
+\IUfig[.55]{default}{IU25}{Pantalla de Asignación de Casos.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Listado de expedientes sin equipo asignado.
+		\item Listado de equipos de trabajo registrados.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Selección de expediente de NNA.
+		\item Selección del equipo multidisciplinario responsable.
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Asignar caso}: Ejecuta la vinculación en base de datos. Transiciona el expediente de "Creado" a "En Diagnóstico" y notifica a los especialistas implicados en el equipo según las reglas de negocio \hyperlink{BR-01}{BR-01} y \hyperlink{BR-02}{BR-02}.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Confirmación cuando se asocia con éxito el caso al equipo multidisciplinario.
+		\item {\bf MSG-04} (Error en entrada): Se muestra si el Coordinador presiona "Asignar caso" sin haber seleccionado previamente un menor o un equipo.
+	\end{Citemize}
+%--------------------------------------

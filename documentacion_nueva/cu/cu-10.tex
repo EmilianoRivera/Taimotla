@@ -1,0 +1,60 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-10}{Registrar hecho victimal}{
+	Permite al Abogado o Coordinador del equipo multidisciplinario capturar y registrar la información jurídica y descriptiva correspondiente al hecho delictivo que dio origen a la intervención de la Fundación (situación de orfandad por feminicidio del menor), asociando dichos datos directamente al expediente único de la NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tCoordinador}{Coordinador de Caso}}
+	\UCitem{Propósito}{Documentar formalmente los antecedentes del hecho victimal en el sistema para contar con el sustento legal de la vulneración de derechos.}
+	\UCitem{Entradas}{Número de reporte, nombre del caso, fecha de detención, nombre de la víctima (madre), descripción del delito, narración de lo sucedido, tipo de detector (catálogo) y datos de dirección del delito.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Confirmación del registro del hecho victimal y actualización del expediente.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El expediente de la NNA debe estar creado en el sistema y el usuario debe estar asignado a dicho expediente a través de su equipo multidisciplinario.}
+	\UCitem{Postcondiciones}{Se guarda la información del hecho victimal en la tabla \texttt{hecho\_victimal} de la base de datos vinculándose al identificador de la NNA.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios vacíos (número de reporte, nombre del caso, fecha de detención o madre víctima).
+			\item[E2:] El usuario no pertenece al equipo responsable del expediente de la NNA.
+			\item[E3:] La fecha de detención es inválida (futura).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado por la tabla de base de datos \texttt{hecho\_victimal} y regido por las reglas de negocio.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña ``Hecho Victimal'' dentro de la pantalla de edición del expediente de la NNA (\IUref{IU26}{Expediente Único}).
+	\UCpaso Verifica que el usuario tenga permisos de escritura sobre el expediente de acuerdo a su equipo asignado. \Trayref{A}.
+	\UCpaso Despliega el formulario de registro del hecho victimal mostrando los campos correspondientes y el catálogo de tipos de detectores.
+	\UCpaso[\UCactor] Ingresa el número de reporte y el nombre del caso.
+	\UCpaso[\UCactor] Captura la fecha de detención y el nombre completo de la madre víctima del delito.
+	\UCpaso[\UCactor] Selecciona el tipo de detector de la lista desplegable.
+	\UCpaso[\UCactor] Escribe la descripción resumida del delito, la narración detallada de lo sucedido y los datos de localización física.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Datos del Hecho}.
+	\UCpaso Valida en el servidor que los campos obligatorios no estén vacíos. \Trayref{B}.
+	\UCpaso Valida que la fecha de detención no sea posterior a la fecha del día de hoy. \Trayref{C}.
+	\UCpaso Registra la información en la tabla \texttt{hecho\_victimal} vinculando el registro a la NNA correspondiente.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y refresca la pestaña mostrando la información guardada.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario no pertenece al equipo asignado}
+	\UCpaso El sistema deshabilita los campos de edición del formulario e impide el guardado de datos.
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando la falta de permisos de edición sobre el caso.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} detallando que el número de reporte, nombre del caso, fecha de detención y el nombre de la madre víctima son requeridos.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos ya capturados.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Fecha de detención inválida}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que la fecha de detención ingresada no puede ser una fecha futura.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal para corregir la fecha.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,33 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-13}{Consultar Alertas y Notificaciones}{
+	Permite a cualquier usuario autenticado en la plataforma (Director, Coordinador o Especialistas) visualizar la bandeja unificada de alertas y notificaciones del sistema relacionadas con plazos de vigencia de las medidas de protección, validación documental pendiente o fechas límites de seguimiento de caso.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director General}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Informar oportunamente al personal sobre las fechas límites de las medidas del PRD y requerimientos documentales para evitar la interrupción del seguimiento.}
+	\UCitem{Entradas}{Filtros de búsqueda (prioridad de alerta, número de expediente, fecha).}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Bandeja unificada de alertas visuales con semáforo de prioridad (rojo: urgente, amarillo: preventivo, verde: informativo).}
+	\UCitem{Destino}{Pantalla principal del panel de control de cada rol.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas en la plataforma.}
+	\UCitem{Postcondiciones}{El usuario visualiza las alertas de los casos bajo su cargo o jurisdicción.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Regido por el requerimiento de usuario de alertas y notificaciones.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Notificaciones} en el menú superior o consulta la sección de alertas en su dashboard principal (\IUref{IU31}{Panel de Control}).
+	\UCpaso Recupera de la sesión activa la CURP y el rol del usuario conectado para determinar los expedientes asignados a su equipo.
+	\UCpaso Consulta en la base de datos las alertas de vigencia activas para dichos expedientes (calculadas según la regla de negocio de plazos de medidas y documentos).
+	\UCpaso Despliega la bandeja de notificaciones en la pantalla principal listando las alertas con su respectivo código de colores (semáforo).
+	\UCpaso[\UCactor] Realiza una de las siguientes opciones de navegación:
+		\begin{itemize}
+			\item **Filtrar Alertas:** Selecciona un nivel de urgencia o un expediente específico en la barra de filtros. El sistema recarga la lista instantáneamente.
+			\item **Ir al Expediente:** Presiona el folio del expediente en la tarjeta de la alerta. El sistema lo redirige directamente a la pantalla de edición del caso (\IUref{IU26}{Expediente Único}).
+		\end{itemize}
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+%-------------------------------------- TERMINA descripción del caso de uso.

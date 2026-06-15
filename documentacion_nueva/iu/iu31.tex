@@ -1,0 +1,39 @@
+%--------------------------------------
+\section{IU31 Panel de Control del Coordinador}
+
+\subsection{Objetivo}
+	Proveer al Coordinador de Caso un espacio de trabajo centralizado que le permita visualizar el personal operativo activo e inactivo de la Fundación y acceder a las funciones de gestión del equipo multidisciplinario asignado a su cargo.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU31}{Panel de Control del Coordinador} (ver figura~\ref{IU31}) comparte la estructura visual del panel del Director pero con un alcance más restringido. Se organiza en dos secciones principales:
+	\begin{enumerate}
+		\item \textbf{Sección ``Personal Operativo'' (Personal Activo):} Tablas agrupadas por especialidad (Abogados, Trabajadores Sociales, Médicos y Psicólogos) que muestran para cada persona su cédula profesional, CURP, nombre completo, especialidad o enfoque (según aplique) y estado de cuenta. Cada renglón incluye botones de acción para editar o deshabilitar la cuenta.
+		\item \textbf{Sección ``Historial / Inactivos'':} Tabla con el personal cuyo estado es ``Inactivo'', mostrando nombre, CURP, rol original y la opción de re-habilitar la cuenta.
+	\end{enumerate}
+
+\IUfig[.55]{default}{IU31}{Panel de Control del Coordinador.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Tablas de personal activo agrupadas por especialidad con sus datos laborales.
+		\item Tabla de historial de personal inactivo o dado de baja.
+	\end{Citemize}
+
+\subsection{Entradas}
+	Ninguna (interfaz de consulta).
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Registrar Nuevo Personal}: Redirige al formulario de registro de un nuevo especialista operativo.
+		\item \IUbutton{Editar} (icono de edición): Redirige a la pantalla de edición de datos del colaborador seleccionado (\IUref{IU30}{Pantalla de Modificación de Perfil}).
+		\item \IUbutton{Deshabilitar} (icono de bloqueo): Cambia el estado lógico del empleado a ``Inactivo'' en la base de datos mediante un mensaje de confirmación del navegador.
+		\item \IUbutton{Eliminar} (icono de eliminación): Elimina permanentemente el registro del empleado tras confirmación del navegador.
+		\item \IUbutton{Habilitar Cuenta}: Reactiva un empleado de la sección de inactivos devolviendo su estado a ``Activo''.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Se muestra tras deshabilitar, habilitar o eliminar un registro de manera exitosa.
+		\item Diálogo de confirmación del navegador: ``¿Deshabilitar cuenta?'' o ``¿Eliminar permanentemente?'' para prevenir acciones accidentales.
+	\end{Citemize}
+%--------------------------------------

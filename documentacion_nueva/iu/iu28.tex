@@ -1,0 +1,48 @@
+%--------------------------------------
+\section{IU28 Pantalla de Gestión de Equipos}
+
+\subsection{Objetivo}
+	Permitir al Director General visualizar la composición de los equipos multidisciplinarios activos y realizar operaciones de modificación en línea (reasignación de coordinador, altas y bajas de especialistas o disolución de equipos).
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU28}{Pantalla de Gestión de Equipos} (ver figura~\ref{IU28}) presenta un listado de tarjetas de los equipos activos. Cada tarjeta cuenta con dos estados visuales:
+	\begin{enumerate}
+		\item **Modo Vista:** Muestra el nombre del equipo, el nombre del coordinador asignado y una tabla con los integrantes activos y sus roles específicos.
+		\item **Modo Edición:** Se activa al presionar el botón de edición \IUbutton{Editar} y permite modificar en línea:
+			\begin{itemize}
+				\item El coordinador asignado mediante una lista de selección.
+				\item Remover integrantes utilizando el botón de baja \IUbutton{Quitar} en cada renglón.
+				\item Eliminar por completo el equipo mediante el botón \IUbutton{Eliminar Equipo}.
+			\end{itemize}
+	\end{enumerate}
+	Adicionalmente, bajo el botón \IUbutton{+} se despliega un panel flotante de personal operativo disponible agrupado por rol para agregar miembros al equipo que posea menos de 4 integrantes.
+
+\IUfig[.55]{default}{IU28}{Pantalla de Gestión de Equipos.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Listado de tarjetas de equipos multidisciplinarios activos con su personal asignado.
+		\item Panel de personal especialista disponible para adición en línea.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Selección de coordinador de la lista desplegable.
+		\item Selección de especialista disponible a integrar.
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Editar}: Alterna la tarjeta de equipo entre Modo Vista y Modo Edición.
+		\item \IUbutton{+}: Abre/cierra el panel de personal disponible para agregar integrantes.
+		\item \IUbutton{Quitar}: Envía la solicitud para dar de baja de forma inmediata al miembro seleccionado del equipo.
+		\item \IUbutton{Eliminar Equipo}: Inactiva el equipo en base de datos y libera a todos sus integrantes cerrando su participación.
+		\item \IUbutton{Cancelar}: Cierra el Modo Edición sin realizar cambios adicionales en la estructura del equipo.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Confirmación cuando se guarda algún cambio de composición, reasignación o disolución.
+		\item Diálogo de Confirmación: Mensaje emergente del navegador (ej. ``¿Quitar a este miembro del equipo?'' o ``¿Estás seguro de querer eliminar el equipo seleccionado?'') para evitar acciones accidentales.
+	\end{Citemize}
+%--------------------------------------

@@ -1,0 +1,61 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-05}{Crear equipo de trabajo}{
+	Permite al Director General configurar un nuevo equipo de trabajo multidisciplinario asignándole un nombre identificador, seleccionando un Coordinador de Caso activo y asociando hasta cuatro especialistas operativos con perfiles profesionales distintos (médico, psicólogo, abogado, trabajador social) que se encuentren disponibles.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director General}}
+	\UCitem{Propósito}{Agrupar al personal operativo en equipos multidisciplinarios para coordinar la atención y el diagnóstico de los casos de NNA de forma integrada.}
+	\UCitem{Entradas}{Nombre del equipo, selección del coordinador de caso (CURP), y selección de especialistas (CURPs) disponibles.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Mensaje de confirmación del registro del equipo y redirección al panel del Director.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión y debe existir personal (coordinadores y especialistas) activo y no asignado en otros equipos.}
+	\UCitem{Postcondiciones}{El equipo de trabajo queda registrado en estado ``Activo'' y su composición queda almacenada, inhabilitando a los especialistas seleccionados para ser agregados a otros equipos.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Faltan campos obligatorios (nombre del equipo o coordinador).
+			\item[E2:] El equipo cuenta con menos de 2 integrantes o más de 4.
+			\item[E3:] Intento de ingresar más de un especialista con el mismo rol (ej. dos abogados).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-01}{BR-01} y \hyperlink{BR-08}{BR-08}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Crear equipo} en el menú de navegación superior de la interfaz.
+	\UCpaso Consulta en la base de datos la lista de coordinadores de caso con cuenta activa y los especialistas (abogados, médicos, psicólogos, trabajadores sociales) activos que no forman parte de ningún equipo multidisciplinario activo.
+	\UCpaso Despliega la \IUref{IU27}{Pantalla de Registro de Equipo de Trabajo} mostrando el formulario de creación, el catálogo de coordinadores y el personal disponible agrupado por rol.
+	\UCpaso[\UCactor] Ingresa el nombre identificador del equipo.
+	\UCpaso[\UCactor] Selecciona un coordinador de la lista desplegable.
+	\UCpaso[\UCactor] Agrega especialistas a la tabla de integrantes presionando el botón \IUbutton{+} en las tarjetas de personal disponible.
+	\UCpaso Valida en la interfaz gráfica mediante scripts del lado del cliente que no se repitan especialidades y que el tamaño del equipo no exceda los 4 integrantes. \Trayref{A}.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{AGREGAR EQUIPO}.
+	\UCpaso Valida en el servidor que los campos requeridos no estén vacíos. \Trayref{B}.
+	\UCpaso Valida que el equipo tenga como mínimo 2 integrantes y como máximo 4. \Trayref{C}.
+	\UCpaso Registra el equipo en la base de datos relacionando al coordinador y establece su estado como ``Activo''.
+	\UCpaso Registra a cada uno de los integrantes del equipo en la tabla de composición de equipo asociando la fecha de inicio actual.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y redirige al Dashboard del Director.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Especialidad duplicada o límite superado en cliente}
+	\UCpaso El sistema muestra un cuadro de diálogo del navegador (alerta) indicando que ya existe un integrante con ese mismo rol o que se ha alcanzado el límite de 4 especialistas.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Impide la adición del miembro y regresa al paso 6 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos incompletos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Equipo con tamaño inválido en servidor}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} alertando que el equipo debe poseer entre 2 y 4 especialistas integrados.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 6 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

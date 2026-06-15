@@ -1,0 +1,45 @@
+%--------------------------------------
+\section{IU27 Pantalla de Registro de Equipo de Trabajo}
+
+\subsection{Objetivo}
+	Permitir al Director General configurar y registrar un nuevo equipo multidisciplinario asignándole un nombre descriptivo, un coordinador de caso activo y seleccionando especialistas disponibles.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU27}{Pantalla de Registro de Equipo de Trabajo} (ver figura~\ref{IU27}) se organiza en dos áreas principales:
+	\begin{enumerate}
+		\item **Encabezado y Datos Generales (Formulario):** Contiene la caja de entrada para el nombre del equipo y la lista de selección con los coordinadores activos disponibles en el sistema.
+		\item **Panel de Personal (Cuadrícula):**
+			\begin{itemize}
+				\item **Columna Izquierda (Disponible):** Muestra tarjetas de empleados agrupados por especialidades (Abogados, Médicos, Psicólogos y Trabajadores Sociales) que no estén asignados a otro equipo activo. Cada tarjeta incluye un botón \IUbutton{+} para agregarlo.
+				\item **Columna Derecha (Integrantes):** Muestra una tabla con la lista de personal seleccionado para conformar el equipo con la opción de eliminarlos mediante el botón \IUbutton{X}.
+			\end{itemize}
+	\end{enumerate}
+
+\IUfig[.55]{default}{IU27}{Pantalla de Registro de Equipo de Trabajo.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Catálogo de coordinadores activos y personal operativo disponible sin equipo asignado.
+		\item Lista de integrantes agregados dinámicamente con su rol.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Nombre del equipo (Texto obligatorio).
+		\item Selección del Coordinador (Menú desplegable obligatorio).
+		\item Selección de especialistas operativos a integrar en el equipo.
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{+}: Agrega al especialista seleccionado de la lista de disponibles a la tabla de integrantes (máximo 4 y sin duplicidad de especialidades).
+		\item \IUbutton{X}: Remueve al especialista seleccionado de la tabla de integrantes y lo regresa a la lista de disponibles.
+		\item \IUbutton{AGREGAR EQUIPO}: Envía la información capturada al servidor para registrar el equipo y sus asociaciones en la base de datos.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Confirmación tras registrar exitosamente el equipo en el sistema.
+		\item {\bf MSG-04} (Error de validación): Alerta si falta capturar algún dato obligatorio o la composición del equipo no cumple con el número mínimo de integrantes (2).
+	\end{Citemize}
+%--------------------------------------

@@ -1,0 +1,39 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-07}{Consultar perfil y datos de cuenta}{
+	Permite a cualquier usuario autenticado del sistema (Director, Coordinador, Abogado, Médico, Psicólogo, Trabajador Social) consultar sus datos de identificación, fecha de alta, rol en la Fundación y el estado actual de su cuenta.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director General}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Visualizar el estado administrativo de la propia cuenta y los datos de registro dentro de la Fundación.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Datos del perfil del usuario (CURP, nombre, fecha de ingreso, estado y rol).}
+	\UCitem{Destino}{Pantalla principal.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión de manera correcta en el sistema.}
+	\UCitem{Postcondiciones}{El usuario visualiza sus datos sin alterarlos.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Incluye una opción informativa para el cambio futuro de contraseña.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Mi Cuenta} en el menú de navegación superior.
+	\UCpaso Recupera de la sesión activa la CURP y el rol del usuario conectado.
+	\UCpaso Consulta en la base de datos los detalles del empleado correspondientes a la CURP obtenida.
+	\UCpaso Despliega la \IUref{IU29}{Pantalla de Perfil de Usuario} con la información del colaborador (Nombre, CURP, fecha de ingreso, estado y rol).
+	\UCpaso[\UCactor] Realiza una de las siguientes acciones:
+		\begin{itemize}
+			\item **Volver al Panel:** Presiona el botón \IUbutton{Volver al Panel} y el sistema lo redirige al Dashboard correspondiente a su rol.
+			\item **Cambiar Contraseña:** Presiona el botón \IUbutton{Cambiar Contraseña} y el sistema despliega una alerta. \Trayref{A}.
+		\end{itemize}
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Opción no implementada}
+	\UCpaso El sistema despliega un mensaje de alerta indicando: ``Funcionalidad de cambio de contraseña próximamente''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

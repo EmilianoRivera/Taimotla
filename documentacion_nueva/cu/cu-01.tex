@@ -1,0 +1,55 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-01}{Control de acceso}{
+	Permite a cualquier usuario autorizado (Director, Coordinador, Abogado, Médico, Psicólogo, Trabajador Social) ingresar al sistema Taimotla mediante sus credenciales para acceder a los módulos de su competencia.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Validar las credenciales del usuario y conceder el acceso correspondiente según su rol operativo.}
+	\UCitem{Entradas}{Correo electrónico y contraseña del usuario.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Redirección al panel o módulo correspondiente según el rol del usuario.}
+	\UCitem{Destino}{Pantalla principal del sistema web.}
+	\UCitem{Precondiciones}{El usuario debe tener una cuenta registrada y activa en el sistema.}
+	\UCitem{Postcondiciones}{El usuario inicia sesión de forma segura y se habilitan sus permisos de acuerdo a su rol.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios vacíos.
+			\item[E2:] Credenciales de acceso incorrectas.
+			\item[E3:] Cuenta de usuario bloqueada o deshabilitada.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-02}{BR-02}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Ingresa a la página de inicio de sesión de Taimotla.
+	\UCpaso Solicita al usuario que introduzca su correo electrónico y contraseña.
+	\UCpaso[\UCactor] Introduce sus credenciales y presiona el botón \IUbutton{Ingresar}.
+	\UCpaso Valida que ninguno de los campos de entrada esté vacío. \Trayref{A}.
+	\UCpaso Verifica en la base de datos si el correo electrónico corresponde a un usuario registrado. \Trayref{B}.
+	\UCpaso Valida si la cuenta del usuario está habilitada (estado activo). \Trayref{C}.
+	\UCpaso Verifica que la contraseña ingresada coincida con la firma hash almacenada para ese usuario. \Trayref{B}.
+	\UCpaso Inicializa la sesión del usuario guardando sus datos en el contexto y redirige a la pantalla del módulo correspondiente según su rol (Director, Coordinador o Especialista).
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Faltan datos de entrada obligatorios}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Credenciales de acceso incorrectas}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} (Usuario no registrado) o {\bf MSG-04} (Error de inicio de sesión).
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Cuenta de usuario deshabilitada}
+	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} (Cuenta inactiva).
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar} y regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

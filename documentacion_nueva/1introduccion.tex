@@ -1,0 +1,99 @@
+%=========================================================
+\chapter{Introducción}
+
+Este documento presenta la Especificación de Requerimientos de Software (SRS) para el sistema de información integral denominado \textbf{Taimotla}, desarrollado a la medida para la \textbf{Fundación Futuro con Derechos}. El sistema tiene como finalidad primordial centralizar, agilizar y asegurar la gestión de la información operativa y clínica relacionada con los expedientes de las Niñas, Niños y Adolescentes (NNA) en situación de orfandad por motivo de feminicidio en el estado de Nuevo León. 
+
+El propósito de este documento es definir con precisión y formalidad los requerimientos de usuario, funcionales y no funcionales del sistema, así como su arquitectura conceptual, para servir de guía base tanto al equipo de desarrollo de software como a los directivos y especialistas de la organización. Mediante esta especificación, se busca consolidar una herramienta de software que sirva como soporte tecnológico al procedimiento de restitución de derechos establecido por la Ley General de los Derechos de Niñas, Niños y Adolescentes (LGDNNA) y los estándares internacionales promovidos por el Fondo de las Naciones Unidas para la Infancia (UNICEF).
+
+%---------------------------------------------------------
+\section{Presentación}
+
+La \textbf{Fundación Futuro con Derechos} es una organización no gubernamental constituida en el estado de Nuevo León, México, con la misión de salvaguardar, defender y restituir de forma integral los derechos humanos y garantías constitucionales de niñas, niños y adolescentes cuya madre ha sido víctima de feminicidio, encontrándose en situación de orfandad y extrema vulnerabilidad. 
+
+Para lograr una intervención eficaz y holística, la Fundación estructura su operación a través de un modelo jerárquico liderado por la \textbf{Dirección General}, la cual se apoya directamente en la \textbf{Coordinación Operativa} para la gestión diaria y el control de calidad de los procesos. La atención directa de los menores y sus redes de apoyo se ejecuta mediante \textbf{Equipos Multidisciplinarios de Caso}. Cada equipo está constituido por cuatro áreas profesionales indispensables que colaboran bajo una metodología interdisciplinaria:
+
+\begin{itemize}
+	\item \textbf{Área Legal (Abogado):} Encargada de realizar la valoración jurídica inicial, dar seguimiento a los procesos de patria potestad, guarda y custodia, y tramitar ante juzgados de lo familiar o agencias del Ministerio Público las medidas de protección urgentes o especiales que correspondan.
+	\item \textbf{Área de Salud (Médico):} Responsable del diagnóstico clínico, nutricional y físico general del menor, de la vinculación con servicios médicos especializados y de la gestión de cartillas de vacunación o seguros de salud.
+	\item \textbf{Área Psicológica (Psicólogo):} Dedicada a la contención emocional inmediata, la valoración de salud mental, el diagnóstico de trauma por violencia o duelo, la terapia de acompañamiento continuo y la preparación psicológica del menor ante posibles comparecencias judiciales.
+	\item \textbf{Área de Trabajo Social (Trabajador Social):} Encargada del estudio socioeconómico y de entorno familiar, la investigación de campo, la identificación de familiares aptos para el acogimiento familiar y la vinculación con redes de apoyo comunitarias e institucionales.
+\end{itemize}
+
+El procedimiento operativo para la restitución de derechos se fundamenta jurídicamente en el artículo 123 de la LGDNNA, complementado metodológicamente por la \textbf{Guía y Caja de Herramientas de UNICEF}. Dicho procedimiento consta de una ruta crítica: detección del caso, registro inicial del expediente, asignación del equipo multidisciplinario, valoraciones y diagnóstico por área, diseño conjunto del Plan de Restitución de Derechos (PRD) con medidas específicas, gestión y ejecución de medidas de protección especial y urgente, seguimiento periódico de las medidas, y cierre formal del expediente tras corroborar la restitución total de los derechos.
+
+\subsection{Problemática Operativa y Justificación del Sistema}
+Debido a la naturaleza crítica de la información tratada y al crecimiento sostenido en el número de casos atendidos, el flujo operativo tradicional —basado en el manejo de archivos físicos en papel, hojas de cálculo aisladas y documentos de texto distribuidos localmente en las computadoras del personal— ha resultado ineficiente. Las principales ineficiencias identificadas incluyen:
+
+\begin{itemize}
+	\item \textbf{Descentralización y heterogeneidad de datos:} Dificultad para consolidar una visión única del estado del menor debido a que la información médica, psicológica, social y jurídica se almacena en formatos dispersos.
+	\item \textbf{Riesgo de pérdida de información sensible:} Falta de respaldos automáticos y vulnerabilidad ante daños físicos de equipos locales, comprometiendo datos históricos irreemplazables.
+	\item \textbf{Retrasos en consultas y reportes:} Tiempo excesivo invertido en la búsqueda manual de documentos probatorios de identidad (actas de nacimiento, CURP, etc.) requeridos urgentemente para trámites gubernamentales o judiciales.
+	\item \textbf{Lagunas en el seguimiento continuo:} Ausencia de alertas de vencimiento para las medidas urgentes y la revisión periódica de los casos.
+\end{itemize}
+
+El sistema web \textbf{Taimotla} se justifica como la solución tecnológica para centralizar toda la información operativa de la Fundación en una base de datos relacional segura, permitiendo el control de acceso según roles definidos, automatizando la generación de alertas y facilitando la colaboración en tiempo real del equipo multidisciplinario sobre un único expediente digital estructurado.
+
+%---------------------------------------------------------
+\section{Organización del contenido}
+
+El presente documento de especificación de requerimientos de software se organiza en los siguientes apartados:
+
+\begin{description}
+	\item[Capítulo 1: Introducción.] (Este capítulo) Proporciona el contexto del proyecto, los objetivos, la presentación de la organización y define las convenciones de notación y acrónimos utilizados en el documento.
+	\item[Capítulo 2: Modelo del alcance.] Detalla el análisis de la problemática institucional (problemas operativos identificados, sus causas raíz y consecuencias previsibles si no se mitigan, así como las características de la solución propuesta), los objetivos generales y específicos del proyecto, el modelado y jerarquía de usuarios (incluyendo organigrama de la Fundación), la lista de requerimientos de usuario y la especificación técnica de la plataforma.
+	\item[Capítulo 3: Modelo del negocio.] Define a los actores del sistema y sus perfiles técnicos/operativos, el glosario de términos del negocio críticos para la comprensión del dominio de protección de menores, el modelo del dominio conceptual (entidades y relaciones), el catálogo detallado de las reglas de negocio que restringen el flujo del sistema y el comportamiento del ciclo de vida de las entidades mediante diagramas y tablas de máquinas de estado.
+	\item[Capítulo 4: Modelo dinámico.] Presenta el diagrama general y detallado de casos de uso del sistema y el detalle minucioso de cada caso de uso (desde CU-01 hasta CU-13, que contemplan control de acceso, gestión de usuarios, expedientes, asignación de casos, equipos de trabajo, perfiles, valoraciones, registro de hechos victimales, cuidadores, familiares y alertas visuales), especificando precondiciones, postcondiciones y trayectorias.
+	\item[Capítulo 5: Modelo de la interacción.] Describe el modelo de navegación conceptual de la aplicación web, el diseño e interacción de las pantallas o interfaces de usuario (entradas de datos, salidas generadas, comandos ejecutables) y el catálogo unificado de mensajes del sistema (éxito, error, advertencia e información).
+\end{description}
+
+%---------------------------------------------------------
+\section{Notación, símbolos y convenciones utilizadas}
+
+Para garantizar la consistencia, legibilidad y el rigor técnico a lo largo de toda la documentación, se emplean las siguientes convenciones y claves de identificación:
+
+\begin{description}
+	\item[RFX] Requerimiento Funcional del sistema, donde X es un número consecutivo. Define los servicios y funciones que el sistema web debe proveer de forma obligatoria (ej. RF-01).
+	\item[RUX] Requerimiento del Usuario, donde X es un número consecutivo. Expresa las necesidades operativas de la organización a nivel de negocio (ej. RU-01).
+	\item[RNX / BR-XXX] Regla de Negocio (Business Rule), donde X o XXX es un código numérico consecutivo. Representa restricciones, políticas o validaciones legales y administrativas externas al software que el sistema debe hacer cumplir de forma estricta (ej. RN-01, BR-001).
+	\item[P-XX] Problemática o ineficiencia operativa identificada en el análisis del estado actual de la organización (ej. P-01).
+	\item[C-XX] Causa Probable de una problemática identificada, utilizada en el análisis de causa-efecto (ej. C-01).
+	\item[PC-XX] Posible Consecuencia a mediano o largo plazo si las problemáticas operativas no son resueltas (ej. PC-01).
+	\item[S-XX] Propuesta de Solución conceptual dirigida a mitigar una problemática u optimizar un proceso (ej. S-01).
+	\item[CUX / CU-XX] Caso de Uso dinámico, donde X o XX representa un número consecutivo. Describe la secuencia de interacciones entre un actor y el sistema para lograr un objetivo específico (ej. CU-01).
+	\item[EX] Condición de Error en las trayectorias de los casos de uso, detallando el escenario de falla, la respuesta del sistema y la recuperación del flujo (ej. E1).
+	\item[MSG-XXX] Identificador para los mensajes de interacción del catálogo del sistema (ej. MSG-001).
+	\item[IUX / IU-XX] Interfaz de Usuario, donde X o XX identifica una pantalla, formulario o reporte del sistema (ej. IU-01).
+\end{description}
+
+Asimismo, se emplean los siguientes acrónimos fundamentales:
+
+\begin{description}
+	\item[IU] Interfaz de Usuario (pantalla gráfica de interacción).
+	\item[MSG] Mensaje del sistema hacia el usuario.
+	\item[UML] Unified Modeling Language (Lenguaje de Modelado Unificado), utilizado para el modelado de casos de uso y diagramas de estado.
+	\item[BPMN] Business Process Modeling Notation (Notación para el Modelado de Procesos de Negocio).
+	\item[NNA] Niñas, Niños y Adolescentes (menores de 18 años).
+	\item[FUD] Formulario Único de Datos (formato estándar de registro sociodemográfico y legal).
+	\item[LGDNNA] Ley General de los Derechos de Niñas, Niños y Adolescentes de los Estados Unidos Mexicanos.
+	\item[PRD] Plan de Restitución de Derechos (documento estratégico de intervención multidisciplinaria).
+	\item[UNICEF] United Nations International Children's Emergency Fund (Fondo de las Naciones Unidas para la Infancia).
+	\item[SNDIF] Sistema Nacional para el Desarrollo Integral de la Familia.
+\end{description}
+
+En la tabla~\ref{tbl:leyendaRF} se detallan los símbolos y niveles de prioridad utilizados para la especificación de los requerimientos de la plataforma:
+
+\begin{table}[hbtp!]
+	\begin{center}
+    \begin{tabular}{|r l|}
+	    \hline
+    	{\footnotesize Id} & {\footnotesize\em Identificador único del requerimiento (funcional o del usuario).}\\
+    	{\footnotesize Pri.} & {\footnotesize\em Prioridad de implementación (MA: Muy Alta, A: Alta, M: Media, B: Baja, MB: Muy Baja).}\\
+    	{\footnotesize Ref.} & {\footnotesize\em Referencia cruzada que vincula un requerimiento funcional con el requerimiento de usuario de origen.}\\
+    	{\footnotesize Iter.} & {\footnotesize\em Número de la iteración del proyecto de desarrollo en la que se implementa.}\\
+    	{\footnotesize Stat.} & {\footnotesize\em Estatus actual (TODO: Pendiente, DOING: En desarrollo, DONE: Terminado, TOCHK: En revisión).}\\
+		\hline
+    \end{tabular} 
+    \caption{Leyenda para la especificación de requerimientos del sistema.}
+    \label{tbl:leyendaRF}
+	\end{center}
+\end{table}

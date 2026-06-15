@@ -1,0 +1,96 @@
+%=========================================================
+\chapter{Modelo dinámico}	
+\label{cap:modDinamico}
+
+Este capítulo describe el modelo dinámico del sistema **Taimotla**, el cual detalla los diferentes escenarios de interacción entre los actores de la Fundación y el sistema. La figura~\ref{fig:casosDeUso} muestra el diagrama de casos de uso general del sistema, organizando los alcances de la plataforma cliente-servidor. La figura~\ref{fig:casosDeUsoDetalle} presenta el diagrama detallado de los casos de uso específicos y sus relaciones con los actores operativos.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\fbox{\includegraphics[width=.8\textwidth]{images/casosDeUso}}
+		\caption{Diagrama de casos de uso general de Taimotla.}
+		\label{fig:casosDeUso}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[width=.85\textwidth]{images/casosDeUsoDetalle}
+		\caption{Diagrama detallado de los casos de uso del sistema.}
+		\label{fig:casosDeUsoDetalle}
+	\end{center}
+\end{figure}
+
+%---------------------------------------------------------
+\section{Descripción de actores}
+
+A continuación se describen los actores identificados que interactúan directamente con el sistema:
+
+\begin{Usuario}{\hypertarget{actDirector}{\subsection{Director General}}}{
+	Es el directivo de mayor rango en la Fundación, responsable de la gestión de usuarios, la configuración de los equipos multidisciplinarios y la auditoría general del estado de los expedientes de NNA.
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Dar de alta, baja y actualizar las cuentas del personal.
+		\item Crear y modificar la composición de los equipos multidisciplinarios.
+		\item Auditar y consultar los expedientes unificados de NNA.
+		\item Firmar y aprobar de forma definitiva el Plan de Restitución de Derechos (PRD).
+    \end{itemize}
+	\item[Perfil:] \cdtEmpty
+    \begin{itemize}
+		\item Licenciatura en Administración, Derecho o Ciencias Sociales.
+		\item Experiencia en liderazgo y dirección de equipos en organizaciones sociales.
+    \end{itemize}
+\end{Usuario}
+
+\begin{Usuario}{\hypertarget{actCoordinador}{\subsection{Coordinador de Caso}}}{
+	Es el profesional que lidera un equipo multidisciplinario asignado a uno o más expedientes. Actúa como supervisor técnico de los especialistas de área.
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Asignar expedientes de NNA recién creados a los equipos correspondientes.
+		\item Supervisar el llenado del FUD y las valoraciones de los especialistas.
+		\item Pre-autorizar el Plan de Restitución de Derechos (PRD).
+    \end{itemize}
+	\item[Perfil:] \cdtEmpty
+    \begin{itemize}
+		\item Licenciatura en Psicología, Derecho, Trabajo Social o afín.
+		\item Habilidades de supervisión y gestión de proyectos clínicos o sociales.
+    \end{itemize}
+\end{Usuario}
+
+\begin{Usuario}{\hypertarget{actEspecialista}{\subsection{Personal Especialista (Médico, Psicólogo, Abogado, TS)}}}{
+	Son los profesionales operativos de cada área técnica asignados a un equipo multidisciplinario para la atención directa de los menores.
+}
+    \item[Responsabilidades:] \cdtEmpty
+    \begin{itemize}
+		\item Consultar la información del expediente único del menor asignado.
+		\item Registrar valoraciones y diagnósticos específicos de su competencia (médicos, emocionales, sociofamiliares y jurídicos).
+		\item Subir archivos digitalizados de actas de nacimiento y cartillas de salud.
+		\item Registrar la ejecución de las medidas de protección y restitución ordenadas.
+    \end{itemize}
+	\item[Perfil:] \cdtEmpty
+    \begin{itemize}
+		\item Licenciatura con cédula profesional en su área respectiva.
+		\item Capacitación en derechos de la infancia e intervención en trauma.
+    \end{itemize}
+\end{Usuario}
+
+\cleardoublepage
+%---------------------------------------------------------
+\section{Casos de Uso}
+
+A continuación se presentan las especificaciones detalladas de los casos de uso principales implementados en esta iteración del sistema:
+
+\input{cu/cu-01}
+\input{cu/cu-02}
+\input{cu/cu-03}
+\input{cu/cu-04}
+\input{cu/cu-05}
+\input{cu/cu-06}
+\input{cu/cu-07}
+\input{cu/cu-08}
+\input{cu/cu-09}
+\input{cu/cu-10}
+\input{cu/cu-11}
+\input{cu/cu-12}
+\input{cu/cu-13}

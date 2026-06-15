@@ -1,0 +1,39 @@
+%--------------------------------------
+\section{IU23 Pantalla de Control de Acceso}
+
+\subsection{Objetivo}
+	Controlar el acceso seguro al sistema Taimotla mediante la validación de las credenciales (correo electrónico y contraseña) del personal de la Fundación, de modo que cada usuario acceda únicamente al módulo de acuerdo con su rol autorizado.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU23}{Pantalla de Control de Acceso} (ver figura~\ref{IU23}) es la interfaz inicial que se muestra al acceder a la dirección URL de la aplicación web. El usuario debe capturar su dirección de correo electrónico institucional y su contraseña de acceso secreta.
+
+\IUfig[.45]{Login}{IU23}{Pantalla de Control de Acceso.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Redirección automática al panel correspondiente:
+			\begin{itemize}
+				\item Módulo del Director (Administración general y gestión de equipos).
+				\item Módulo del Coordinador (Asignación y visualización de expedientes).
+				\item Módulo del Especialista (Consulta de expediente, registro de valoraciones e historial).
+			\end{itemize}
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Correo electrónico del usuario (ej. \texttt{director@fundacion.org}).
+		\item Contraseña del usuario.
+	\end{itemize}
+
+\subsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Entrar}: Ejecuta la validación de las credenciales del usuario en la base de datos de acuerdo con la regla de negocio \hyperlink{BR-03}{BR-03}. Si los datos son correctos, inicia la sesión e ingresa al sistema.
+	\item \IUbutton{¿Olvidaste tu contraseña?}: Enlace que redirige a la pantalla de recuperación de credenciales mediante el correo electrónico registrado.
+\end{itemize}
+
+\subsection{Mensajes}
+\begin{Citemize}
+	\item {\bf MSG-02} (Usuario no registrado): Se muestra cuando el correo electrónico ingresado no coincide con ninguna cuenta registrada y activa en el sistema.
+	\item {\bf MSG-04} (Error de inicio de sesión): Se muestra cuando la contraseña no coincide con la guardada para el correo especificado.
+	\item {\bf MSG-03} (Cuenta inactiva): Se muestra si el usuario intenta ingresar con una cuenta que ha sido temporalmente deshabilitada por el Director.
+\end{Citemize}

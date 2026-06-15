@@ -1,0 +1,44 @@
+%--------------------------------------
+\section{IU30 Pantalla de Modificación de Perfil de Personal}
+
+\subsection{Objetivo}
+	Permitir al Director General actualizar la información de identificación, nombre completo, contacto y dirección de residencia de un colaborador previamente registrado en el sistema.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU30}{Pantalla de Modificación de Perfil de Personal} (ver figura~\ref{IU30}) presenta un formulario extenso dividido en tres grupos lógicos:
+	\begin{enumerate}
+		\item **Datos de Identificación:** Muestra la CURP del empleado (campo deshabilitado no modificable por seguridad), y permite editar el RFC, Sexo y la Fecha de Nacimiento.
+		\item **Nombre Completo:** Cajas de entrada de texto para modificar el primer nombre (obligatorio), segundo nombre, primer apellido (obligatorio) y segundo apellido.
+		\item **Contacto y Dirección:** Campos para actualizar el Correo Electrónico (obligatorio), Teléfono, Calle, Número Exterior, Colonia, Código Postal, Municipio y Estado.
+	\end{enumerate}
+
+\IUfig[.55]{default}{IU30}{Pantalla de Modificación de Perfil de Personal.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Formulario precargado con los datos actuales del colaborador consultados desde la base de datos.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item RFC (Opcional, 13 caracteres máximo).
+		\item Sexo (Selección obligatoria).
+		\item Fecha de Nacimiento (Calendario obligatorio).
+		\item Primer Nombre y Primer Apellido (Texto obligatorio).
+		\item Correo electrónico (Texto obligatorio en formato de email).
+		\item Datos de domicilio (Calle, Número exterior, Colonia, Municipio, Estado y Código Postal de 5 dígitos).
+		\item Teléfono (Texto opcional).
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Cancelar}: Aborta la edición del colaborador y redirige al usuario de vuelta al Dashboard del Director.
+		\item \IUbutton{Guardar Todos los Cambios}: Envía el formulario para su validación en el servidor y actualización correspondiente en las tablas `persona` y `personal`.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Se muestra tras persistir correctamente los datos modificados en la base de datos.
+		\item {\bf MSG-04} (Error de validación): Se muestra si algún campo obligatorio se envía vacío o la sintaxis de correo o RFC es incorrecta.
+	\end{Citemize}
+%--------------------------------------

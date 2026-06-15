@@ -1,0 +1,52 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-12}{Registrar Familiar de NNA}{
+	Permite al Trabajador Social agregar miembros adicionales de la red familiar o de apoyo del menor (como hermanos, abuelos o tíos) en el expediente único de la NNA, con la finalidad de contar con un censo familiar completo y evaluar alternativas de acogimiento familiar.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Registrar y estructurar a los miembros de la red de apoyo familiar del menor en la base de datos.}
+	\UCitem{Entradas}{CURP (opcional), Nombre(s), Apellidos, Fecha de nacimiento, Sexo, Parentesco (catálogo) y observaciones (comentarios de campo).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Confirmación del registro del familiar en el expediente.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El expediente de la NNA debe estar en estado de edición activa en el sistema y el Trabajador Social asignado al caso.}
+	\UCitem{Postcondiciones}{El familiar queda registrado en la tabla \texttt{familiares} de la base de datos y se relaciona con el expediente único de la NNA.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios vacíos (Primer nombre, primer apellido o parentesco).
+			\item[E2:] El usuario no pertenece al equipo responsable del expediente.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por el catálogo de parentescos del negocio.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña ``Entorno Familiar'' y luego la subsección ``Datos de Familiares'' en la pantalla de edición del expediente único (\IUref{IU26}{Expediente Único}).
+	\UCpaso Verifica que el usuario cuente con los permisos de edición sobre el caso. \Trayref{A}.
+	\UCpaso Despliega la tabla de familiares del expediente y el botón para agregar un nuevo integrante.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Agregar Familiar}.
+	\UCpaso Despliega un formulario emergente (modal) con los campos para registrar los datos del familiar.
+	\UCpaso[\UCactor] Captura la CURP (si la tiene), el nombre completo, sexo y la fecha de nacimiento.
+	\UCpaso[\UCactor] Selecciona el parentesco de la lista desplegable y captura observaciones adicionales sobre el familiar.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Familiar}.
+	\UCpaso Valida en el servidor que los campos obligatorios del familiar no estén vacíos. \Trayref{B}.
+	\UCpaso Registra el familiar en la tabla \texttt{familiares} de la base de datos.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y refresca la tabla de familiares en la interfaz.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario sin autorización para el expediente}
+	\UCpaso El sistema deshabilita las opciones de agregar o editar familiares de la red familiar.
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando la falta de permisos de edición sobre el caso.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios incompletos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario del familiar.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 6 de la trayectoria principal manteniendo el formulario modal abierto.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

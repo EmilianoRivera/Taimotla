@@ -1,0 +1,64 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-08}{Capturar valoración del Especialista}{
+	Permite a cualquier integrante del equipo multidisciplinario (médico, psicólogo, abogado, trabajador social) registrar o actualizar la información diagnóstica pericial y datos específicos del menor en el expediente unificado de NNA asignado a su equipo. El sistema habilitará las pestañas y secciones correspondientes a la competencia profesional del especialista activo.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Centralizar y estructurar la información del diagnóstico del menor de acuerdo con las áreas de competencia del equipo técnico.}
+	\UCitem{Entradas}{Formulario de expediente unificado subdividido en pestañas (Datos personales, Hecho victimal, Entorno familiar, Datos de contacto, Datos médicos, Datos familiares, Datos del tutor) y carga de archivos digitalizados.}
+	\UCitem{Origen}{Teclado, mouse y archivos digitales.}
+	\UCitem{Salidas}{Expediente del NNA actualizado en la base de datos y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El especialista debe haber iniciado sesión y el expediente del menor debe estar asignado al equipo al cual pertenece dicho especialista.}
+	\UCitem{Postcondiciones}{El expediente del NNA es actualizado y queda disponible para consulta por los directivos de la Fundación.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intentar ingresar información sin pertenecer al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de la pestaña vacíos o con formato inválido.
+			\item[E3:] Carga de archivos digitalizados que no cumplen con los formatos permitidos o exceden el límite de peso.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03}, \hyperlink{BR-04}{BR-04}, \hyperlink{BR-09}{BR-09} y \hyperlink{BR-10}{BR-10}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al panel de expedientes en su espacio de trabajo.
+	\UCpaso Muestra los expedientes de NNA asignados al equipo multidisciplinario del especialista.
+	\UCpaso[\UCactor] Selecciona el caso de un menor y presiona la opción de ingresar o editar información.
+	\UCpaso Verifica que el especialista pertenezca al equipo asignado al menor. \Trayref{A}.
+	\UCpaso Despliega la \IUref{IU26}{Pantalla de Expediente Único de NNA} posicionando al usuario en la pestaña del área correspondiente según su especialidad.
+	\UCpaso[\UCactor] Selecciona la pestaña requerida para registrar información:
+		\begin{itemize}
+			\item **Abogado (Hechos y Documentos):** Llena el reporte de hecho victimal (relato de hechos, delito, fiscalía), sube el acta de nacimiento digitalizada y valida su estatus.
+			\item **Médico (Salud):** Captura el estado de salud, seguro médico, afiliación, cartilla de vacunación, padecimientos (CIE-10), discapacidades y requerimientos de aditamentos.
+			\item **Trabajador Social (Entorno):** Captura la dinámica familiar, condiciones de vivienda, sostiene económico, evaluación del cuidador (grados de negación e impacto emocional) y redes familiares.
+			\item **Psicólogo (Salud Emocional):** Captura notas terapéuticas y valoraciones psicológicas de contención.
+		\end{itemize}
+	\UCpaso[\UCactor] Llena los campos correspondientes y presiona el botón \IUbutton{Guardar Registro Completo}.
+	\UCpaso Valida en el servidor que los campos obligatorios contengan información estructurada. \Trayref{B}.
+	\UCpaso Valida que los archivos digitales cargados (como el acta de nacimiento) cumplan con la regla de negocio \hyperlink{BR-10}{BR-10} (PDF/PNG/JPG menor a 5MB). \Trayref{C}.
+	\UCpaso Guarda la información en la base de datos (tablas \texttt{hecho\_victimal}, \texttt{nna\_padecimientos}, \texttt{tutores}, \texttt{documentos\_nna}, etc.) y actualiza el estado del expediente.
+	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando el guardado de la información.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Especialista no pertenece al equipo asignado}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos o incorrectos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} detallando qué campos requeridos de la pestaña activa no fueron capturados correctamente.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Mantiene la información capturada en pantalla y regresa al paso 6 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Fallo en archivo digital cargado}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que el archivo no cuenta con una extensión compatible o supera el peso permitido.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 6 de la trayectoria principal para corregir el archivo adjunto.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

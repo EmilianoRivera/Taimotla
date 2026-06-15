@@ -1,0 +1,51 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-02}{Gestión de usuarios y roles}{
+	Permite al Director registrar a los miembros del personal multidisciplinario, asignarles su rol respectivo, actualizar sus datos personales o laborales, y habilitar o deshabilitar sus cuentas de acceso en el sistema.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Administrar las cuentas y roles del personal operativo en el sistema Taimotla para asegurar el correcto flujo de trabajo.}
+	\UCitem{Entradas}{CURP, RFC, Nombre, Apellidos, Fecha de nacimiento, Sexo, Correo, Teléfono, Domicilio, Rol, Cédula profesional, Especialidad y Contraseña del nuevo usuario.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Confirmación del registro o modificación del usuario en el panel del Director.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión con credenciales válidas en la plataforma.}
+	\UCitem{Postcondiciones}{El personal modificado o agregado queda registrado y disponible para la formación de equipos multidisciplinarios.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Datos obligatorios incompletos o en formato incorrecto (ej. CURP no válida).
+			\item[E2:] Correo electrónico o CURP duplicados en el sistema.
+		\end{description}
+	}
+ 	\UCitem{Tipo}{Caso de uso primario}
+ 	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-01}{BR-01}, \hyperlink{BR-06}{BR-06}, \hyperlink{BR-07}{BR-07} y \hyperlink{BR-08}{BR-08}.}
+ \end{UseCase}
+ 
+ \begin{UCtrayectoria}
+ 	\UCpaso[\UCactor] Accede al panel de administración de personal de Taimotla.
+ 	\UCpaso Despliega la lista de empleados registrados (activos e inactivos).
+ 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar nuevo personal} o selecciona un empleado para editar.
+ 	\UCpaso Despliega el formulario de registro/edición de datos de personal.
+ 	\UCpaso[\UCactor] Llena los campos correspondientes a la información del personal y presiona el botón \IUbutton{Guardar}.
+ 	\UCpaso Valida que se hayan capturado todos los campos obligatorios del empleado de acuerdo a su rol, incluyendo la cédula profesional obligatoria para especialistas según la regla de negocio \hyperlink{BR-08}{BR-08}. \Trayref{A}.
+ 	\UCpaso Verifica que el correo, RFC y CURP ingresados no se encuentren duplicados en la base de datos, y que cumplan con la estructura requerida según las reglas de negocio \hyperlink{BR-06}{BR-06} y \hyperlink{BR-07}{BR-07}. \Trayref{B}.
+ 	\UCpaso Encripta la contraseña de acceso por seguridad.
+ 	\UCpaso Guarda la información en la base de datos asociando al empleado con su rol de especialidad respectivo (Abogado, Médico, Psicólogo, Trabajador Social).
+ 	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} indicando el registro del usuario.
+ 	\UCpaso[] -- -- Fin del caso de uso.
+ \end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Faltan datos de entrada obligatorios o son incorrectos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos o con formato inválido.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Duplicidad de datos de identidad en el sistema}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} alertando que la CURP o correo ya existen en otra cuenta registrada.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

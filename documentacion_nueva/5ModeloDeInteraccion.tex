@@ -1,0 +1,104 @@
+%=========================================================
+\chapter{Modelo de la interacción}	
+\label{cap:modInteraccion}
+
+Este capítulo describe los detalles de la interacción del usuario con el sistema **Taimotla**, abordando los principios de usabilidad, ergonomía y arquitectura de la información de la interfaz. Se detalla el modelo de navegación y se especifican las pantallas del sistema junto con el catálogo de mensajes.
+
+%---------------------------------------------------------
+\section{Modelo de navegación}
+
+La navegación entre las pantallas del sistema se muestra en el mapa del sitio de la figura~\ref{fig:mapaNavegacion}. El acceso inicial se da a través de la pantalla de inicio de sesión. Una vez autenticado, el sistema bifurca el flujo de navegación de forma estricta según el rol del usuario (Director, Coordinador o Especialista), restringiendo la consulta de pantallas cruzadas para asegurar la confidencialidad de los datos.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[width=.9\textwidth]{images/mapa_navegacion_taimotla}
+		\caption{Mapa de navegación del sistema Taimotla.}
+		\label{fig:mapaNavegacion}
+	\end{center}
+\end{figure}
+
+A continuación se detalla la especificación de las pantallas principales del sistema:
+
+\input{iu/iu23}
+\input{iu/iu24}
+\input{iu/iu25}
+\input{iu/iu26}
+\input{iu/iu27}
+\input{iu/iu28}
+\input{iu/iu29}
+\input{iu/iu30}
+\input{iu/iu31}
+\input{iu/iu32}
+
+%---------------------------------------------------------
+\section{Catálogo de mensajes}
+\label{sec:catalogoMensajes}
+
+En esta sección se describen los mensajes utilizados por el sistema para dar retroalimentación de las operaciones al usuario. Cada mensaje se clasifica de la siguiente forma:
+
+\begin{description}
+	\item[Éxito:] Mensaje informativo que confirma la correcta conclusión de una operación de base de datos (se presenta en color verde).
+	\item[Atención:] Mensaje de advertencia sobre consecuencias colaterales o requerimientos pendientes de acción por parte del usuario (color naranja).
+	\item[Error:] Mensaje de fallo en la validación de reglas de negocio o impedimentos del sistema (color rojo).
+\end{description}
+
+A continuación se enumeran los mensajes lógicos del catálogo:
+
+\begin{description}
+	\item[\hypertarget{mMSG01}{MSG-01: Bienvenida al usuario.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Indicar al usuario que ha iniciado sesión satisfactoriamente en Taimotla.
+			\item[Redacción:] ``Bienvenido(a) a Taimotla, <nombre\_usuario>.''
+			\item[Parámetros:] \texttt{<nombre\_usuario>}: Nombre completo del empleado registrado.
+			\item[Ejemplo:] {\em Bienvenido(a) a Taimotla, Edgar Rafael Guerra Salinas.}
+		\end{description}
+		
+	\item[\hypertarget{mMSG02}{MSG-02: Cuenta o permisos inválidos.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Notificar al usuario que no tiene permisos de acceso al recurso solicitado, o que la cuenta especificada no está registrada.
+			\item[Redacción:] ``El usuario o correo electrónico ingresado no se encuentra registrado en la plataforma, o no pertenece al equipo asignado a este expediente.''
+			\item[Parámetros:] Ninguno.
+			\item[Ejemplo:] {\em El usuario o correo electrónico ingresado no se encuentra registrado en la plataforma...}
+		\end{description}
+
+	\item[\hypertarget{mMSG03}{MSG-03: Cuenta inactiva.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Indicar al usuario que su cuenta ha sido deshabilitada administrativamente por la Dirección General.
+			\item[Redacción:] ``La cuenta especificada se encuentra inactiva o suspendida. Favor de ponerse en contacto con la Dirección de la Fundación para mayor información.''
+			\item[Parámetros:] Ninguno.
+		\end{description}
+
+	\item[\hypertarget{mMSG04}{MSG-04: Error en entrada de datos / Validación.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Alertar al usuario que hay campos vacíos, inválidos o duplicados al intentar guardar un formulario (ej. registro de personal, expediente FUD o carga de archivos).
+			\item[Redacción:] ``Error de validación: <detalle\_error>. Verifique los datos obligatorios e intente de nuevo.''
+			\item[Parámetros:] \texttt{<detalle\_error>}: Descripción específica del error de formato o regla de negocio rota.
+			\item[Ejemplo:] {\em Error de validación: La CURP ingresada ya se encuentra registrada en el expediente de NNA de nuevo ingreso.}
+		\end{description}
+
+	\item[\hypertarget{mMSG08}{MSG-08: Plazo límite por vencer.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Alertar al personal que una medida de protección para la restitución de derechos del menor está por vencer.
+			\item[Redacción:] ``Atención: La medida de protección \texttt{<medida>} asociada al expediente \texttt{<num\_expediente>} tiene un plazo de vigencia que vence en \texttt{<tiempo>} días.''
+			\item[Parámetros:] 
+				\begin{itemize}
+					\item \texttt{<medida>}: Nombre de la medida de protección.
+					\item \texttt{<num\_expediente>}: Número de expediente oficial del menor.
+					\item \texttt{<tiempo>}: Número de días que restan para el vencimiento de la medida.
+				\end{itemize}
+			\item[Ejemplo:] {\em Atención: La medida de protección Acogimiento Familiar asociada al expediente NNA-2026-004 tiene un plazo de vigencia que vence en 5 días.}
+		\end{description}
+
+	\item[\hypertarget{mMSG09}{MSG-09: Operación exitosa.}] \cdtEmpty
+		\begin{description}
+			\item[Propósito:] Confirmar la correcta ejecución de una acción de persistencia en la base de datos (registro, edición o eliminación).
+			\item[Redacción:] ``El/La <operación> de <entidad> <identificador> se realizó con éxito.''
+			\item[Parámetros:] 
+				\begin{itemize}
+					\item \texttt{<operación>}: Acción realizada (registro, modificación, asignación, eliminación).
+					\item \texttt{<entidad>}: Elemento afectado (Personal, Expediente, Equipo, Documento).
+					\item \texttt{<identificador>}: Valor identificador para el usuario (ej. nombre de la persona, folio del expediente).
+				\end{itemize}
+			\item[Ejemplo:] {\em El registro de Expediente NNA-2026-004 se realizó con éxito.}
+		\end{description}
+\end{description}

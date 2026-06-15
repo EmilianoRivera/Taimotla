@@ -1,0 +1,57 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-03}{Gestión de expediente del NNA}{
+	Permite a los coordinadores y especialistas operativos abrir un expediente de un menor, ingresar su información básica (FUD), subir los documentos digitalizados obligatorios (acta de nacimiento, cartilla de salud) y registrar valoraciones clínicas, psicológicas, jurídicas y sociofamiliares.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tMedico}{Médico}}
+	\UCitem{Propósito}{Centralizar el registro de la información de las NNA en situación de orfandad, controlando la carga documental e historial multidisciplinario.}
+	\UCitem{Entradas}{Datos generales de la NNA (CURP, nombre, sexo, fecha de nacimiento, etnia, nacionalidad, escolaridad), datos de los hechos victimales, datos de los tutores y archivos de documentos digitalizados.}
+	\UCitem{Origen}{Teclado y archivo digital (PDF/PNG).}
+	\UCitem{Salidas}{Expediente del menor registrado o actualizado y almacenado en la base de datos.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión y tener permisos de edición sobre el expediente asignado.}
+	\UCitem{Postcondiciones}{El expediente queda actualizado y disponible para la consulta unificada del equipo y el Director.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del expediente o del FUD incompletos.
+			\item[E2:] El usuario no cuenta con los permisos de edición o no pertenece al equipo asignado al expediente.
+			\item[E3:] El archivo adjunto supera el límite de tamaño permitido o tiene un formato no soportado.
+		\end{description}
+	}
+ 	\UCitem{Tipo}{Caso de uso primario}
+ 	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03}, \hyperlink{BR-04}{BR-04}, \hyperlink{BR-05}{BR-05}, \hyperlink{BR-06}{BR-06}, \hyperlink{BR-09}{BR-09} y \hyperlink{BR-10}{BR-10}.}
+ \end{UseCase}
+ 
+ \begin{UCtrayectoria}
+ 	\UCpaso[\UCactor] Accede al panel de gestión de expedientes del sistema.
+ 	\UCpaso Muestra la lista de expedientes asignados al usuario de acuerdo a su equipo.
+ 	\UCpaso[\UCactor] Selecciona la opción de abrir un nuevo expediente o editar un expediente existente.
+ 	\UCpaso Valida los permisos de acceso del usuario para el expediente seleccionado. \Trayref{A}.
+ 	\UCpaso Despliega el formulario de datos de la NNA, el hecho victimal, tutores y la sección de carga documental.
+ 	\UCpaso[\UCactor] Llena los campos requeridos, adjunta los archivos digitalizados solicitados (acta de nacimiento, cartilla de vacunación, etc.) y presiona el botón \IUbutton{Guardar}.
+ 	\UCpaso Valida que se hayan llenado todos los campos requeridos del menor, incluyendo la CURP obligatoria y con estructura válida, verificando que no esté duplicada de acuerdo con las reglas de negocio \hyperlink{BR-03}{BR-03}, \hyperlink{BR-06}{BR-06} y \hyperlink{BR-09}{BR-09}. \Trayref{B}.
+ 	\UCpaso Valida el formato y tamaño de los archivos adjuntos según la regla de negocio \hyperlink{BR-10}{BR-10}. \Trayref{C}.
+ 	\UCpaso Almacena el expediente y asocia los archivos en el servidor de archivos asignado.
+ 	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} indicando el guardado del caso.
+ 	\UCpaso[] -- -- Fin del caso de uso.
+ \end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario no autorizado para ver o editar el caso}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no pertenece al equipo asignado al expediente.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Faltan datos obligatorios}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario del expediente.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 6 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Error en formato de archivo adjunto}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que el archivo no tiene la extensión correcta (ej. debe ser PDF, JPG o PNG) o excede los 5MB.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 6 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

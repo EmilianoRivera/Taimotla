@@ -1,0 +1,71 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-06}{Gestionar equipos de trabajo}{
+	Permite al Director General consultar y modificar la integración de los equipos multidisciplinarios registrados. El Director puede reasignar coordinadores, dar de baja especialistas de un equipo, integrar nuevos especialistas disponibles y eliminar de forma lógica un equipo completo cuando ya no sea necesario.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director General}}
+	\UCitem{Propósito}{Mantener actualizada la conformación de los equipos de trabajo para responder a los cambios de personal o necesidades operativas en la Fundación.}
+	\UCitem{Entradas}{Selección del equipo, cambio de coordinador, selección del miembro a eliminar o del especialista a agregar.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Mensaje de confirmación del cambio realizado, actualización de la tabla de composición en pantalla.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión y deben existir equipos de trabajo creados previamente en el sistema.}
+	\UCitem{Postcondiciones}{La base de datos actualiza el estado del equipo, la composición de sus integrantes o el coordinador asignado. Si se remueve a un especialista, este queda disponible nuevamente para otros equipos.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intento de agregar un especialista cuyo rol ya existe en el equipo activo.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-01}{BR-01} y \hyperlink{BR-08}{BR-08}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Equipos} en el menú de navegación superior.
+	\UCpaso Consulta en la base de datos todos los equipos con estado ``Activo'', detallando su coordinador e integrantes asignados actualmente, así como el personal especialista disponible.
+	\UCpaso Despliega la \IUref{IU28}{Pantalla de Gestión de Equipos}.
+	\UCpaso[\UCactor] Realiza una de las siguientes opciones de gestión:
+		\begin{itemize}
+			\item **Modificar Coordinador:** Selecciona un coordinador diferente de la lista desplegable en la tarjeta del equipo. El sistema actualiza en base de datos de forma inmediata. \Trayref{A}.
+			\item **Eliminar integrante del equipo:** Presiona el botón \IUbutton{Quitar} al lado del especialista. Tras confirmar, el sistema actualiza la fecha de término en la composición. \Trayref{B}.
+			\item **Agregar integrante al equipo:** Presiona el botón \IUbutton{+} en la tarjeta del equipo para abrir el menú de personal disponible, y selecciona al especialista deseado. El sistema guarda la asignación. \Trayref{C}.
+			\item **Eliminar equipo:** Presiona el botón \IUbutton{Eliminar Equipo}. Tras confirmar, el sistema inhabilita el equipo de forma lógica. \Trayref{D}.
+		\end{itemize}
+	\UCpaso Refresca la interfaz de usuario mostrando los cambios de composición reflejados.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Error al reasignar coordinador}
+	\UCpaso Ocurre un fallo en la conexión con la base de datos o el coordinador no es válido.
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando el fallo de actualización.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Revierte visualmente el cambio y regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Confirmación y eliminación de miembro}
+	\UCpaso El sistema solicita confirmación mediante un cuadro de diálogo: ``¿Quitar a este miembro del equipo?''.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Actualiza en la tabla de composición la fecha de término (\texttt{fecha\_fin}) con la fecha del día actual para darlo de baja del equipo.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Especialidad duplicada en el equipo}
+	\UCpaso Verifica que el rol del especialista que se desea agregar no coincida con el rol de un miembro actual del equipo. \Trayref{C1}.
+	\UCpaso Agrega al miembro a la composición del equipo con la fecha de inicio actual.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C1}{El rol ya existe en el equipo}
+	\UCpaso El sistema impide la adición del especialista y oculta al personal de ese rol en el panel de disponibles en base a la regla de negocio.
+	\UCpaso Continúa en el paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Confirmación de eliminación de equipo}
+	\UCpaso El sistema solicita confirmación: ``¿Estás seguro de querer eliminar el equipo seleccionado?''.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Cambia el estado del equipo a ``Inactivo'' e ingresa la fecha de término (\texttt{fecha\_fin}) para todos sus miembros activos actuales en la base de datos.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y regresa al paso 2 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

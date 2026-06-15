@@ -1,0 +1,172 @@
+%=========================================================
+\chapter{Modelo del Negocio}	
+\label{cap:reqSist}
+
+En este capítulo se modela la {\em Arquitectura del negocio} la cual está conformada por la Ontología del negocio (Glosario de {\em Términos}), el Modelo del Dominio del problema (entidades y relaciones), las {\em Reglas de negocio} y las {\em Máquinas de estado} que controlan el ciclo de vida de los expedientes. Primero se especifica el {\em Contexto} operativo de la organización.
+
+%----------------------------------------------------------
+\section{Contexto}
+
+La **Fundación Futuro con Derechos** es una organización civil que se encarga de proteger y restituir de forma integral los derechos vulnerados de niñas, niños y adolescentes (NNA) en situación de orfandad por motivo de femicidio. La institución opera mediante un equipo multidisciplinario (psicólogos, médicos, trabajadores sociales y abogados) liderado por coordinadores y bajo la supervisión de la Dirección General. 
+
+El flujo de trabajo operativo gira en torno a la detección del menor, la apertura de su expediente único, la valoración especializada en las cuatro áreas críticas, el diseño de un Plan de Restitución de Derechos (PRD) que contiene las medidas de protección específicas, y el monitoreo constante de su bienestar. El sistema web **Taimotla** tiene como finalidad digitalizar y automatizar esta estructura para evitar fugas de información, lentitud administrativa y fallos de coordinación.
+
+%---------------------------------------------------------
+\section{Términos del Negocio}
+\label{sec:terminosDeNegocio}
+
+A continuación se presenta la definición formal de los términos fundamentales de la operación de la Fundación, organizados en forma de glosario con hipervínculos cruzados:
+
+\begin{description}
+	\item[\hypertarget{tFundacion}{Fundación Futuro con Derechos:}] Organización no gubernamental dedicada a la atención integral de NNA huérfanos por femicidio en el estado de Nuevo León.
+	\item[\hypertarget{tLGDNNA}{LGDNNA:}] Ley General de los Derechos de Niñas, Niños y Adolescentes. Es el marco normativo superior que rige todas las acciones y medidas de protección de la Fundación.
+	\item[\hypertarget{tFUD}{FUD:}] Formulario Único de Datos. Herramienta que recopila toda la información de identidad, del hecho victimal, y del entorno social del NNA.
+	\item[\hypertarget{tDirector}{Director:}] Actor del sistema. Máxima autoridad de la Fundación encargada de auditar la plataforma, gestionar las cuentas del personal y conformar los equipos.
+	\item[\hypertarget{tCoordinador}{Coordinador:}] Actor del sistema. Profesional que supervisa las valoraciones y la ejecución de medidas de un equipo multidisciplinario.
+	\item[\hypertarget{tAbogado}{Abogado:}] Especialista legal del equipo. Encargado de la defensa judicial y la regularización legal (tutela, custodia) del NNA.
+	\item[\hypertarget{tMedico}{Médico / Doctor:}] Especialista de salud del equipo. Responsable del diagnóstico clínico, tratamiento físico y control del seguro médico del NNA.
+	\item[\hypertarget{tPsicologo}{Psicólogo:}] Especialista de salud mental del equipo. Provee apoyo emocional, terapia por trauma de duelo y aplica peritajes psicológicos.
+	\item[\hypertarget{tTSocial}{Trabajador Social:}] Especialista social del equipo. Realiza estudios socioeconómicos y visitas a la red familiar del menor.
+	\item[\hypertarget{tEquipo}{Equipo Multidisciplinario:}] Célula de trabajo compuesta por un coordinador y especialistas que atienden un expediente específico de forma unificada.
+	\item[\hypertarget{tNNA}{NNA:}] Niña, Niño o Adolescente menor de 18 años cuyos derechos han sido restringidos o vulnerados y es el beneficiario central.
+	\item[\hypertarget{tTutor}{Tutor:}] Adulto que ejerce la guarda, custodia o patria potestad del NNA ante la ausencia de sus progenitores.
+	\item[\hypertarget{tExpediente}{Expediente Único Digital:}] Carpeta digital en el sistema Taimotla que unifica los datos médicos, psicológicos, sociales, legales e historial del menor.
+	\item[\hypertarget{tPRD}{Plan de Restitución de Derechos (PRD):}] Documento técnico-legal y de seguimiento donde se especifican las medidas de protección especial para subsanar los derechos vulnerados del menor.
+	\item[\hypertarget{tMedidaUrgente}{Medida Urgente:}] Acción inmediata de resguardo físico, legal o de salud implementada ante un riesgo inminente para la vida o integridad del NNA.
+\end{description}
+
+%----------------------------------------------------------
+\section{Modelo del dominio del problema}
+\label{sec:hechosDeNegocio}
+
+El modelo del dominio del problema representa gráficamente las entidades estructurales del sistema **Taimotla** y sus asociaciones. El diagrama de clases UML se detalla en la figura~\ref{fig:modeloDeDominio}.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{images/modelo_dominio_fundacion}
+		\caption{Modelo del dominio del problema para el sistema Taimotla.}
+		\label{fig:modeloDeDominio}
+	\end{center}
+\end{figure}
+
+A continuación se describen las entidades principales del modelo y sus relaciones:
+
+\begin{cdtEntidad}{Persona}{Persona}
+	\brAttr{curp}{CURP}{Alfanumérico (18)}{Clave Única de Registro de Población utilizada como identificador primario de toda persona en el sistema.}{Sí}
+	\brAttr{rfc}{RFC}{Alfanumérico (13)}{Registro Federal de Contribuyentes.}{Sí}
+	\brAttr{p\_nombre}{Primer Nombre}{Palabra Corta}{Primer nombre de la persona.}{Sí}
+	\brAttr{s\_nombre}{Segundo Nombre}{Palabra Corta}{Segundo nombre, de existir.}{No}
+	\brAttr{p\_apellido}{Primer Apellido}{Palabra Corta}{Primer apellido paterno.}{Sí}
+	\brAttr{s\_apellido}{Segundo Apellido}{Palabra Corta}{Segundo apellido materno.}{Sí}
+	\brAttr{fecha\_nacimiento}{Fecha de Nacimiento}{Fecha}{Fecha de nacimiento de la persona.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Domicilio}{Toda persona reside en un \hyperlink{Domicilio}{Domicilio}.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Personal}{Personal}
+	\brAttr{fecha\_alta}{Fecha de Alta}{Fecha}{Fecha en que el empleado se incorporó a la Fundación.}{Sí}
+	\brAttr{voluntario}{Voluntario}{Booleano}{Indica si el empleado es voluntario o contratado de base.}{Sí}
+	\brAttr{estado}{Estado}{Entero}{Estatus de la cuenta (Habilitado/Deshabilitado).}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelGeneralization}{Persona}{Un \hyperlink{Personal}{Personal} hereda todos los datos de una \hyperlink{Persona}{Persona}.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Equipo}{Equipo}
+	\brAttr{id\_equipo}{Identificador}{Entero}{Clave autoincremental única del equipo.}{Sí}
+	\brAttr{nombre\_equipo}{Nombre}{Palabra Corta}{Nombre identificador del equipo multidisciplinario.}{Sí}
+	\brAttr{fecha\_creacion}{Fecha de Creación}{Fecha}{Fecha en que el Director conformó el equipo.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Personal}{Un \hyperlink{Equipo}{Equipo} se compone de un Coordinador y entre 2 y 4 especialistas de \hyperlink{Personal}{Personal}.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Expediente}{Expediente}
+	\brAttr{id\_expediente}{Identificador}{Entero}{Clave única interna del expediente.}{Sí}
+	\brAttr{num\_expediente}{Número de Expediente}{Alfanumérico}{Clave física y oficial asignada al caso.}{Sí}
+	\brAttr{fecha\_apertura}{Fecha de Apertura}{Timestamp}{Fecha y hora en que se abrió el caso en el sistema.}{Sí}
+	\brAttr{id\_estado\_expediente}{Estado}{Entero}{Identificador del estado actual del expediente.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelAgregation}{Equipo}{Un \hyperlink{Expediente}{Expediente} tiene asignado un \hyperlink{Equipo}{Equipo} para su atención.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{NNA}{NNA}
+	\brAttr{id\_nna}{Identificador}{Entero}{Clave única del menor en el sistema.}{Sí}
+	\brAttr{apodo}{Apodo}{Palabra Corta}{Nombre por el cual se identifica de confianza al menor.}{No}
+	\brAttr{observaciones}{Observaciones}{Texto Largo}{Notas generales del caso del menor.}{No}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Expediente}{Toda \hyperlink{NNA}{NNA} está asociada de manera exclusiva a un \hyperlink{Expediente}{Expediente}.}
+	\brRel{\brRelComposition}{Tutor}{Un \hyperlink{NNA}{NNA} está vinculado a uno o varios \hyperlink{Tutor}{Tutores} o familiares directos.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Domicilio}{Domicilio}
+	\brAttr{id\_domicilio}{Identificador}{Entero}{Clave única del domicilio en el sistema.}{Sí}
+	\brAttr{calle}{Calle}{Palabra Corta}{Nombre de la calle.}{Sí}
+	\brAttr{num\_ext}{Número Exterior}{Palabra Corta}{Número exterior de la vivienda.}{Sí}
+	\brAttr{num\_int}{Número Interior}{Palabra Corta}{Número interior de la vivienda, de existir.}{No}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Colonia}{El domicilio pertenece a una Colonia.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Tutor}{Tutor}
+	\brAttr{id\_tutor}{Identificador}{Entero}{Clave única del tutor en el sistema.}{Sí}
+	\brAttr{ocupacion}{Ocupación}{Palabra Corta}{Ocupación u oficio del tutor.}{Sí}
+	\brAttr{es\_sosten\_economico}{Sostén Económico}{Booleano}{Indica si el tutor es el principal proveedor económico.}{Sí}
+	\brAttr{escolaridad}{Escolaridad}{Palabra Corta}{Último grado escolar del tutor.}{Sí}
+	\brAttr{patron\_migracion}{Patrón de Migración}{Palabra Corta}{Historial o patrón de migración, de existir.}{No}
+	\brAttr{observaciones}{Observaciones}{Texto Largo}{Notas adicionales sobre el tutor.}{No}
+	\cdtEntityRelSection
+	\brRel{\brRelGeneralization}{Persona}{Un \hyperlink{Tutor}{Tutor} hereda los datos de una \hyperlink{Persona}{Persona}.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{HechoVictimal}{HechoVictimal}
+	\brAttr{id\_hecho}{Identificador}{Entero}{Clave única del hecho victimal en el sistema.}{Sí}
+	\brAttr{num\_reporte}{Número de Reporte}{Palabra Corta}{Número oficial o folio del reporte del caso.}{Sí}
+	\brAttr{nombre\_caso}{Nombre del Caso}{Palabra Corta}{Nombre identificador o clave asignada al caso.}{Sí}
+	\brAttr{fecha\_detencion}{Fecha de Registro}{Fecha}{Fecha en que el menor ingresó o fue puesto a disposición.}{Sí}
+	\brAttr{nombre\_victima\_madre}{Víctima Madre}{Palabra Corta}{Nombre completo de la madre víctima del feminicidio.}{Sí}
+	\brAttr{descripcion\_delito}{Descripción del Delito}{Texto Largo}{Detalle de los delitos relacionados en perjuicio de la familia.}{No}
+	\brAttr{narracion\_sucedido}{Narración de lo Sucedido}{Texto Largo}{Narrativa sucinta de los hechos victimales.}{No}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{NNA}{El hecho victimal está asociado de forma exclusiva a un \hyperlink{NNA}{NNA}.}
+\end{cdtEntidad}
+
+\begin{cdtEntidad}{Documento}{Documento}
+	\brAttr{id\_documento}{Identificador}{Entero}{Clave única del documento digital en el sistema.}{Sí}
+	\brAttr{nombre\_documento}{Nombre}{Palabra Corta}{Nombre oficial del documento (ej. Acta de Nacimiento).}{Sí}
+	\brAttr{ruta\_archivo}{Ruta de Archivo}{Palabra Corta}{Ubicación de almacenamiento en el servidor de archivos.}{Sí}
+	\brAttr{fecha\_subida}{Fecha de Subida}{Timestamp}{Fecha y hora en que se cargó el archivo digital.}{Sí}
+	\brAttr{observaciones}{Observaciones}{Texto Largo}{Notas adicionales del estado o vigencia del documento.}{No}
+	\cdtEntityRelSection
+	\brRel{\brRelAgregation}{NNA}{El documento digital está vinculado a un \hyperlink{NNA}{NNA} en su expediente.}
+\end{cdtEntidad}
+
+
+%---------------------------------------------------------
+\section{Modelado de Reglas de negocio}
+
+Las reglas de negocio estructuran y restringen las operaciones lógicas de la Fundación y la base de datos. Estas se detallan a continuación:
+
+\input{3-1-reglas}
+
+%---------------------------------------------------------
+\section{Máquinas de estado}
+
+Para controlar y modelar de forma rigurosa la evolución del proceso de restitución de derechos, el ciclo de vida de la entidad **Expediente** se modela mediante la máquina de estados presentada en la figura~\ref{fig:estadosExpediente}.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{images/maquina_estados_expediente}
+		\caption{Máquina de estados para el Expediente Único de NNA en Taimotla.}
+		\label{fig:estadosExpediente}
+	\end{center}
+\end{figure}
+
+A continuación se describen cada uno de los estados identificados para el expediente:
+
+\begin{description}
+	\item[Creado:] El expediente ha sido abierto y el NNA ha sido registrado con sus datos de identidad básicos. Está pendiente la asignación del equipo responsable y la carga de los documentos legales de identidad.
+	\item[En Diagnóstico:] El expediente cuenta con un equipo asignado y el acta de nacimiento ha sido validada. Los especialistas se encuentran aplicando las valoraciones clínica, psicológica, jurídica y sociofamiliar.
+	\item[Plan Asignado:] Se ha redactado y estructurado el Plan de Restitución de Derechos (PRD) con las medidas aplicables. El PRD está pre-autorizado por el Coordinador en espera de firma por la Dirección.
+	\item[En Ejecución:] El Director de la Fundación ha aprobado formalmente el PRD. Las medidas de protección especial y urgentes están siendo ejecutadas y coordinadas con dependencias externas.
+	\item[En Seguimiento:] Las medidas de restitución han concluido y el equipo realiza un monitoreo constante del menor para garantizar que no exista riesgo de nueva vulneración de derechos.
+	\item[Cerrado:] El caso ha concluido exitosamente tras verificar la restitución duradera e integral de todos los derechos vulnerados del menor.
+\end{description}

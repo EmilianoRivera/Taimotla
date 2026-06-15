@@ -1,0 +1,40 @@
+%--------------------------------------
+\section{IU29 Pantalla de Perfil de Usuario}
+
+\subsection{Objetivo}
+	Permitir al usuario autenticado (Director o Coordinador) consultar la información administrativa general asociada a su cuenta de acceso en el sistema Taimotla.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU29}{Pantalla de Perfil de Usuario} (ver figura~\ref{IU29}) se estructura en una tarjeta de perfil centralizada que presenta la siguiente información del colaborador en modo de solo lectura:
+	\begin{itemize}
+		\item **Nombre Completo:** Nombre(s) y apellidos del usuario.
+		\item **Rol Operativo:** Etiqueta visual indicando el rol en la Fundación (ej. Director de la Fundación o Coordinador de Caso).
+		\item **Detalles de Registro:**
+			\begin{itemize}
+				\item Clave Única de Registro de Población (CURP).
+				\item Fecha de ingreso o alta administrativa en la institución.
+				\item Estado actual de la cuenta (activo, inactivo).
+			\end{itemize}
+	\end{itemize}
+
+\IUfig[.45]{default}{IU29}{Pantalla de Perfil de Usuario.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Ficha de datos de identificación y registro del usuario conectado.
+	\end{Citemize}
+
+\subsection{Entradas}
+	Ninguna (interfaz de consulta estática).
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Volver al Panel}: Redirige al usuario a la pantalla del Dashboard principal correspondiente a su rol.
+		\item \IUbutton{Cambiar Contraseña}: Despliega una notificación sobre el estado de desarrollo de la función de actualización de credenciales.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item Alerta informativa: ``Funcionalidad de cambio de contraseña próximamente''.
+	\end{Citemize}
+%--------------------------------------

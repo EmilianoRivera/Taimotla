@@ -1,0 +1,61 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-11}{Registrar Cuidador / Tutor}{
+	Permite al Trabajador Social capturar la información personal, laboral, educativa y los resultados de la valoración sociofamiliar del cuidador o tutor legal de la NNA, vinculándolo al expediente del menor para identificar formalmente su red de apoyo y condiciones de vida.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar los datos del cuidador responsable del menor, incluyendo evaluaciones de su aptitud, estabilidad sociofamiliar y estabilidad emocional para la acogida.}
+	\UCitem{Entradas}{CURP, RFC, Nombre(s), Apellidos, Fecha de nacimiento, Sexo, Ocupación, Escolaridad, Parentesco con la NNA, es sostén económico (booleano), patrón de migración, observaciones, teléfono, correo electrónico, grado de negación (catálogo), grado de afectación emocional (catálogo).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Confirmación del registro del cuidador y actualización del expediente.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El expediente de la NNA debe estar registrado en el sistema y el Trabajador Social debe pertenecer al equipo responsable asignado al caso.}
+	\UCitem{Postcondiciones}{Se guarda la información del tutor en la tabla \texttt{tutores} y se asocia la persona en la tabla \texttt{personas\_expediente} de la base de datos.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios vacíos (Primer nombre, primer apellido, parentesco, ocupación o escolaridad).
+			\item[E2:] El usuario no pertenece al equipo responsable del caso.
+			\item[E3:] La CURP del tutor ya está registrada o tiene un formato no válido.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio de validación de CURP y RFC.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña ``Entorno Familiar'' y luego la subsección ``Datos del Tutor'' en la pantalla de edición del expediente único (\IUref{IU26}{Expediente Único}).
+	\UCpaso Verifica que el usuario cuente con los permisos de edición sobre el caso. \Trayref{A}.
+	\UCpaso Despliega el formulario de registro de tutor con los campos de datos personales, contacto y valoración.
+	\UCpaso[\UCactor] Captura la CURP, nombre completo y fecha de nacimiento del tutor.
+	\UCpaso[\UCactor] Ingresa los datos laborales y de educación (ocupación, si es sostén económico y nivel de escolaridad).
+	\UCpaso[\UCactor] Selecciona el parentesco y captura el patrón de migración si aplica.
+	\UCpaso[\UCactor] Ingresa los datos de contacto (teléfono y dirección de correo electrónico).
+	\UCpaso[\UCactor] Selecciona el grado de negación y el grado de afectación emocional identificados en las entrevistas sociofamiliares.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Tutor}.
+	\UCpaso Valida en el servidor que los campos obligatorios del tutor contengan información válida. \Trayref{B}.
+	\UCpaso Verifica que la CURP cumpla con el formato válido y no se encuentre duplicada en la base de datos. \Trayref{C}.
+	\UCpaso Guarda la información del tutor en la tabla \texttt{tutores} y crea la relación correspondiente con el NNA.
+	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y refresca la vista del expediente.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario sin autorización para el expediente}
+	\UCpaso El sistema bloquea el formulario e impide realizar operaciones de guardado.
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no pertenece al equipo asignado.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios incompletos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario del tutor.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Error en validación de CURP}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} alertando que la CURP tiene un formato inválido o ya pertenece a otro tutor registrado en la plataforma.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal para corregir la CURP.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

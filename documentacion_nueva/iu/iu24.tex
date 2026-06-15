@@ -1,0 +1,36 @@
+%--------------------------------------
+\section{IU24 Pantalla de Gestión de Personal}
+
+\subsection{Objetivo}
+	Permitir al Director de la Fundación administrar de forma centralizada las cuentas, especialidades y estados de acceso del personal multidisciplinario y operativo.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU24}{Pantalla de Gestión de Personal} (ver figura~\ref{IU24}) es accesible únicamente para el rol de Director General. Presenta un listado tabular que detalla el personal registrado, mostrando su CURP, nombre, rol en la Fundación (Coordinador o Especialista Abogado, Médico, Psicólogo, Trabajador Social), cédula profesional, fecha de alta y estado de cuenta (Habilitado/Deshabilitado).
+	Incluye controles superiores para buscar personal por nombre o CURP y filtros de selección por especialidad.
+
+\IUfig[.55]{default}{IU24}{Pantalla de Gestión de Personal.}
+
+\subsection{Salidas}
+	\begin{Citemize}
+		\item Tabla dinámica con el personal registrado y sus datos laborales.
+		\item Notificaciones informativas de estado de cuenta.
+	\end{Citemize}
+
+\subsection{Entradas}
+	\begin{itemize}
+		\item Filtro de búsqueda (por CURP o nombre del empleado).
+		\item Selección de filtro por Rol o Especialidad.
+	\end{itemize}
+
+\subsection{Comandos}
+	\begin{itemize}
+		\item \IUbutton{Registrar Personal}: Abre el formulario de registro de nuevo personal bajo las validaciones de las reglas \hyperlink{BR-06}{BR-06}, \hyperlink{BR-07}{BR-07} y \hyperlink{BR-08}{BR-08}.
+		\item \IUbutton{Editar}: Redirige a la pantalla de edición de datos personales del colaborador seleccionado.
+		\item \IUbutton{Desactivar/Activar}: Cambia de forma lógica el estado del empleado en la base de datos (Habilitado/Deshabilitado). Las cuentas deshabilitadas perderán acceso inmediato al sistema según la regla \hyperlink{BR-03}{BR-03}.
+	\end{itemize}
+
+\subsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG-09} (Operación exitosa): Confirmación cuando se guarda un registro o se cambia el estado de la cuenta.
+	\end{Citemize}
+%--------------------------------------
