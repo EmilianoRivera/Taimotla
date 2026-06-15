@@ -104,76 +104,96 @@
 \contentsline {subsection}{\numberline {4.15.1}Descripción completa}{62}{subsection.4.15.1}%
 \contentsline {subsection}{\numberline {4.15.2}Atributos importantes}{62}{subsection.4.15.2}%
 \contentsline {subsection}{\numberline {4.15.3}Trayectorias del Caso de Uso}{62}{subsection.4.15.3}%
-\contentsline {chapter}{\numberline {5}Modelo de la interacción}{65}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Modelo de navegación}{65}{section.5.1}%
-\contentsline {section}{\numberline {5.2}IU23 Pantalla de Control de Acceso}{65}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Objetivo}{65}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Diseño}{65}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Salidas}{67}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Entradas}{67}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Comandos}{67}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Mensajes}{67}{subsection.5.2.6}%
-\contentsline {section}{\numberline {5.3}IU24 Pantalla de Gestión de Personal}{68}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Objetivo}{68}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Diseño}{68}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Salidas}{68}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Entradas}{68}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Comandos}{68}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Mensajes}{68}{subsection.5.3.6}%
-\contentsline {section}{\numberline {5.4}IU25 Pantalla de Asignación de Casos}{69}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Objetivo}{69}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Diseño}{69}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Salidas}{69}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Entradas}{69}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Comandos}{69}{subsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.4.6}Mensajes}{69}{subsection.5.4.6}%
-\contentsline {section}{\numberline {5.5}IU26 Pantalla de Expediente Único de NNA}{70}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Objetivo}{70}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Diseño}{70}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Salidas}{70}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Entradas}{70}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Comandos}{71}{subsection.5.5.5}%
-\contentsline {subsection}{\numberline {5.5.6}Mensajes}{71}{subsection.5.5.6}%
-\contentsline {section}{\numberline {5.6}IU27 Pantalla de Registro de Equipo de Trabajo}{71}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Objetivo}{71}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Diseño}{71}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Salidas}{72}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Entradas}{72}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Comandos}{72}{subsection.5.6.5}%
-\contentsline {subsection}{\numberline {5.6.6}Mensajes}{72}{subsection.5.6.6}%
-\contentsline {section}{\numberline {5.7}IU28 Pantalla de Gestión de Equipos}{72}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Objetivo}{72}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Diseño}{72}{subsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.7.3}Salidas}{73}{subsection.5.7.3}%
-\contentsline {subsection}{\numberline {5.7.4}Entradas}{73}{subsection.5.7.4}%
-\contentsline {subsection}{\numberline {5.7.5}Comandos}{73}{subsection.5.7.5}%
-\contentsline {subsection}{\numberline {5.7.6}Mensajes}{73}{subsection.5.7.6}%
-\contentsline {section}{\numberline {5.8}IU29 Pantalla de Perfil de Usuario}{73}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Objetivo}{73}{subsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.8.2}Diseño}{74}{subsection.5.8.2}%
-\contentsline {subsection}{\numberline {5.8.3}Salidas}{74}{subsection.5.8.3}%
-\contentsline {subsection}{\numberline {5.8.4}Entradas}{74}{subsection.5.8.4}%
-\contentsline {subsection}{\numberline {5.8.5}Comandos}{74}{subsection.5.8.5}%
-\contentsline {subsection}{\numberline {5.8.6}Mensajes}{74}{subsection.5.8.6}%
-\contentsline {section}{\numberline {5.9}IU30 Pantalla de Modificación de Perfil de Personal}{74}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Objetivo}{74}{subsection.5.9.1}%
-\contentsline {subsection}{\numberline {5.9.2}Diseño}{75}{subsection.5.9.2}%
-\contentsline {subsection}{\numberline {5.9.3}Salidas}{75}{subsection.5.9.3}%
-\contentsline {subsection}{\numberline {5.9.4}Entradas}{75}{subsection.5.9.4}%
-\contentsline {subsection}{\numberline {5.9.5}Comandos}{75}{subsection.5.9.5}%
-\contentsline {subsection}{\numberline {5.9.6}Mensajes}{75}{subsection.5.9.6}%
-\contentsline {section}{\numberline {5.10}IU31 Panel de Control del Coordinador}{76}{section.5.10}%
-\contentsline {subsection}{\numberline {5.10.1}Objetivo}{76}{subsection.5.10.1}%
-\contentsline {subsection}{\numberline {5.10.2}Diseño}{76}{subsection.5.10.2}%
-\contentsline {subsection}{\numberline {5.10.3}Salidas}{76}{subsection.5.10.3}%
-\contentsline {subsection}{\numberline {5.10.4}Entradas}{76}{subsection.5.10.4}%
-\contentsline {subsection}{\numberline {5.10.5}Comandos}{76}{subsection.5.10.5}%
-\contentsline {subsection}{\numberline {5.10.6}Mensajes}{77}{subsection.5.10.6}%
-\contentsline {section}{\numberline {5.11}IU32 Panel del Especialista}{77}{section.5.11}%
-\contentsline {subsection}{\numberline {5.11.1}Objetivo}{77}{subsection.5.11.1}%
-\contentsline {subsection}{\numberline {5.11.2}Diseño}{77}{subsection.5.11.2}%
-\contentsline {subsection}{\numberline {5.11.3}Salidas}{77}{subsection.5.11.3}%
-\contentsline {subsection}{\numberline {5.11.4}Entradas}{77}{subsection.5.11.4}%
-\contentsline {subsection}{\numberline {5.11.5}Comandos}{77}{subsection.5.11.5}%
-\contentsline {subsection}{\numberline {5.11.6}Mensajes}{78}{subsection.5.11.6}%
-\contentsline {section}{\numberline {5.12}Catálogo de mensajes}{78}{section.5.12}%
+\contentsline {section}{\numberline {4.16}CU-14 Elaborar y aprobar el Plan de Restitución de Derechos (PRD)}{64}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Descripción completa}{64}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Atributos importantes}{64}{subsection.4.16.2}%
+\contentsline {subsection}{\numberline {4.16.3}Trayectorias del Caso de Uso}{65}{subsection.4.16.3}%
+\contentsline {section}{\numberline {4.17}CU-15 Registrar seguimiento de medidas de protección}{67}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Descripción completa}{67}{subsection.4.17.1}%
+\contentsline {subsection}{\numberline {4.17.2}Atributos importantes}{67}{subsection.4.17.2}%
+\contentsline {subsection}{\numberline {4.17.3}Trayectorias del Caso de Uso}{68}{subsection.4.17.3}%
+\contentsline {section}{\numberline {4.18}CU-16 Capturar ficha de verificación del cumplimiento de derechos}{70}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Descripción completa}{70}{subsection.4.18.1}%
+\contentsline {subsection}{\numberline {4.18.2}Atributos importantes}{70}{subsection.4.18.2}%
+\contentsline {subsection}{\numberline {4.18.3}Trayectorias del Caso de Uso}{71}{subsection.4.18.3}%
+\contentsline {section}{\numberline {4.19}CU-17 Registrar detección inicial de caso}{72}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Descripción completa}{72}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Atributos importantes}{72}{subsection.4.19.2}%
+\contentsline {subsection}{\numberline {4.19.3}Trayectorias del Caso de Uso}{72}{subsection.4.19.3}%
+\contentsline {section}{\numberline {4.20}CU-18 Cerrar expediente del NNA}{74}{section.4.20}%
+\contentsline {subsection}{\numberline {4.20.1}Descripción completa}{74}{subsection.4.20.1}%
+\contentsline {subsection}{\numberline {4.20.2}Atributos importantes}{74}{subsection.4.20.2}%
+\contentsline {subsection}{\numberline {4.20.3}Trayectorias del Caso de Uso}{74}{subsection.4.20.3}%
+\contentsline {chapter}{\numberline {5}Modelo de la interacción}{77}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modelo de navegación}{77}{section.5.1}%
+\contentsline {section}{\numberline {5.2}IU23 Pantalla de Control de Acceso}{77}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Objetivo}{77}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Diseño}{77}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Salidas}{79}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Entradas}{79}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Comandos}{79}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Mensajes}{79}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}IU24 Pantalla de Gestión de Personal}{80}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Objetivo}{80}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Diseño}{80}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Salidas}{80}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Entradas}{80}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Comandos}{80}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Mensajes}{80}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}IU25 Pantalla de Asignación de Casos}{81}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Objetivo}{81}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Diseño}{81}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Salidas}{81}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Entradas}{81}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Comandos}{81}{subsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.4.6}Mensajes}{81}{subsection.5.4.6}%
+\contentsline {section}{\numberline {5.5}IU26 Pantalla de Expediente Único de NNA}{82}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Objetivo}{82}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Diseño}{82}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Salidas}{82}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Entradas}{82}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Comandos}{83}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}Mensajes}{83}{subsection.5.5.6}%
+\contentsline {section}{\numberline {5.6}IU27 Pantalla de Registro de Equipo de Trabajo}{83}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Objetivo}{83}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Diseño}{83}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Salidas}{84}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Entradas}{84}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Comandos}{84}{subsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.6.6}Mensajes}{84}{subsection.5.6.6}%
+\contentsline {section}{\numberline {5.7}IU28 Pantalla de Gestión de Equipos}{84}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Objetivo}{84}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Diseño}{84}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Salidas}{85}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Entradas}{85}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.5}Comandos}{85}{subsection.5.7.5}%
+\contentsline {subsection}{\numberline {5.7.6}Mensajes}{85}{subsection.5.7.6}%
+\contentsline {section}{\numberline {5.8}IU29 Pantalla de Perfil de Usuario}{85}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Objetivo}{85}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Diseño}{86}{subsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.8.3}Salidas}{86}{subsection.5.8.3}%
+\contentsline {subsection}{\numberline {5.8.4}Entradas}{86}{subsection.5.8.4}%
+\contentsline {subsection}{\numberline {5.8.5}Comandos}{86}{subsection.5.8.5}%
+\contentsline {subsection}{\numberline {5.8.6}Mensajes}{86}{subsection.5.8.6}%
+\contentsline {section}{\numberline {5.9}IU30 Pantalla de Modificación de Perfil de Personal}{86}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Objetivo}{86}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Diseño}{87}{subsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.9.3}Salidas}{87}{subsection.5.9.3}%
+\contentsline {subsection}{\numberline {5.9.4}Entradas}{87}{subsection.5.9.4}%
+\contentsline {subsection}{\numberline {5.9.5}Comandos}{87}{subsection.5.9.5}%
+\contentsline {subsection}{\numberline {5.9.6}Mensajes}{87}{subsection.5.9.6}%
+\contentsline {section}{\numberline {5.10}IU31 Panel de Control del Coordinador}{88}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Objetivo}{88}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Diseño}{88}{subsection.5.10.2}%
+\contentsline {subsection}{\numberline {5.10.3}Salidas}{88}{subsection.5.10.3}%
+\contentsline {subsection}{\numberline {5.10.4}Entradas}{88}{subsection.5.10.4}%
+\contentsline {subsection}{\numberline {5.10.5}Comandos}{88}{subsection.5.10.5}%
+\contentsline {subsection}{\numberline {5.10.6}Mensajes}{89}{subsection.5.10.6}%
+\contentsline {section}{\numberline {5.11}IU32 Panel del Especialista}{89}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Objetivo}{89}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Diseño}{89}{subsection.5.11.2}%
+\contentsline {subsection}{\numberline {5.11.3}Salidas}{89}{subsection.5.11.3}%
+\contentsline {subsection}{\numberline {5.11.4}Entradas}{89}{subsection.5.11.4}%
+\contentsline {subsection}{\numberline {5.11.5}Comandos}{89}{subsection.5.11.5}%
+\contentsline {subsection}{\numberline {5.11.6}Mensajes}{90}{subsection.5.11.6}%
+\contentsline {section}{\numberline {5.12}Catálogo de mensajes}{90}{section.5.12}%

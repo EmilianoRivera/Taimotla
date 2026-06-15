@@ -1,0 +1,49 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-16}{Capturar ficha de verificación del cumplimiento de derechos}{
+	Permite a los integrantes del equipo multidisciplinario completar la ficha de verificación del cumplimiento de derechos del NNA (educación, salud, descanso y esparcimiento, inclusión, identidad, entre otros), conforme a la metodología de la Caja de Herramientas de UNICEF, para identificar de manera estructurada los derechos vulnerados que serán insumo del PRD.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Estandarizar la identificación de derechos vulnerados o restringidos del menor mediante un cuestionario estructurado por categoría de derecho (Si / No / No aplica) que sirva como base objetiva para la elaboración del PRD.}
+	\UCitem{Entradas}{Respuestas (Si, No, No aplica) a los elementos a evaluar de cada categoría de derecho y observaciones complementarias.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Ficha de verificación almacenada con el listado de derechos marcados como vulnerados y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El especialista debe pertenecer al equipo asignado al expediente y el expediente debe encontrarse en estatus ``En Diagnóstico''.}
+	\UCitem{Postcondiciones}{La ficha de verificación queda registrada en el expediente y los derechos marcados como ``No'' se incorporan automáticamente como derechos vulnerados sugeridos en el cuadro guía del PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intentar guardar la ficha dejando elementos de evaluación sin responder.
+			\item[E2:] Intentar acceder a la ficha sin pertenecer al equipo asignado al expediente.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-05}{BR-05}. Insumo directo de \hyperlink{CU-14}{CU-14}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al expediente del NNA y selecciona la pestaña \IUbutton{Ficha de Verificación de Derechos}.
+	\UCpaso Verifica que el especialista pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de la ficha organizado por categorías de derecho (educación, salud, descanso y esparcimiento, inclusión, identidad, convivencia familiar, entre otros) con sus respectivos elementos a evaluar.
+	\UCpaso[\UCactor] Para cada elemento a evaluar, selecciona una de las opciones \IUbutton{Si}, \IUbutton{No} o \IUbutton{No aplica} y, de manera opcional, agrega observaciones.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Ficha de Verificación}.
+	\UCpaso Valida que todos los elementos de evaluación obligatorios hayan sido respondidos. \Trayref{B}.
+	\UCpaso Almacena la ficha de verificación en el expediente del NNA, asociada al especialista y a la fecha de captura.
+	\UCpaso Genera de forma automática la lista de derechos marcados como ``No'' y los incorpora como sugerencias de derechos vulnerados en el cuadro guía del PRD (\hyperlink{CU-14}{CU-14}).
+	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando el registro de la ficha.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Especialista no pertenece al equipo asignado}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Elementos de evaluación sin responder}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando las categorías de derecho con elementos pendientes de respuesta.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Mantiene la información capturada y regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

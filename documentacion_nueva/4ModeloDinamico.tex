@@ -26,60 +26,60 @@ Este capítulo describe el modelo dinámico del sistema **Taimotla**, el cual de
 A continuación se describen los actores identificados que interactúan directamente con el sistema:
 
 \begin{Usuario}{\hypertarget{actDirector}{\subsection{Director General}}}{
-	Es el directivo de mayor rango en la Fundación, responsable de la gestión de usuarios, la configuración de los equipos multidisciplinarios y la auditoría general del estado de los expedientes de NNA.
-}
-    \item[Responsabilidades:] \cdtEmpty
-    \begin{itemize}
+		Es el directivo de mayor rango en la Fundación, responsable de la gestión de usuarios, la configuración de los equipos multidisciplinarios y la auditoría general del estado de los expedientes de NNA.
+	}
+	\item[Responsabilidades:] \cdtEmpty
+	\begin{itemize}
 		\item Dar de alta, baja y actualizar las cuentas del personal.
 		\item Crear y modificar la composición de los equipos multidisciplinarios.
 		\item Auditar y consultar los expedientes unificados de NNA.
 		\item Firmar y aprobar de forma definitiva el Plan de Restitución de Derechos (PRD).
-    \end{itemize}
+	\end{itemize}
 	\item[Perfil:] \cdtEmpty
-    \begin{itemize}
+	\begin{itemize}
 		\item Licenciatura en Administración, Derecho o Ciencias Sociales.
 		\item Experiencia en liderazgo y dirección de equipos en organizaciones sociales.
-    \end{itemize}
+	\end{itemize}
 \end{Usuario}
 
 \begin{Usuario}{\hypertarget{actCoordinador}{\subsection{Coordinador de Caso}}}{
-	Es el profesional que lidera un equipo multidisciplinario asignado a uno o más expedientes. Actúa como supervisor técnico de los especialistas de área.
-}
-    \item[Responsabilidades:] \cdtEmpty
-    \begin{itemize}
+		Es el profesional que lidera un equipo multidisciplinario asignado a uno o más expedientes. Actúa como supervisor técnico de los especialistas de área.
+	}
+	\item[Responsabilidades:] \cdtEmpty
+	\begin{itemize}
 		\item Asignar expedientes de NNA recién creados a los equipos correspondientes.
 		\item Supervisar el llenado del FUD y las valoraciones de los especialistas.
 		\item Pre-autorizar el Plan de Restitución de Derechos (PRD).
-    \end{itemize}
+	\end{itemize}
 	\item[Perfil:] \cdtEmpty
-    \begin{itemize}
+	\begin{itemize}
 		\item Licenciatura en Psicología, Derecho, Trabajo Social o afín.
 		\item Habilidades de supervisión y gestión de proyectos clínicos o sociales.
-    \end{itemize}
+	\end{itemize}
 \end{Usuario}
 
 \begin{Usuario}{\hypertarget{actEspecialista}{\subsection{Personal Especialista (Médico, Psicólogo, Abogado, TS)}}}{
-	Son los profesionales operativos de cada área técnica asignados a un equipo multidisciplinario para la atención directa de los menores.
-}
-    \item[Responsabilidades:] \cdtEmpty
-    \begin{itemize}
+		Son los profesionales operativos de cada área técnica asignados a un equipo multidisciplinario para la atención directa de los menores.
+	}
+	\item[Responsabilidades:] \cdtEmpty
+	\begin{itemize}
 		\item Consultar la información del expediente único del menor asignado.
 		\item Registrar valoraciones y diagnósticos específicos de su competencia (médicos, emocionales, sociofamiliares y jurídicos).
 		\item Subir archivos digitalizados de actas de nacimiento y cartillas de salud.
 		\item Registrar la ejecución de las medidas de protección y restitución ordenadas.
-    \end{itemize}
+	\end{itemize}
 	\item[Perfil:] \cdtEmpty
-    \begin{itemize}
+	\begin{itemize}
 		\item Licenciatura con cédula profesional en su área respectiva.
 		\item Capacitación en derechos de la infancia e intervención en trauma.
-    \end{itemize}
+	\end{itemize}
 \end{Usuario}
 
 \cleardoublepage
 %---------------------------------------------------------
 \section{Casos de Uso}
 
-A continuación se presentan las especificaciones detalladas de los casos de uso principales implementados en esta iteración del sistema:
+A continuación se presentan las especificaciones detalladas de los casos de uso principales implementados en esta iteración del sistema. Los casos CU-01 a CU-13 cubren el control de acceso, la gestión de personal y equipos, y la apertura y captura del expediente único de NNA. Los casos CU-14 a CU-18 amplían la cobertura del ciclo completo de restitución de derechos --desde la detección inicial del caso hasta su cierre--, incorporando explícitamente las herramientas y formatos propuestos en la Caja de Herramientas de UNICEF/SNDIF para la aplicación del artículo 123 de la LGDNNA.
 
 \input{cu/cu-01}
 \input{cu/cu-02}
@@ -94,3 +94,8 @@ A continuación se presentan las especificaciones detalladas de los casos de uso
 \input{cu/cu-11}
 \input{cu/cu-12}
 \input{cu/cu-13}
+\input{cu/cu-14}
+\input{cu/cu-15}
+\input{cu/cu-16}
+\input{cu/cu-17}
+\input{cu/cu-18}

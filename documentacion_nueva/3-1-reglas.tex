@@ -118,3 +118,16 @@
 	\BRitem[Referenciado por:] \hyperlink{CU-03}{CU-03}.
 \end{BussinesRule}
 
+\begin{BussinesRule}{BR-11}{Cierre de expediente condicionado al cumplimiento total de medidas.}
+	\BRitem[Tipo:] Regla de inferencia.
+	\BRitem[Clase:] Habilitadora.
+	\BRitem[Nivel:] Control.
+	\BRitem[Descripción:] Un expediente de NNA solo puede cambiar a estatus ``Cerrado'' si la totalidad de las medidas de protección especial contenidas en su PRD vigente se encuentran registradas con estatus ``Cumplida'', y dicho cierre debe ser solicitado por el Coordinador de Caso y autorizado por el Director.
+	\BRitem[Motivación:] Garantizar que ningún expediente se archive como resuelto sin haber verificado la restitución plena de los derechos del NNA, conforme al proceso PRC-09.
+	\BRitem[Sentencia:] $\forall ex \in Expediente \Rightarrow (ex.estado = \mbox{'Cerrado'} \Leftrightarrow (\forall m \in ex.prd.medidas \Rightarrow m.estado = \mbox{'Cumplida'}) \land ex.cierreAutorizado = true)$.
+	\BRitem[Ejemplo positivo:] El Coordinador solicita el cierre tras verificar que las cinco medidas del PRD están ``Cumplida'' y el Director autoriza el cierre.
+	\BRitem[Ejemplo negativo:] El Coordinador intenta cerrar un expediente con una medida de acogimiento residencial todavía en estatus ``En proceso''.
+	\BRitem[Referenciado por:] \hyperlink{CU-15}{CU-15}, \hyperlink{CU-18}{CU-18}.
+\end{BussinesRule}
+
+

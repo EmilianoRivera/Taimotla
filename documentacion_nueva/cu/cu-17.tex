@@ -1,0 +1,41 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-17}{Registrar detección inicial de caso}{
+	Permite al Coordinador de Caso o a un especialista capturar el formato de registro de detección de un posible caso de vulneración de derechos de un NNA, antes de la apertura formal del expediente, con base en la narración inicial del hecho y los datos de quien da aviso, conforme a la metodología de la Caja de Herramientas de UNICEF.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Dejar constancia inmediata y textual de la información recibida sobre un posible caso de vulneración de derechos, asignándole un número de reporte consecutivo previo a la apertura del expediente formal del menor.}
+	\UCitem{Entradas}{Fecha, ciudad o localidad, nombre del caso, narración textual de lo sucedido, referencias de ubicación de la NNA, nombre y carácter de quien da aviso (servidor público, sociedad civil, persona adulta de la comunidad, NNA u otros).}
+	\UCitem{Origen}{Teclado.}
+	\UCitem{Salidas}{Registro de detección almacenado con número de reporte consecutivo asignado y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas en el sistema.}
+	\UCitem{Postcondiciones}{El registro de detección queda almacenado con un folio consecutivo y disponible para vincularse a la apertura del expediente del NNA (\hyperlink{CU-03}{CU-03}).}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del formato de detección vacíos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Antecedente directo de \hyperlink{CU-03}{CU-03}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la opción \IUbutton{Registrar Detección de Caso} desde su panel principal.
+	\UCpaso Muestra el formato de registro de detección con los campos de fecha, ciudad o localidad, nombre del caso, narración de lo sucedido, referencias de ubicación y datos de quien da aviso.
+	\UCpaso[\UCactor] Captura la información solicitada de manera textual, indicando el carácter de quien da aviso del caso.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Registro de Detección}.
+	\UCpaso Valida que los campos obligatorios del formato hayan sido completados. \Trayref{A}.
+	\UCpaso Asigna de forma automática un número de reporte consecutivo y almacena el registro de detección en la base de datos.
+	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} mostrando el número de reporte asignado y la opción de continuar hacia la apertura del expediente del NNA.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Mantiene la información capturada y regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

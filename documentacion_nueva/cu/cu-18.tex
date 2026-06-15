@@ -1,0 +1,51 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-18}{Cerrar expediente del NNA}{
+	Permite al Coordinador de Caso solicitar el cierre del expediente de un NNA una vez que todas las medidas de protección especial del PRD han sido cumplidas, y permite al Director validar y autorizar el cierre definitivo, archivando el caso de forma histórica.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Concluir formalmente el proceso de restitución de derechos de un NNA, validando que todos los derechos vulnerados identificados hayan sido plenamente garantizados antes de archivar el expediente.}
+	\UCitem{Entradas}{Justificación del cierre y, en su caso, observaciones de la autorización del Director.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Expediente actualizado a estatus ``Cerrado'' y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El expediente debe encontrarse en estatus ``En Seguimiento'' y todas las medidas de protección especial del PRD vigente deben estar en estatus ``Cumplida''.}
+	\UCitem{Postcondiciones}{El expediente queda en estatus ``Cerrado'', se vuelve de solo lectura para consulta histórica y deja de aparecer en el panel de casos activos del equipo multidisciplinario.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intentar solicitar el cierre cuando existen medidas de protección pendientes o no cumplidas.
+			\item[E2:] Intentar autorizar el cierre sin que el Coordinador haya enviado la solicitud previa.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Depende del cumplimiento total registrado en \hyperlink{CU-15}{CU-15}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] El Coordinador accede al expediente del NNA y selecciona la opción \IUbutton{Solicitar Cierre de Expediente}.
+	\UCpaso Verifica que todas las medidas de protección especial del PRD vigente se encuentren en estatus ``Cumplida''. \Trayref{A}.
+	\UCpaso Despliega un resumen del cumplimiento de derechos del expediente y un campo para capturar la justificación del cierre.
+	\UCpaso[\UCactor] Captura la justificación del cierre y presiona el botón \IUbutton{Enviar Solicitud de Cierre}.
+	\UCpaso Actualiza el estatus del expediente a ``Cierre Solicitado'' y notifica al Director sobre la solicitud pendiente.
+	\UCpaso[\UCactor] El Director ingresa a la bandeja de cierres pendientes desde su panel de control y selecciona el expediente.
+	\UCpaso Despliega el resumen de cumplimiento de derechos, la justificación del Coordinador y el historial de bitácoras de seguimiento.
+	\UCpaso[\UCactor] Revisa la información y presiona el botón \IUbutton{Autorizar Cierre} o \IUbutton{Rechazar Cierre}.
+	\UCpaso Verifica que el expediente se encuentre en estatus ``Cierre Solicitado''. \Trayref{B}.
+	\UCpaso Actualiza el estatus del expediente a ``Cerrado'' (o lo regresa a ``En Seguimiento'' en caso de rechazo, registrando la observación del Director).
+	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando la resolución del cierre.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Medidas de protección pendientes o no cumplidas}
+	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} indicando las medidas de protección que aún no se encuentran en estatus ``Cumplida''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Expediente sin solicitud de cierre previa}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que el expediente no cuenta con una solicitud de cierre pendiente.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

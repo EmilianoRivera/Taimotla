@@ -1,0 +1,61 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+\begin{UseCase}{CU-14}{Elaborar y aprobar el Plan de Restitución de Derechos (PRD)}{
+	Permite al Coordinador de Caso consolidar el cuadro guía del Plan de Restitución de Derechos (PRD) a partir de las valoraciones registradas por el equipo multidisciplinario, enviarlo a pre-autorización, y posteriormente permite al Director de la Fundación revisarlo y firmarlo digitalmente para que el expediente cambie a estatus ``En Seguimiento''.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Estructurar formalmente los derechos vulnerados detectados, las medidas de protección especial recomendadas y los responsables de su ejecución, y formalizar su autorización institucional conforme al artículo 123 de la LGDNNA.}
+	\UCitem{Entradas}{Cuadro guía del PRD (derecho vulnerado, sustento legal, descripción de la medida, beneficiario, institución responsable, plazo de seguimiento) y firma digital del Director.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Documento del PRD generado en estatus ``Borrador'', ``Pre-autorizado'' o ``Vigente'' y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla y base de datos relacional.}
+	\UCitem{Precondiciones}{El expediente del NNA debe encontrarse en estatus ``En Diagnóstico'' y contar con al menos una valoración registrada por cada especialista del equipo asignado.}
+	\UCitem{Postcondiciones}{El PRD queda registrado con estatus ``Vigente'' y el expediente del NNA cambia automáticamente a estatus ``En Seguimiento''.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intentar generar el PRD sin que todas las valoraciones obligatorias del equipo estén completas.
+			\item[E2:] Campos obligatorios del cuadro guía del PRD vacíos.
+			\item[E3:] Intentar aprobar un PRD que no cuenta con la pre-autorización previa del Coordinador.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-05}{BR-05}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] El Coordinador accede al expediente del menor desde su panel y selecciona la opción \IUbutton{Elaborar PRD}.
+	\UCpaso Verifica que el expediente cuente con las valoraciones obligatorias de los cuatro especialistas del equipo. \Trayref{A}.
+	\UCpaso Despliega el cuadro guía del PRD prellenado con los derechos vulnerados identificados en las valoraciones registradas.
+	\UCpaso[\UCactor] Para cada derecho vulnerado, captura la medida de protección especial recomendada, la institución responsable, el servidor público a cargo y el plazo de seguimiento.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Borrador} o \IUbutton{Enviar a Pre-autorización}.
+	\UCpaso Valida que los campos obligatorios del cuadro guía estén completos antes de cambiar el estatus. \Trayref{B}.
+	\UCpaso Guarda el PRD con estatus ``Pre-autorizado'' y notifica al Director sobre el documento pendiente de firma.
+	\UCpaso[\UCactor] El Director ingresa a la bandeja de PRD pendientes desde su panel de control y selecciona el expediente.
+	\UCpaso Despliega el cuadro guía del PRD en modo de solo lectura junto con las valoraciones que lo respaldan.
+	\UCpaso[\UCactor] Revisa el contenido y presiona el botón \IUbutton{Firmar y Aprobar PRD}.
+	\UCpaso Verifica que el PRD cuente con la pre-autorización del Coordinador. \Trayref{C}.
+	\UCpaso Registra la firma digital del Director, actualiza el estatus del PRD a ``Vigente'' y el estatus del expediente del NNA a ``En Seguimiento''.
+	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando la aprobación del PRD.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Valoraciones incompletas del equipo}
+	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} indicando qué especialistas tienen valoraciones pendientes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios del cuadro guía vacíos}
+	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando las filas del cuadro guía que requieren información.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Mantiene la información capturada y regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{PRD sin pre-autorización del Coordinador}
+	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que el documento no puede firmarse sin la pre-autorización correspondiente.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.
