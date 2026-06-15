@@ -11,189 +11,169 @@
 \contentsline {subsection}{\numberline {2.1.3}Análisis de causas probables}{6}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Análisis de posibles consecuencias}{7}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Características de la solución}{7}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Síntesis de la problemática}{7}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.6}Síntesis de la problemática}{8}{subsection.2.1.6}%
 \contentsline {section}{\numberline {2.2}Objetivos del proyecto}{8}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Objetivo general}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Objetivos específicos}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}Objetivos específicos}{9}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Usuarios identificados}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Perfil y Definición de Actores}{9}{subsection.2.3.1}%
-\contentsline {subsubsection}{Actor: Director de la Fundación}{9}{section*.4}%
+\contentsline {subsection}{\numberline {2.3.1}Perfil y Definición de Actores}{10}{subsection.2.3.1}%
+\contentsline {subsubsection}{Actor: Director de la Fundación}{10}{section*.4}%
 \contentsline {subsubsection}{Actor: Coordinador de Caso}{10}{section*.5}%
-\contentsline {subsubsection}{Actor: Abogado (Personal Multidisciplinario)}{10}{section*.6}%
+\contentsline {subsubsection}{Actor: Abogado (Personal Multidisciplinario)}{11}{section*.6}%
 \contentsline {subsubsection}{Actor: Médico (Personal Multidisciplinario)}{11}{section*.7}%
-\contentsline {subsubsection}{Actor: Psicólogo (Personal Multidisciplinario)}{11}{section*.8}%
+\contentsline {subsubsection}{Actor: Psicólogo (Personal Multidisciplinario)}{12}{section*.8}%
 \contentsline {subsubsection}{Actor: Trabajador Social (Personal Multidisciplinario)}{12}{section*.9}%
-\contentsline {section}{\numberline {2.4}Procesos involucrados}{12}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Clasificación de Procesos}{12}{subsection.2.4.1}%
-\contentsline {subsubsection}{Procesos Estratégicos}{12}{section*.10}%
+\contentsline {section}{\numberline {2.4}Procesos involucrados}{13}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Clasificación de Procesos}{13}{subsection.2.4.1}%
+\contentsline {subsubsection}{Procesos Estratégicos}{13}{section*.10}%
 \contentsline {subsubsection}{Procesos Clave}{13}{section*.11}%
 \contentsline {subsubsection}{Procesos de Soporte}{13}{section*.12}%
-\contentsline {section}{\numberline {2.5}Requerimientos de usuario}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Requerimientos funcionales}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.5}Requerimientos de usuario}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Requerimientos funcionales}{15}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Especificación de plataforma}{16}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Modelo del Negocio}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Contexto}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Términos del Negocio}{17}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Modelo del dominio del problema}{18}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Entidad: Persona}{18}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Entidad: Personal}{19}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Entidad: Equipo}{19}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Entidad: Expediente}{20}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Entidad: NNA}{20}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Entidad: Domicilio}{21}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Entidad: Tutor}{21}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Entidad: HechoVictimal}{23}{subsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.3.9}Entidad: Documento}{23}{subsection.3.3.9}%
-\contentsline {section}{\numberline {3.4}Modelado de Reglas de negocio}{24}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Máquinas de estado}{27}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Modelo dinámico}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Descripción de actores}{30}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Director General}{30}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Coordinador de Caso}{31}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Personal Especialista (Médico, Psicólogo, Abogado, TS)}{31}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Casos de Uso}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}CU-01 Control de acceso}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Descripción completa}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Atributos importantes}{34}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Trayectorias del Caso de Uso}{34}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}CU-02 Gestión de usuarios y roles}{36}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Descripción completa}{36}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Atributos importantes}{36}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Trayectorias del Caso de Uso}{36}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}CU-03 Gestión de expediente del NNA}{38}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Descripción completa}{38}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Atributos importantes}{38}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Trayectorias del Caso de Uso}{39}{subsection.4.5.3}%
-\contentsline {section}{\numberline {4.6}CU-04 Asignación de casos}{40}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Descripción completa}{40}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Atributos importantes}{40}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Trayectorias del Caso de Uso}{40}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}CU-05 Crear equipo de trabajo}{42}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Descripción completa}{42}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Atributos importantes}{42}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Trayectorias del Caso de Uso}{42}{subsection.4.7.3}%
-\contentsline {section}{\numberline {4.8}CU-06 Gestionar equipos de trabajo}{44}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Descripción completa}{44}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.8.2}Atributos importantes}{44}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {4.8.3}Trayectorias del Caso de Uso}{44}{subsection.4.8.3}%
-\contentsline {section}{\numberline {4.9}CU-07 Consultar perfil y datos de cuenta}{47}{section.4.9}%
-\contentsline {subsection}{\numberline {4.9.1}Descripción completa}{47}{subsection.4.9.1}%
-\contentsline {subsection}{\numberline {4.9.2}Atributos importantes}{47}{subsection.4.9.2}%
-\contentsline {subsection}{\numberline {4.9.3}Trayectorias del Caso de Uso}{47}{subsection.4.9.3}%
-\contentsline {section}{\numberline {4.10}CU-08 Capturar valoración del Especialista}{49}{section.4.10}%
-\contentsline {subsection}{\numberline {4.10.1}Descripción completa}{49}{subsection.4.10.1}%
-\contentsline {subsection}{\numberline {4.10.2}Atributos importantes}{49}{subsection.4.10.2}%
-\contentsline {subsection}{\numberline {4.10.3}Trayectorias del Caso de Uso}{50}{subsection.4.10.3}%
-\contentsline {section}{\numberline {4.11}CU-09 Gestión de personal por Coordinador}{52}{section.4.11}%
-\contentsline {subsection}{\numberline {4.11.1}Descripción completa}{52}{subsection.4.11.1}%
-\contentsline {subsection}{\numberline {4.11.2}Atributos importantes}{52}{subsection.4.11.2}%
-\contentsline {subsection}{\numberline {4.11.3}Trayectorias del Caso de Uso}{52}{subsection.4.11.3}%
-\contentsline {section}{\numberline {4.12}CU-10 Registrar hecho victimal}{54}{section.4.12}%
-\contentsline {subsection}{\numberline {4.12.1}Descripción completa}{54}{subsection.4.12.1}%
-\contentsline {subsection}{\numberline {4.12.2}Atributos importantes}{54}{subsection.4.12.2}%
-\contentsline {subsection}{\numberline {4.12.3}Trayectorias del Caso de Uso}{55}{subsection.4.12.3}%
-\contentsline {section}{\numberline {4.13}CU-11 Registrar Cuidador / Tutor}{57}{section.4.13}%
-\contentsline {subsection}{\numberline {4.13.1}Descripción completa}{57}{subsection.4.13.1}%
-\contentsline {subsection}{\numberline {4.13.2}Atributos importantes}{57}{subsection.4.13.2}%
-\contentsline {subsection}{\numberline {4.13.3}Trayectorias del Caso de Uso}{58}{subsection.4.13.3}%
-\contentsline {section}{\numberline {4.14}CU-12 Registrar Familiar de NNA}{60}{section.4.14}%
-\contentsline {subsection}{\numberline {4.14.1}Descripción completa}{60}{subsection.4.14.1}%
-\contentsline {subsection}{\numberline {4.14.2}Atributos importantes}{60}{subsection.4.14.2}%
-\contentsline {subsection}{\numberline {4.14.3}Trayectorias del Caso de Uso}{60}{subsection.4.14.3}%
-\contentsline {section}{\numberline {4.15}CU-13 Consultar Alertas y Notificaciones}{62}{section.4.15}%
-\contentsline {subsection}{\numberline {4.15.1}Descripción completa}{62}{subsection.4.15.1}%
-\contentsline {subsection}{\numberline {4.15.2}Atributos importantes}{62}{subsection.4.15.2}%
-\contentsline {subsection}{\numberline {4.15.3}Trayectorias del Caso de Uso}{62}{subsection.4.15.3}%
-\contentsline {section}{\numberline {4.16}CU-14 Elaborar y aprobar el Plan de Restitución de Derechos (PRD)}{64}{section.4.16}%
-\contentsline {subsection}{\numberline {4.16.1}Descripción completa}{64}{subsection.4.16.1}%
-\contentsline {subsection}{\numberline {4.16.2}Atributos importantes}{64}{subsection.4.16.2}%
-\contentsline {subsection}{\numberline {4.16.3}Trayectorias del Caso de Uso}{65}{subsection.4.16.3}%
-\contentsline {section}{\numberline {4.17}CU-15 Registrar seguimiento de medidas de protección}{67}{section.4.17}%
-\contentsline {subsection}{\numberline {4.17.1}Descripción completa}{67}{subsection.4.17.1}%
-\contentsline {subsection}{\numberline {4.17.2}Atributos importantes}{67}{subsection.4.17.2}%
-\contentsline {subsection}{\numberline {4.17.3}Trayectorias del Caso de Uso}{68}{subsection.4.17.3}%
-\contentsline {section}{\numberline {4.18}CU-16 Capturar ficha de verificación del cumplimiento de derechos}{70}{section.4.18}%
-\contentsline {subsection}{\numberline {4.18.1}Descripción completa}{70}{subsection.4.18.1}%
-\contentsline {subsection}{\numberline {4.18.2}Atributos importantes}{70}{subsection.4.18.2}%
-\contentsline {subsection}{\numberline {4.18.3}Trayectorias del Caso de Uso}{71}{subsection.4.18.3}%
-\contentsline {section}{\numberline {4.19}CU-17 Registrar detección inicial de caso}{72}{section.4.19}%
-\contentsline {subsection}{\numberline {4.19.1}Descripción completa}{72}{subsection.4.19.1}%
-\contentsline {subsection}{\numberline {4.19.2}Atributos importantes}{72}{subsection.4.19.2}%
-\contentsline {subsection}{\numberline {4.19.3}Trayectorias del Caso de Uso}{72}{subsection.4.19.3}%
-\contentsline {section}{\numberline {4.20}CU-18 Cerrar expediente del NNA}{74}{section.4.20}%
-\contentsline {subsection}{\numberline {4.20.1}Descripción completa}{74}{subsection.4.20.1}%
-\contentsline {subsection}{\numberline {4.20.2}Atributos importantes}{74}{subsection.4.20.2}%
-\contentsline {subsection}{\numberline {4.20.3}Trayectorias del Caso de Uso}{74}{subsection.4.20.3}%
-\contentsline {chapter}{\numberline {5}Modelo de la interacción}{77}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Modelo de navegación}{77}{section.5.1}%
-\contentsline {section}{\numberline {5.2}IU23 Pantalla de Control de Acceso}{77}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Objetivo}{77}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Diseño}{77}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Salidas}{79}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Entradas}{79}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Comandos}{79}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Mensajes}{79}{subsection.5.2.6}%
-\contentsline {section}{\numberline {5.3}IU24 Pantalla de Gestión de Personal}{80}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Objetivo}{80}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Diseño}{80}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Salidas}{80}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Entradas}{80}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Comandos}{80}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Mensajes}{80}{subsection.5.3.6}%
-\contentsline {section}{\numberline {5.4}IU25 Pantalla de Asignación de Casos}{81}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Objetivo}{81}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Diseño}{81}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Salidas}{81}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Entradas}{81}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Comandos}{81}{subsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.4.6}Mensajes}{81}{subsection.5.4.6}%
-\contentsline {section}{\numberline {5.5}IU26 Pantalla de Expediente Único de NNA}{82}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Objetivo}{82}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Diseño}{82}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Salidas}{82}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Entradas}{82}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Comandos}{83}{subsection.5.5.5}%
-\contentsline {subsection}{\numberline {5.5.6}Mensajes}{83}{subsection.5.5.6}%
-\contentsline {section}{\numberline {5.6}IU27 Pantalla de Registro de Equipo de Trabajo}{83}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Objetivo}{83}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Diseño}{83}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Salidas}{84}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Entradas}{84}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Comandos}{84}{subsection.5.6.5}%
-\contentsline {subsection}{\numberline {5.6.6}Mensajes}{84}{subsection.5.6.6}%
-\contentsline {section}{\numberline {5.7}IU28 Pantalla de Gestión de Equipos}{84}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Objetivo}{84}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Diseño}{84}{subsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.7.3}Salidas}{85}{subsection.5.7.3}%
-\contentsline {subsection}{\numberline {5.7.4}Entradas}{85}{subsection.5.7.4}%
-\contentsline {subsection}{\numberline {5.7.5}Comandos}{85}{subsection.5.7.5}%
-\contentsline {subsection}{\numberline {5.7.6}Mensajes}{85}{subsection.5.7.6}%
-\contentsline {section}{\numberline {5.8}IU29 Pantalla de Perfil de Usuario}{85}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Objetivo}{85}{subsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.8.2}Diseño}{86}{subsection.5.8.2}%
-\contentsline {subsection}{\numberline {5.8.3}Salidas}{86}{subsection.5.8.3}%
-\contentsline {subsection}{\numberline {5.8.4}Entradas}{86}{subsection.5.8.4}%
-\contentsline {subsection}{\numberline {5.8.5}Comandos}{86}{subsection.5.8.5}%
-\contentsline {subsection}{\numberline {5.8.6}Mensajes}{86}{subsection.5.8.6}%
-\contentsline {section}{\numberline {5.9}IU30 Pantalla de Modificación de Perfil de Personal}{86}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Objetivo}{86}{subsection.5.9.1}%
-\contentsline {subsection}{\numberline {5.9.2}Diseño}{87}{subsection.5.9.2}%
-\contentsline {subsection}{\numberline {5.9.3}Salidas}{87}{subsection.5.9.3}%
-\contentsline {subsection}{\numberline {5.9.4}Entradas}{87}{subsection.5.9.4}%
-\contentsline {subsection}{\numberline {5.9.5}Comandos}{87}{subsection.5.9.5}%
-\contentsline {subsection}{\numberline {5.9.6}Mensajes}{87}{subsection.5.9.6}%
-\contentsline {section}{\numberline {5.10}IU31 Panel de Control del Coordinador}{88}{section.5.10}%
-\contentsline {subsection}{\numberline {5.10.1}Objetivo}{88}{subsection.5.10.1}%
-\contentsline {subsection}{\numberline {5.10.2}Diseño}{88}{subsection.5.10.2}%
-\contentsline {subsection}{\numberline {5.10.3}Salidas}{88}{subsection.5.10.3}%
-\contentsline {subsection}{\numberline {5.10.4}Entradas}{88}{subsection.5.10.4}%
-\contentsline {subsection}{\numberline {5.10.5}Comandos}{88}{subsection.5.10.5}%
-\contentsline {subsection}{\numberline {5.10.6}Mensajes}{89}{subsection.5.10.6}%
-\contentsline {section}{\numberline {5.11}IU32 Panel del Especialista}{89}{section.5.11}%
-\contentsline {subsection}{\numberline {5.11.1}Objetivo}{89}{subsection.5.11.1}%
-\contentsline {subsection}{\numberline {5.11.2}Diseño}{89}{subsection.5.11.2}%
-\contentsline {subsection}{\numberline {5.11.3}Salidas}{89}{subsection.5.11.3}%
-\contentsline {subsection}{\numberline {5.11.4}Entradas}{89}{subsection.5.11.4}%
-\contentsline {subsection}{\numberline {5.11.5}Comandos}{89}{subsection.5.11.5}%
-\contentsline {subsection}{\numberline {5.11.6}Mensajes}{90}{subsection.5.11.6}%
-\contentsline {section}{\numberline {5.12}Catálogo de mensajes}{90}{section.5.12}%
+\contentsline {chapter}{\numberline {3}Modelo del Negocio}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Contexto}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Términos del Negocio}{19}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Modelo del dominio del problema}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Entidad: Persona}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Entidad: Personal}{21}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Entidad: Equipo}{21}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Entidad: Expediente}{22}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Entidad: NNA}{22}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Entidad: Domicilio}{23}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Entidad: Tutor}{23}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Entidad: HechoVictimal}{25}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.9}Entidad: Documento}{25}{subsection.3.3.9}%
+\contentsline {section}{\numberline {3.4}Modelado de Reglas de negocio}{26}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Máquinas de estado}{29}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Modelo dinámico}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Descripción de actores}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Director General}{32}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Coordinador de Caso}{33}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Personal Especialista (Médico, Psicólogo, Abogado, TS)}{33}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Casos de Uso}{35}{section.4.2}%
+\contentsline {section}{\numberline {4.3}CU-01 Control de acceso}{36}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Descripción completa}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Atributos importantes}{36}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Trayectorias del Caso de Uso}{36}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}CU-02 Gestión de usuarios y roles}{38}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Descripción completa}{38}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Atributos importantes}{38}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Trayectorias del Caso de Uso}{38}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}CU-03 Gestión de expediente del NNA}{40}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Descripción completa}{40}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Atributos importantes}{40}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Trayectorias del Caso de Uso}{41}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.6}CU-04 Asignación de casos}{42}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Descripción completa}{42}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Atributos importantes}{42}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Trayectorias del Caso de Uso}{42}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}CU-05 Crear equipo de trabajo}{44}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Descripción completa}{44}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Atributos importantes}{44}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Trayectorias del Caso de Uso}{44}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}CU-06 Gestionar equipos de trabajo}{46}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Descripción completa}{46}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Atributos importantes}{46}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Trayectorias del Caso de Uso}{46}{subsection.4.8.3}%
+\contentsline {section}{\numberline {4.9}CU-07 Consultar perfil y datos de cuenta}{49}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Descripción completa}{49}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Atributos importantes}{49}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Trayectorias del Caso de Uso}{49}{subsection.4.9.3}%
+\contentsline {section}{\numberline {4.10}CU-08 Capturar valoración del Especialista}{51}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Descripción completa}{51}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Atributos importantes}{51}{subsection.4.10.2}%
+\contentsline {subsection}{\numberline {4.10.3}Trayectorias del Caso de Uso}{52}{subsection.4.10.3}%
+\contentsline {section}{\numberline {4.11}CU-09 Gestión de personal por Coordinador}{54}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Descripción completa}{54}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Atributos importantes}{54}{subsection.4.11.2}%
+\contentsline {subsection}{\numberline {4.11.3}Trayectorias del Caso de Uso}{54}{subsection.4.11.3}%
+\contentsline {section}{\numberline {4.12}CU-10 Registrar hecho victimal}{56}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Descripción completa}{56}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Atributos importantes}{56}{subsection.4.12.2}%
+\contentsline {subsection}{\numberline {4.12.3}Trayectorias del Caso de Uso}{57}{subsection.4.12.3}%
+\contentsline {section}{\numberline {4.13}CU-11 Registrar Cuidador / Tutor}{59}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Descripción completa}{59}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Atributos importantes}{59}{subsection.4.13.2}%
+\contentsline {subsection}{\numberline {4.13.3}Trayectorias del Caso de Uso}{60}{subsection.4.13.3}%
+\contentsline {section}{\numberline {4.14}CU-12 Registrar Familiar de NNA}{62}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Descripción completa}{62}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Atributos importantes}{62}{subsection.4.14.2}%
+\contentsline {subsection}{\numberline {4.14.3}Trayectorias del Caso de Uso}{62}{subsection.4.14.3}%
+\contentsline {section}{\numberline {4.15}CU-13 Consultar Alertas y Notificaciones}{64}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Descripción completa}{64}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}Atributos importantes}{64}{subsection.4.15.2}%
+\contentsline {subsection}{\numberline {4.15.3}Trayectorias del Caso de Uso}{64}{subsection.4.15.3}%
+\contentsline {chapter}{\numberline {5}Modelo de la interacción}{67}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modelo de navegación}{67}{section.5.1}%
+\contentsline {section}{\numberline {5.2}IU23 Pantalla de Control de Acceso}{67}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Objetivo}{67}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Diseño}{67}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Salidas}{69}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Entradas}{69}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Comandos}{69}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Mensajes}{69}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}IU24 Pantalla de Gestión de Personal}{70}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Objetivo}{70}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Diseño}{70}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Salidas}{70}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Entradas}{70}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Comandos}{70}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Mensajes}{70}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}IU25 Pantalla de Asignación de Casos}{71}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Objetivo}{71}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Diseño}{71}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Salidas}{71}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Entradas}{71}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Comandos}{71}{subsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.4.6}Mensajes}{71}{subsection.5.4.6}%
+\contentsline {section}{\numberline {5.5}IU26 Pantalla de Expediente Único de NNA}{72}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Objetivo}{72}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Diseño}{72}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Salidas}{72}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Entradas}{72}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Comandos}{73}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}Mensajes}{73}{subsection.5.5.6}%
+\contentsline {section}{\numberline {5.6}IU27 Pantalla de Registro de Equipo de Trabajo}{73}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Objetivo}{73}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Diseño}{73}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Salidas}{74}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Entradas}{74}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Comandos}{74}{subsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.6.6}Mensajes}{74}{subsection.5.6.6}%
+\contentsline {section}{\numberline {5.7}IU28 Pantalla de Gestión de Equipos}{74}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Objetivo}{74}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Diseño}{74}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Salidas}{75}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Entradas}{75}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.5}Comandos}{75}{subsection.5.7.5}%
+\contentsline {subsection}{\numberline {5.7.6}Mensajes}{75}{subsection.5.7.6}%
+\contentsline {section}{\numberline {5.8}IU29 Pantalla de Perfil de Usuario}{75}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Objetivo}{75}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Diseño}{76}{subsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.8.3}Salidas}{76}{subsection.5.8.3}%
+\contentsline {subsection}{\numberline {5.8.4}Entradas}{76}{subsection.5.8.4}%
+\contentsline {subsection}{\numberline {5.8.5}Comandos}{76}{subsection.5.8.5}%
+\contentsline {subsection}{\numberline {5.8.6}Mensajes}{76}{subsection.5.8.6}%
+\contentsline {section}{\numberline {5.9}IU30 Pantalla de Modificación de Perfil de Personal}{76}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Objetivo}{76}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Diseño}{77}{subsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.9.3}Salidas}{77}{subsection.5.9.3}%
+\contentsline {subsection}{\numberline {5.9.4}Entradas}{77}{subsection.5.9.4}%
+\contentsline {subsection}{\numberline {5.9.5}Comandos}{77}{subsection.5.9.5}%
+\contentsline {subsection}{\numberline {5.9.6}Mensajes}{77}{subsection.5.9.6}%
+\contentsline {section}{\numberline {5.10}IU31 Panel de Control del Coordinador}{78}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Objetivo}{78}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Diseño}{78}{subsection.5.10.2}%
+\contentsline {subsection}{\numberline {5.10.3}Salidas}{78}{subsection.5.10.3}%
+\contentsline {subsection}{\numberline {5.10.4}Entradas}{78}{subsection.5.10.4}%
+\contentsline {subsection}{\numberline {5.10.5}Comandos}{78}{subsection.5.10.5}%
+\contentsline {subsection}{\numberline {5.10.6}Mensajes}{79}{subsection.5.10.6}%
+\contentsline {section}{\numberline {5.11}IU32 Panel del Especialista}{79}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Objetivo}{79}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Diseño}{79}{subsection.5.11.2}%
+\contentsline {subsection}{\numberline {5.11.3}Salidas}{79}{subsection.5.11.3}%
+\contentsline {subsection}{\numberline {5.11.4}Entradas}{79}{subsection.5.11.4}%
+\contentsline {subsection}{\numberline {5.11.5}Comandos}{79}{subsection.5.11.5}%
+\contentsline {subsection}{\numberline {5.11.6}Mensajes}{80}{subsection.5.11.6}%
+\contentsline {section}{\numberline {5.12}Catálogo de mensajes}{80}{section.5.12}%

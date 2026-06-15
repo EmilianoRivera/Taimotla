@@ -28,31 +28,35 @@ El problema general que atiende este proyecto se define de la siguiente manera:
 Los problemas específicos identificados en la operación de la Fundación se detallan en la tabla~\ref{tbl:problemasIdentificados}:
 
 \begin{problemas}
-	\caption{Problemas identificados en la operación de la Fundación.}\label{tbl:problemasIdentificados}\\
+	
 	\problema{P-01}{Heterogeneidad de datos}{La información de los expedientes está dispersa en múltiples soportes físicos y archivos locales (Word, notas sueltas, carpetas físicas), dificultando la integración y consulta rápida del caso.}{A}
 	\problema{P-02}{Lentitud en la consulta de información}{El personal invierte tiempo excesivo en localizar documentos de identidad y salud del menor en carpetas físicas y discos locales de diferentes computadoras, lo que retrasa los trámites legales y médicos urgentes.}{A}
-	\problema{P-03}{Vulnerabilidad y riesgo de pérdida de datos}{Almacenamiento local de la información en equipos individuales. Si un disco se daña, un equipo se extravía o un colaborador se retira de la Fundación, se corre el riesgo de perder el historial completo de un menor de forma irreparable.}{MA}
+	\problema{P-03}{Vulnerabilidad y riesgo de pérdida de datos}{Almacenamiento local de la información en equipos individuales. Si un disco se daña, un equipo se extravía o un colaborador se retira de la fundación, se corre el riesgo de perder el historial completo de un menor de forma irreparable.}{MA}
 	\problema{P-04}{Interrupción en el seguimiento de caso}{El seguimiento de la restitución de derechos no es continuo por falta de herramientas de control de fechas límite, provocando lagunas temporales sobre el estatus real de los derechos del menor.}{MA}
 	\problema{P-05}{Inconsistencia de datos}{Falta de sincronización entre especialistas del mismo equipo. Por ejemplo, el médico puede actualizar un diagnóstico físico en un papel que el abogado o el psicólogo desconocen o no tienen registrado.}{M}
 	\problema{P-06}{Sobrecarga operativa del personal}{El aumento acelerado de casos supera la capacidad del personal para redactar y consolidar reportes de manera manual, restando tiempo de atención directa a los menores.}{A}
 	\problema{P-07}{Falta de personal capacitado en TIC}{La disparidad en las habilidades tecnológicas del personal operativo limita el aprovechamiento de herramientas informáticas genéricas, requiriendo un sistema intuitivo y adaptado a sus flujos de trabajo.}{M}
+	\caption{Problemas identificados en la operación de la Fundación.}\label{tbl:problemasIdentificados}\\
 \end{problemas}
 
 \subsection{Análisis de causas probables}
 
 \begin{description}
-	\item[Uso de herramientas de almacenamiento descentralizadas:] El uso de carpetas locales, hojas de cálculo de Word/Excel y expedientes impresos impide la edición concurrente, el control de versiones y el respaldo automatizado de la información (Causa directa de P-01, P-02, P-03 y P-05).
-	\item[Falta de una plataforma con flujos de trabajo centralizados:] La carencia de un sistema de notificaciones y recordatorios centralizados sobre plazos legales y médicos impide a los coordinadores y especialistas monitorear el avance de las medidas en tiempo real (Causa de P-04).
-	\item[Inexistencia de un estándar operativo digitalizado:] Cada colaborador maneja su propio formato de trabajo y almacenamiento. Esto incrementa los tiempos de capacitación para el nuevo personal y genera cuellos de botella administrativos (Causa de P-06 y P-07).
+	\item[C-01 Uso de herramientas de almacenamiento descentralizadas:] El uso de carpetas locales, hojas de cálculo de Word/Excel y expedientes impresos impide la edición concurrente, el control de versiones y el respaldo automatizado de la información (Causa directa de P-01, P-02, P-03 y P-05).
+	\item[C-02 Falta de una plataforma con flujos de trabajo centralizados:] La carencia de un sistema de notificaciones y recordatorios centralizados sobre plazos legales y médicos impide a los coordinadores y especialistas monitorear el avance de las medidas en tiempo real (Causa de P-04).
+	\item[C-03 Inexistencia de un estándar operativo digitalizado:] Cada colaborador maneja su propio formato de trabajo y almacenamiento. Esto incrementa los tiempos de capacitación para el nuevo personal y genera cuellos de botella administrativos (Causa de P-06 y P-07).
 \end{description}
 
 \subsection{Análisis de posibles consecuencias}
 
 \begin{description}
-	\item[Pérdida de la integridad y consistencia de los datos:] Existencia de información contradictoria en los expedientes de NNA, lo que inhabilita a la Fundación para entregar reportes confiables ante auditorías de la Procuraduría de Protección o dependencias gubernamentales (Consecuencia de P-01 y P-05).
-	\item[Vulnerabilidad jurídica y física de los NNA:] Si un menor carece de su expediente unificado, se pueden aplicar medidas de protección incorrectas o tardías, categorizando casos como ``resueltos'' cuando no lo están, dejando desprotegido al menor ante su entorno de riesgo (Consecuencia de P-04).
-	\item[Filtración de información altamente sensible:] El almacenamiento y envío desordenado de datos personales de menores víctimas de violencia puede derivar en fugas de información, poniendo en riesgo la integridad física del menor y de su red de apoyo familiar (Consecuencia de P-03).
-	\item[Retrasos administrativos severos y pérdida de credibilidad:] Incapacidad de responder a tiempo ante requerimientos de juzgados familiares o fiscalías debido al desorden en la consulta del archivo (Consecuencia de P-02).
+	\item[PC-01 Pérdida de la integridad y consistencia de los datos:] Existencia de información contradictoria en los expedientes de NNA, lo que inhabilita a la Fundación para entregar reportes confiables ante auditorías de la Procuraduría de Protección o dependencias gubernamentales (Consecuencia de P-01 y P-05).
+	\item[PC- 02 Vulnerabilidad jurídica y física de los NNA:] Si un menor carece de su expediente unificado, se pueden aplicar medidas de protección incorrectas o tardías, categorizando casos como ``resueltos'' cuando no lo están, dejando desprotegido al menor ante su entorno de riesgo (Consecuencia de P-04).
+	\item[PC - 03 Filtración de información altamente sensible:] El almacenamiento y envío desordenado de datos personales de menores víctimas de violencia puede derivar en fugas de información, poniendo en riesgo la integridad física del menor y de su red de apoyo familiar (Consecuencia de P-03).
+	\item[PC - 04 Retrasos administrativos severos y pérdida de credibilidad:] Incapacidad de responder a tiempo ante requerimientos de juzgados familiares o fiscalías debido al desorden en la consulta del archivo (Consecuencia de P-02).
+	\item[PC - 05 Afectación a la salud laboral del personal y deserción operativa:] La sobrecarga extrema provocada por la redacción manual de informes y la duplicidad de tareas mecánicas genera agotamiento crónico en los especialistas. Esto incrementa la probabilidad de errores humanos críticos en los diagnósticos y provoca una alta rotación de personal, lo que interrumpe la continuidad y la confianza en los procesos de atención directa de los menores (Consecuencia de P-06).
+    \item[PC - 06 Incapacidad institucional ante el incremento de la demanda:] La falta de automatización en la consolidación de reportes satura los tiempos de la estructura multidisciplinaria. Al no poder procesar la información de forma ágil, la Fundación se enfrenta a la imposibilidad de absorber nuevos casos, dejando desatendidas a Niñas, Niños y Adolescentes que requieren incorporarse urgentemente a un Plan de Restitución de Derechos (Consecuencia de P-06).
+    \item[PC - 07 Resistencia al uso del sistema y persistencia del error:] Si la plataforma tecnológica no se adapta intuitivamente a las capacidades reales de los usuarios, se generará frustración y un rechazo sistemático hacia la herramienta digital. Esto obligaría al personal a regresar al uso de formatos informales o registros manuales descentralizados, perpetuando el riesgo de extravío de información y las lagunas de datos en los expedientes (Consecuencia de P-07).
 \end{description}
 
 \subsection{Características de la solución}
@@ -63,7 +67,7 @@ Para mitigar la problemática de la Fundación, la solución de software propues
 	\item Centralizar los datos en un servidor seguro con base de datos relacional para evitar la fragmentación y pérdida de datos.
 	\item Restringir los accesos a la información confidencial mediante roles definidos (Director, Coordinador, Especialista).
 	\item Emitir notificaciones de plazos y tareas críticas para el seguimiento continuo de los planes de restitución.
-	\item Automatizar la generación de reportes operativos básicos para reducir la carga administrativa.
+	\item Que todos los documentos y reportes sean generados desde el sistema.
 \end{itemize}
 
 \subsection{Síntesis de la problemática}
@@ -71,9 +75,9 @@ Para mitigar la problemática de la Fundación, la solución de software propues
 En acuerdo con la Dirección General y la Coordinación Operativa de la Fundación, se han determinado las siguientes soluciones tecnológicas a implementar en el sistema \textbf{Taimotla}:
 
 \begin{description}
-	\item[S-01 Base de datos centralizada:] Implementación de un repositorio de datos PostgreSQL único de donde se extraerá y sincronizará toda la información.
+	\item[S-01 Base de datos centralizada:] Implementación de una base de datos relacional a través del sistema gestor de bases de datos PostgreSQL único de donde se extraerá y sincronizará toda la información.
 	\item[S-02 Autenticación y control de accesos basado en roles:] Limitación del acceso a los expedientes únicamente al equipo multidisciplinario responsable del caso y a la Dirección General.
-	\item[S-03 Módulo de gestión de personal multidisciplinario:] Registro, actualización y control de estatus de los usuarios (activo/inactivo) realizado por el Director.
+	\item[S-03 Módulo de gestión de personal multidisciplinario:] Registro, actualización y control de estatus de los usuarios (activo/inactivo) realizado por el Coordinador.
 	\item[S-04 Módulo de creación y gestión de equipos:] Asignación estructurada de un coordinador y especialistas a un expediente para asegurar responsables del seguimiento.
 	\item[S-05 Formulario Único de Datos (FUD) digital:] Módulo de alta de NNA que captura de manera estandarizada los datos de identidad, etnia, nacionalidad, tutores e historial del hecho victimal.
 	\item[S-06 Módulos específicos de especialidad:] Secciones especializadas en el expediente para que cada profesional (Médico, Psicólogo, Abogado, Trabajador Social) registre diagnósticos de su competencia.
@@ -279,16 +283,36 @@ Al digitalizar las operaciones de la Fundación mediante \textbf{Taimotla}, los 
 Los requerimientos de usuario extraídos de la operación de la Fundación se especifican en la tabla~\ref{tbl:requerimientosUsuario}:
 
 \begin{requerimientosU}
+	
+	\FRitem{RU-01}{Consulta de casos asignados}{El personal necesita consultar los casos que tiene asignados.}{1}{\TODO}
+	\FRitem{RU-02}{Seguimiento del estado del caso}{El personal necesita saber en qué estado se encuentra cada caso de NNA que atiende.}{1}{\TODO}
+	\FRitem{RU-03}{Registro del NNA}{El personal necesita registrar a los NNA que ingresan a la Fundación.}{1}{\TODO}
+	\FRitem{RU-04}{Asignación de casos a equipos}{El Coordinador necesita asignar los casos de NNA a los equipos multidisciplinarios.}{1}{\TODO}
+	\FRitem{RU-05}{Gestión de equipos multidisciplinarios}{El Coordinador necesita conformar y gestionar los equipos multidisciplinarios.}{1}{\TODO}
+	\FRitem{RU-06}{Gestión del personal de la Fundación}{El Director necesita registrar y administrar las cuentas del personal.}{2}{\TODO}
+	\FRitem{RU-07}{Carga de documentos del NNA}{El personal necesita adjuntar los documentos oficiales del NNA al expediente.}{2}{\TODO}
+	\FRitem{RU-08}{Registro del entorno familiar del NNA}{El Trabajador Social necesita registrar la información del entorno familiar del NNA.}{2}{\TODO}
+	\FRitem{RU-09}{Registro del tutor o cuidador del NNA}{El personal necesita registrar los datos del tutor o cuidador responsable del NNA.}{2}{\TODO}
+	\FRitem{RU-10}{Registro del historial médico del NNA}{El Médico necesita registrar el historial clínico y el esquema de vacunación del NNA.}{2}{\TODO}
+	\FRitem{RU-11}{Registro del hecho victimal}{El personal necesita documentar el hecho que originó la vulneración de derechos del NNA.}{2}{\TODO}
+	\FRitem{RU-12}{Mantenimiento de catálogos del sistema}{El Director necesita mantener actualizados los catálogos de valores del sistema.}{2}{\TODO}
+	\FRitem{RU-13}{Diagnóstico clínico del NNA}{El Médico necesita registrar el diagnóstico clínico inicial del NNA.}{4}{\TODO}
+	\FRitem{RU-14}{Diagnóstico psicológico del NNA}{El Psicólogo necesita registrar el diagnóstico del estado emocional del NNA.}{4}{\TODO}
+	\FRitem{RU-15}{Diagnóstico jurídico del NNA}{El Abogado necesita registrar la valoración jurídica del caso del NNA.}{4}{\TODO}
+	\FRitem{RU-16}{Diagnóstico sociofamiliar del NNA}{El Trabajador Social necesita registrar el diagnóstico del entorno social del NNA.}{4}{\TODO}
+	\FRitem{RU-17}{Identificación de derechos vulnerados}{El Coordinador necesita registrar qué derechos del NNA han sido vulnerados.}{4}{\TODO}
+	\FRitem{RU-18}{Plan de Restitución de Derechos}{El Coordinador necesita elaborar el Plan de Restitución de Derechos del NNA.}{4}{\TODO}
+	\FRitem{RU-19}{Registro de medidas urgentes}{El Coordinador necesita registrar las medidas urgentes de protección solicitadas.}{4}{\TODO}
+	\FRitem{RU-20}{Seguimiento de medidas de protección}{El personal necesita registrar el avance de cada medida de protección del plan.}{4}{\TODO}
+	\FRitem{RU-21}{Catálogo de actores en materia de derechos}{El personal necesita consultar las organizaciones y personas que pueden apoyar la restitución de derechos del NNA.}{4}{\TODO}
+	\FRitem{RU-22}{Gestión de actores en materia de derechos}{El Coordinador necesita registrar y actualizar la información de los actores en materia de derechos.}{4}{\TODO}
+	\FRitem{RU-23}{Vinculación de actores al plan}{El Coordinador necesita asociar actores responsables a cada medida del plan.}{4}{\TODO}
+	\FRitem{RU-24}{Familiograma del NNA}{El Trabajador Social necesita construir el familiograma del NNA.}{4}{\TODO}
+	\FRitem{RU-25}{Alertas de fechas importantes}{El personal necesita recibir alertas cuando se acercan fechas límite de los casos.}{4}{\TODO}
+	\FRitem{RU-26}{Cierre del expediente}{El Coordinador necesita registrar el cierre del caso cuando todos los derechos han sido restituidos.}{4}{\TODO}
+	\FRitem{RU-27}{Historial del expediente}{El personal necesita consultar el historial completo de acciones realizadas en un caso.}{4}{\TODO}
+	\FRitem{RU-28}{Supervisión general de casos}{El Director necesita una vista general del estado de todos los expedientes activos.}{4}{\TODO}
 	\caption{Requerimientos de usuario del sistema Taimotla.}\label{tbl:requerimientosUsuario}\\
-	\FRitem{RU-01}{Control de acceso por credenciales}{El personal de la Fundación debe autenticarse de manera segura antes de poder realizar cualquier consulta u operación en el sistema.}{1}{\TODO}
-	\FRitem{RU-02}{Centralización de expedientes}{El personal autorizado debe poder consultar de forma integrada toda la información médica, psicológica, legal y social de cada NNA.}{1}{\TODO}
-	\FRitem{RU-03}{Registro del Expediente FUD}{El personal de la Fundación debe registrar y actualizar los datos personales, del hecho victimal y de contacto de la NNA, tutores y familiares en formato FUD.}{1}{\TODO}
-	\FRitem{RU-04}{Diagnósticos multidisciplinarios}{Los especialistas (Médicos, Psicólogos, Abogados y Trabajadores Sociales) deben capturar sus diagnósticos y adjuntar reportes periciales al expediente del NNA.}{1}{\TODO}
-	\FRitem{RU-05}{Asignación de Casos}{El Coordinador de Caso debe poder asignar un expediente abierto a un equipo multidisciplinario específico de especialistas.}{1}{\TODO}
-	\FRitem{RU-06}{Configuración de Equipos}{El Director debe poder conformar, editar e integrar los equipos multidisciplinarios vinculados a la Coordinación.}{1}{\TODO}
-	\FRitem{RU-07}{Seguridad de datos por Rol}{La información confidencial del expediente debe ser consultada y editada únicamente por el personal asignado al caso para evitar filtraciones de datos sensibles.}{1}{\TODO}
-	\FRitem{RU-08}{Gestión de personal multidisciplinario}{El Director de la Fundación debe poder registrar, modificar los datos de perfil, habilitar o deshabilitar accesos y eliminar permanentemente las cuentas de los colaboradores.}{1}{\TODO}
-	\FRitem{RU-09}{Gestión y validación documental}{Los especialistas del sistema deben poder resguardar documentos digitalizados oficiales del menor (acta de nacimiento y cartilla de salud), y el especialista legal debe poder validar formalmente el acta de nacimiento.}{1}{\TODO}
 \end{requerimientosU}
 
 %---------------------------------------------------------
@@ -297,7 +321,7 @@ Los requerimientos de usuario extraídos de la operación de la Fundación se es
 Los requerimientos funcionales del sistema Taimotla, que detallan las funciones de la plataforma tecnológica y su trazabilidad con las necesidades de usuario, se especifican en la tabla~\ref{tbl:requerimientosFuncionales}:
 
 \begin{requerimientos}
-	\caption{Requerimientos funcionales del sistema Taimotla.}\label{tbl:requerimientosFuncionales}\\
+	
 	\FRitem{RF-01}{Autenticación de usuarios}{El sistema debe permitir a los colaboradores iniciar sesión ingresando su correo institucional y contraseña.}{A}{RU-01}
 	\FRitem{RF-02}{Cierre de sesión}{El sistema debe permitir a los usuarios finalizar su sesión activa y destruir las variables de sesión locales.}{M}{RU-01}
 	\FRitem{RF-03}{Recuperación de contraseña}{El sistema debe permitir a los usuarios recuperar sus accesos mediante el envío de un enlace al correo registrado.}{M}{RU-01}
@@ -321,8 +345,9 @@ Los requerimientos funcionales del sistema Taimotla, que detallan las funciones 
 	\FRitem{RF-21}{Eliminación permanente de cuentas}{El sistema debe permitir al Director eliminar de forma permanente la cuenta de un colaborador del sistema.}{M}{RU-08}
 	\FRitem{RF-22}{Consulta de datos de cuenta propia}{El sistema debe permitir a los usuarios logueados consultar la información administrativa de su propia cuenta de acceso.}{M}{RU-01}
 	\FRitem{RF-23}{Validación de acta de nacimiento}{El sistema debe permitir al Abogado marcar el acta de nacimiento de un NNA como verificada tras validar su autenticidad.}{A}{RU-09}
+	\caption{Requerimientos funcionales del sistema Taimotla.}\label{tbl:requerimientosFuncionales}\\
 \end{requerimientos}
-
+	
 
 %---------------------------------------------------------
 \section{Especificación de plataforma}
