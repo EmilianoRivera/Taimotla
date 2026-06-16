@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.13)  16 JUN 2026 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.13)  16 JUN 2026 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4084,101 +4084,65 @@ File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/default.png, id=2063, 926.46124pt x 57.21375pt>
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 11.
-(pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
+<images/24.png, id=2063, 1206.5075pt x 599.23875pt>
+File: images/24.png Graphic file (type png)
+<use images/24.png>
+Package pdftex.def Info: images/24.png  used on input line 11.
+(pdftex.def)             Requested size: 275.26772pt x 136.71562pt.
 
 
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 30.
+Package pdftex.def Info: theme/headerPar.png  used on input line 23.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 23.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[82 <./images/default.png>]) (./iu/iu25.tex
+[82 <./images/24.png>]) (./iu/iu25.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+<images/default.png, id=2075, 926.46124pt x 57.21375pt>
 File: images/default.png Graphic file (type png)
 <use images/default.png>
 Package pdftex.def Info: images/default.png  used on input line 15.
 (pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
+
+
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 26.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[83 <./images/default.png>]
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 6.64998pt on input line 31.
-
-
-File: theme/headerInp.png Graphic file (type png)
-<use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 37.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 37.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[83]) (./iu/iu26.tex
+) (./iu/iu26.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 17.
-(pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
+<images/26.png, id=2090, 1179.40625pt x 686.565pt>
+File: images/26.png Graphic file (type png)
+<use images/26.png>
+Package pdftex.def Info: images/26.png  used on input line 17.
+(pdftex.def)             Requested size: 275.26772pt x 160.2428pt.
 
 
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 32.
+Package pdftex.def Info: theme/headerPar.png  used on input line 26.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 32.
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
 [84]) (./iu/iu27.tex
-File: theme/uc/iu.png Graphic file (type png)
-<use theme/uc/iu.png>
-Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
-(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 18.
-(pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
-
-
-File: theme/headerInp.png Graphic file (type png)
-<use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 24.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 24.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[85]) (./iu/iu28.tex
-File: theme/uc/iu.png Graphic file (type png)
-<use theme/uc/iu.png>
-Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
-(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-
-
-File: theme/headerPar.png Graphic file (type png)
-<use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 14.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 14.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[86]
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 20.
-(pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
-) (./iu/iu29.tex
 
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
@@ -4188,45 +4152,97 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 7.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[87]
+[85 <./images/26.png>]
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+<images/27.png, id=2104, 1196.47pt x 658.46pt>
+File: images/27.png Graphic file (type png)
+<use images/27.png>
+Package pdftex.def Info: images/27.png  used on input line 18.
+(pdftex.def)             Requested size: 275.26772pt x 151.49284pt.
+
+
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 38.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 38.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[86 <./images/27.png>]) (./iu/iu28.tex
+File: theme/uc/iu.png Graphic file (type png)
+<use theme/uc/iu.png>
+Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+<images/28.png, id=2113, 1164.35pt x 419.5675pt>
+File: images/28.png Graphic file (type png)
+<use images/28.png>
+Package pdftex.def Info: images/28.png  used on input line 20.
+(pdftex.def)             Requested size: 275.26772pt x 99.18736pt.
+
+
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 34.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 34.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[87]) (./iu/iu29.tex
+File: theme/uc/iu.png Graphic file (type png)
+<use theme/uc/iu.png>
+Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+
+
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 16.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 16.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[88 <./images/28.png>]
 File: images/default.png Graphic file (type png)
 <use images/default.png>
 Package pdftex.def Info: images/default.png  used on input line 20.
 (pdftex.def)             Requested size: 225.21626pt x 13.90791pt.
 ) (./iu/iu30.tex
-
-File: theme/headerPar.png Graphic file (type png)
-<use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 4.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[88]
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 15.
-(pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
+<images/30.png, id=2129, 1180.41pt x 654.445pt>
+File: images/30.png Graphic file (type png)
+<use images/30.png>
+Package pdftex.def Info: images/30.png  used on input line 15.
+(pdftex.def)             Requested size: 275.26772pt x 152.60626pt.
 
 
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 39.
+Package pdftex.def Info: theme/headerInp.png  used on input line 15.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 39.
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 15.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[89]) (./iu/iu31.tex
+[89]
+
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 43.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 43.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[90 <./images/30.png>]) (./iu/iu31.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
@@ -4235,6 +4251,33 @@ File: images/default.png Graphic file (type png)
 <use images/default.png>
 Package pdftex.def Info: images/default.png  used on input line 14.
 (pdftex.def)             Requested size: 275.26772pt x 16.99925pt.
+File: theme/uc/iu.png Graphic file (type png)
+<use theme/uc/iu.png>
+Package pdftex.def Info: theme/uc/iu.png  used on input line 28.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+
+
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 30.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[91]) (./iu/iu32.tex
+File: theme/uc/iu.png Graphic file (type png)
+<use theme/uc/iu.png>
+Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/default.png Graphic file (type png)
+<use images/default.png>
+Package pdftex.def Info: images/default.png  used on input line 14.
+(pdftex.def)             Requested size: 225.21626pt x 13.90791pt.
+File: theme/uc/iu.png Graphic file (type png)
+<use theme/uc/iu.png>
+Package pdftex.def Info: theme/uc/iu.png  used on input line 27.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 
 
 File: theme/headerPar.png Graphic file (type png)
@@ -4245,56 +4288,27 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[90]
-File: theme/uc/iu.png Graphic file (type png)
-<use theme/uc/iu.png>
-Package pdftex.def Info: theme/uc/iu.png  used on input line 28.
-(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-) (./iu/iu32.tex
-File: theme/uc/iu.png Graphic file (type png)
-<use theme/uc/iu.png>
-Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
-(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-File: images/default.png Graphic file (type png)
-<use images/default.png>
-Package pdftex.def Info: images/default.png  used on input line 14.
-(pdftex.def)             Requested size: 225.21626pt x 13.90791pt.
-
-
-File: theme/headerInp.png Graphic file (type png)
-<use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 22.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 22.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[91]
-File: theme/uc/iu.png Graphic file (type png)
-<use theme/uc/iu.png>
-Package pdftex.def Info: theme/uc/iu.png  used on input line 27.
-(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-)
-
-File: theme/headerPar.png Graphic file (type png)
-<use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 69.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-File: theme/plecaAyD.png Graphic file (type png)
-<use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 69.
-(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
 [92])
 
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 45.
+Package pdftex.def Info: theme/headerInp.png  used on input line 74.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 74.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[93])
+
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 45.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 45.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[93] (./ejemplo.aux
+[94] (./ejemplo.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
  (./projectCharter.aux) (./1introduccion.aux)
@@ -4308,10 +4322,10 @@ Package rerunfilecheck Info: File `ejemplo.out' has not changed.
 (rerunfilecheck)             Checksum: EB04402A688A8E9539E3058CBC1E8353;31833.
  ) 
 Here is how much of TeX's memory you used:
- 17388 strings out of 473197
- 273020 string characters out of 5718605
+ 17444 strings out of 473197
+ 274062 string characters out of 5718605
  711614 words of memory out of 5000000
- 39415 multiletter control sequences out of 15000+600000
+ 39470 multiletter control sequences out of 15000+600000
  619201 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,16n,107p,768b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -4328,10 +4342,10 @@ dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on ejemplo.pdf (107 pages, 832330 bytes).
+Output written on ejemplo.pdf (108 pages, 1150591 bytes).
 PDF statistics:
- 2397 PDF objects out of 2487 (max. 8388607)
- 2206 compressed objects within 23 object streams
- 796 named destinations out of 1000 (max. 500000)
- 1618 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2406 PDF objects out of 2487 (max. 8388607)
+ 2209 compressed objects within 23 object streams
+ 797 named destinations out of 1000 (max. 500000)
+ 1643 words of extra memory for PDF output out of 10000 (max. 10000000)
 
