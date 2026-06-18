@@ -1,0 +1,28 @@
+\begin{UseCase}{CU-54}{Notificar valoración pendiente de especialista}{
+	Permite al sistema generar una alerta al Coordinador cuando han transcurrido más de 5 días hábiles desde la asignación del expediente sin que algún especialista haya registrado su valoración.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Evitar que los expedientes permanezcan sin valoración durante periodos prolongados que retrasen la elaboración del PRD.}
+	\UCitem{Entradas}{Fecha de asignación del expediente al equipo y estado de completitud de valoraciones.}
+	\UCitem{Origen}{Proceso interno del sistema.}
+	\UCitem{Salidas}{Alerta informativa en la bandeja del Coordinador del equipo.}
+	\UCitem{Destino}{Bandeja de notificaciones del Coordinador.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{Alerta registrada y visible para el Coordinador.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta en el proceso diario junto con CU-53.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema ejecuta el proceso de verificación de valoraciones diariamente.
+	\UCpaso Consulta expedientes en estado En Diagnóstico con más de 5 días hábiles desde la asignación.
+	\UCpaso Para cada expediente con valoraciones incompletas, genera una alerta informativa en la bandeja del Coordinador.
+	\UCpaso Registra la alerta en la tabla de notificaciones.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-55

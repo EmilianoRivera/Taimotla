@@ -1,0 +1,42 @@
+\begin{UseCase}{CU-28}{Registrar diagnóstico de grado de peligro y coerción}{
+	Permite al Coordinador registrar el diagnóstico del grado de peligro para la integridad física y emocional del NNA y el grado de coerción del entorno, una vez concluidas las entrevistas con la familia y el NNA, como insumo para la elaboración del PRD.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Determinar formalmente el nivel de urgencia de intervención y el tipo de coerción requerido para la ejecución del PRD, conforme a la Caja de Herramientas §4.4.1 y §4.4.2.}
+	\UCitem{Entradas}{Grado de peligro (Alto/Medio/Bajo), observaciones sobre el peligro, grado de coerción (Alto/Medio/Bajo), observaciones sobre la coerción, fecha del diagnóstico.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Diagnóstico registrado en tabla separada del expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Diagnóstico.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico y contar con al menos la valoración sociofamiliar registrada.}
+	\UCitem{Postcondiciones}{El diagnóstico de peligro y coerción queda registrado en la tabla de diagnóstico del expediente, separado del hecho victimal.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del diagnóstico vacíos (grado de peligro o grado de coerción).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en §4.4.1 y §4.4.2 de la Caja de Herramientas UNICEF. El peligro se evalúa sobre el NNA; la coerción sobre el entorno familiar.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Diagnóstico} dentro del expediente único del NNA.
+	\UCpaso Despliega el formulario de diagnóstico de peligro y coerción con sus campos.
+	\UCpaso[\UCactor] Selecciona el grado de peligro para la integridad del NNA (Alto, Medio, Bajo) y captura las observaciones que sustentan la determinación.
+	\UCpaso[\UCactor] Selecciona el grado de coerción del entorno (Alto, Medio, Bajo) y captura las observaciones correspondientes.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Diagnóstico}.
+	\UCpaso Valida que ambos campos de grado estén seleccionados. \Trayref{A}.
+	\UCpaso Almacena el diagnóstico en la tabla de diagnóstico del expediente con la fecha del día.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos de grado vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el grado de peligro y el de coerción son obligatorios.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-29

@@ -1,0 +1,29 @@
+\begin{UseCase}{CU-52}{Registrar contexto indígena o rural del NNA}{
+	Permite capturar el nivel de bilingüismo de la familia, la participación en asambleas comunitarias y el parentesco con autoridades locales cuando el NNA vive en comunidad indígena o rural.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar el contexto cultural e institucional del NNA en comunidades indígenas o rurales para adaptar el PRD a la realidad comunitaria.}
+	\UCitem{Entradas}{Nivel de bilingüismo de la familia (texto), participación en asambleas (texto), cargos desempeñados en la comunidad, parentesco con autoridades locales.}
+	\UCitem{Origen}{Teclado.}
+	\UCitem{Salidas}{Contexto comunitario registrado en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares, subsección Contexto comunitario.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos del contexto comunitario almacenados.}
+	\UCitem{Errores}{Ninguno específico.}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme a §4.3.3 de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Contexto Comunitario}.
+	\UCpaso Despliega el formulario de contexto indígena o rural.
+	\UCpaso[\UCactor] Captura el nivel de bilingüismo de la familia, participación comunitaria, cargos y parentesco con autoridades.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar contexto comunitario}.
+	\UCpaso Almacena los datos y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-53

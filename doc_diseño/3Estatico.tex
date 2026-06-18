@@ -1,0 +1,173 @@
+\chapter{Diseño estático}
+\label{cap:disenoEstatico}
+
+Este capítulo detalla la estructura estática del sistema \textbf{Taimotla}, representando la división lógica de los componentes de código, dependencias de paquetes y la estructura de funciones agrupadas en módulos mediante diagramas de clases embebidos en TikZ.
+
+%---------------------------------------------------------
+\section{Descripción y alcance del diseño}
+\label{sec:descripcionAlcanceEstatico}
+
+El diseño estático define cómo se organiza el código fuente en tiempo de desarrollo. Su alcance abarca la definición de límites entre la lógica de control, lógica de negocio y persistencia de datos, garantizando cohesión alta y bajo acoplamiento.
+
+%---------------------------------------------------------
+\section{Diseño de subsistemas}
+\label{sec:disenoSubsistemas}
+
+La plataforma se subdivide lógicamente en tres subsistemas principales:
+
+\begin{itemize}
+    \item \textbf{Subsistema de Autenticación y Seguridad:} Encargado de la validación de accesos, recuperación de cuentas y control de variables de sesión.
+    \item \textbf{Subsistema del Director (Administración):} Módulos para la gestión de cuentas del personal multidisciplinario y conformación de equipos de trabajo.
+    \item \textbf{Subsistema del Coordinador y Especialistas (Operativo):} Centrado en la apertura de expedientes (FUD), captura de valoraciones específicas y gestión de documentos médicos/legales de los NNA.
+\end{itemize}
+
+%---------------------------------------------------------
+\section{Diseño de módulos}
+\label{sec:disenoModulos}
+
+La estructura modular de archivos en el sistema sigue el patrón MVC y se compone de:
+
+\begin{description}
+    \item[\texttt{app.py}:] Archivo raíz del servidor. Inicializa la aplicación Flask, carga las variables del entorno (\texttt{.env}) y registra los Blueprints de control.
+    \item[\texttt{routes/}:] Contiene los controladores que reciben las peticiones del cliente:
+    \begin{itemize}
+        \item \texttt{main.py}: Rutas de acceso público y login.
+        \item \texttt{director.py}: Lógica de las interfaces de administración de personal y equipos.
+        \item \texttt{coordinador.py}: Lógica para la creación de expedientes y asignación de casos.
+    \end{itemize}
+    \item[\texttt{models/}:] Contiene los módulos que implementan la lógica de negocio y consultas directas a base de datos:
+    \begin{itemize}
+        \item \texttt{database.py}: Establece conexiones psycopg2 seguras.
+        \item \texttt{auth.py}: Valida credenciales contra la base de datos.
+        \item \texttt{director.py}: Operaciones de personal y equipos.
+        \item \texttt{equipo.py}: Lógica operativa de equipos de trabajo.
+        \item \texttt{nna.py}: Alta, edición y lectura de los datos unificados FUD.
+    \end{itemize}
+\end{description}
+
+%---------------------------------------------------------
+\section{Diseño de paquetes}
+\label{sec:disenoPaquetes}
+
+El mapa de dependencias de librerías del proyecto se compone de los siguientes paquetes de software:
+
+\begin{figure}[htbp!]
+\centering
+\begin{tikzpicture}[
+    node distance=1.2cm and 2.0cm,
+    pack/.style={rectangle, draw, fill=blue!5, text width=2.8cm, text centered, minimum height=1.2cm, font=\sffamily\small, rounded corners},
+    extpack/.style={rectangle, draw, fill=gray!15, text width=2.8cm, text centered, minimum height=1.2cm, font=\sffamily\small, dashed},
+    arrow/.style={thick,->,>=stealth,dashed,font=\sffamily\scriptsize}
+]
+    % App Modules (Internal)
+    \node (app) [pack, fill=orange!10] {\textbf{app.py} \\ (Módulo Raíz)};
+    \node (routes) [pack, right=of app] {\textbf{routes/} \\ (Controladores)};
+    \node (models) [pack, right=of routes] {\textbf{models/} \\ (Modelos)};
+    \node (views) [pack, below=of routes] {\textbf{templates/ / static/} \\ (Vistas)};
+
+    % External Packages
+    \node (flask) [extpack, above=of routes] {\textbf{Flask} \\ (Web Framework)};
+    \node (dotenv) [extpack, above=of app] {\textbf{python-dotenv} \\ (Variables .env)};
+    \node (psycopg) [extpack, above=of models] {\textbf{psycopg2} \\ (PostgreSQL Driver)};
+
+    % Dependencies
+    \draw [arrow] (app) -- node[above] {registra} (routes);
+    \draw [arrow] (app) -- (dotenv);
+    \draw [arrow] (routes) -- node[above] {consulta} (models);
+    \draw [arrow] (routes) -- (views);
+    \draw [arrow] (routes) -- (flask);
+    \draw [arrow] (models) -- (psycopg);
+
+\end{tikzpicture}
+\caption{Diagrama de dependencias de paquetes y organización interna del sistema Taimotla.}
+\label{fig:dependenciasPaquetes}
+\end{figure}
+
+%---------------------------------------------------------
+\section{Diseño de clases}
+\label{sec:disenoClases}
+
+Dado que Python es un lenguaje multiparadigma y el sistema se estructuró de forma modular (utilizando funciones dentro de módulos en lugar de clases tradicionales con estado), el diagrama de clases modela los módulos del sistema como clases que exponen servicios estáticos.
+
+\begin{figure}[htbp!]
+\centering
+\begin{tikzpicture}[
+    class/.style={rectangle, draw, fill=blue!5, text width=5.5cm, rounded corners, font=\sffamily\scriptsize},
+    title/.style={font=\sffamily\bfseries\small, text centered},
+    arrow/.style={thick,->,>=stealth}
+]
+    % Database Module
+    \node (db) [class] {
+        \textbf{models.database} \\
+        \rule{\linewidth}{0.4pt} \\
+        + obtener\_conexion() : connection \\
+        + get\_db\_cursor(commit: bool) : cursorcontext \\
+    };
+
+    % Auth Module
+    \node (auth) [class, above=of db, yshift=0.5cm] {
+        \textbf{models.auth} \\
+        \rule{\linewidth}{0.4pt} \\
+        + verify\_director(email: str) : tuple \\
+        + verify\_coordinador(email: str) : tuple \\
+    };
+
+    % Coordinador Module
+    \node (coordinador) [class, left=of auth, xshift=-0.5cm] {
+        \textbf{models.coordinador} \\
+        \rule{\linewidth}{0.4pt} \\
+        + consult\_coordinador(curp) : list \\
+    };
+
+    % Director Module
+    \node (director) [class, right=of db, xshift=1.5cm] {
+        \textbf{models.director} \\
+        \rule{\linewidth}{0.4pt} \\
+        + get\_all\_personal() : list \\
+        + add\_personal(curp, rfc, p\_nombre, ...) : bool \\
+        + toggle\_personal\_status(curp) : bool \\
+        + add\_equipo(nombre, coordinador\_curp, ...) : bool \\
+        + add\_actor(datos) : bool \\
+        + get\_actors\_filtered(...) : list \\
+        + update\_catalog(table, id, values) : bool \\
+    };
+
+    % Equipo Module
+    \node (equipo) [class, below=of director, yshift=-0.5cm] {
+        \textbf{models.equipo} \\
+        \rule{\linewidth}{0.4pt} \\
+        + get\_all\_coordinators() : list \\
+        + get\_available\_staff() : dict \\
+        + get\_busy\_staff() : list \\
+        + create\_team(nombre, coord, integ) : tuple \\
+        + get\_active\_teams() : list \\
+        + add\_member\_to\_team(id, curp) : tuple \\
+        + remove\_member\_from\_team(id, curp) : tuple \\
+        + update\_team\_coordinator(id, coord) : tuple \\
+        + delete\_team(id) : tuple \\
+    };
+
+    % NNA Module
+    \node (nna) [class, below=of db, yshift=-0.5cm] {
+        \textbf{models.nna} \\
+        \rule{\linewidth}{0.4pt} \\
+        + register\_nna(persona\_data, nna\_data) : int \\
+        + get\_expediente(num\_expediente) : dict \\
+        + update\_valoracion(id\_nna, area, nota) : bool \\
+        + register\_idiomas(id\_nna, list) : bool \\
+        + save\_familiograma(id\_nna, text, img) : bool \\
+        + register\_medidas\_urgentes(...) : bool \\
+        + save\_prd(id\_exp, datos) : bool \\
+    };
+
+    % Dependencies
+    \draw [arrow] (auth) -- (db);
+    \draw [arrow] (coordinador) -- (db);
+    \draw [arrow] (director) -- (db);
+    \draw [arrow] (equipo) -- (db);
+    \draw [arrow] (nna) -- (db);
+
+\end{tikzpicture}
+\caption{Diagrama de estructura modular (Clases Lógicas) del backend de Taimotla.}
+\label{fig:diagramaClases}
+\end{figure}

@@ -1,0 +1,54 @@
+\begin{UseCase}{CU-40}{Mantener catálogos del sistema}{
+	Permite al Director agregar, editar y desactivar los valores de los catálogos del sistema: derechos del NNA, tipos de discapacidad, parentescos, tipos de detector, niveles de idioma y grados de negación o afectación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Mantener actualizados los catálogos de valores del sistema para que reflejen fielmente las clasificaciones institucionales y normativas vigentes.}
+	\UCitem{Entradas}{Nombre del catálogo a gestionar, valor a agregar o modificar, estado activo/inactivo.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Catálogo actualizado y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de administración de catálogos.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El catálogo modificado queda actualizado y sus nuevos valores disponibles en los formularios del sistema.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El nombre del valor del catálogo está vacío.
+			\item[E2:] Intento de desactivar un valor que está siendo usado en expedientes activos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.3.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Administración de Catálogos} desde el panel del Director.
+	\UCpaso Despliega la lista de catálogos disponibles para gestión.
+	\UCpaso[\UCactor] Selecciona el catálogo a gestionar.
+	\UCpaso Despliega los valores actuales del catálogo con opciones de agregar, editar y desactivar.
+	\UCpaso[\UCactor] Realiza una de las siguientes acciones:
+		\begin{itemize}
+			\item \textbf{Agregar:} Ingresa el nuevo valor y presiona \IUbutton{Agregar}.
+			\item \textbf{Editar:} Modifica el nombre del valor y presiona \IUbutton{Guardar}.
+			\item \textbf{Desactivar:} Presiona \IUbutton{Desactivar} en el valor correspondiente. \Trayref{B}.
+		\end{itemize}
+	\UCpaso Valida que el nombre del valor no esté vacío. \Trayref{A}.
+	\UCpaso Guarda el cambio en la base de datos y refresca la lista del catálogo.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Nombre del valor vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el nombre del valor es obligatorio.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Valor en uso por expedientes activos}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que el valor está siendo utilizado y no puede desactivarse hasta liberar las referencias.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal sin realizar el cambio.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-41

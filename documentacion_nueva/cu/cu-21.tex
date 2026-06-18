@@ -1,0 +1,39 @@
+\begin{UseCase}{CU-21}{Buscar y filtrar expedientes}{
+	Permite a cualquier usuario autenticado localizar expedientes de NNA mediante búsqueda por nombre, CURP o folio, y filtrarlos por estado del expediente o rango de fechas desde el panel principal.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Agilizar la localización de expedientes específicos dentro del panel de casos, reduciendo el tiempo de consulta.}
+	\UCitem{Entradas}{Texto de búsqueda (nombre, CURP o folio), filtro de estado y rango de fechas (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Lista filtrada de expedientes que coinciden con los criterios ingresados.}
+	\UCitem{Destino}{Panel de expedientes del rol activo.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión. Los especialistas solo ven expedientes de su equipo asignado.}
+	\UCitem{Postcondiciones}{El sistema despliega la lista de resultados sin modificar ningún dato del expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se encontraron expedientes que coincidan con los criterios de búsqueda.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al panel de expedientes desde el menú de navegación principal.
+	\UCpaso Muestra la lista de expedientes disponibles según el rol y equipo del usuario, con la barra de búsqueda y los controles de filtrado.
+	\UCpaso[\UCactor] Ingresa un texto en la barra de búsqueda (nombre, CURP o folio) y/o selecciona filtros de estado y rango de fechas.
+	\UCpaso Actualiza en tiempo real la lista mostrando los expedientes que coinciden con los criterios ingresados. \Trayref{A}.
+	\UCpaso[\UCactor] Selecciona el expediente deseado de los resultados y el sistema lo redirige al detalle del expediente ({\hyperlink{CU-03}{CU-03}}).
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin resultados para los criterios de búsqueda}
+	\UCpaso Muestra el mensaje informativo \textbf{MSG-01} indicando que no se encontraron expedientes que coincidan con los criterios ingresados.
+	\UCpaso[\UCactor] Modifica los criterios de búsqueda o limpia los filtros.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-22

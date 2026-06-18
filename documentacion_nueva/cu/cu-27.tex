@@ -1,0 +1,49 @@
+\begin{UseCase}{CU-27}{Registrar familiograma del NNA}{
+	Permite al Trabajador Social construir y guardar el familiograma del NNA, registrando la descripción textual de la red familiar y comunitaria y adjuntando la imagen digitalizada del diagrama elaborado durante la entrevista.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar gráfica y textualmente la estructura de relaciones familiares y comunitarias del NNA como herramienta diagnóstica del entorno social.}
+	\UCitem{Entradas}{Descripción textual de quiénes conviven, sus ocupaciones y relaciones; imagen del familiograma en formato JPG, PNG o PDF (opcional).}
+	\UCitem{Origen}{Teclado, mouse y archivo digital.}
+	\UCitem{Salidas}{Familiograma registrado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, subsección Familiograma.}
+	\UCitem{Precondiciones}{El Trabajador Social debe pertenecer al equipo asignado y el expediente estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{El familiograma queda almacenado en el expediente del NNA y disponible para consulta del equipo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El archivo adjunto supera 5MB o tiene formato no soportado.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en la metodología del familiograma de la Caja de Herramientas §4.3.2.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la subsección \IUbutton{Familiograma} dentro de la pestaña de Entorno Familiar del expediente único.
+	\UCpaso Verifica que el Trabajador Social pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario del familiograma con el campo de descripción textual y la zona de carga de imagen.
+	\UCpaso[\UCactor] Captura la descripción textual de la composición familiar: quiénes conviven, edades, ocupaciones y relaciones de afecto o conflicto.
+	\UCpaso[\UCactor] De manera opcional, adjunta la imagen digitalizada del familiograma elaborado en papel durante la entrevista.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Familiograma}.
+	\UCpaso Valida el formato y tamaño del archivo adjunto si se cargó uno. \Trayref{B}.
+	\UCpaso Almacena la descripción textual y el archivo en el servidor.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Trabajador Social sin permisos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Archivo con formato inválido o tamaño excedido}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser JPG, PNG o PDF menor a 5MB.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-28

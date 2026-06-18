@@ -1,0 +1,51 @@
+\begin{UseCase}{CU-19}{Recuperar contraseña}{
+	Permite a cualquier usuario registrado en el sistema solicitar el restablecimiento de su contraseña mediante el envío de un enlace de recuperación a su correo institucional registrado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Restablecer el acceso al sistema de un usuario que olvidó sus credenciales sin requerir intervención del administrador.}
+	\UCitem{Entradas}{Correo electrónico institucional registrado.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Correo electrónico con enlace de restablecimiento enviado al usuario.}
+	\UCitem{Destino}{Pantalla de confirmación y bandeja de correo del usuario.}
+	\UCitem{Precondiciones}{El usuario debe contar con una cuenta activa y un correo institucional registrado en el sistema.}
+	\UCitem{Postcondiciones}{El usuario recibe un enlace temporal de un solo uso para restablecer su contraseña.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El correo ingresado no corresponde a ninguna cuenta registrada.
+			\item[E2:] El enlace de recuperación ha expirado o ya fue utilizado.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-02}{BR-02}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona el enlace \IUbutton{¿Olvidaste tu contraseña?} en la pantalla de inicio de sesión.
+	\UCpaso Muestra el formulario de recuperación solicitando el correo electrónico institucional.
+	\UCpaso[\UCactor] Ingresa su correo y presiona el botón \IUbutton{Enviar enlace de recuperación}.
+	\UCpaso Verifica que el correo corresponda a una cuenta registrada y activa en el sistema. \Trayref{A}.
+	\UCpaso Genera un token de restablecimiento de un solo uso con expiración de 60 minutos.
+	\UCpaso Envía un correo electrónico al usuario con el enlace de restablecimiento y muestra el mensaje de confirmación \textbf{MSG-09}.
+	\UCpaso[\UCactor] Accede al enlace desde su correo, ingresa y confirma la nueva contraseña, y presiona \IUbutton{Restablecer contraseña}.
+	\UCpaso Valida que el token sea válido y no haya expirado. \Trayref{B}.
+	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave e invalida el token.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión con el mensaje \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Correo no registrado en el sistema}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el correo no corresponde a ninguna cuenta activa.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Token expirado o ya utilizado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el enlace de recuperación ha expirado o ya fue utilizado.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirige al paso 1 de la trayectoria principal para solicitar un nuevo enlace.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-20

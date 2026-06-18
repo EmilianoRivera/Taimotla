@@ -1,0 +1,44 @@
+\begin{UseCase}{CU-29}{Registrar medidas urgentes de protección}{
+	Permite al Coordinador documentar las medidas urgentes de protección solicitadas cuando de la entrevista con el NNA o la familia se desprende un riesgo inmediato para la vida, libertad o integridad del menor.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Dejar constancia formal de las medidas urgentes solicitadas, su justificación y la opinión del NNA conforme a la regla 4 de la Caja de Herramientas §4.3.8.}
+	\UCitem{Entradas}{¿Se solicitaron medidas urgentes? (booleano), fecha de solicitud, tipo de medida solicitada, justificación de la medida y opinión del NNA sobre la medida.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Registro de medidas urgentes almacenado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, sección Medidas Urgentes del hecho victimal.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico y el Coordinador debe pertenecer al equipo asignado.}
+	\UCitem{Postcondiciones}{Las medidas urgentes quedan registradas y quedan disponibles como antecedente en la elaboración del PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Se indica que se solicitaron medidas pero los campos de tipo y justificación están vacíos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme a §4.3.7 y §4.3.8 de la Caja de Herramientas UNICEF.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección \IUbutton{Medidas Urgentes} dentro del expediente único.
+	\UCpaso Despliega el formulario de medidas urgentes con el indicador booleano y los campos condicionales.
+	\UCpaso[\UCactor] Marca el indicador \IUbutton{¿Se solicitaron medidas urgentes?} como Sí.
+	\UCpaso El sistema habilita los campos de fecha, tipo de medida, justificación y opinión del NNA.
+	\UCpaso[\UCactor] Captura la fecha de solicitud, el tipo de medida y la justificación basada en las reglas prácticas del interés superior del NNA.
+	\UCpaso[\UCactor] Registra textualmente la opinión del NNA sobre la medida, conforme a la Regla 4 de §4.3.8.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Medidas Urgentes}.
+	\UCpaso Valida que los campos de tipo y justificación no estén vacíos cuando el indicador sea afirmativo. \Trayref{A}.
+	\UCpaso Almacena el registro en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos requeridos vacíos con medidas activas}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de medida y la justificación son obligatorios cuando se solicitaron medidas urgentes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-30

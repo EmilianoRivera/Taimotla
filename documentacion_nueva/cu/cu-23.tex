@@ -1,0 +1,50 @@
+\begin{UseCase}{CU-23}{Registrar valoración psicológica}{
+	Permite al Psicólogo del equipo multidisciplinario registrar el diagnóstico del estado emocional del NNA en el expediente, incluyendo observaciones de comportamiento, indicadores de riesgo emocional y notas terapéuticas iniciales.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Documentar el estado emocional del NNA para identificar indicadores de riesgo psicológico e insumar el PRD con medidas de intervención terapéutica.}
+	\UCitem{Entradas}{Observaciones de comportamiento, indicadores de riesgo emocional identificados (selección múltiple de catálogo), notas terapéuticas iniciales y recomendaciones de intervención.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración psicológica registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Valoración Psicológica.}
+	\UCitem{Precondiciones}{El Psicólogo debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración psicológica queda almacenada y el indicador de valoración psicológica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El campo de notas terapéuticas iniciales está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Valoración Psicológica} en el expediente único del NNA.
+	\UCpaso Verifica que el Psicólogo pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración psicológica con campos de observaciones, indicadores de riesgo y notas.
+	\UCpaso[\UCactor] Registra las observaciones de comportamiento del NNA durante la entrevista.
+	\UCpaso[\UCactor] Selecciona los indicadores de riesgo emocional identificados del catálogo (aislamiento, regresión conductual, hipervigilancia, comportamiento sexualizado, entre otros).
+	\UCpaso[\UCactor] Captura las notas terapéuticas iniciales y las recomendaciones de intervención psicológica.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Psicológica}.
+	\UCpaso Valida que el campo de notas terapéuticas no esté vacío. \Trayref{B}.
+	\UCpaso Almacena la valoración en la base de datos y actualiza el indicador de valoración psicológica en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Psicólogo no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Notas terapéuticas vacías}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que las notas terapéuticas son obligatorias.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-24

@@ -1,0 +1,71 @@
+Diseño
+índice de contenido del documento de diseño
+ 
+Documento de diseño
+ 
+1.- Organización del diseño
+
+    1.1 Lineamientos de diseño
+
+    1.2 Metodologia o procedimiento o técnicas.
+
+    1.3 Notación
+
+    1.4 Alcance
+ 
+2.- Diseño arquitectónico o de alto nivel
+
+    2.1 Proposito u objetivo de la Arq (en terminos de propiedades)
+
+    2.2 Diagrama 
+
+    2.3 Explicacion (elementos, relaciones y reglas)
+
+    2.4 Beneficios y limitaciones de la arquitectura (en terminos de propiedades)
+ 
+ 
+3.- Diseño estático
+
+	Describir la estructura del código
+
+    apoyado con diagramas de clases y paquetes.
+ 
+    3.1 Descripcion y alcance del diseño
+
+    3.2 Diseño de subsisatemas
+
+    3.3 Diseño de módulos
+
+    3.4 Diseño d epaquetes
+
+    3.5 Duseño de clases
+ 
+4. - Diseño dinámico
+ 
+	4.1 diseño dinámico del CU login
+
+	...
+ 
+5.- Diseño de la persistencia de la información
+
+	5.1 Modelo Relacional
+
+	5.2 Dicionario de datos
+
+	5.3 Diseño de las consultas
+ 
+Diccionario de consultas:
+ 
+Nombre: Query1
+
+Parametros: login: string
+
+Diseño:
+ 
+SELECT * 
+
+FROM Usuario
+
+WHERE login = ' <login>';
+ 
+ 

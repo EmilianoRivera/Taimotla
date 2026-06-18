@@ -1,0 +1,53 @@
+\begin{UseCase}{CU-22}{Registrar datos médicos del NNA}{
+	Permite al Médico del equipo multidisciplinario capturar el historial clínico inicial del NNA en el expediente: seguro médico, padecimientos (catálogo CIE-10), cartilla de vacunación, discapacidades, aditamentos requeridos y datos de alimentación y descanso.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tMedico}{Médico}}
+	\UCitem{Propósito}{Documentar de forma estructurada el estado de salud del NNA para identificar derechos de salud vulnerados e insumar el PRD.}
+	\UCitem{Entradas}{Tipo de seguro médico, número de afiliación, fecha de última consulta, indicador de cartilla de vacunación (completa/incompleta/no tiene), padecimientos (CIE-10, crónico, controlado), tipo y grado de discapacidad, requerimiento de aditamentos, descripción de alimentación y horarios de sueño.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos médicos del NNA registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Datos Médicos.}
+	\UCitem{Precondiciones}{El Médico debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico o En Seguimiento.}
+	\UCitem{Postcondiciones}{Los datos de salud del NNA quedan almacenados y el indicador de valoración médica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de salud vacíos (tipo de seguro médico).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Datos Médicos} dentro del expediente único del NNA.
+	\UCpaso Verifica que el Médico pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de datos médicos con las secciones de seguro médico, padecimientos, cartilla, discapacidades y vida cotidiana.
+	\UCpaso[\UCactor] Selecciona el tipo de seguro médico del NNA y captura el número de afiliación si aplica.
+	\UCpaso[\UCactor] Registra la fecha de la última visita médica e indica si el NNA recibe atención actualmente.
+	\UCpaso[\UCactor] Marca el estado de la cartilla de vacunación y registra las vacunas faltantes si la cartilla está incompleta.
+	\UCpaso[\UCactor] Agrega los padecimientos del NNA seleccionándolos del catálogo CIE-10, marcando si son crónicos y si están controlados. Presiona \IUbutton{Agregar padecimiento} por cada uno.
+	\UCpaso[\UCactor] Registra las discapacidades del NNA indicando tipo y grado de dependencia, y si requiere o cuenta con aditamentos.
+	\UCpaso[\UCactor] Captura la descripción de la alimentación habitual y los horarios de sueño del NNA.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Datos Médicos}.
+	\UCpaso Valida que los campos obligatorios del formulario estén completos. \Trayref{B}.
+	\UCpaso Almacena los datos médicos en las tablas correspondientes y actualiza el indicador de valoración médica en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Médico no pertenece al equipo asignado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos de edición.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos pendientes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos capturados.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-23

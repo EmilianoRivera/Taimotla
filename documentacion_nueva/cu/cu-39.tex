@@ -1,0 +1,29 @@
+\begin{UseCase}{CU-39}{Consultar dashboard del Director}{
+	Permite al Director visualizar un tablero de control con indicadores globales del estado de todos los expedientes activos, número de equipos operativos, alertas pendientes totales y casos por estado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Proporcionar al Director una visión global y en tiempo real del estado operativo de la Fundación para la toma de decisiones de supervisión.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Tablero con indicadores: expedientes por estado, equipos activos, alertas pendientes, casos cerrados en el mes.}
+	\UCitem{Destino}{Pantalla del Dashboard del Director.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El Director visualiza el tablero sin modificar ningún dato del sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al módulo \IUbutton{Dashboard} desde el menú principal.
+	\UCpaso Consulta en la base de datos los indicadores globales: totales por estado de expediente, equipos activos, alertas vigentes y cierres del mes.
+	\UCpaso Despliega el tablero con tarjetas de indicadores, gráfica de distribución por estado y listado de alertas críticas.
+	\UCpaso[\UCactor] Presiona el indicador de un estado para ver la lista de expedientes correspondientes.
+	\UCpaso El sistema redirige al panel de expedientes filtrado por el estado seleccionado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-40

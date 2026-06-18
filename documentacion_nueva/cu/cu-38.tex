@@ -1,0 +1,28 @@
+\begin{UseCase}{CU-38}{Consultar historial del expediente}{
+	Permite a los miembros del equipo y al Director consultar la bitácora cronológica de todas las acciones, modificaciones y valoraciones registradas en el expediente de un NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Garantizar la trazabilidad completa del expediente, permitiendo conocer qué se hizo, quién lo hizo y cuándo en cada etapa del proceso de restitución de derechos.}
+	\UCitem{Entradas}{Identificador del expediente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Bitácora cronológica de acciones del expediente.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Historial.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo del expediente o ser Director.}
+	\UCitem{Postcondiciones}{El usuario visualiza el historial sin modificar datos del expediente.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{El historial es de solo lectura y no puede ser modificado por ningún usuario.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al expediente del NNA y selecciona la pestaña \IUbutton{Historial}.
+	\UCpaso Consulta en la base de datos la bitácora de auditoría del expediente, incluyendo tipo de acción, usuario, fecha y hora.
+	\UCpaso Despliega la bitácora cronológica en pantalla con los registros más recientes primero.
+	\UCpaso[\UCactor] Revisa el historial y puede desplazarse por los registros.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-39

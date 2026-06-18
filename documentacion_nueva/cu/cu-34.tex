@@ -1,0 +1,39 @@
+\begin{UseCase}{CU-34}{Consultar catálogo de actores en materia de derechos}{
+	Permite a cualquier usuario autenticado consultar el directorio de actores, buscando por nombre y filtrando por tipo de actor, derecho que restituyen y municipio de ubicación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Facilitar la localización de actores disponibles para apoyar la restitución de derechos según la necesidad específica de cada NNA.}
+	\UCitem{Entradas}{Texto de búsqueda por nombre, filtro por tipo de actor, filtro por derecho que restituye, filtro por municipio.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Lista filtrada de actores activos con su información de contacto y servicios disponibles.}
+	\UCitem{Destino}{Pantalla del catálogo de actores.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El usuario visualiza los actores sin modificar ningún dato del catálogo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se encontraron actores que coincidan con los criterios de búsqueda.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Catálogo de Actores} desde el menú principal.
+	\UCpaso Despliega la lista de actores activos con barra de búsqueda y controles de filtrado por tipo, derecho y municipio.
+	\UCpaso[\UCactor] Ingresa texto de búsqueda y/o aplica filtros.
+	\UCpaso Actualiza la lista en tiempo real mostrando los actores que coinciden con los criterios. \Trayref{A}.
+	\UCpaso[\UCactor] Selecciona un actor para ver el detalle completo con sus servicios, contactos y horarios.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin resultados}
+	\UCpaso Muestra el mensaje \textbf{MSG-01} indicando que no hay actores que coincidan.
+	\UCpaso[\UCactor] Ajusta los criterios de búsqueda.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-35

@@ -1,0 +1,43 @@
+\begin{UseCase}{CU-31}{Registrar domicilio con validación SEPOMEX}{
+	Permite al personal capturar domicilios en el sistema (del NNA, tutor o actor) con autocompletado de colonia, municipio y estado a partir del código postal, usando el catálogo oficial de SEPOMEX.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Garantizar que todos los domicilios registrados en el sistema sean geográficamente válidos y consistentes con la división territorial oficial de México.}
+	\UCitem{Entradas}{Código postal (5 dígitos), selección de colonia de la lista devuelta, calle y número exterior (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Domicilio validado y almacenado con municipio y estado autocompletados.}
+	\UCitem{Destino}{Sección de domicilio dentro del formulario correspondiente (NNA, tutor o actor).}
+	\UCitem{Precondiciones}{El usuario debe estar editando un formulario que requiera captura de domicilio en el sistema.}
+	\UCitem{Postcondiciones}{El domicilio queda registrado en la tabla DOMICILIO y vinculado a la entidad correspondiente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El código postal ingresado no existe en el catálogo SEPOMEX.
+			\item[E2:] El campo de código postal está vacío o tiene formato inválido.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Conforme al Catálogo de domicilios SEPOMEX — Requerimientos §5.3.1.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al campo de código postal dentro del formulario de domicilio.
+	\UCpaso[\UCactor] Ingresa el código postal de 5 dígitos y presiona \IUbutton{Tab} o hace clic fuera del campo.
+	\UCpaso Consulta el catálogo SEPOMEX con el código postal ingresado. \Trayref{A}.
+	\UCpaso Autocompleta automáticamente los campos de estado y municipio con los valores devueltos por el catálogo.
+	\UCpaso Muestra la lista de colonias disponibles para ese código postal en un menú desplegable.
+	\UCpaso[\UCactor] Selecciona la colonia correspondiente de la lista.
+	\UCpaso[\UCactor] Captura la calle y el número exterior de forma opcional.
+	\UCpaso[\UCactor] Continúa con el guardado del formulario principal que contiene el domicilio.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Código postal no encontrado en SEPOMEX}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el código postal no es válido o no existe en el catálogo.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Limpia los campos de colonia, municipio y estado, y regresa al paso 1 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-32

@@ -1,0 +1,44 @@
+\documentclass[10pt]{book}
+
+\usepackage{cdtUsecases}
+\usepackage{txfonts}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc,babel}
+
+\title{Documentación de Diseño del Sistema Taimotla}
+\subtitle{Entregable de Diseño de Software -- Versión 2.0}
+\author{Equipo: Cachetes}
+\organization{Escuela Superior de Cómputo, IPN}
+\date{15 de junio de 2026}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\ThisLRCornerWallPaper{1}{theme/bannerAzul}
+\maketitle
+\thispagestyle{empty}
+
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\LRCornerWallPaper{1}{theme/plecaAyD}
+
+%=========================================================
+\include{1Organizacion}
+
+%=========================================================
+\include{2Arquitectura}
+
+%=========================================================
+\include{3Estatico}
+
+%=========================================================
+\include{4Dinamico}
+
+%=========================================================
+\include{5Persistencia}
+
+\end{document}

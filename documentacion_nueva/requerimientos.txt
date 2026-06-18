@@ -1,0 +1,170 @@
+% ============================================================
+% REQUERIMIENTOS DE USUARIO FALTANTES (RU-29 a RU-52)
+% ============================================================
+
+	\FRitem{RU-29}{Recuperación de contraseña}{El personal necesita recuperar el acceso a su cuenta mediante un enlace enviado a su correo institucional registrado.}{1}{\TODO}
+	\FRitem{RU-30}{Búsqueda y filtrado de expedientes}{El personal necesita buscar expedientes por nombre, CURP o folio y filtrarlos por estado o fecha.}{1}{\TODO}
+	\FRitem{RU-31}{Registro de idiomas del NNA y tutor}{El personal necesita registrar los idiomas que habla el NNA y el tutor, con su nivel, conforme al catálogo INALI.}{2}{\TODO}
+	\FRitem{RU-32}{Registro de discapacidades del NNA}{El Médico necesita registrar el tipo de discapacidad y grado de dependencia del NNA, incluyendo si requiere o cuenta con aditamentos.}{2}{\TODO}
+	\FRitem{RU-33}{Registro de enfermedades del NNA y tutor}{El Médico necesita registrar los padecimientos del NNA y del tutor con base en el catálogo CIE-10, indicando si son crónicos y si están controlados.}{2}{\TODO}
+	\FRitem{RU-34}{Registro del domicilio con catálogo SEPOMEX}{El personal necesita registrar domicilios validados mediante el catálogo de códigos postales de SEPOMEX para garantizar la correcta ubicación geográfica.}{2}{\TODO}
+	\FRitem{RU-35}{Validación y registro de documentos oficiales}{El Abogado necesita validar la autenticidad de documentos oficiales del NNA (acta de nacimiento, CURP) y dejar constancia de su verificación en el expediente.}{2}{\TODO}
+	\FRitem{RU-36}{Mantenimiento de catálogos de derechos}{El Director necesita mantener actualizado el catálogo de derechos del NNA para que sirva de base en la ficha de verificación y el PRD.}{2}{\TODO}
+	\FRitem{RU-37}{Registro del familiograma}{El Trabajador Social necesita construir y guardar el familiograma del NNA con sus relaciones familiares y comunitarias.}{4}{\TODO}
+	\FRitem{RU-38}{Diagnóstico del grado de peligro y coerción}{El Coordinador necesita registrar el grado de peligro para la integridad del NNA y el grado de coerción del entorno, una vez concluidas las entrevistas.}{4}{\TODO}
+	\FRitem{RU-39}{Registro de medidas urgentes de protección}{El Coordinador necesita documentar las medidas urgentes solicitadas con su justificación, tipo y opinión del NNA, conforme a la Caja de Herramientas.}{4}{\TODO}
+	\FRitem{RU-40}{Gestión del catálogo de actores en materia de derechos}{El Coordinador necesita registrar, actualizar y desactivar organizaciones y personas físicas que pueden apoyar la restitución de derechos del NNA.}{4}{\TODO}
+	\FRitem{RU-41}{Consulta de actores por derecho y municipio}{El personal necesita consultar actores disponibles filtrando por derecho que restituyen y municipio de ubicación para vincularlos al PRD.}{4}{\TODO}
+	\FRitem{RU-42}{Registro de servicios de actores}{El Coordinador necesita registrar los servicios, costos, disponibilidad y requisitos de cada actor en materia de derechos.}{4}{\TODO}
+	\FRitem{RU-43}{Vinculación de actores a medidas del PRD}{El Coordinador necesita asociar actores responsables a cada medida de protección del PRD vigente del NNA.}{4}{\TODO}
+	\FRitem{RU-44}{Historial de acciones del expediente}{El personal necesita consultar la bitácora completa de cambios, valoraciones y seguimientos realizados en un expediente.}{4}{\TODO}
+	\FRitem{RU-45}{Dashboard del Director}{El Director necesita una vista de tablero con indicadores del estado general de todos los expedientes activos de la Fundación.}{4}{\TODO}
+	\FRitem{RU-46}{Cambio de contraseña}{El personal necesita cambiar su contraseña de acceso al sistema desde su perfil de cuenta.}{2}{\TODO}
+	\FRitem{RU-47}{Registro de contactos del actor en materia de derechos}{El Coordinador necesita registrar las personas de enlace de cada actor, incluyendo su nombre, cargo, teléfono y correo.}{4}{\TODO}
+	\FRitem{RU-48}{Generación de reporte del PRD en PDF}{El Coordinador necesita exportar el Plan de Restitución de Derechos como documento PDF para compartirlo con las instituciones responsables.}{4}{\TODO}
+	\FRitem{RU-49}{Registro de observaciones de la entrevista con el NNA}{El Trabajador Social o Psicólogo necesita registrar las observaciones de la entrevista directa con el NNA: actitud, tono de voz, expresión corporal y personas referidas.}{4}{\TODO}
+	\FRitem{RU-50}{Registro de la dinámica del entorno familiar}{El Trabajador Social necesita registrar el análisis del entorno familiar: sistema de residencia, redes de apoyo, patrón de migración y participación comunitaria.}{4}{\TODO}
+	\FRitem{RU-51}{Gestión de catálogo de parentescos}{El Director necesita administrar el catálogo de tipos de parentesco utilizados en el registro de tutores y familiares del NNA.}{2}{\TODO}
+	\FRitem{RU-52}{Rechazo y reapertura de cierre de expediente}{El Director necesita rechazar una solicitud de cierre de expediente y devolver el caso a estado activo con una observación justificada.}{4}{\TODO}
+
+
+% ============================================================
+% REQUERIMIENTOS FUNCIONALES FALTANTES (RF-24 a RF-120)
+% ============================================================
+
+% --- AUTENTICACIÓN Y CUENTA ---
+	\FRitem{RF-24}{Cambio de contraseña}{El sistema debe permitir a los usuarios autenticados actualizar su contraseña ingresando la contraseña actual y confirmando la nueva.}{A}{RU-46}
+	\FRitem{RF-25}{Bloqueo por intentos fallidos}{El sistema debe bloquear temporalmente una cuenta tras cinco intentos de inicio de sesión fallidos consecutivos y notificar al Director.}{M}{RU-01}
+	\FRitem{RF-26}{Cierre automático de sesión por inactividad}{El sistema debe cerrar la sesión automáticamente tras 30 minutos de inactividad del usuario.}{M}{RU-01}
+	\FRitem{RF-27}{Recuperación de contraseña por correo}{El sistema debe permitir al usuario solicitar un enlace de recuperación de contraseña enviado a su correo institucional registrado.}{A}{RU-29}
+
+% --- BÚSQUEDA Y NAVEGACIÓN ---
+	\FRitem{RF-28}{Búsqueda de expedientes por nombre}{El sistema debe permitir buscar expedientes de NNA en tiempo real escribiendo el nombre o apellido del menor en una barra de búsqueda.}{A}{RU-30}
+	\FRitem{RF-29}{Búsqueda de expedientes por CURP}{El sistema debe permitir buscar expedientes ingresando la CURP completa o parcial del NNA.}{A}{RU-30}
+	\FRitem{RF-30}{Búsqueda de expedientes por folio}{El sistema debe permitir localizar un expediente ingresando su número de folio o número de reporte consecutivo.}{A}{RU-30}
+	\FRitem{RF-31}{Filtrado de expedientes por estado}{El sistema debe permitir filtrar la lista de expedientes según su estado: Detección, En Diagnóstico, En Seguimiento, Cierre Solicitado o Cerrado.}{A}{RU-30}
+	\FRitem{RF-32}{Filtrado de expedientes por rango de fechas}{El sistema debe permitir filtrar expedientes por rango de fecha de apertura o de última actualización.}{M}{RU-30}
+	\FRitem{RF-33}{Paginación de resultados de expedientes}{El sistema debe paginar los resultados de expedientes mostrando un máximo de 20 registros por página.}{M}{RU-01}
+
+% --- REGISTRO DE NNA ---
+	\FRitem{RF-34}{Captura de datos de domicilio con autocompletado SEPOMEX}{El sistema debe autocompletar colonia, municipio y estado al ingresar un código postal válido, consultando el catálogo SEPOMEX.}{A}{RU-34}
+	\FRitem{RF-35}{Registro de idiomas del NNA}{El sistema debe permitir registrar uno o más idiomas que habla el NNA seleccionándolos del catálogo INALI y especificando el nivel de dominio (Nativo, Fluido, Básico, Solo comprende).}{A}{RU-31}
+	\FRitem{RF-36}{Registro de idiomas del tutor}{El sistema debe permitir registrar los idiomas del tutor con el mismo mecanismo que el NNA, vinculando el registro al tutor correspondiente.}{A}{RU-31}
+	\FRitem{RF-37}{Validación de formato CURP}{El sistema debe validar que la CURP capturada para el NNA, tutor o personal cumpla con la estructura oficial de 18 caracteres alfanuméricos establecida por el RENAPO.}{A}{RU-03}
+	\FRitem{RF-38}{Prevención de expedientes duplicados}{El sistema debe verificar que no exista un expediente previo activo con la misma CURP del NNA antes de crear uno nuevo.}{A}{RU-03}
+	\FRitem{RF-39}{Registro del apodo o nombre preferido del NNA}{El sistema debe permitir capturar el nombre o apodo con el que el NNA prefiere ser llamado, conforme a la Caja de Herramientas §4.3.6.}{A}{RU-03}
+	\FRitem{RF-40}{Registro de nacionalidad y etnia del NNA}{El sistema debe permitir registrar la nacionalidad y el origen étnico o pueblo indígena del NNA.}{A}{RU-03}
+	\FRitem{RF-41}{Indicador de documentos registrales del NNA}{El sistema debe registrar si el NNA cuenta con acta de nacimiento y si está registrado en el Registro Civil, mostrando estos indicadores en el expediente.}{A}{RU-07}
+	\FRitem{RF-42}{Carga y visualización de acta de nacimiento}{El sistema debe permitir cargar el acta de nacimiento digitalizada en formato PDF, JPG o PNG con un límite de 5 MB.}{A}{RU-07}
+	\FRitem{RF-43}{Carga y visualización de cartilla de vacunación}{El sistema debe permitir cargar la cartilla de vacunación del NNA en formato PDF, JPG o PNG y marcar si está completa o incompleta.}{A}{RU-10}
+
+% --- DATOS MÉDICOS ---
+	\FRitem{RF-44}{Registro del seguro médico del NNA}{El sistema debe permitir seleccionar el tipo de seguro médico del NNA (IMSS, ISSSTE, Bienestar, Sin seguro) y capturar el número de afiliación.}{A}{RU-10}
+	\FRitem{RF-45}{Registro de padecimientos del NNA con catálogo CIE-10}{El sistema debe permitir registrar uno o más padecimientos del NNA seleccionándolos del catálogo CIE-10, indicando si son crónicos y si están controlados.}{A}{RU-33}
+	\FRitem{RF-46}{Registro de padecimientos del tutor con catálogo CIE-10}{El sistema debe permitir registrar los padecimientos del tutor con el mismo mecanismo del NNA, vinculados al registro del tutor.}{A}{RU-33}
+	\FRitem{RF-47}{Registro de discapacidades del NNA}{El sistema debe permitir registrar el tipo de discapacidad (Motriz, Sensorial, Intelectual, Psicosocial, Múltiple), grado de dependencia y si el NNA requiere o cuenta con aditamentos.}{A}{RU-32}
+	\FRitem{RF-48}{Registro de datos de alimentación y descanso}{El sistema debe permitir capturar la descripción de la alimentación habitual del NNA y sus horarios de sueño, conforme al checklist de la Caja de Herramientas §4.3.3.}{M}{RU-10}
+	\FRitem{RF-49}{Registro de fecha de última visita médica}{El sistema debe permitir registrar la fecha de la última consulta médica del NNA y si actualmente recibe atención.}{M}{RU-10}
+
+% --- ENTORNO FAMILIAR ---
+	\FRitem{RF-50}{Registro de la dinámica del hogar}{El sistema debe permitir al Trabajador Social capturar el sistema de residencia, sostén económico, relación con familia de origen, patrón de migración y participación comunitaria de la familia del NNA.}{A}{RU-50}
+	\FRitem{RF-51}{Registro de redes de apoyo familiares y comunitarias}{El sistema debe permitir registrar en texto libre la descripción de las redes de apoyo disponibles para la familia del NNA.}{A}{RU-50}
+	\FRitem{RF-52}{Registro del grado de negación del cuidador}{El sistema debe permitir seleccionar el grado de negación del cuidador principal (Alto, Medio, Bajo) con un campo de observaciones, conforme a la Caja de Herramientas §4.3.1.}{A}{RU-16}
+	\FRitem{RF-53}{Registro del grado de afectación emocional del cuidador}{El sistema debe permitir seleccionar el grado de afectación emocional o física del cuidador (Alto, Medio, Bajo) con un campo de observaciones, conforme a la Caja de Herramientas §4.3.1.}{A}{RU-16}
+	\FRitem{RF-54}{Registro de la fecha acordada para el plan de restitución}{El sistema debe permitir registrar la fecha pactada con la familia para presentarles el Plan de Restitución de Derechos.}{A}{RU-16}
+
+% --- FAMILIOGRAMA ---
+	\FRitem{RF-55}{Registro textual del familiograma}{El sistema debe permitir al Trabajador Social registrar en texto la descripción de quiénes conviven con el NNA, sus ocupaciones y relaciones de afecto o conflicto.}{A}{RU-37}
+	\FRitem{RF-56}{Carga de imagen del familiograma}{El sistema debe permitir adjuntar una imagen digitalizada del familiograma elaborado durante la entrevista, en formato JPG, PNG o PDF.}{M}{RU-37}
+	\FRitem{RF-57}{Visualización del familiograma en el expediente}{El sistema debe mostrar el familiograma registrado (texto e imagen) en la sección de entorno familiar del expediente para consulta del equipo.}{M}{RU-37}
+
+% --- ENTREVISTA CON EL NNA ---
+	\FRitem{RF-58}{Registro de observaciones de la entrevista directa con el NNA}{El sistema debe permitir al Trabajador Social o Psicólogo registrar la actitud general, tono de voz, expresión corporal y cambios emocionales observados durante la entrevista con el NNA, conforme a la Caja de Herramientas §4.3.6.}{A}{RU-49}
+	\FRitem{RF-59}{Registro de personas a quienes el NNA teme y personas significativas}{El sistema debe permitir registrar en texto libre a quién dice temer el NNA y qué adulto le es significativo, conforme al formato §4.3.6 de la Caja de Herramientas.}{A}{RU-49}
+	\FRitem{RF-60}{Registro del checklist de vida cotidiana del NNA}{El sistema debe permitir capturar las respuestas (Sí, No, No aplica) al checklist de vida cotidiana del NNA: escuela, alimentación, juego, deporte, amigos, sueño; conforme a §4.3.6 de la Caja de Herramientas.}{A}{RU-49}
+
+% --- DATOS DE CONTACTO ---
+	\FRitem{RF-61}{Registro del teléfono del cuidador principal}{El sistema debe permitir capturar el número de teléfono celular del cuidador principal del NNA, marcando si cuenta con WhatsApp.}{A}{RU-09}
+	\FRitem{RF-62}{Registro del contacto de emergencia alternativo}{El sistema debe permitir registrar un contacto de emergencia distinto al cuidador principal, con nombre, parentesco y teléfono.}{M}{RU-09}
+	\FRitem{RF-63}{Registro de preferencias de contacto}{El sistema debe permitir especificar el horario disponible para contactar al cuidador y el medio preferido (llamada, WhatsApp, visita domiciliaria).}{M}{RU-09}
+
+% --- HECHO VICTIMAL Y DIAGNÓSTICO ---
+	\FRitem{RF-64}{Registro del grado de peligro para el NNA}{El sistema debe permitir al Coordinador seleccionar el grado de peligro para la integridad física y emocional del NNA (Alto, Medio, Bajo) con observaciones, conforme a la Caja de Herramientas §4.4.1, en una tabla de diagnóstico separada del hecho victimal.}{A}{RU-38}
+	\FRitem{RF-65}{Registro del grado de coerción del entorno}{El sistema debe permitir al Coordinador seleccionar el grado de coerción del entorno (Alto, Medio, Bajo) con observaciones, conforme a la Caja de Herramientas §4.4.2.}{A}{RU-38}
+	\FRitem{RF-66}{Registro de medidas urgentes de protección}{El sistema debe permitir registrar si se solicitaron medidas urgentes de protección, la fecha, tipo de medida, justificación y la opinión del NNA al respecto, conforme a §4.3.7 y §4.3.8 de la Caja de Herramientas.}{A}{RU-39}
+	\FRitem{RF-67}{Validación de fecha de detección no futura}{El sistema debe impedir registrar una fecha de detección del hecho victimal posterior a la fecha actual del sistema.}{A}{RU-11}
+
+% --- VALORACIONES DE ESPECIALISTAS ---
+	\FRitem{RF-68}{Captura de valoración médica}{El sistema debe habilitar al Médico un formulario para registrar el diagnóstico clínico inicial del NNA: estado de salud general, padecimientos activos, esquema de vacunación y requerimientos de aditamentos.}{A}{RU-13}
+	\FRitem{RF-69}{Captura de valoración psicológica}{El sistema debe habilitar al Psicólogo un formulario para registrar el diagnóstico del estado emocional del NNA: observaciones de comportamiento, indicadores de riesgo y notas terapéuticas iniciales.}{A}{RU-14}
+	\FRitem{RF-70}{Captura de valoración jurídica}{El sistema debe habilitar al Abogado un formulario para registrar la valoración jurídica del caso: delitos identificados, instancias legales involucradas, estado procesal del expediente jurídico y medidas penales recomendadas.}{A}{RU-15}
+	\FRitem{RF-71}{Captura de valoración sociofamiliar}{El sistema debe habilitar al Trabajador Social un formulario para registrar el diagnóstico del entorno social del NNA: estructura familiar, condiciones de vivienda, redes de apoyo y evaluación del cuidador.}{A}{RU-16}
+	\FRitem{RF-72}{Indicador de completitud de valoraciones en el expediente}{El sistema debe mostrar en el expediente qué valoraciones han sido capturadas y cuáles están pendientes, usando indicadores visuales por especialidad.}{A}{RU-17}
+	\FRitem{RF-73}{Bloqueo de generación del PRD sin valoraciones completas}{El sistema debe impedir al Coordinador iniciar la elaboración del PRD si falta al menos una valoración de los especialistas asignados al equipo.}{A}{RU-18}
+
+% --- PLAN DE RESTITUCIÓN DE DERECHOS ---
+	\FRitem{RF-74}{Registro de derechos vulnerados en el PRD}{El sistema debe permitir al Coordinador identificar y registrar, para cada derecho vulnerado, el sustento legal, la descripción del derecho y su nivel de vulneración.}{A}{RU-17}
+	\FRitem{RF-75}{Registro de medidas de protección en el PRD}{El sistema debe permitir registrar para cada derecho vulnerado la medida de protección especial recomendada, la institución responsable, el servidor público a cargo y el plazo de seguimiento.}{A}{RU-18}
+	\FRitem{RF-76}{Guardado de borrador del PRD}{El sistema debe permitir guardar el PRD en estatus Borrador sin cambiar el estado del expediente, conservando el progreso de la captura.}{A}{RU-18}
+	\FRitem{RF-77}{Envío del PRD a pre-autorización}{El sistema debe permitir al Coordinador cambiar el estatus del PRD de Borrador a Pre-autorizado y notificar al Director sobre el documento pendiente de firma.}{A}{RU-18}
+	\FRitem{RF-78}{Firma digital del PRD por el Director}{El sistema debe permitir al Director revisar el PRD pre-autorizado y firmarlo digitalmente para cambiar su estatus a Vigente y actualizar el expediente a En Seguimiento.}{A}{RU-18}
+	\FRitem{RF-79}{Exportación del PRD a PDF}{El sistema debe generar un documento PDF del Plan de Restitución de Derechos con membrete de la Fundación, datos del NNA y cuadro guía completo.}{A}{RU-48}
+	\FRitem{RF-80}{Vinculación de actor al plan en el PRD}{El sistema debe permitir al Coordinador asociar uno o más actores en materia de derechos a cada medida de protección registrada en el PRD.}{A}{RU-43}
+	\FRitem{RF-81}{Consulta de actores disponibles al elaborar el PRD}{El sistema debe permitir al Coordinador buscar y filtrar actores en materia de derechos por tipo de derecho y municipio directamente desde la pantalla del PRD.}{A}{RU-41}
+
+% --- SEGUIMIENTO ---
+	\FRitem{RF-82}{Listado de medidas del PRD con semáforo de estado}{El sistema debe mostrar el listado de medidas del PRD vigente con un indicador visual de estado (Pendiente, En proceso, Cumplida, No cumplida) y la fecha límite de cada una.}{A}{RU-20}
+	\FRitem{RF-83}{Carga de evidencia digital en bitácora de medida}{El sistema debe permitir adjuntar archivos de evidencia (PDF, JPG, PNG, máximo 5MB) al registrar el avance de una medida de protección en la bitácora.}{A}{RU-20}
+	\FRitem{RF-84}{Detección automática de cumplimiento total del PRD}{El sistema debe verificar automáticamente si todas las medidas del PRD están en estatus Cumplida al registrar cualquier actualización de bitácora y habilitar la opción de cierre cuando se cumpla la condición.}{A}{RU-20}
+	\FRitem{RF-85}{Historial cronológico de bitácoras por medida}{El sistema debe mostrar el historial completo de actualizaciones de bitácora para cada medida del PRD ordenadas cronológicamente, incluyendo autor, fecha y evidencias adjuntas.}{A}{RU-44}
+
+% --- ALERTAS ---
+	\FRitem{RF-86}{Alerta por vencimiento próximo de medida del PRD}{El sistema debe generar una alerta visual (semáforo amarillo) cuando una medida de protección del PRD se encuentre a 7 días o menos de su fecha límite.}{A}{RU-25}
+	\FRitem{RF-87}{Alerta por medida vencida del PRD}{El sistema debe generar una alerta visual (semáforo rojo) cuando una medida de protección del PRD haya superado su fecha límite sin ser marcada como cumplida.}{A}{RU-25}
+	\FRitem{RF-88}{Alerta por valoración pendiente de especialista}{El sistema debe notificar al Coordinador cuando han transcurrido más de 5 días hábiles desde la asignación del expediente sin que algún especialista haya registrado su valoración.}{M}{RU-25}
+	\FRitem{RF-89}{Alerta por documento oficial no verificado}{El sistema debe notificar al Abogado cuando el acta de nacimiento del NNA lleva más de 3 días cargada sin haber sido validada.}{M}{RU-25}
+	\FRitem{RF-90}{Filtrado de alertas por nivel de urgencia}{El sistema debe permitir filtrar la bandeja de notificaciones por nivel de urgencia: Urgente (rojo), Preventivo (amarillo) o Informativo (verde).}{M}{RU-25}
+	\FRitem{RF-91}{Acceso directo al expediente desde la alerta}{El sistema debe permitir navegar directamente al expediente referenciado presionando el folio en la tarjeta de alerta.}{M}{RU-25}
+
+% --- ACTORES EN MATERIA DE DERECHOS ---
+	\FRitem{RF-92}{Registro de actor en materia de derechos}{El sistema debe permitir al Coordinador registrar un nuevo actor (organización gubernamental, no gubernamental o persona física) capturando nombre, tipo, giro, descripción, página web, correo, teléfonos y redes sociales.}{A}{RU-22}
+	\FRitem{RF-93}{Registro de domicilio del actor con autocompletado SEPOMEX}{El sistema debe permitir registrar el domicilio del actor con validación por código postal SEPOMEX, incluyendo coordenadas geográficas opcionales.}{A}{RU-22}
+	\FRitem{RF-94}{Registro de horario de atención del actor}{El sistema debe permitir capturar los horarios de atención del actor en texto libre.}{M}{RU-22}
+	\FRitem{RF-95}{Registro de contactos del actor}{El sistema debe permitir registrar uno o más contactos de enlace del actor, con nombre, cargo, teléfono, correo y si es el contacto principal.}{A}{RU-47}
+	\FRitem{RF-96}{Registro de servicios del actor}{El sistema debe permitir registrar los servicios que ofrece el actor indicando nombre del servicio, derecho que restituye, tipo de beneficio (servicio, producto, beca, donativo), si tiene costo, duración, disponibilidad y requisitos.}{A}{RU-42}
+	\FRitem{RF-97}{Consulta del catálogo de actores}{El sistema debe mostrar el catálogo completo de actores activos con su nombre, tipo, municipio y servicios disponibles en modo de lectura para todos los usuarios autenticados.}{A}{RU-21}
+	\FRitem{RF-98}{Búsqueda y filtrado de actores}{El sistema debe permitir buscar actores por nombre y filtrarlos por tipo de actor, derecho que restituyen y municipio.}{A}{RU-41}
+	\FRitem{RF-99}{Edición y desactivación de actor}{El sistema debe permitir al Coordinador actualizar los datos de un actor registrado o marcarlo como inactivo sin eliminarlo permanentemente de la base de datos.}{A}{RU-40}
+
+% --- CATÁLOGOS ---
+	\FRitem{RF-100}{Mantenimiento del catálogo de tipos de discapacidad}{El sistema debe permitir al Director agregar, editar y desactivar tipos de discapacidad del catálogo utilizado en el registro médico del NNA.}{M}{RU-12}
+	\FRitem{RF-101}{Mantenimiento del catálogo de derechos del NNA}{El sistema debe permitir al Director agregar, editar y desactivar los derechos del NNA utilizados en la ficha de verificación y el PRD.}{A}{RU-36}
+	\FRitem{RF-102}{Mantenimiento del catálogo de parentescos}{El sistema debe permitir al Director agregar, editar y desactivar los tipos de parentesco usados en el registro de tutores y familiares.}{M}{RU-51}
+	\FRitem{RF-103}{Mantenimiento del catálogo de tipos de detector}{El sistema debe permitir al Director gestionar el catálogo de tipos de quien detecta el caso (Procuraduría, Servidor municipal, Institución federal, OCS, Comunidad, NNA).}{M}{RU-12}
+	\FRitem{RF-104}{Mantenimiento del catálogo de niveles de idioma}{El sistema debe permitir al Director gestionar los niveles de dominio de idioma (Nativo, Fluido, Básico, Solo comprende) para el módulo de idiomas.}{M}{RU-12}
+	\FRitem{RF-105}{Mantenimiento del catálogo de grados de negación y afectación}{El sistema debe permitir al Director gestionar los valores del catálogo de grado de negación y afectación emocional del cuidador.}{M}{RU-12}
+
+% --- HISTORIAL Y TRAZABILIDAD ---
+	\FRitem{RF-106}{Registro automático de bitácora de cambios del expediente}{El sistema debe registrar automáticamente en una bitácora de auditoría cada modificación realizada en el expediente, indicando el usuario, fecha, hora y campo modificado.}{A}{RU-44}
+	\FRitem{RF-107}{Visualización del historial del expediente}{El sistema debe mostrar al personal autorizado el historial cronológico completo de todas las acciones realizadas sobre el expediente.}{A}{RU-44}
+	\FRitem{RF-108}{Registro del número de reporte consecutivo automático}{El sistema debe asignar automáticamente un número de reporte consecutivo al crear un registro de detección de caso, sin posibilidad de edición manual.}{A}{RU-11}
+
+% --- DASHBOARD ---
+	\FRitem{RF-109}{Dashboard del Director con indicadores globales}{El sistema debe mostrar al Director un tablero con el total de expedientes por estado (Detección, En Diagnóstico, En Seguimiento, Cierre Solicitado, Cerrados), número de equipos activos y alertas pendientes totales.}{A}{RU-45}
+	\FRitem{RF-110}{Panel de casos asignados para el Coordinador}{El sistema debe mostrar al Coordinador un panel con sus expedientes activos agrupados por estado, con indicadores de alertas y valoraciones pendientes.}{A}{RU-01}
+	\FRitem{RF-111}{Panel de casos del especialista}{El sistema debe mostrar a cada especialista (Abogado, Médico, Psicólogo, Trabajador Social) únicamente los expedientes del equipo al que pertenece, con indicadores de sus valoraciones pendientes.}{A}{RU-02}
+
+% --- SEGURIDAD Y PERMISOS ---
+	\FRitem{RF-112}{Control de acceso basado en rol (RBAC)}{El sistema debe restringir el acceso a módulos y acciones según el rol del usuario: Director, Coordinador, Abogado, Médico, Psicólogo, Trabajador Social.}{A}{RU-06}
+	\FRitem{RF-113}{Restricción de edición por equipo asignado}{El sistema debe impedir que un especialista edite o visualice expedientes de equipos a los que no pertenece.}{A}{RU-07}
+	\FRitem{RF-114}{Modo de solo lectura para expedientes cerrados}{El sistema debe cambiar automáticamente el expediente a modo de solo lectura una vez que su estado sea Cerrado, impidiendo cualquier modificación posterior.}{A}{RU-26}
+	\FRitem{RF-115}{Confirmación antes de acciones destructivas}{El sistema debe solicitar confirmación explícita del usuario antes de ejecutar acciones irreversibles como eliminar equipos, deshabilitar cuentas o solicitar el cierre de un expediente.}{M}{RU-06}
+
+% --- CIERRE Y REAPERTURA ---
+	\FRitem{RF-116}{Rechazo de solicitud de cierre por el Director}{El sistema debe permitir al Director rechazar una solicitud de cierre de expediente registrando la observación de rechazo y devolviendo el expediente al estado En Seguimiento.}{A}{RU-52}
+	\FRitem{RF-117}{Registro de justificación de cierre}{El sistema debe obligar al Coordinador a capturar una justificación textual al enviar la solicitud de cierre del expediente.}{A}{RU-26}
+	\FRitem{RF-118}{Notificación al Coordinador sobre resolución de cierre}{El sistema debe notificar al Coordinador cuando el Director autorice o rechace la solicitud de cierre del expediente.}{M}{RU-26}
+
+% --- INTEROPERABILIDAD Y EXPORTACIÓN ---
+	\FRitem{RF-119}{Exportación del expediente completo en PDF}{El sistema debe permitir generar un PDF con el expediente completo del NNA incluyendo datos personales, hecho victimal, valoraciones, PRD y bitácoras de seguimiento.}{M}{RU-27}
+	\FRitem{RF-120}{Visualización en línea de documentos adjuntos}{El sistema debe permitir visualizar directamente en el navegador los documentos adjuntos al expediente (acta de nacimiento, cartilla, evidencias) sin necesidad de descargarlos.}{M}{RU-07}

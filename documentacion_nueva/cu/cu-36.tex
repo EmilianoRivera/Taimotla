@@ -1,0 +1,43 @@
+\begin{UseCase}{CU-36}{Vincular actor a medida del PRD}{
+	Permite al Coordinador asociar uno o más actores en materia de derechos como responsables de ejecutar una medida de protección específica dentro del PRD vigente del NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Formalizar la responsabilidad de ejecución de cada medida del PRD asignando los actores institucionales o comunitarios que la llevarán a cabo.}
+	\UCitem{Entradas}{Selección de la medida del PRD, búsqueda y selección del actor a vincular.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Actor vinculado a la medida del PRD y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del PRD, sección de medidas de protección.}
+	\UCitem{Precondiciones}{El PRD debe estar en estatus Vigente o Borrador y el Coordinador debe pertenecer al equipo del expediente.}
+	\UCitem{Postcondiciones}{La relación entre el actor y la medida queda registrada en la tabla de vinculación y disponible para seguimiento.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se seleccionó ningún actor antes de guardar la vinculación.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.2. Un mismo actor puede vincularse a múltiples medidas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al PRD del NNA y selecciona la medida de protección a la que desea vincular un actor.
+	\UCpaso Presiona el botón \IUbutton{Vincular actor} en la fila de la medida.
+	\UCpaso Despliega el panel de búsqueda del catálogo de actores con filtro por derecho y municipio.
+	\UCpaso[\UCactor] Busca y selecciona el actor a vincular de los resultados.
+	\UCpaso[\UCactor] Presiona \IUbutton{Confirmar vinculación}.
+	\UCpaso Valida que se haya seleccionado al menos un actor. \Trayref{A}.
+	\UCpaso Registra la vinculación en la base de datos.
+	\UCpaso Actualiza la vista de la medida mostrando el actor asignado.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin actor seleccionado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que debe seleccionar al menos un actor.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-37

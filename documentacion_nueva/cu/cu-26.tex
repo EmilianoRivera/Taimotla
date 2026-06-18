@@ -1,0 +1,53 @@
+\begin{UseCase}{CU-26}{Registrar observaciones de la entrevista con el NNA}{
+	Permite al Trabajador Social o Psicólogo registrar las observaciones de la entrevista directa con el NNA: actitud general, tono de voz, expresión corporal, personas a quienes teme, adulto significativo y resultados del checklist de vida cotidiana.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Documentar la información observada durante la entrevista directa con el NNA, conforme al Formato §4.3.6 de la Caja de Herramientas de UNICEF.}
+	\UCitem{Entradas}{Actitud general, tono de voz y cambios, expresión corporal, registro textual de lo narrado por el NNA, personas a quienes teme, adulto significativo y respuestas (Sí/No/No aplica) al checklist de vida cotidiana.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Observaciones de entrevista registradas en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Entrevista con NNA.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{Las observaciones de la entrevista quedan almacenadas en el expediente del NNA.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El campo de actitud general o registro textual está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme al Formato §4.3.6 de la Caja de Herramientas UNICEF.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Entrevista con NNA} en el expediente único.
+	\UCpaso Verifica que el usuario pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de observaciones con sus secciones.
+	\UCpaso[\UCactor] Captura la actitud general del NNA durante la entrevista.
+	\UCpaso[\UCactor] Registra el tono de voz y cambios emocionales observados.
+	\UCpaso[\UCactor] Describe la expresión corporal y gestos del NNA.
+	\UCpaso[\UCactor] Registra textualmente lo que el NNA dijo al preguntarle si hay algo que le molesta o lastima.
+	\UCpaso[\UCactor] Captura las personas a quienes el NNA dice temer y el adulto que le resulta significativo.
+	\UCpaso[\UCactor] Responde el checklist de vida cotidiana (escuela, alimentación, sueño, juego, amigos, deporte) marcando Sí, No o No aplica para cada elemento.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Observaciones de Entrevista}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena las observaciones en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-27

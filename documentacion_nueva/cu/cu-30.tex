@@ -1,0 +1,44 @@
+\begin{UseCase}{CU-30}{Registrar idiomas del NNA y del tutor}{
+	Permite al personal del equipo multidisciplinario registrar los idiomas que habla el NNA y el tutor, seleccionando del catálogo del INALI y especificando el nivel de dominio.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Documentar el perfil lingüístico del NNA y del tutor para garantizar la comunicación adecuada durante el proceso de restitución de derechos y apoyar la búsqueda de actores con capacidad de atención en el idioma correspondiente.}
+	\UCitem{Entradas}{Selección de idioma del catálogo INALI (incluyendo variante lingüística), nivel de dominio (Nativo, Fluido, Básico, Solo comprende); puede registrarse más de un idioma por persona.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Registro de idiomas almacenado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, sección Idiomas (dentro de datos del NNA y datos del tutor).}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente y el expediente debe estar activo.}
+	\UCitem{Postcondiciones}{El perfil lingüístico del NNA o del tutor queda almacenado y disponible para la consulta del equipo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intento de agregar un idioma duplicado para la misma persona.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Catálogo basado en el INALI conforme a Requerimientos §5.4.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección de \IUbutton{Idiomas} dentro de los datos del NNA o del tutor en el expediente único.
+	\UCpaso Muestra la lista de idiomas ya registrados para la persona y el botón para agregar uno nuevo.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Agregar idioma}.
+	\UCpaso Despliega un formulario emergente con el catálogo INALI y el selector de nivel de dominio.
+	\UCpaso[\UCactor] Selecciona el idioma y su variante lingüística del catálogo INALI.
+	\UCpaso[\UCactor] Selecciona el nivel de dominio (Nativo, Fluido, Básico, Solo comprende).
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar idioma}.
+	\UCpaso Verifica que el idioma seleccionado no esté ya registrado para la misma persona. \Trayref{A}.
+	\UCpaso Registra el idioma en la tabla correspondiente y actualiza la lista en pantalla.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Idioma duplicado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que ese idioma ya está registrado para la persona.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-31

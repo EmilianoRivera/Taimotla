@@ -1,0 +1,35 @@
+\begin{UseCase}{CU-49}{Registrar composición del núcleo familiar}{
+	Permite al Trabajador Social registrar el número de personas en el hogar, quiénes conviven con el NNA y si algún hermano vive fuera del hogar.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar la composición del núcleo familiar para insumar el diagnóstico sociofamiliar y el PRD.}
+	\UCitem{Entradas}{Número de personas en el hogar, descripción textual de convivientes, indicador de hermanos fuera del hogar, narración del entorno.}
+	\UCitem{Origen}{Teclado.}
+	\UCitem{Salidas}{Composición familiar registrada en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares, subsección Núcleo familiar.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos del núcleo familiar almacenados.}
+	\UCitem{Errores}{\begin{description}\item[E1:] Campo de número de personas vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Complementa el familiograma (\hyperlink{CU-27}{CU-27}).}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Núcleo Familiar}.
+	\UCpaso Despliega el formulario de composición.
+	\UCpaso[\UCactor] Ingresa el número de personas en el hogar y la descripción de quiénes conviven.
+	\UCpaso[\UCactor] Indica si hay hermanos que viven fuera del hogar y captura la narración del entorno.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar composición familiar}.
+	\UCpaso Valida campo de número de personas. \Trayref{A}.
+	\UCpaso Almacena y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo vacío}
+	\UCpaso Muestra \textbf{MSG-04}. \UCpaso[\UCactor] Oprime \IUbutton{Aceptar}. \UCpaso Regresa al paso 3.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-50

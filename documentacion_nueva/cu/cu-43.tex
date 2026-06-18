@@ -1,0 +1,35 @@
+\begin{UseCase}{CU-43}{Validar acta de nacimiento del NNA}{
+	Permite al Abogado marcar el acta de nacimiento cargada en el expediente como verificada, dejando constancia de la autenticidad del documento tras su revisión.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}}
+	\UCitem{Propósito}{Certificar dentro del sistema que el acta de nacimiento del NNA ha sido revisada y es auténtica, como requisito para la elaboración del PRD.}
+	\UCitem{Entradas}{Identificador del documento de acta de nacimiento.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Estado del acta actualizado a Verificada y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Documentos.}
+	\UCitem{Precondiciones}{El acta de nacimiento debe estar cargada en el expediente y el Abogado pertenecer al equipo asignado.}
+	\UCitem{Postcondiciones}{El indicador de verificación del acta queda en estado Verificada en el expediente.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El acta de nacimiento no ha sido cargada en el expediente.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por RF-23.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la pestaña \IUbutton{Documentos} y localiza el acta de nacimiento.
+	\UCpaso Verifica que el acta esté cargada en el expediente. \Trayref{A}.
+	\UCpaso[\UCactor] Revisa el documento en el visor en línea (\hyperlink{CU-42}{CU-42}).
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Marcar como Verificada}.
+	\UCpaso Actualiza el estado del acta a Verificada, registrando el usuario y la fecha de verificación.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Acta no cargada}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que no hay acta de nacimiento cargada para verificar.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-44

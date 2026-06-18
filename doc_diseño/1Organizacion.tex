@@ -1,0 +1,61 @@
+\chapter{Organización del diseño}
+\label{cap:organizacionDiseno}
+
+Este capítulo detalla el marco metodológico y las directrices técnicas bajo las cuales se concibió el diseño del sistema \textbf{Taimotla}. Se definen las convenciones de desarrollo, la metodología de descomposición de software, la notación de modelado adoptada y el alcance técnico de este entregable.
+
+%---------------------------------------------------------
+\section{Lineamientos de diseño}
+\label{sec:lineamientosDiseno}
+
+Los estándares y convenciones técnicas aplicados para garantizar la calidad, legibilidad y mantenibilidad del software son los siguientes:
+
+\begin{itemize}
+    \item \textbf{Guía de Estilo de Código (Python/Flask):} Se adopta estrictamente la norma \textbf{PEP 8} para el código Python. Esto incluye el uso de \textit{snake\_case} para nombres de funciones y variables, y \textit{PascalCase} para nombres de clases.
+    \item \textbf{Estructura de Carpetas:} Se organiza el sistema bajo el patrón de arquitectura MVC (Model-View-Controller). El código fuente se distribuye en:
+    \begin{itemize}
+        \item \textbf{\texttt{models/}:} Módulos encargados del acceso a datos, validación y consultas SQL a PostgreSQL utilizando \texttt{psycopg2}.
+        \item \textbf{\texttt{routes/}:} Controladores y enrutamiento implementados mediante Flask Blueprints.
+        \item \textbf{\texttt{templates/}:} Vistas HTML estructuradas.
+        \item \textbf{\texttt{static/}:} Archivos de soporte gráfico, JavaScript y estilos CSS (Vanilla CSS y Bootstrap).
+    \end{itemize}
+    \item \textbf{Documentación y Comentarios:} Todo método y función del backend debe contar con un \textit{docstring} que explique su propósito, parámetros y valor de retorno.
+    \item \textbf{Manejo de Errores y Seguridad:} Se prohíbe el uso de variables globales. Toda consulta de base de datos se ejecuta dentro de un contexto seguro utilizando el helper \texttt{get\_db\_cursor} para garantizar la liberación de conexiones.
+\end{itemize}
+
+%---------------------------------------------------------
+\section{Metodología o procedimiento o técnicas}
+\label{sec:metodologiaDiseno}
+
+Para abordar la complejidad inherente al sistema de gestión de la Fundación, se aplicaron técnicas formales de descomposición y refinamiento progresivo:
+
+\begin{itemize}
+    \item \textbf{Enfoque Bottom-Up (Acceso a Datos):} El diseño del backend se construyó desde las capas más bajas (el script de base de datos \texttt{bd\_nna.sql} y los modelos en \texttt{models/}) hacia arriba. Esto garantizó que el sistema contara con funciones de consulta estables antes de diseñar los flujos lógicos.
+    \item \textbf{Enfoque Top-Down (Interfaz de Usuario):} La navegación y la experiencia de usuario (UX) se diseñaron desde una perspectiva macro (mapa de navegación general) hacia los componentes detallados de cada pantalla (formularios FUD y paneles de control).
+    \item \textbf{Refinamiento y Conciliación (Trade-offs):} Se balancearon los requerimientos funcionales frente a las limitantes técnicas. Por ejemplo, para garantizar la consistencia en el registro y modificación del Expediente Único (FUD) y su entorno familiar, se optó por ejecutar transacciones multitabla aisladas (usando el helper transaccional \texttt{get\_db\_cursor(commit=True)}) en lugar de inserciones y actualizaciones secuenciales independientes que pudieran dejar datos huérfanos o inconsistentes ante fallos de conexión o excepciones del sistema.
+\end{itemize}
+
+%---------------------------------------------------------
+\section{Notación}
+\label{sec:notacionDiseno}
+
+Para facilitar la comprensión del diseño detallado y la arquitectura del sistema, esta sección introduce los estándares de modelado visual (UML y ERD) utilizados en las siguientes secciones del documento para documentar las vistas estática, dinámica y de persistencia:
+
+\begin{itemize}
+    \item \textbf{Diagramas de Despliegue UML:} Utilizados para modelar la infraestructura física y lógica del servidor web Flask, el navegador del cliente y la base de datos PostgreSQL.
+    \item \textbf{Diagramas de Clases UML:} Empleados para modelar la estructura estática de los controladores, modelos y su correspondencia lógica.
+    \item \textbf{Diagramas de Secuencia UML y Máquinas de Estado:} Utilizados para detallar la interacción dinámica en tiempo de ejecución (ej. el flujo de autenticación de usuario y el ciclo de vida del expediente del menor).
+    \item \textbf{Modelo Entidad-Relación Físico:} Para la especificación de la base de datos relacional.
+\end{itemize}
+
+%---------------------------------------------------------
+\section{Alcance}
+\label{sec:alcanceDiseno}
+
+El alcance de este documento cubre el diseño de bajo nivel y de alto nivel del sistema \textbf{Taimotla} para la Iteración 2, enfocándose en los siguientes módulos críticos:
+
+\begin{itemize}
+    \item \textbf{Autenticación y Control de Acceso:} Restricciones y validación de usuarios (Director y Coordinador).
+    \item \textbf{Gestión y Asignación de Equipos:} Composición y disolución de los grupos de trabajo multidisciplinarios.
+    \item \textbf{Expediente Único FUD:} Creación, actualización y consulta de la información del NNA.
+    \item \textbf{Diseño de Persistencia:} Estructuración física de las 45+ tablas de la base de datos y su diccionario de consultas.
+\end{itemize}

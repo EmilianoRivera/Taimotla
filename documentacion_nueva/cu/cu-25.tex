@@ -1,0 +1,55 @@
+\begin{UseCase}{CU-25}{Registrar valoración sociofamiliar}{
+	Permite al Trabajador Social capturar el diagnóstico del entorno social del NNA: estructura familiar, condiciones de vivienda, redes de apoyo, evaluación del grado de negación y afectación emocional del cuidador, y dinámica del hogar.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar el entorno sociofamiliar del NNA para identificar derechos vulnerados de convivencia y protección, e insumar el PRD con medidas de intervención familiar.}
+	\UCitem{Entradas}{Sistema de residencia, sostén económico, patrón de migración, redes de apoyo, espacios de socialización, grado de negación del cuidador (Alto/Medio/Bajo), grado de afectación emocional del cuidador (Alto/Medio/Bajo), fecha acordada para presentar el PRD a la familia, narración general del entorno.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración sociofamiliar registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Entorno Familiar.}
+	\UCitem{Precondiciones}{El Trabajador Social debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración sociofamiliar queda almacenada y el indicador de valoración social se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de la valoración sociofamiliar vacíos (grado de negación o afectación emocional del cuidador).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Entorno Familiar} en el expediente único del NNA.
+	\UCpaso Verifica que el Trabajador Social pertenezca al equipo asignado. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración sociofamiliar con todas sus secciones.
+	\UCpaso[\UCactor] Captura el sistema de residencia familiar y el sostén económico principal.
+	\UCpaso[\UCactor] Registra el patrón de migración de la familia y los miembros ausentes si aplica.
+	\UCpaso[\UCactor] Describe las redes de apoyo comunitarias y familiares disponibles.
+	\UCpaso[\UCactor] Captura los espacios de socialización frecuentados por la familia.
+	\UCpaso[\UCactor] Selecciona el grado de negación del cuidador y agrega observaciones.
+	\UCpaso[\UCactor] Selecciona el grado de afectación emocional del cuidador y agrega observaciones.
+	\UCpaso[\UCactor] Registra la fecha acordada con la familia para presentarles el PRD.
+	\UCpaso[\UCactor] Captura la narración general del entorno familiar observado.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Sociofamiliar}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena la valoración y actualiza el indicador sociofamiliar en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Trabajador Social no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-26

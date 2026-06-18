@@ -1,0 +1,1061 @@
+=== PAGE 1 ===
+Sistema de Gestio´n para la Restitucio´n de
+Derechos a NNA
+Documento de Ana´lisis de Requerimientos
+Etapa 1, Iteracio´n 1 – Borrador
+Taimotla
+Fundacio´n Futuro con Derechos
+Borrador – Para revisio´n
+=== PAGE 2 ===
+
+=== PAGE 3 ===
+´Indice general
+1. Introduccio´n 1
+1.1. Presentacio´n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2. Organizacio´ndelcontenido . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.3. Notacio´n,s´ımbolosyconvencionesutilizadas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2. Modelodelalcance 3
+2.1. Ana´lisisdelaproblema´tica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.1. Contextodelproyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.2. Problemasidentificados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.3. Ana´lisisdecausasprobables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.4. Ana´lisisdeposiblesconsecuencias . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.5. Caracter´ısticasdelasolucio´n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.6. S´ıntesisdelaproblema´tica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2. Objetivosdelproyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.1. Objetivogeneral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.2. Objetivosespec´ıficos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.3. Usuariosidentificados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.4. Procesosinvolucrados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.5. Requerimientosdeusuario . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.6. Especificacio´ndeplataforma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3. ModelodelNegocio 9
+3.1. Actoresdelsistema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.1.1. Director . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.1.2. Coordinador . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.1.3. Psico´logo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.1.4. Doctor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.1.5. TrabajadorSocial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.1.6. Abogado . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.2. Te´rminosdelNegocio . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.3. Modelodeldominiodelproblema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+i
+=== PAGE 4 ===
+3.4. ModeladodeReglasdenegocio . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.5. Ma´quinasdeestado . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.5.1. Estadosparaunpre´stamo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4. Modelodina´mico 17
+4.1. Descripcio´ndecasosdeuso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+4.2. CUXEscribaelnombredelcasodeuso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.2.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.2.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.2.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.2.4. Puntosdeextensio´n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+4.3. CUXEscribaelnombredelcasodeuso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.3.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.3.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.3.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+4.3.4. Puntosdeextensio´n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5. Modelodelainteraccio´n 25
+5.1. Modelodenavegacio´n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2. IUXInterfaz(nombredelainterfaz) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2.1. Objetivo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2.2. Disen˜o . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2.3. Salidas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+5.2.4. Entradas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+5.2.5. Comandos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+5.3. Cata´logodemensajes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5.3.1. Listademensajes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+6. CasosdeUso 31
+6.1. CU-01Controldeacceso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+6.1.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+6.1.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+6.1.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+6.2. CU-02Gestio´ndeusuariosyroles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+6.2.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+6.2.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+6.2.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+6.3. CU-03Gestio´ndeexpedientedelNNA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+6.3.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+6.3.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+6.3.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+6.4. CU-04Asignacio´ndecasos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+6.4.1. Descripcio´ncompleta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+6.4.2. Atributosimportantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+6.4.3. TrayectoriasdelCasodeUso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+ii
+Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 5 ===
+´Indice de figuras
+2.1. EstructuradeusuariosdelaFundacio´nFuturoconDerechos. . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.1. Ma´quinadeestadosdeunPre´stamo. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.1. Diagramadecasosdeusodelsistema. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.2. Diagramadetalladodelsistema. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.1. mapa . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+5.2. IU23PantalladeControldeAcceso. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+iii
+=== PAGE 6 ===
+iv
+Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 7 ===
+´Indice de tablas
+1. Resumendelproyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vii
+v
+=== PAGE 8 ===
+vi
+Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 9 ===
+Project Charter
+Proyecto: CVE,Nombreproyecto.
+Responsable: Empresa,Nombredelresponsable,cargo,Firma.
+Autoriza: Empresa,Nombredelresponsable,cargo,Firma.
+Background/Contexto: Descripcio´nbrevedelcontexto,nomasde3l´ıneas.
+Beneficiosesperados: Principalesbeneficiosalte´rminodelproyecto.
+Costoestimado: $2,350,700.00±13%(porejemplo.)
+Fechadeinicio: Fecha Fechadete´rmino: Fecha.
+Objetivo: Objetivogeneraldelproyecto.
+EntregablesPrincipales
+Clave-Nombre descripcio´ndelentregable
+Clave-Nombre descripcio´ndelentregable
+...
+Alcancedelproyecto
+Incluye: •Elemento1delalcancequeincluye.
+•...
+Excluye: •Elemento1delalcancequeincluye.
+•...
+Criteriodee´xito: Indicadorclavedete´rminodelproyecto
+Metodolog´ıa: Metodolog´ıa o metodolog´ıas que se utilizan (dos renglones o lista de no mas
+de7)
+Datosdecontacto
+ProjectManager: Nombre,Tel,correo,etc.
+Projectowner: Nombre,Tel,correo,etc.
+...
+Riesgosypeligros: •Riesgoopeligroidentificado.
+•...
+Supuestos: •Suposicioneshechasdelasquedependeele´xitodelproyecto.
+•...
+Restricciones y depen- •Restriccionesdelproyecto.
+dencias: •...
+Supervisio´n
+Juntas: (Nombre de la(s) perso- reportaa(Nombredela(s)persona(s))
+na(s)),
+Dudas: (Nombre de la(s) perso- reportaa(Nombredela(s)persona(s))
+na(s)),
+Avances: (Nombre de la(s) perso- reportaa(Nombredela(s)persona(s))
+na(s)),
+...
+Tabla1:Resumendelproyecto
+vii
+Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 10 ===
+viii
+Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 11 ===
+1
+CAP´ITULO
+Introduccio´n
+Este documento contiene la Especificacio´n del proyecto realizado para la Fundacio´n Futuro con Derechos, que
+tienecomofinalidadfacilitarlagestio´ndelainformacio´nrelacionadaaloscasosparalarestitucio´ndederechosdelas
+nin˜as,nin˜osyadolescentes(NNA).Estedocumentocontienelaespecificacio´ndelosrequerimientosdelusuarioydel
+sistemaadesarrollar,ytienecomoobjetivoestablecerque´ funcionesdelsistemaseintegrara´n.
+1.1. Presentacio´n
+LaFundacio´nFuturoconDerechosesunaorganizacio´nubicadaenNuevoLeo´ncuyofinesrestituirlosderechosde
+lasnin˜as,nin˜osyadolescentesenestadodeorfandadpormotivodefemicidio.Paracumplirconsuobjetivo,elmiembro
+conmayorautoridadyquienrepresentaatodalaorganizacio´neselDirector(a),quienseapoyadeunCoordinador(a)y
+juntosgestionanalosequiposmultidisciplinarios.
+DebidoaqueserequiereunagrancantidaddedatossobrelosNNA,laorganizacio´npresentaproblemasdegestio´n
+delainformacio´n,provocandoextrav´ıodearchivos,mezcladedatosyretrasosimportantesenlaconsultadeinforma-
+cio´n,loquepuedeimposibilitarlarestitucio´ndederechosoelmonitoreoadecuadodecadacaso.
+El presente documento describe el ana´lisis de la problema´tica, los objetivos del proyecto, los requerimientos del
+usuarioyloscasosdeusodelsistemaqueseproponedesarrollarcomosolucio´n.
+1.2. Organizacio´n del contenido
+En el cap´ıtulo 2 se presenta el Modelo del Alcance, que incluye el ana´lisis de la problema´tica, los objetivos del
+proyecto,losusuariosidentificadosylosrequerimientosdeusuario.
+Enelcap´ıtulo3sepresentaelModelodelNegocio,quedescribelosactoresdelsistema,loste´rminosdelnegocio
+yelmodelodeldominiodelproblema.
+1
+=== PAGE 12 ===
+1.3. Notacio´n, s´ımbolos y convenciones utilizadas
+Los requerimientos funcionales utilizan una clave RFX, donde X es un nu´mero consecutivo y RF es la clave para
+todoslosRequerimientosFuncionales.
+Los requerimientos del usuario utilizan una clave RUX, donde X es un nu´mero consecutivo y RU es la clave para
+todoslosRequerimientosdelUsuario.
+LasreglasdenegocioutilizanunaclaveRNX.Lasproblema´ticasutilizanP-XX.LascausasprobablesutilizanC-XX.
+Las posibles consecuencias utilizan PC-XX. Las soluciones utilizanS-XX. Los casos de uso utilizan CUX. Los errores
+utilizanEX.
+IU InterfazdeUsuario
+MSG MeSsaGe
+UML UnifiedModelingLanguage
+BPMN BusinessProcessModelingNotation
+NNA Nin˜as,Nin˜osyAdolescentes
+FUD FormularioU´nicodeDatos
+LGDNNA LeyGeneraldelosDerechosdeNin˜as,Nin˜osyAdolescentes
+2 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 13 ===
+2
+CAP´ITULO
+Modelo del alcance
+Estecap´ıtulopresentaelana´lisisdelaproblema´ticaqueenfrentalaFundacio´nFuturoconDerechos,losobjetivos
+delproyecto,losusuariosidentificadosylosrequerimientosdeusuarioqueguiara´neldesarrollodelsistemadegestio´n
+deexpedientesdigitales.
+2.1. Ana´lisis de la problema´tica
+Acontinuacio´npresentamoselana´lisisdelproblemaquesustentaelproyectodedesarrollodesoftware.Elpresente
+ana´lisis establece las caracter´ısticas en el a´rea de posgrado para describir a continuacio´n los principales problemas
+encontradosysusposiblessoluciones.
+2.1.1. Contexto del proyecto
+La Fundacio´n Futuro con Derechos es una organizacio´n ubicada en Nuevo Leo´n que tiene como fin restituir los
+derechos de las nin˜as, nin˜os y adolescentes en estado de orfandad por motivo de femicidio. El miembro con mayor
+autoridadeselDirector(a),quienseapoyadeunCoordinador(a)paragestionarlosequiposmultidisciplinarios.
+Los equipos multidisciplinarios son grupos de ma´ximo cuatro profesionales (un psico´logo, un doctor, un trabajador
+social y un abogado). Su objetivo es trabajar en conjunto con las familias de los NNA y los mismos NNA para restituir
+todos los derechos vulnerados. El proceso de restitucio´n se fundamenta en la Ley General de los Derechos de las
+Nin˜as,Nin˜osyAdolescentes(LGDNNA),laGu´ıayCajadeHerramientasdelaUNICEF,ylaFUD.
+Debido a la gran cantidad de datos requeridos por caso, la organizacio´n presenta problemas de gestio´n de la
+informacio´n:extrav´ıodearchivos,mezcladedatosyretrasosenlaconsulta,loquepuedeimposibilitarlarestitucio´nde
+derechosoelmonitoreoadecuadodecadacaso.
+2.1.2. Problemas identificados
+Elproblemageneralqueatiendeelpresenteproyectoes:
+3
+=== PAGE 14 ===
+“La gestio´n operativa e institucional esta´ siendo rebasada por la dispersio´n de la informacio´n de los
+casos,generandoretrasosenlostiemposderespuesta,vulnerabilidadantelape´rdidadedatosyobsta´culos
+paraelseguimientocontinuodelasNNAensituacio´ndeorfandad.”
+Losproblemasidentificadosson1
+Id Nombre Descripcio´n Pri.
+P-01 Heterogeneidad de da- La informacio´n de los expedientes se encuentra dispersa en formatos A
+tos tanto f´ısicos como digitales (archivos de Word, notas sueltas, carpetas
+f´ısicas).Estodificultaelobjetivodelarestitucio´ndelosderechosdelas
+NNA.
+P-02 Lentitud en la consulta Elpersonalinviertedemasiadotiempobuscandodocumentosespec´ıfi- A
+deinformacio´n cos entre archivos f´ısicos o carpetas de distintas computadoras, retra-
+sandolostiemposderespuestaantetra´mitesurgentes.
+P-03 Vulnerabilidad y riesgo Granpartedelainformacio´nsealmacenademaneralocalenlosequi- MA
+depe´rdidadedatos posdelpersonal.Siundiscodurosedan˜a,siunequipodeco´mputose
+extrav´ıaosiuncolaboradorseretiradelafundacio´n,secorreelriesgo
+deperderdeformairreparableelhistorialcompletodeunmenor.
+P-04 Interrupcio´n en el se- El seguimiento de cada caso llega a ser temporal, lo que implica tener MA
+guimientodelcaso lagunasdeinformacio´noinclusonotenerlacertezadesirealmentese
+restituyenlosderechos.
+P-05 Inconsistenciadedatos Cadacolaboradortienesupropiaversio´nyformatodelosexpedientes M
+que atiende, pudiendo aparecer informacio´n contradictoria. Por ejem-
+plo, cuando un me´dico escribe cierta informacio´n del estado de salud
+del NNA en un formato f´ısico pero en digital no se estipula lo mismo o
+inclusonoesta´.
+P-06 Faltadepersonal Elpersonaldelafundacio´nesinsuficienteparaatenderatodoslosNNA A
+P-07 Faltadepersonalcapa- Debido a que cada colaborador maneja una herramienta diferente, po- M
+citado costienenlashabilidadesparaaprovecharprocesadoresdetextoyafi-
+nes.
+2.1.3. Ana´lisis de causas probables
+P-01,P-02,P-03,P-05 Usodeherramientasdescentralizadas.ElpersonalquehaceusodeherramientascomoWord,
+Excelydocumentosf´ısicosnopermiteneladecuadomanejodeinformacio´n(actualizacio´n,intercambioymanejo
+dehisto´ricos).
+P-04 Falta de mecanismos de control para el manejo de la informacio´n. La falta de una plataforma que permita llevar
+flujosdetrabajoimposibilitaquelosequiposeste´nenteradosatiempodefechasimportantesparacadamenor.
+P-06,P-07 La dificultad de incorporar personal a la fundacio´n. Capacitar nuevo personal para atender expedientes
+fragmentadosrepresentauncostoelevadoparalafundacio´n.
+P-01,P-04,P-05 Nohayunesta´ndarentodosloscolaboradoresdelafundacio´n.Losformatosycadaflujodetrabajo
+esdiferenteporloquedacabidaaerroresenlosexpedientes.
+1Laprioridadenlatablaesta´indicadacomo:MB-MuyBaja,B-Baja,M-Media,A-Alta,MA-MuyAlta.
+4 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 15 ===
+P-04,P-06,P-07 La sobrecarga de trabajo supera al personal restando tiempo cr´ıtico a la atencio´n de los casos. Ya
+quelafundacio´nnocuentaconmecanismosparaautomatizartareasyescasezdepersonal,seretrasaeltiempo
+deseguimientodeloscasos.
+2.1.4. Ana´lisis de posibles consecuencias
+Acontinuacio´npresentamoslasconsecuenciasquelafundacio´nesta´ presentandoyseguira´ presentandoamediano
+ylargoplazoderivadasdelapresenteproblema´tica:
+P-01,P-02,P-03,P-05 L a falta de integridad y consistencia. En los expedientes de los nin˜os existir´ıa informacio´n no
+confiablequepodr´ıaderivarlaincapacidaddeproporcionarinformacio´nclaveadependenciasgubernamentales.
+P-06,P-07 Incapacidad para abordar la carga de trabajo. El personal de la fundacio´n no sera´ capaz de sostener la
+sobrecarga de trabajo. Los familiares o tutores de los NNA se sentira´n desatendidos y perdera´n confianza en la
+fundacio´n.
+Todos Afectacio´n a los NNA. Los familiares o tutores de los NNA y a los mismos NNA adema´s de que sus derechos
+noser´ıanrestituidossepondr´ıaenriesgotantoalosnin˜oscomoalareddeapoyo.
+P-01,P-03,P-05 ncapacidad para mantener histo´ricos de expedientes. Por la baja confiabilidad, consistencias e inte-
+gridad se pierde la capacidad para analizar dichos expedientes si se llega a reabrir el caso provocando que se
+tengaquevolveracapturarlainformacio´naumentandolainformacio´nnoconfiable,consistentee´ıntegra.
+P-03 Fuga de informacio´n sensible. Por la falta de mecanismos para el correcto manejo de la informacio´n, personas
+tercerastendr´ıanaccesoadichosdatosponiendoenriesgolavidadelmenor.
+P-04 Falsasrestitucionesdederechos.Porlafaltadeseguimientoaloscasos,au´neimplementandoplanesdetrabajo
+estos no ser´ıan suficientes para garantizar la restitucio´n de derechos de los NNA provocando que la fundacio´n
+categoricecasoscomoterminadoscuandonoloesta´n.
+P-01,P-02 Retrasosadministrativos.Cuandounadependenciagubernamentalsoliciteinformacio´nimportantedelNNA
+lafundacio´nnosera´ capazderesponderentiempoporlacomplejidaddelaconsultadelainformacio´nytambie´n
+afectandoalarestitucio´ndederechosdelNNA.
+2.1.5. Caracter´ısticas de la solucio´n
+Enelprocesodes´ıntesisseinvestigaronlasprincipalessolucionesposiblesparamitigarlaproblema´ticaplanteada.
+P-01 Estandarizareimplementarprocesostalquetodosloscolaboradorestrabajenconelmismoformato.
+P-02,P-03,P-04,P-05 Almacenar toda la informacio´n en un repositorio que garantice la integridad, confiabilidad y
+disponibilidaddelainformacio´n.
+P-03 Validarqueelpersonalaccedaasuinformacio´ncorrespondienteacordeasurol.
+P-04 Validarlasituacio´ndelNNAconstantementehastagarantizarlarestitucio´ncompletadesusderechos.
+P-06,P-07 Incrementarlaplantillaconpersonalcapacitado.
+Todos Quetodoslosdocumentosyreportesseangeneradosdesdeelsistema.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 5
+=== PAGE 16 ===
+2.1.6. S´ıntesis de la problema´tica
+Unavezrealizadoelana´lisisdelproblemayvalidadotodosloshallazgosconlafundacio´nsehaintegradolasiguiente
+propuestadesolucio´n:
+S-01 Revisara´n los procesos involucrados para identificar las actividades susceptibles de automatizacio´n o que sean
+soportadasporelsistema.
+S-02 Elsistematendra´ unabasededatoscentralizadadedondetodalainformacio´nseextraera´.
+S-03 Elsistemacontemplaaccesoalainformacio´nbasadoenrolesparalimitarlafugadedatossensibles.
+S-04 Elsistemagenerara´ losprincipalesdocumentosparaquetodoelpersonallosutiliceconbaseensurol.
+S-05 El sistema debe ser lo suficientemente entendible para que tanto el nuevo y antiguo personal se adapte ra´pida-
+mente.
+S-06 Elsistemadebera´ seroperadov´ıaWEB.
+S-07 Elsistemacontemplamo´dulosespec´ıficosparalaelaboracio´ndelplanderestitucio´n
+S-08 Elsistematendra´ controldeaccesoparaquetodoslosactoresloutilicenconbaseenlaoperacio´ndesurol.
+S-09 Elsistematendra´ elexpedientedecadaNNA,siendoaccesiblealequiporesponsable.
+S-10 Paraqueelequipoeste´ enteradodelasfechasimportanteselsistemaemitira´ alertasvisualesbasadosenfechas
+l´ımitespararecordaralpersonal.
+2.2. Objetivos del proyecto
+2.2.1. Objetivo general
+“Desarrollarunsistemadegestio´ndeexpedientesdigitalesparaelequipomultidisciplinario,quecentra-
+lice y optimice los procesos para la restitucio´n de derechos de los nin˜os, nin˜as y adolescentes en Nuevo
+Leo´n.”
+2.2.2. Objetivos espec´ıficos
+• Desarrollar procesos para generar, actualizar y consultar expedientes digitales, integrando informacio´n social,
+jur´ıdica,me´dicaypsicolo´gicaatrave´sdemo´dulosespec´ıficos.
+• Asegurar la seguridad de la informacio´n evitando filtraciones sensibles mediante niveles de acceso adecuados
+paracadausuario.
+• Centralizartodalainformacio´ndeloscasosenunaplataformau´nica,eliminandoelusodemediosdispersos.
+• Implementarseguimientocontinuodelestadodecadacasoparagarantizarlarestitucio´ndederechos.
+6 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 17 ===
+Figura2.1:EstructuradeusuariosdelaFundacio´nFuturoconDerechos.
+2.3. Usuarios identificados
+Dentro de la Fundacio´n, los usuarios que participan en la organizacio´n y que interactuara´n con el sistema son los
+siguientes:
+Lajerarqu´ıaorganizacionalpartedelDirectorGeneral,quiensupervisaalCoordinador.ElCoordinadorgestionalos
+EquiposMultidisciplinarios,cadaunointegradopor:Psico´logo,Doctor,TrabajadorSocialyAbogado.
+2.4. Procesos involucrados
+ElprocesoprincipalqueinvolucraelsistemaeslaGestio´ndeCasosparalaRestitucio´ndeDerechosdeNNA,
+que incluye: deteccio´n del caso, registro del expediente, asignacio´n al equipo multidisciplinario, intervencio´n y segui-
+miento,ycierredelcaso.EsteprocesosefundamentaenlaLGDDNNA,laGu´ıayCajadeHerramientasdelaUNICEF,
+ylaFUD.
+2.5. Requerimientos de usuario
+Trasconsultardiversasfuentesacercadelprocesodeatencio´nacasosdeNNAyalaorganizacio´ndelafundacio´n,
+seextrajeronlossiguientesrequerimientosdeusuario2:
+RequerimientosdelUsuario
+Id Nombre Descripcio´n Iter. Stat.
+RU-01 Control de acceso a Elpersonaldelafundacio´ndebetenerautorizacio´nantesdecual- 1
+TODO
+losusuarios quieroperacio´ndentrodelsistema.
+2ElvalordeStatusenlatablaesta´ indicadacomo:TODO-Pendiente,DOING-Enproceso,DONE-Terminado,TOCHK-Listopararevisio´n,
+ISSUE-Presentaproblemas.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 7
+=== PAGE 18 ===
+RequerimientosdelUsuario
+Id Nombre Descripcio´n Iter. Stat.
+RU-02 Centralizacio´n de la El personal requiere realizar consultas de toda la informacio´n de 1
+TODO
+informacio´n suscasosasignados.
+RU-03 Seguimientodelcaso El personal requiere poder llevar un seguimiento del caso del 1
+TODO
+NNA.
+RU-04 Registro de expe- Elpersonalrequierepoderregistrartodoslosdatosnecesariosdel 1
+TODO
+dientedelNNA casodelNNA.
+RU-05 Asignacio´ndecasos ElusuarioCoordinadorrequierepoderasignardiferentescasosa 1
+TODO
+losequiposmultidisciplinarios.
+RU-06 Crear equipos multi- ElusuarioCoordinadorrequierepodercrearygestionarlosequi- 1
+TODO
+disciplinarios posmultidisciplinarios.
+RU-07 Acceso a la Informa- Los usuarios requieren que su informacio´n no sea alterada por 1
+TODO
+cio´nporRol algu´notromiembrodelafundacio´n.
+2.6. Especificacio´n de plataforma
+Elsistemapropuestoesunaaplicacio´nwebaccesibledesdenavegadoresmodernos,disen˜adaparaserutilizada
+portodoslosmiembrosdelafundacio´nconaccesocontroladoporroles.
+Tipodesistema: Aplicacio´nweb(sistemadegestio´ndeexpedientesdigitales).
+Softwarerequerido: Navegador web moderno (Chrome, Firefox, Edge); servidor web con soporte para la tecnolog´ıa
+debackendseleccionada;sistemagestordebasededatosrelacional.
+Hardwarerequerido: Servidorconaccesoainternetoredlocal;computadorasodispositivosconnavegadorparalos
+usuarios.
+Servicios: Conexio´n a internet o red local; respaldo perio´dico de la base de datos; autenticacio´n segura mediante
+credenciales.
+8 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 19 ===
+3
+CAP´ITULO
+Modelo del Negocio
+Este cap´ıtulo describe los actores del sistema, los te´rminos del negocio utilizados en la Fundacio´n Futuro con
+Derechos y el modelo del dominio del problema que sustenta el desarrollo del sistema de gestio´n de expedientes
+digitales.
+3.1. Actores del sistema
+Acontinuacio´nsedescribenlosactoresqueinteractu´anconelsistema.
+3.1.1. Director
+Ma´xima autoridad responsable de la gestio´n estrate´gica, representacio´n legal y toma de decisiones presupuestales y
+administrativasdelafundacio´n.
+Responsabilidades:
+• RepresentarlegalmentealaFundacio´nFuturoconDerechos.
+• Tomardecisionesestrate´gicasypresupuestales.
+• Supervisarelcumplimientodelosobjetivosdelafundacio´n.
+• Gestionarusuariosyrolesdentrodelsistema.
+Perfil:
+• Experienciaengestio´ndeorganizacionescivilesosimilares.
+• Conocimientoenlegislacio´ndeproteccio´nalainfancia.
+• Habilidadesdeliderazgoytomadedecisiones.
+Procesosenlosqueparticipa:
+9
+=== PAGE 20 ===
+• Gestio´nadministrativadelafundacio´n.
+• Supervisio´ngeneraldelprocesoderestitucio´ndederechos.
+A´rea: Direccio´nGeneral
+Cantidadaproximada: 1
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.1.2. Coordinador
+Responsabledesupervisarlaejecucio´noperativadelequipo,asegurarelcumplimientodeloscalendariosdeinterven-
+cio´nyfungircomoenlaceentreladireccio´nyelequipote´cnico.
+Responsabilidades:
+• Supervisaralosequiposmultidisciplinarios.
+• AsignarcasosdeNNAalosequiposcorrespondientes.
+• Crearygestionarequiposmultidisciplinarios.
+• Gestionarusuariosyrolesdentrodelsistema.
+Perfil:
+• Formacio´nprofesionalentrabajosocial,psicolog´ıaoa´reaaf´ın.
+• Experienciaencoordinacio´ndeequiposmultidisciplinarios.
+• Habilidadesdeorganizacio´nyseguimientodeproyectos.
+Procesosenlosqueparticipa:
+• Asignacio´ndecasosaequiposmultidisciplinarios.
+• Seguimientodelprocesoderestitucio´ndederechos.
+A´rea: Coordinacio´nOperativa
+Cantidadaproximada: 1
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.1.3. Psico´logo
+Especialista encargado de brindar contencio´n emocional, diagno´stico de salud mental y acompan˜amiento terape´utico
+especializadoentraumapordueloyviolencia.
+Responsabilidades:
+• Registraryactualizarlainformacio´npsicolo´gicadelNNAenelexpediente.
+• DarseguimientoalestadoemocionalymentaldelNNA.
+10 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 21 ===
+Perfil:
+• LicenciaturaenPsicolog´ıaconespecialidadentraumainfantiloduelo.
+• Experienciaenatencio´namenoresensituacio´ndevulnerabilidad.
+Procesosenlosqueparticipa:
+• Registroyseguimientodelexpedientepsicolo´gicodelNNA.
+A´rea: EquipoMultidisciplinario–Psicolog´ıa
+Cantidadaproximada: Variable(unoporequipomultidisciplinario)
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.1.4. Doctor
+Profesional de la salud encargado de evaluar, diagnosticar y dar seguimiento al estado f´ısico y nutricional de los NNA
+durantesuprocesodeatencio´n.
+Responsabilidades:
+• Registraryactualizarlainformacio´nme´dicadelNNAenelexpediente.
+• Darseguimientoalestadodesaludf´ısicodelNNA.
+Perfil:
+• LicenciaturaenMedicinaconexperienciaenpediatr´ıaomedicinafamiliar.
+Procesosenlosqueparticipa:
+• Registroyseguimientodelexpedienteme´dicodelNNA.
+A´rea: EquipoMultidisciplinario–Salud
+Cantidadaproximada: Variable(unoporequipomultidisciplinario)
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.1.5. Trabajador Social
+Profesional responsable de la investigacio´n de campo, estudio del entorno sociofamiliar y vinculacio´n del NNA con
+recursoscomunitariosyapoyossociales.
+Responsabilidades:
+• Registraryactualizarlainformacio´nsocialdelNNAenelexpediente.
+• DarseguimientoalentornofamiliarysocialdelNNA.
+Perfil:
+Fundacio´nFuturoconDerechos–NuevoLeo´n 11
+=== PAGE 22 ===
+• LicenciaturaenTrabajoSocialconexperienciaenatencio´namenoresensituacio´ndevulnerabilidad.
+Procesosenlosqueparticipa:
+• RegistroyseguimientodelexpedientesocialdelNNA.
+A´rea: EquipoMultidisciplinario–TrabajoSocial
+Cantidadaproximada: Variable(unoporequipomultidisciplinario)
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.1.6. Abogado
+Representante legal encargado de la vigilancia de los procesos judiciales, tra´mites de patria potestad, custodia y el
+seguimientodelasituacio´nlegaldelNNAantelasautoridades.
+Responsabilidades:
+• Registraryactualizarlainformacio´nlegaldelNNAenelexpediente.
+• DarseguimientoalosprocesosjudicialesrelacionadosconelNNA.
+Perfil:
+• LicenciaturaenDerechoconexperienciaenderechofamiliaryproteccio´ndemenores.
+Procesosenlosqueparticipa:
+• RegistroyseguimientodelexpedientelegaldelNNA.
+A´rea: EquipoMultidisciplinario–Legal
+Cantidadaproximada: Variable(unoporequipomultidisciplinario)
+Horarioactividad: Horariolaboraldelafundacio´n.
+3.2. Te´rminos del Negocio
+Fundacio´nFuturoconDerechos: Organizacio´ndelasociedadcivildedicadaalaproteccio´nintegralyrestitucio´nde
+derechosdeNin˜as,Nin˜osyAdolescentes(NNA)ensituacio´ndeorfandadderivadadefeminicidios.
+LGDNNA: (Ley General de los Derechos de Nin˜as, Nin˜os y Adolescentes.) Marco jur´ıdico superior que establece los
+principiosycriteriosqueorientanlapol´ıticapu´blicaylasaccionesdeproteccio´ndelainfanciaenelpa´ıs.
+FUD: (Formulario U´nico de Datos.) Herramienta te´cnica de registro utilizada para concentrar la informacio´n sociode-
+mogra´ficayjur´ıdicaba´sicadecadaNNAatendidoporlafundacio´n.
+Gu´ıadeUNICEFyCajadeHerramientas: Conjuntodeesta´ndaresinternacionalesyrecursosmetodolo´gicosquesir-
+vendebaseparalaimplementacio´ndeprocesosdecuidadoalternativoyproteccio´nespecial.
+Director: Ma´xima autoridad responsable de la gestio´n estrate´gica, representacio´n legal y toma de decisiones presu-
+puestalesyadministrativasdelafundacio´n.
+12 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 23 ===
+Coordinador: Responsabledesupervisarlaejecucio´noperativadelequipo,asegurarelcumplimientodeloscalenda-
+riosdeintervencio´nyfungircomoenlaceentreladireccio´nyelequipote´cnico.
+Psico´logo: Especialistaencargadodebrindarcontencio´nemocional,diagno´sticodesaludmentalyacompan˜amiento
+terape´uticoespecializadoentraumapordueloyviolencia.
+TrabajadorSocial: Profesionalresponsabledelainvestigacio´ndecampo,estudiodelentornosociofamiliaryvincula-
+cio´ndelNNAconrecursoscomunitariosyapoyossociales.
+Abogado: Representantelegalencargadodelavigilanciadelosprocesosjudiciales,tra´mitesdepatriapotestad,cus-
+todiayelseguimientodelasituacio´nlegaldelNNAantelasautoridades.
+Doctor: Profesionaldelasaludencargadodeevaluar,diagnosticarydarseguimientoalestadof´ısicoynutricionalde
+losNNAdurantesuestanciaoproceso.
+EquipoMultidisciplinario: Grupote´cnicointegradoporlasa´reasdepsicolog´ıa,trabajosocial,legalysalud,quetra-
+bajademaneraconjuntaparadisen˜aryejecutarelPlandeRestitucio´ndeDerechos.
+NNA: (Nin˜as, Nin˜os y Adolescentes.) Personas menores de 18 an˜os sujetos de derechos y foco principal de la inter-
+vencio´ndelafundacio´n.
+FamiliadelNNA: Grupodeparentesco(consangu´ıneooextenso)queformalareddeapoyoprimariayqueesevalua-
+doparadeterminarlaviabilidaddelacogimientooreintegracio´n.
+TutordelNNA: Persona f´ısica que ejerce la guarda y custodia legal, responsable de la representacio´n, cuidado y
+proteccio´ndelosbieneseintegridaddelmenorantelaausenciadelospadres.
+PlandeRestitucio´ndeDerechos: Documentoestrate´gicoypersonalizadoquedetallalasacciones,plazosyrespon-
+sablesparasubsanarlasvulneracionesidentificadasenelNNA.
+Restitucio´ndeDerechos: Acto jur´ıdico y social de devolver al NNA el ejercicio pleno de sus facultades y garant´ıas
+quelefueronvulneradasporsusituacio´ndeorfandadoviolencia.
+DerechosdelNNA: Conjuntodegarant´ıasinalienables(vida,salud,educacio´n,identidad,familia,etc.)quedebenser
+protegidosdemaneraprioritariabajoelprincipiodelIntere´sSuperiordelaNin˜ez.
+ProcesoparalaRestitucio´ndeDerechos: Rutacr´ıticadeatencio´nqueincluyeladeteccio´n,diagno´stico,determina-
+cio´ndemedidas,ejecucio´ndelplanyseguimientodelcaso.
+MedidasUrgentes: Acciones de proteccio´n inmediata (me´dicas, psicolo´gicas o de resguardo f´ısico) que se ejecutan
+cuandolaintegridadolavidadelNNAseencuentraenriesgoinminente.
+3.3. Modelo del dominio del problema
+Elmodelodeldominiodelproblemadescribelasentidadesprincipalesqueintervienenenelprocesoderestitucio´n
+dederechosdelosNNAysusrelaciones.Lasentidadescentralesson:NNA,Expediente,EquipoMultidisciplinario,Plan
+deRestitucio´ndeDerechosylosdistintosactoresdelafundacio´n.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 13
+=== PAGE 24 ===
+3.4. Modelado de Reglas de negocio
+Enestaseccio´ndescribatodaslasreglasdenegocioidentificadas.
+BR-001 Nombre de la regla de negocio
+Tipo:(cid:25)Habilitadora. Clase:(cid:5)Decondicio´n. Nivel:WEstricto.
+Descripcio´n: Descripcio´ndelaregla.Formacoloquialamaneradereglamento.
+Motivacio´n: Describaporqueesimportantelaregla.
+Sentencia: Sentenciaformaldelaregla.
+Ejemplopositivo: Indiqueunoovariosejemplosendondelareglasecumple.
+• ...
+Ejemplonegativo: Indiqueunoovariosejemplosendo´ndelareglanosecumple.
+• ...
+Referenciadopor: Listeloscasosdeusoendondelareglanosecumple.porejemploCUCE3.2,CUCE3.3.
+3.5. Ma´quinas de estado
+En esta seccio´n describa para cada ma´quina de estados y a que entidad corresponde. Utilice reglas ECA en el
+diagrama y elabore el diagrama de estados, una descripcio´n del diagrama, una descripcio´n de cada estado y una
+descripcio´ndelasaccionesindicandoquecasosdeusoesta´ninvolucrados.
+3.5.1. Estados para un pre´stamo
+Enlafigura3.1semuestran...
+Figura3.1:Ma´quinadeestadosdeunPre´stamo.
+14 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 25 ===
+Estados
+Estado: Descripcio´ndelestado.
+... ...
+Acciones
+Accio´n: Descripcio´ndelaaccio´nindicandoelCasodeusoinvolucrado.
+... ...
+Fundacio´nFuturoconDerechos–NuevoLeo´n 15
+=== PAGE 26 ===
+16 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 27 ===
+4
+CAP´ITULO
+Modelo dina´mico
+Presentelasolucio´nindicandoelsiestasecomponedevariossistemas,lossubsistemasdelsistemaysiaplica,los
+mo´dulosdelossubsistemas.
+Este cap´ıtulo describe en modelo dina´mico del sistema. en el se detallan todos los escenarios de ejecucio´n del
+sistema. La figura 4.1 muestra el diagrama general del sistema y sus subsistemas, y la figura 4.2 muestra todos los
+casosdeusodelsistema.Enestedocumentosolodetallamosloscasosdeusodelsubsistemadegestio´ndecursos.
+Figura4.1:Diagramadecasosdeusodelsistema.
+17
+=== PAGE 28 ===
+Figura4.2:Diagramadetalladodelsistema.
+18 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 29 ===
+4.1. Descripcio´n de casos de uso
+Acontinuacio´nsedetallanloscasosdeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 19
+=== PAGE 30 ===
+4.2. CUX Escriba el nombre del caso de uso
+4.2.1. Descripcio´n completa
+4.2.2. Atributos importantes
+CasodeUso: CUXEscribaelnombredelcasodeuso
+Versio´n:
+0.1
+Autor:
+Nombredelanalista.
+Supervisa:
+Nombredelanalistarevisor.
+Actor: Nombredelactor
+Propo´sito: •Propo´sitodelcasodeuso.
+•...
+Entradas: •Nombredeldatodeentrada.
+•Nombredeldatodeentrada.
+Origen: •Seintroducendesdeelteclado.
+•otros.
+Salidas: •Nombredeldatodeentrada.
+•Mensajesdeerror.
+•Datosqueaparecenenpantalla.
+•Datosqueaparecenenlistasdesplegablesotablas,etc.
+•Datosqueseimprimenoqueseenv´ıaaotrossistemas.
+Destino: •Semuestraenlapantalla IUXNombrepantalla..
+•otros.
+Precondiciones: •Escribalaprecondicio´n.
+Postcondiciones: •Escribatodaslaspostcondiciones.
+Errores: •E1:Condicio´nquedetonaelerror,reaccio´ndelsistemayregresaalpaso??.
+•E2:Condicio´nquedetonaelerror,reaccio´ndelsistemayterminaelCasodeuso..
+Tipo: Casodeusoprimario
+Observaciones:
+4.2.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 o VERBOENINFINITIVO+(Accio´ndelusuario)+(Accio´ndentrodelsistema)
+20 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 31 ===
+2 IngresaalsistemaescribiendolaURLdelaaplicacio´n.
+3 Solicitaalusuarioqueseidentifiquemediantelapantalla IU1Iniciodesesio´n
+4 Seidentificaintroduciendosunombredeusuarioycontrasen˜a.
+5 Solicitaelingresoalsistemapresionaelboto´n Ingresar .
+6 BuscalosdatosdelusuarioidentificadoporelnombredeusuariointroducidoqE1Nohayusuario
+7 Verificaqueelusuarioespecificadonoeste´ inactivoqE2Usuarioinactivo[TrayectoriaA].
+8 Verificaquelacontrasen˜aingresadacoincidaconlaalmacenadaqE3Lacontrasen˜anocoincide[Trayectoria
+B].
+9 SeejecutanlospasosdelcasodeusoCUYNombredelcasodeuso.
+10 Muestralapantalla IU2PrincipalconelmensajeMSG-001Bienvenidaalusuario.
+-- --Findelcasodeuso.
+Trayectoria alternativa LETRA:
+Condicio´n:Condicio´nquehacequeseejecuteestatrayectoria
+LETRA1 Especifiquelospasosdelatrayectoria.
+LETRA2 ElCasodeUsocontinu´aenelpaso3.
+-- --Findelatrayectoria.
+4.2.4. Puntos de extensio´n
+Cuando: Elusuarionorecuerdacualessucontrasen˜aosospechaquesuusuarioesta´ bloqueado.
+Durantelaregio´n: Delpaso??alpaso??.
+Laoperacio´nsepuedeextendera: CUZNombredelcasodeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 21
+=== PAGE 32 ===
+4.3. CUX Escriba el nombre del caso de uso
+4.3.1. Descripcio´n completa
+4.3.2. Atributos importantes
+CasodeUso: CUXEscribaelnombredelcasodeuso
+Versio´n:
+0.1
+Estatus:
+.
+Prioridad:
+.
+Usuario:
+Nombredelusuarioousuarios
+Elaboro´:
+Nombredelanalista
+Superviso´:
+Nombredelanalistarevisor.
+Valido´:
+Nombredelusuarioousuarios
+Complejidad:
+.
+Volatilidad:
+.
+Madurez:
+.
+Dificultades: •
+Proceso:
+Sub-proceso:
+A´rea:
+Actor: Nombredelactor
+Tipodeoperacio´n:
+Frecuencia: •M´ınimo:
+•Promedio:
+•Ma´ximo:
+Volumen: •M´ınimo:
+•Promedio:
+•Ma´ximo:
+Req.deusuario:
+Fuentes: •
+Propo´sito: •
+22 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 33 ===
+CasodeUso: CUXEscribaelnombredelcasodeuso
+Entradas: •Nombredeldatodeentrada.
+•Nombredeldatodeentrada.
+Origen: •Seintroducendesdeelteclado.
+•otros.
+Salidas: •Nombredeldatodeentrada.
+•Mensajesdeerror.
+•Datosqueaparecenenpantalla.
+•Datosqueaparecenenlistasdesplegablesotablas,etc.
+•Datosqueseimprimenoqueseenv´ıaaotrossistemas.
+Destino: •Semuestraenlapantalla IUXNombrepantalla..
+•otros.
+Disparadores: •
+Precondiciones: •Escribalaprecondicio´n.
+Condicio´n de •
+te´rmino:
+Efectos colatera- •
+les:
+Postcondiciones: •Escribatodaslaspostcondiciones.
+Errores: •E1:Condicio´nquedetonaelerror,reaccio´ndelsistemayregresaalpaso??.
+•E2:Condicio´nquedetonaelerror,reaccio´ndelsistemayterminaelCasodeuso..
+Tipo: Casodeusoprimario
+Casosdeprueba: •E1:Condicio´nquedetonaelerror,reaccio´ndelsistemayregresaalpaso??.
+•E2:Condicio´nquedetonaelerror,reaccio´ndelsistemayterminaelCasodeuso..
+Consideraciones •...
+dedisen˜o:
+Impedimentos: •E1:Condicio´nquedetonaelerror,reaccio´ndelsistemayregresaalpaso??.
+•E2:Condicio´nquedetonaelerror,reaccio´ndelsistemayterminaelCasodeuso..
+Preguntas: •...
+Observaciones:
+4.3.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 IngresaalsistemaescribiendolaURLdelaaplicacio´n.
+2 Solicitaalusuarioqueseidentifiquemediantelapantalla IU1Iniciodesesio´n
+3 Seidentificaintroduciendosunombredeusuarioycontrasen˜a.
+4 Solicitaelingresoalsistemapresionaelboto´n Ingresar .
+5 Buscalosdatosdelusuarioidentificadoporelnombredeusuariointroducido
+6 Verificaqueelusuarioespecificadonoeste´ inactivo[TrayectoriaA].
+7 Verificaquelacontrasen˜aingresadacoincidaconlaalmacenada[TrayectoriaB].
+Fundacio´nFuturoconDerechos–NuevoLeo´n 23
+=== PAGE 34 ===
+8 SeejecutanlospasosdelcasodeusoCUYCUYNombredelcasodeuso.
+9 Muestralapantalla IU2PrincipalconelmensajeMSG1Bienvenidaalusuario.
+-- --Findelcasodeuso.
+Trayectoria alternativa LETRA:
+Condicio´n:Condicio´nquehacequeseejecuteestatrayectoria
+LETRA1 Especifiquelospasosdelatrayectoria.
+LETRA2 ElCasodeUsocontinu´aenelpaso3.
+-- --Findelatrayectoria.
+4.3.4. Puntos de extensio´n
+Cuando: Elusuarionorecuerdacualessucontrasen˜aosospechaquesuusuarioesta´ bloqueado.
+Durantelaregio´n: Delpaso??alpaso??.
+Laoperacio´nsepuedeextendera: CU3.4Consultarhistorialacade´mico.
+24 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 35 ===
+5
+CAP´ITULO
+Modelo de la interaccio´n
+Introduzcaelcap´ıtuloindicandosucontenidoyorganizacio´n.
+Utilice este cap´ıtulo para describir todos los detalles de la interaccio´n con el usuario, describiendo elementos d
+eusabilidad,ergonom´ıa,psicolog´ıa,arqjuitecturadeinformacio´nyrepreentacio´n.
+Estecap´ıtulodescribe...
+5.1. Modelo de navegacio´n
+Describa de acuerdo al tipo de aplicacio´n como es la interaccio´n con el usuario, destacando los elementos de
+ubicacio´ndentrodelaaplicacio´n.Silasinterfacestieneelementoscomunesma´salla´ delosquesoncomunesatodas
+las aplicaciones describalos ampliamente as´ı como los encabezados, pies de pa´gina, menu´s y otros elementos que
+aparecenrepetitivamenteentrelaspantallas.
+Lanavegacio´nentrepantallassemuestraenlafigura5.1.enelseexplica...
+Acontinuacio´ndescribacadaunadelaspantallas.
+5.2. IUX Interfaz (nombre de la interfaz)
+5.2.1. Objetivo
+Describaelobjetivo,propo´sitoofuncio´ndelapantalla.
+5.2.2. Disen˜o
+Describa brevemente los elementos de la pantalla y como de be usarse a manera de manual de usuario. Esta
+pantalla IU23PantalladeControldeAccesoaparecealiniciarelsistema,paraingresar...
+25
+=== PAGE 36 ===
+Figura5.1:mapa
+5.2.3. Salidas
+Listelassalidasdelainterfaz.Sicoincidenconlasdelcasodeusosoloindiquelo.Esta,istadebeincluirlosmensajes
+• Descripcio´ndesalida.
+5.2.4. Entradas
+Listelasentradasdelainterfaz.Sicoincidenconlasdelcasodeusosoloindiquelo.
+• Descripcio´ndesalida.
+5.2.5. Comandos
+Describacadacontrol(boto´nes,areasdedraganddrop,componentesinteractivos,animaciones,etc.)quesepuede
+utilizardentrodelapantallaindicandooquehacenysicambiadepantalla.
+• Entrar : Verifica que el Estudiante se encuentre registrado y la contrasen˜a sea la correcta. Si la verificacio´n es
+correcta,semuestrala UI32PantalladeSeleccio´ndeSeminario.
+• Ayuda :Muestralaayudadeestapantalla IU50PantalladeAyuda.
+26 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 37 ===
+Figura5.2:IU23PantalladeControldeAcceso.
+5.3. Cata´logo de mensajes
+Enestaseccio´nsedescribentodoslosmensajesqueaparecenenelsistema.Paracadamensajeseespecifica:
+Id: Identificadordelmensajedelaforma“MSGXX”ydescripcio´ncortadelmismo.
+Tipo: Tipodelmensajeelcualpuedeser:
+Normal: Mensaje queinforma al usuario unainstruccio´n oel estado interno queguarda el sistema, sueletener
+uncolorAzul.
+E´xito: Mensajequeinformaalusuariosobreunaaccio´nrealizada,sirveparaconfirmarelcorrectofuncionamiento
+delsistema.SepresentanconuncolorVerde.
+Atencio´n: Mensaje que tiene como finalidad llamar la atencio´n del usuario a una situacio´n que requiere su
+intervencio´n, por ejemplo cuando una actividad ha generado un efecto colateral o se realizara´ una accio´n
+destructivaynoreversible.SepresentanconuncolorNaranja.
+Error: Mensajequeinformaalusuariounfalloenenunaoperacio´nounimpedimentopararealizarla,porejemplo:
+cuando no se puede efectuar la accio´n solicitada, cuando un dato falta o tiene un formato no aceptado por
+elsistema.SepresentanconuncolorRojo.
+Propo´sito: Explicacio´ndelpropo´sitodelmensaje.
+Redaccio´n: Redaccio´ndelmensaje.
+Para´metros: En caso de que el mensaje pueda variar se especifican los casos y la forma en que debe adaptarse la
+redaccio´n
+Ejemplos: Ejemplosdecomodeberenderizarseelmensaje.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 27
+=== PAGE 38 ===
+5.3.1. Lista de mensajes
+MSG-001: Bienvenidaalusuario.
+Propo´sito: Indicaralusuarioquehaingresadosatisfactoriamentealsistema.
+Redaccio´n: Bienvenido<nombre>.
+Para´metros:
+• <nombre>NombrecompletodelUsuario.
+Ejemplos: BienvenidoJuanPe´rez.
+MSG-002: Usuarionoregistrado.
+Propo´sito: Indicaqueelusuarioingresadonoexisteenelsistema.
+Redaccio´n: Elusuario<login>noseencuentraregistrado.
+Para´metros:
+• <login>LogindelUsuario.
+Ejemplos: ElusuariojuanPnoseencuentraregistrado.
+MSG-003: Cuentainactiva.
+Propo´sito: Indicaralusuarioquelacuentaespecificadaseencuentrainactiva.
+Redaccio´n: La cuenta especificada <login> se encuentra inactiva, favor de contactar al Secretario Escolar para mas
+informacio´n.
+Para´metros:
+• <login>LogindelUsuario.
+Ejemplos: La cuenta especificada juanP se encuentra inactiva, favor de contactar al Secretario Escolar para mas
+informacio´n.
+MSG-004: Errordeiniciodesesio´n.
+Propo´sito: Indicaalusuarioquelacontrasen˜aintroducidaesincorrecta.
+Redaccio´n: Lacontrasen˜aingresadaesincorrecta.
+Para´metros: Noaplica.
+Ejemplos: Lacontrasen˜aingresadaesincorrecta.
+MSG-008: Tiemporestanteparaterminarunproceso.
+Propo´sito: Indicaralusuarioeltiemporestanteparaterminarunaoperacio´nlimitadaeneltiempocomolareinscripcio´n.
+Redaccio´n: Quedan<tiempo>paraterminarla<operacio´n>.
+Para´metros:
+• <tiempo>Tiempofaltanteparalaoperacio´ especificandod´ıas,horasminutosysegundos.
+28 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 39 ===
+•
+Ejemplos:
+• Quedan45d´ıas,2horas12minutosy45segundosparainiciartureinscripcio´n.
+• Quedan2minutosy32segundosparaterminartureinscripcio´n
+MSG-009: Operacio´nexitosa.
+Propo´sito: Informaralusuarioquelaoperacio´nsolicitadahasidoejecutadacone´xito.
+Redaccio´n: <Art´ıculo><Operacio´n>del<Entidad><Identificador>serealizo´ cone´xito.
+Para´metros:
+• <Art´ıculo><Operacio´n>serefierealaoperacio´nrealizada.
+• <Entidad> <Identificador> se refiere al elemento del negocio donde recayo´ la operacio´n, indicando el tipo
+delobjetoyundatoqueelusuariopuedausarparaidentificarlo.
+Ejemplo: Algunosejemplosson
+• ElregistrodelAlumno342343serealizo´ cone´xito.
+• Laeliminacio´ndelaTarea“documentarelproceso”seharealizadocone´xito.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 29
+=== PAGE 40 ===
+30 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 41 ===
+6
+CAP´ITULO
+Casos de Uso
+A continuacio´n se presentan los Casos de Uso del sistema de gestio´n de expedientes digitales para la Fundacio´n
+FuturoconDerechos.
+31
+=== PAGE 42 ===
+6.1. CU-01 Control de acceso
+6.1.1. Descripcio´n completa
+Cada usuario, antes de poder realizar alguna operacio´n, debe validar en el sistema si cuenta con las credenciales
+adecuadas para obtener acceso. Todos los usuarios debera´n ingresar su correo electro´nico y su contrasen˜a; si son
+correctas,elsistemalosredirigira´ asumo´dulocorrespondiente.
+6.1.2. Atributos importantes
+CasodeUso: CU-01Controldeacceso
+Versio´n: 1.0
+Estatus: Enedicio´n
+Prioridad: Alta
+Elaboro´: RiveraSeguraJose´ Emiliano
+Superviso´: AtzinArielReyesPasqualli
+Valido´: AtzinArielReyesPasqualli
+Complejidad: Media
+Actor: Director,Coordinador,Abogado,TrabajadorSocial,Psico´logoyDoctor.
+Req.deusuario: RU-01
+Propo´sito: •Elaccesoalsistemadebera´ sersoloparaelpersonalautorizado.
+•Cadausuariotengaaccesou´nicamenteasumo´dulocorrespondiente.
+Entradas: •Correoelectro´nicodelusuario.
+•Contrasen˜adelusuario.
+Origen: Losdatossonintroducidosdesdeelteclado.
+Salidas: Seredireccionaalmo´dulocorrespondientealusuarioautenticado.
+Destino: Pantalla.
+Precondiciones: •Los usuariosque quieranacceder alsistema debera´n teneruna cuentacreada previa-
+mente.
+•Lascredencialesdebenserrecordadasporelusuario.
+•Lacuentadelusuarionopuedeestarinactiva.
+Condicio´n de •Elsistemaredirigealusuarioasumo´dulocorrespondiente.
+te´rmino: •Elusuariotieneaccesoasusherramientascorrespondientes.
+Postcondiciones: Ninguna.
+Errores: •E1:Sialgu´ndatolefaltaalusuario,elsistemamuestraunmensajedeerrorindicando
+elcampofaltante.
+•E2:Silacontrasen˜aoelcorreosonincorrectos,elsistemanotificaalusuarioquealguno
+desusdatosesincorrecto.
+•E3:Silacuentadelusuarioesta´ bloqueada,elsistemamuestraunmensajedecuenta
+bloqueada.
+32 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 43 ===
+CasodeUso: CU-01Controldeacceso
+Tipo: Casodeusoprimario
+6.1.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 Ingresaalapantalladeiniciodesesio´ndelsistema.
+2 SolicitaalusuarioqueseidentifiquemediantelapantalladeLogin.
+3 Introducesucorreoelectro´nicoycontrasen˜a.
+4 Presionaelboto´n Ingresar .
+5 Validaqueloscamposnoeste´nvac´ıos(E1).
+6 Buscaalusuarioporelcorreoelectro´nicointroducido.
+7 Verificaquelascredencialesseancorrectas(E2).
+8 Verificaquelacuentadelusuarionoeste´ bloqueada(E3).
+9 Redirigealusuarioasumo´dulocorrespondientesegu´nsurol.
+-- --Findelcasodeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 33
+=== PAGE 44 ===
+6.2. CU-02 Gestio´n de usuarios y roles
+6.2.1. Descripcio´n completa
+Elsistemapermitealusuarioadministradorgestionarlascuentasdelosusuariosdentrodelafundacio´n.ElDirector
+oCoordinadorpodra´ registrarnuevosusuarios,asignarlesunrolespec´ıficoydefinirsuspermisosdeacceso,as´ıcomo
+modificaroactualizarlainformacio´ndelosusuariosexistentes.Cadausuariotendra´ accesou´nicamentealasfunciones
+ydatoscorrespondientesasurol.
+6.2.2. Atributos importantes
+CasodeUso: CU-02Gestio´ndeusuariosyroles
+Versio´n: 1.0
+Estatus: Enedicio´n
+Prioridad: Alta
+Elaboro´: Ram´ırezCuevasEmiliano
+Superviso´: GuerraSalinasEdgarRafael
+Valido´: GuerraSalinasEdgarRafael
+Complejidad: Media
+Actor: Director,Coordinador.
+Req.deusuario: RU-01,RU-07
+Propo´sito: •Garantizarquesololosusuariosautorizadostenganaccesoalsistemayalainformacio´n
+correspondientesegu´nsurol.
+Entradas: •Nombredelusuario.
+•Correoelectro´nicodelusuario.
+•Contrasen˜adelusuario.
+•Rolasignadoalusuario.
+Origen: Losdatossonintroducidosdesdeeltecladoporelusuarioadministrador.
+Salidas: Usuariosregistradosoactualizadosconrolesypermisosasignados.
+Destino: Pantalla/Basededatos.
+Precondiciones: •Elusuariodebehaberiniciadosesio´nenelsistema.
+•Elusuariodebecontarconpermisosdeadministracio´n.
+Condicio´n de •Elusuarioquedaregistradooactualizadocorrectamenteenelsistema.
+te´rmino: •Elrolypermisosquedanasignadosconformealaconfiguracio´n.
+Postcondiciones: •Elsistemaguardaloscambiosenlabasededatos.
+•Losaccesosdelusuarioquedanrestringidossegu´nsurolasignado.
+Errores: • E1: Si faltan datos obligatorios, el sistema muestra un mensaje de error indicando los
+camposrequeridos.
+•E2:Sielcorreoelectro´nicoyaesta´ registrado,elsistemanotificaladuplicidad.
+Tipo: Casodeusoprimario
+34 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 45 ===
+6.2.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 Accedealmo´dulodegestio´ndeusuariosdelsistema.
+2 Muestralalistadeusuariosregistradosylasopcionesdegestio´n.
+3 Seleccionalaopcio´nderegistrarunnuevousuariooeditarunoexistente.
+4 Muestraelformulariodecapturadedatosdelusuario.
+5 Introducelosdatosdelusuario:nombre,correoelectro´nico,contrasen˜ayrolasignado.
+6 Presionaelboto´n Guardar .
+7 Validaquetodosloscamposobligatorioseste´ncompletos(E1).
+8 Verificaqueelcorreoelectro´niconoeste´ duplicado(E2).
+9 Registraoactualizaalusuarioconelrolypermisosasignadosenlabasededatos.
+10 Muestraunmensajedeconfirmacio´nindicandoqueelusuariofueguardadocorrectamente.
+-- --Findelcasodeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 35
+=== PAGE 46 ===
+6.3. CU-03 Gestio´n de expediente del NNA
+6.3.1. Descripcio´n completa
+Elsistemapermitealosusuariosregistrar,consultaryactualizarlainformacio´ndelosexpedientesdelosNNA.Cada
+usuariopodra´ ingresarlosdatoscorrespondientesalcaso,incluyendoinformacio´npersonal,me´dica,legal,psicolo´gica
+ysocial.Elsistemaalmacenara´ estosdatosdemaneracentralizada,permitiendosuconsultayseguimientoconforme
+alospermisosdeaccesodelroldelusuario.
+6.3.2. Atributos importantes
+CasodeUso: CU-03Gestio´ndeexpedientedelNNA
+Versio´n: 1.0
+Estatus: Enedicio´n
+Prioridad: Alta
+Elaboro´: Ram´ırezCuevasEmiliano
+Superviso´: GuerraSalinasEdgarRafael
+Valido´: GuerraSalinasEdgarRafael
+Complejidad: Alta
+Actor: Coordinador,Abogado,TrabajadorSocial,Psico´logoyDoctor.
+Req.deusuario: RU-02,RU-03,RU-04
+Propo´sito: •Permitirlacentralizacio´n,consultayseguimientodelainformacio´ndeloscasosdelos
+NNAmedianteexpedientesdigitales.
+Entradas: •DatospersonalesdelNNA.
+•Datosme´dicosdelNNA.
+•DatoslegalesdelNNA.
+•Datospsicolo´gicosdelNNA.
+•DatossocialesdelNNA.
+Origen: Losdatossonintroducidosdesdeeltecladoporelusuariocorrespondiente.
+Salidas: Expedientedigitalactualizadoydisponibleparaconsulta.
+Destino: Pantalla/Basededatos.
+Precondiciones: •Elusuariodebehaberiniciadosesio´nenelsistema.
+•Elusuariodebecontarconpermisosparaaccederomodificarelexpediente.
+Condicio´n de •ElexpedientedelNNAquedaregistradooactualizadocorrectamenteenelsistema.
+te´rmino: •Lainformacio´nquedadisponibleparasuconsultaposterior.
+Postcondiciones: •Elsistemaalmacenalainformacio´nenlabasededatos.
+•Elexpedientequedavinculadoalequipomultidisciplinariocorrespondiente.
+Errores: •E1:Sifaltandatosobligatorios,elsistemamuestraunmensajedeerror.
+•E2:Sielusuarionotienepermisos,elsistemadeniegaelacceso.
+•E3:Siocurreunfalloalguardarlainformacio´n,elsistemanotificaelerror.
+36 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 47 ===
+CasodeUso: CU-03Gestio´ndeexpedientedelNNA
+Tipo: Casodeusoprimario
+6.3.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 Accedealmo´dulodeexpedientesdelNNA.
+2 Verificalospermisosdelusuariosegu´nsurol(E2).
+3 Muestralalistadeexpedientesasignadosalusuariooequipo.
+4 Seleccionalaopcio´nderegistrarunnuevoexpedienteoconsultar/editarunoexistente.
+5 MuestraelformulariodecapturadedatosdelNNAcorrespondienteala´readelusuario.
+6 IntroduceoactualizalosdatosdelNNAenloscamposcorrespondientes.
+7 Presionaelboto´n Guardar .
+8 Validaqueloscamposobligatorioseste´ncompletos(E1).
+9 Guardalainformacio´nenlabasededatos(E3).
+10 Muestraunmensajedeconfirmacio´nindicandoqueelexpedientefueguardadocorrectamente.
+-- --Findelcasodeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 37
+=== PAGE 48 ===
+6.4. CU-04 Asignacio´n de casos
+6.4.1. Descripcio´n completa
+El sistema permite al Coordinador asignar los casos de los NNA a los equipos multidisciplinarios. Para cada caso
+registrado, el Coordinador podra´ seleccionar un equipo y vincularlo al expediente correspondiente, asegurando que
+cada caso tenga responsables definidos. El sistema mantendra´ un control de las asignaciones, permitiendo consultar
+que´ equipoesta´ encargadodecadacaso.
+6.4.2. Atributos importantes
+CasodeUso: CU-04Asignacio´ndecasos
+Versio´n: 1.0
+Estatus: Enedicio´n
+Prioridad: Alta
+Elaboro´: GuerraSalinasEdgarRafael
+Superviso´: Ram´ırezCuevasEmiliano
+Valido´: Ram´ırezCuevasEmiliano
+Complejidad: Media
+Actor: Coordinador.
+Req.deusuario: RU-05,RU-06
+Propo´sito: •Garantizarquecadacasoseaatendidoporunequipomultidisciplinariodefinidoparasu
+seguimientoadecuado.
+Entradas: •Seleccio´ndelcasodelNNAaasignar.
+•Seleccio´ndelequipomultidisciplinarioresponsable.
+Origen: LosdatossonseleccionadosporelusuarioCoordinadordesdelainterfazdelsistema.
+Salidas: Casoasignadoalequipomultidisciplinariocorrespondiente.
+Destino: Pantalla/Basededatos.
+Precondiciones: •Elusuariodebehaberiniciadosesio´nenelsistema.
+•ElusuariodebetenerroldeCoordinador.
+•Debenexistircasosregistradosyequiposmultidisciplinarioscreadospreviamente.
+Condicio´n de •Elcasoquedaasignadocorrectamenteaunequipomultidisciplinario.
+te´rmino:
+Postcondiciones: •Elsistemaguardalaasignacio´nenlabasededatos.
+•Elequipomultidisciplinariopuedeaccederalcasoasignado.
+Errores: •E1:Sinoseseleccionauncasoounequipo,elsistemamuestraunmensajedeerror.
+•E2:Sielusuarionotienepermisos,elsistemadeniegalaaccio´n.
+•E3:Siocurreunfalloalguardarlaasignacio´n,elsistemanotificaelerror.
+Tipo: Casodeusoprimario
+38 Fundacio´nFuturoconDerechos–NuevoLeo´n
+=== PAGE 49 ===
+6.4.3. Trayectorias del Caso de Uso
+Trayectoria principal
+1 Accedealmo´dulodeasignacio´ndecasosdelsistema.
+2 VerificaqueelusuariotengaroldeCoordinador(E2).
+3 Muestralalistadecasosdisponiblesparaasignacio´nylalistadeequiposmultidisciplinarios.
+4 SeleccionaelcasodelNNAaasignar.
+5 Seleccionaelequipomultidisciplinarioresponsabledelcaso.
+6 Presionaelboto´n Asignar .
+7 Validaquesehayanseleccionadotantouncasocomounequipo(E1).
+8 Registralaasignacio´nenlabasededatos(E3).
+9 Muestraunmensajedeconfirmacio´nindicandoqueelcasofueasignadocorrectamentealequipo.
+-- --Findelcasodeuso.
+Fundacio´nFuturoconDerechos–NuevoLeo´n 39

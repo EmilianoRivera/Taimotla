@@ -1,0 +1,1556 @@
+% ============================================================
+% CASOS DE USO FALTANTES (CU-19 a CU-57)
+% ============================================================
+
+%-------------------------------------- CU-19
+\begin{UseCase}{CU-19}{Recuperar contraseña}{
+	Permite a cualquier usuario registrado en el sistema solicitar el restablecimiento de su contraseña mediante el envío de un enlace de recuperación a su correo institucional registrado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Restablecer el acceso al sistema de un usuario que olvidó sus credenciales sin requerir intervención del administrador.}
+	\UCitem{Entradas}{Correo electrónico institucional registrado.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Correo electrónico con enlace de restablecimiento enviado al usuario.}
+	\UCitem{Destino}{Pantalla de confirmación y bandeja de correo del usuario.}
+	\UCitem{Precondiciones}{El usuario debe contar con una cuenta activa y un correo institucional registrado en el sistema.}
+	\UCitem{Postcondiciones}{El usuario recibe un enlace temporal de un solo uso para restablecer su contraseña.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El correo ingresado no corresponde a ninguna cuenta registrada.
+			\item[E2:] El enlace de recuperación ha expirado o ya fue utilizado.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-02}{BR-02}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona el enlace \IUbutton{¿Olvidaste tu contraseña?} en la pantalla de inicio de sesión.
+	\UCpaso Muestra el formulario de recuperación solicitando el correo electrónico institucional.
+	\UCpaso[\UCactor] Ingresa su correo y presiona el botón \IUbutton{Enviar enlace de recuperación}.
+	\UCpaso Verifica que el correo corresponda a una cuenta registrada y activa en el sistema. \Trayref{A}.
+	\UCpaso Genera un token de restablecimiento de un solo uso con expiración de 60 minutos.
+	\UCpaso Envía un correo electrónico al usuario con el enlace de restablecimiento y muestra el mensaje de confirmación \textbf{MSG-09}.
+	\UCpaso[\UCactor] Accede al enlace desde su correo, ingresa y confirma la nueva contraseña, y presiona \IUbutton{Restablecer contraseña}.
+	\UCpaso Valida que el token sea válido y no haya expirado. \Trayref{B}.
+	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave e invalida el token.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión con el mensaje \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Correo no registrado en el sistema}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el correo no corresponde a ninguna cuenta activa.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Token expirado o ya utilizado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el enlace de recuperación ha expirado o ya fue utilizado.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirige al paso 1 de la trayectoria principal para solicitar un nuevo enlace.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-20
+\begin{UseCase}{CU-20}{Cambiar contraseña}{
+	Permite a cualquier usuario autenticado actualizar su contraseña de acceso al sistema desde la pantalla de su perfil de cuenta.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Permitir al usuario actualizar su contraseña de forma segura sin requerir intervención del administrador.}
+	\UCitem{Entradas}{Contraseña actual, nueva contraseña y confirmación de nueva contraseña.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Mensaje de confirmación del cambio exitoso.}
+	\UCitem{Destino}{Pantalla de perfil de cuenta.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{La contraseña del usuario queda actualizada en la base de datos y la sesión activa se mantiene.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] La contraseña actual ingresada es incorrecta.
+			\item[E2:] La nueva contraseña y su confirmación no coinciden.
+			\item[E3:] La nueva contraseña no cumple con los requisitos mínimos de seguridad.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la opción \IUbutton{Cambiar Contraseña} desde la pantalla de su perfil de cuenta.
+	\UCpaso Despliega el formulario con campos para la contraseña actual, nueva contraseña y confirmación.
+	\UCpaso[\UCactor] Ingresa la contraseña actual, la nueva contraseña y la confirmación, y presiona \IUbutton{Guardar cambios}.
+	\UCpaso Verifica que la contraseña actual ingresada coincida con la almacenada. \Trayref{A}.
+	\UCpaso Verifica que la nueva contraseña y su confirmación sean idénticas. \Trayref{B}.
+	\UCpaso Verifica que la nueva contraseña cumpla con al menos 8 caracteres, incluyendo mayúsculas, minúsculas y un número. \Trayref{C}.
+	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el cambio.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Contraseña actual incorrecta}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que la contraseña actual ingresada es incorrecta.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Nueva contraseña y confirmación no coinciden}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que los campos de nueva contraseña no coinciden.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Contraseña no cumple requisitos de seguridad}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los requisitos mínimos de la contraseña.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-21
+\begin{UseCase}{CU-21}{Buscar y filtrar expedientes}{
+	Permite a cualquier usuario autenticado localizar expedientes de NNA mediante búsqueda por nombre, CURP o folio, y filtrarlos por estado del expediente o rango de fechas desde el panel principal.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Agilizar la localización de expedientes específicos dentro del panel de casos, reduciendo el tiempo de consulta.}
+	\UCitem{Entradas}{Texto de búsqueda (nombre, CURP o folio), filtro de estado y rango de fechas (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Lista filtrada de expedientes que coinciden con los criterios ingresados.}
+	\UCitem{Destino}{Panel de expedientes del rol activo.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión. Los especialistas solo ven expedientes de su equipo asignado.}
+	\UCitem{Postcondiciones}{El sistema despliega la lista de resultados sin modificar ningún dato del expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se encontraron expedientes que coincidan con los criterios de búsqueda.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al panel de expedientes desde el menú de navegación principal.
+	\UCpaso Muestra la lista de expedientes disponibles según el rol y equipo del usuario, con la barra de búsqueda y los controles de filtrado.
+	\UCpaso[\UCactor] Ingresa un texto en la barra de búsqueda (nombre, CURP o folio) y/o selecciona filtros de estado y rango de fechas.
+	\UCpaso Actualiza en tiempo real la lista mostrando los expedientes que coinciden con los criterios ingresados. \Trayref{A}.
+	\UCpaso[\UCactor] Selecciona el expediente deseado de los resultados y el sistema lo redirige al detalle del expediente ({\hyperlink{CU-03}{CU-03}}).
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin resultados para los criterios de búsqueda}
+	\UCpaso Muestra el mensaje informativo \textbf{MSG-01} indicando que no se encontraron expedientes que coincidan con los criterios ingresados.
+	\UCpaso[\UCactor] Modifica los criterios de búsqueda o limpia los filtros.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-22
+\begin{UseCase}{CU-22}{Registrar datos médicos del NNA}{
+	Permite al Médico del equipo multidisciplinario capturar el historial clínico inicial del NNA en el expediente: seguro médico, padecimientos (catálogo CIE-10), cartilla de vacunación, discapacidades, aditamentos requeridos y datos de alimentación y descanso.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tMedico}{Médico}}
+	\UCitem{Propósito}{Documentar de forma estructurada el estado de salud del NNA para identificar derechos de salud vulnerados e insumar el PRD.}
+	\UCitem{Entradas}{Tipo de seguro médico, número de afiliación, fecha de última consulta, indicador de cartilla de vacunación (completa/incompleta/no tiene), padecimientos (CIE-10, crónico, controlado), tipo y grado de discapacidad, requerimiento de aditamentos, descripción de alimentación y horarios de sueño.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos médicos del NNA registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Datos Médicos.}
+	\UCitem{Precondiciones}{El Médico debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico o En Seguimiento.}
+	\UCitem{Postcondiciones}{Los datos de salud del NNA quedan almacenados y el indicador de valoración médica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de salud vacíos (tipo de seguro médico).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Datos Médicos} dentro del expediente único del NNA.
+	\UCpaso Verifica que el Médico pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de datos médicos con las secciones de seguro médico, padecimientos, cartilla, discapacidades y vida cotidiana.
+	\UCpaso[\UCactor] Selecciona el tipo de seguro médico del NNA y captura el número de afiliación si aplica.
+	\UCpaso[\UCactor] Registra la fecha de la última visita médica e indica si el NNA recibe atención actualmente.
+	\UCpaso[\UCactor] Marca el estado de la cartilla de vacunación y registra las vacunas faltantes si la cartilla está incompleta.
+	\UCpaso[\UCactor] Agrega los padecimientos del NNA seleccionándolos del catálogo CIE-10, marcando si son crónicos y si están controlados. Presiona \IUbutton{Agregar padecimiento} por cada uno.
+	\UCpaso[\UCactor] Registra las discapacidades del NNA indicando tipo y grado de dependencia, y si requiere o cuenta con aditamentos.
+	\UCpaso[\UCactor] Captura la descripción de la alimentación habitual y los horarios de sueño del NNA.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Datos Médicos}.
+	\UCpaso Valida que los campos obligatorios del formulario estén completos. \Trayref{B}.
+	\UCpaso Almacena los datos médicos en las tablas correspondientes y actualiza el indicador de valoración médica en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Médico no pertenece al equipo asignado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos de edición.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos pendientes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos capturados.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-23
+\begin{UseCase}{CU-23}{Registrar valoración psicológica}{
+	Permite al Psicólogo del equipo multidisciplinario registrar el diagnóstico del estado emocional del NNA en el expediente, incluyendo observaciones de comportamiento, indicadores de riesgo emocional y notas terapéuticas iniciales.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Documentar el estado emocional del NNA para identificar indicadores de riesgo psicológico e insumar el PRD con medidas de intervención terapéutica.}
+	\UCitem{Entradas}{Observaciones de comportamiento, indicadores de riesgo emocional identificados (selección múltiple de catálogo), notas terapéuticas iniciales y recomendaciones de intervención.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración psicológica registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Valoración Psicológica.}
+	\UCitem{Precondiciones}{El Psicólogo debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración psicológica queda almacenada y el indicador de valoración psicológica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El campo de notas terapéuticas iniciales está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Valoración Psicológica} en el expediente único del NNA.
+	\UCpaso Verifica que el Psicólogo pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración psicológica con campos de observaciones, indicadores de riesgo y notas.
+	\UCpaso[\UCactor] Registra las observaciones de comportamiento del NNA durante la entrevista.
+	\UCpaso[\UCactor] Selecciona los indicadores de riesgo emocional identificados del catálogo (aislamiento, regresión conductual, hipervigilancia, comportamiento sexualizado, entre otros).
+	\UCpaso[\UCactor] Captura las notas terapéuticas iniciales y las recomendaciones de intervención psicológica.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Psicológica}.
+	\UCpaso Valida que el campo de notas terapéuticas no esté vacío. \Trayref{B}.
+	\UCpaso Almacena la valoración en la base de datos y actualiza el indicador de valoración psicológica en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Psicólogo no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Notas terapéuticas vacías}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que las notas terapéuticas son obligatorias.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-24
+\begin{UseCase}{CU-24}{Registrar valoración jurídica}{
+	Permite al Abogado del equipo multidisciplinario capturar la valoración jurídica del caso del NNA en el expediente: delitos identificados, instancias legales involucradas, estado del expediente jurídico, validación del acta de nacimiento y medidas penales recomendadas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}}
+	\UCitem{Propósito}{Documentar la situación jurídica del caso para identificar derechos vulnerados con sustento legal e insumar el PRD con medidas de protección de tipo penal o familiar.}
+	\UCitem{Entradas}{Delitos identificados (texto), instancias legales involucradas, estado procesal del expediente jurídico, número de expediente de fiscalía, medidas penales recomendadas, validación del acta de nacimiento (verificada / no verificada).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración jurídica registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Valoración Jurídica.}
+	\UCitem{Precondiciones}{El Abogado debe pertenecer al equipo asignado al expediente. El expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración jurídica queda almacenada y el indicador de valoración jurídica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de la valoración jurídica vacíos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Incluye la acción de validación del acta de nacimiento definida en RF-23.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Valoración Jurídica} en el expediente único del NNA.
+	\UCpaso Verifica que el Abogado pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración jurídica con campos de delitos, instancias, estado procesal y documentos.
+	\UCpaso[\UCactor] Captura los delitos identificados y las instancias legales involucradas en el caso.
+	\UCpaso[\UCactor] Ingresa el número de expediente de fiscalía y el estado procesal actual del caso.
+	\UCpaso[\UCactor] Registra las medidas penales o de juzgado familiar recomendadas.
+	\UCpaso[\UCactor] Verifica el acta de nacimiento adjunta y la marca como \IUbutton{Verificada} si está completa y es auténtica.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Jurídica}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena la valoración en la base de datos y actualiza el indicador jurídico en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Abogado no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos pendientes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-25
+\begin{UseCase}{CU-25}{Registrar valoración sociofamiliar}{
+	Permite al Trabajador Social capturar el diagnóstico del entorno social del NNA: estructura familiar, condiciones de vivienda, redes de apoyo, evaluación del grado de negación y afectación emocional del cuidador, y dinámica del hogar.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar el entorno sociofamiliar del NNA para identificar derechos vulnerados de convivencia y protección, e insumar el PRD con medidas de intervención familiar.}
+	\UCitem{Entradas}{Sistema de residencia, sostén económico, patrón de migración, redes de apoyo, espacios de socialización, grado de negación del cuidador (Alto/Medio/Bajo), grado de afectación emocional del cuidador (Alto/Medio/Bajo), fecha acordada para presentar el PRD a la familia, narración general del entorno.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración sociofamiliar registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Entorno Familiar.}
+	\UCitem{Precondiciones}{El Trabajador Social debe pertenecer al equipo asignado al expediente y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración sociofamiliar queda almacenada y el indicador de valoración social se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de la valoración sociofamiliar vacíos (grado de negación o afectación emocional del cuidador).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por las reglas de negocio \hyperlink{BR-03}{BR-03} y \hyperlink{BR-04}{BR-04}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Entorno Familiar} en el expediente único del NNA.
+	\UCpaso Verifica que el Trabajador Social pertenezca al equipo asignado. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración sociofamiliar con todas sus secciones.
+	\UCpaso[\UCactor] Captura el sistema de residencia familiar y el sostén económico principal.
+	\UCpaso[\UCactor] Registra el patrón de migración de la familia y los miembros ausentes si aplica.
+	\UCpaso[\UCactor] Describe las redes de apoyo comunitarias y familiares disponibles.
+	\UCpaso[\UCactor] Captura los espacios de socialización frecuentados por la familia.
+	\UCpaso[\UCactor] Selecciona el grado de negación del cuidador y agrega observaciones.
+	\UCpaso[\UCactor] Selecciona el grado de afectación emocional del cuidador y agrega observaciones.
+	\UCpaso[\UCactor] Registra la fecha acordada con la familia para presentarles el PRD.
+	\UCpaso[\UCactor] Captura la narración general del entorno familiar observado.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Sociofamiliar}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena la valoración y actualiza el indicador sociofamiliar en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Trabajador Social no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-26
+\begin{UseCase}{CU-26}{Registrar observaciones de la entrevista con el NNA}{
+	Permite al Trabajador Social o Psicólogo registrar las observaciones de la entrevista directa con el NNA: actitud general, tono de voz, expresión corporal, personas a quienes teme, adulto significativo y resultados del checklist de vida cotidiana.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Documentar la información observada durante la entrevista directa con el NNA, conforme al Formato §4.3.6 de la Caja de Herramientas de UNICEF.}
+	\UCitem{Entradas}{Actitud general, tono de voz y cambios, expresión corporal, registro textual de lo narrado por el NNA, personas a quienes teme, adulto significativo y respuestas (Sí/No/No aplica) al checklist de vida cotidiana.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Observaciones de entrevista registradas en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Entrevista con NNA.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado y el expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{Las observaciones de la entrevista quedan almacenadas en el expediente del NNA.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El campo de actitud general o registro textual está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme al Formato §4.3.6 de la Caja de Herramientas UNICEF.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Entrevista con NNA} en el expediente único.
+	\UCpaso Verifica que el usuario pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de observaciones con sus secciones.
+	\UCpaso[\UCactor] Captura la actitud general del NNA durante la entrevista.
+	\UCpaso[\UCactor] Registra el tono de voz y cambios emocionales observados.
+	\UCpaso[\UCactor] Describe la expresión corporal y gestos del NNA.
+	\UCpaso[\UCactor] Registra textualmente lo que el NNA dijo al preguntarle si hay algo que le molesta o lastima.
+	\UCpaso[\UCactor] Captura las personas a quienes el NNA dice temer y el adulto que le resulta significativo.
+	\UCpaso[\UCactor] Responde el checklist de vida cotidiana (escuela, alimentación, sueño, juego, amigos, deporte) marcando Sí, No o No aplica para cada elemento.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Observaciones de Entrevista}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena las observaciones en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-27
+\begin{UseCase}{CU-27}{Registrar familiograma del NNA}{
+	Permite al Trabajador Social construir y guardar el familiograma del NNA, registrando la descripción textual de la red familiar y comunitaria y adjuntando la imagen digitalizada del diagrama elaborado durante la entrevista.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar gráfica y textualmente la estructura de relaciones familiares y comunitarias del NNA como herramienta diagnóstica del entorno social.}
+	\UCitem{Entradas}{Descripción textual de quiénes conviven, sus ocupaciones y relaciones; imagen del familiograma en formato JPG, PNG o PDF (opcional).}
+	\UCitem{Origen}{Teclado, mouse y archivo digital.}
+	\UCitem{Salidas}{Familiograma registrado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, subsección Familiograma.}
+	\UCitem{Precondiciones}{El Trabajador Social debe pertenecer al equipo asignado y el expediente estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{El familiograma queda almacenado en el expediente del NNA y disponible para consulta del equipo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] El archivo adjunto supera 5MB o tiene formato no soportado.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en la metodología del familiograma de la Caja de Herramientas §4.3.2.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la subsección \IUbutton{Familiograma} dentro de la pestaña de Entorno Familiar del expediente único.
+	\UCpaso Verifica que el Trabajador Social pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario del familiograma con el campo de descripción textual y la zona de carga de imagen.
+	\UCpaso[\UCactor] Captura la descripción textual de la composición familiar: quiénes conviven, edades, ocupaciones y relaciones de afecto o conflicto.
+	\UCpaso[\UCactor] De manera opcional, adjunta la imagen digitalizada del familiograma elaborado en papel durante la entrevista.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Familiograma}.
+	\UCpaso Valida el formato y tamaño del archivo adjunto si se cargó uno. \Trayref{B}.
+	\UCpaso Almacena la descripción textual y el archivo en el servidor.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Trabajador Social sin permisos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Archivo con formato inválido o tamaño excedido}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser JPG, PNG o PDF menor a 5MB.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-28
+\begin{UseCase}{CU-28}{Registrar diagnóstico de grado de peligro y coerción}{
+	Permite al Coordinador registrar el diagnóstico del grado de peligro para la integridad física y emocional del NNA y el grado de coerción del entorno, una vez concluidas las entrevistas con la familia y el NNA, como insumo para la elaboración del PRD.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Determinar formalmente el nivel de urgencia de intervención y el tipo de coerción requerido para la ejecución del PRD, conforme a la Caja de Herramientas §4.4.1 y §4.4.2.}
+	\UCitem{Entradas}{Grado de peligro (Alto/Medio/Bajo), observaciones sobre el peligro, grado de coerción (Alto/Medio/Bajo), observaciones sobre la coerción, fecha del diagnóstico.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Diagnóstico registrado en tabla separada del expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Diagnóstico.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico y contar con al menos la valoración sociofamiliar registrada.}
+	\UCitem{Postcondiciones}{El diagnóstico de peligro y coerción queda registrado en la tabla de diagnóstico del expediente, separado del hecho victimal.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del diagnóstico vacíos (grado de peligro o grado de coerción).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en §4.4.1 y §4.4.2 de la Caja de Herramientas UNICEF. El peligro se evalúa sobre el NNA; la coerción sobre el entorno familiar.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Diagnóstico} dentro del expediente único del NNA.
+	\UCpaso Despliega el formulario de diagnóstico de peligro y coerción con sus campos.
+	\UCpaso[\UCactor] Selecciona el grado de peligro para la integridad del NNA (Alto, Medio, Bajo) y captura las observaciones que sustentan la determinación.
+	\UCpaso[\UCactor] Selecciona el grado de coerción del entorno (Alto, Medio, Bajo) y captura las observaciones correspondientes.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Diagnóstico}.
+	\UCpaso Valida que ambos campos de grado estén seleccionados. \Trayref{A}.
+	\UCpaso Almacena el diagnóstico en la tabla de diagnóstico del expediente con la fecha del día.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos de grado vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el grado de peligro y el de coerción son obligatorios.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-29
+\begin{UseCase}{CU-29}{Registrar medidas urgentes de protección}{
+	Permite al Coordinador documentar las medidas urgentes de protección solicitadas cuando de la entrevista con el NNA o la familia se desprende un riesgo inmediato para la vida, libertad o integridad del menor.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Dejar constancia formal de las medidas urgentes solicitadas, su justificación y la opinión del NNA conforme a la regla 4 de la Caja de Herramientas §4.3.8.}
+	\UCitem{Entradas}{¿Se solicitaron medidas urgentes? (booleano), fecha de solicitud, tipo de medida solicitada, justificación de la medida y opinión del NNA sobre la medida.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Registro de medidas urgentes almacenado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, sección Medidas Urgentes del hecho victimal.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico y el Coordinador debe pertenecer al equipo asignado.}
+	\UCitem{Postcondiciones}{Las medidas urgentes quedan registradas y quedan disponibles como antecedente en la elaboración del PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Se indica que se solicitaron medidas pero los campos de tipo y justificación están vacíos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme a §4.3.7 y §4.3.8 de la Caja de Herramientas UNICEF.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección \IUbutton{Medidas Urgentes} dentro del expediente único.
+	\UCpaso Despliega el formulario de medidas urgentes con el indicador booleano y los campos condicionales.
+	\UCpaso[\UCactor] Marca el indicador \IUbutton{¿Se solicitaron medidas urgentes?} como Sí.
+	\UCpaso El sistema habilita los campos de fecha, tipo de medida, justificación y opinión del NNA.
+	\UCpaso[\UCactor] Captura la fecha de solicitud, el tipo de medida y la justificación basada en las reglas prácticas del interés superior del NNA.
+	\UCpaso[\UCactor] Registra textualmente la opinión del NNA sobre la medida, conforme a la Regla 4 de §4.3.8.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Medidas Urgentes}.
+	\UCpaso Valida que los campos de tipo y justificación no estén vacíos cuando el indicador sea afirmativo. \Trayref{A}.
+	\UCpaso Almacena el registro en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos requeridos vacíos con medidas activas}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de medida y la justificación son obligatorios cuando se solicitaron medidas urgentes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-30
+\begin{UseCase}{CU-30}{Registrar idiomas del NNA y del tutor}{
+	Permite al personal del equipo multidisciplinario registrar los idiomas que habla el NNA y el tutor, seleccionando del catálogo del INALI y especificando el nivel de dominio.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Documentar el perfil lingüístico del NNA y del tutor para garantizar la comunicación adecuada durante el proceso de restitución de derechos y apoyar la búsqueda de actores con capacidad de atención en el idioma correspondiente.}
+	\UCitem{Entradas}{Selección de idioma del catálogo INALI (incluyendo variante lingüística), nivel de dominio (Nativo, Fluido, Básico, Solo comprende); puede registrarse más de un idioma por persona.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Registro de idiomas almacenado en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, sección Idiomas (dentro de datos del NNA y datos del tutor).}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente y el expediente debe estar activo.}
+	\UCitem{Postcondiciones}{El perfil lingüístico del NNA o del tutor queda almacenado y disponible para la consulta del equipo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Intento de agregar un idioma duplicado para la misma persona.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Catálogo basado en el INALI conforme a Requerimientos §5.4.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección de \IUbutton{Idiomas} dentro de los datos del NNA o del tutor en el expediente único.
+	\UCpaso Muestra la lista de idiomas ya registrados para la persona y el botón para agregar uno nuevo.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Agregar idioma}.
+	\UCpaso Despliega un formulario emergente con el catálogo INALI y el selector de nivel de dominio.
+	\UCpaso[\UCactor] Selecciona el idioma y su variante lingüística del catálogo INALI.
+	\UCpaso[\UCactor] Selecciona el nivel de dominio (Nativo, Fluido, Básico, Solo comprende).
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar idioma}.
+	\UCpaso Verifica que el idioma seleccionado no esté ya registrado para la misma persona. \Trayref{A}.
+	\UCpaso Registra el idioma en la tabla correspondiente y actualiza la lista en pantalla.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Idioma duplicado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que ese idioma ya está registrado para la persona.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-31
+\begin{UseCase}{CU-31}{Registrar domicilio con validación SEPOMEX}{
+	Permite al personal capturar domicilios en el sistema (del NNA, tutor o actor) con autocompletado de colonia, municipio y estado a partir del código postal, usando el catálogo oficial de SEPOMEX.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Garantizar que todos los domicilios registrados en el sistema sean geográficamente válidos y consistentes con la división territorial oficial de México.}
+	\UCitem{Entradas}{Código postal (5 dígitos), selección de colonia de la lista devuelta, calle y número exterior (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Domicilio validado y almacenado con municipio y estado autocompletados.}
+	\UCitem{Destino}{Sección de domicilio dentro del formulario correspondiente (NNA, tutor o actor).}
+	\UCitem{Precondiciones}{El usuario debe estar editando un formulario que requiera captura de domicilio en el sistema.}
+	\UCitem{Postcondiciones}{El domicilio queda registrado en la tabla DOMICILIO y vinculado a la entidad correspondiente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El código postal ingresado no existe en el catálogo SEPOMEX.
+			\item[E2:] El campo de código postal está vacío o tiene formato inválido.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Conforme al Catálogo de domicilios SEPOMEX — Requerimientos §5.3.1.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al campo de código postal dentro del formulario de domicilio.
+	\UCpaso[\UCactor] Ingresa el código postal de 5 dígitos y presiona \IUbutton{Tab} o hace clic fuera del campo.
+	\UCpaso Consulta el catálogo SEPOMEX con el código postal ingresado. \Trayref{A}.
+	\UCpaso Autocompleta automáticamente los campos de estado y municipio con los valores devueltos por el catálogo.
+	\UCpaso Muestra la lista de colonias disponibles para ese código postal en un menú desplegable.
+	\UCpaso[\UCactor] Selecciona la colonia correspondiente de la lista.
+	\UCpaso[\UCactor] Captura la calle y el número exterior de forma opcional.
+	\UCpaso[\UCactor] Continúa con el guardado del formulario principal que contiene el domicilio.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Código postal no encontrado en SEPOMEX}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el código postal no es válido o no existe en el catálogo.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Limpia los campos de colonia, municipio y estado, y regresa al paso 1 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-32
+\begin{UseCase}{CU-32}{Gestionar catálogo de actores en materia de derechos}{
+	Permite al Coordinador registrar nuevos actores (organizaciones gubernamentales, no gubernamentales o personas físicas), actualizar su información y desactivarlos cuando ya no estén disponibles para apoyar la restitución de derechos.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Mantener actualizado el directorio de actores disponibles para vincularlos a medidas del PRD de los NNA atendidos.}
+	\UCitem{Entradas}{Nombre, tipo de actor (gubernamental, no gubernamental, persona física), giro, descripción, página web, correo, teléfonos, redes sociales, domicilio, horario de atención, coordenadas geográficas (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Actor registrado, actualizado o desactivado en el catálogo y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de gestión del catálogo de actores.}
+	\UCitem{Precondiciones}{El Coordinador debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El catálogo de actores queda actualizado y disponible para búsqueda y vinculación al PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del actor vacíos (nombre y tipo).
+			\item[E2:] Código postal del domicilio inválido.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.2.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Actores en Materia de Derechos} desde el menú principal.
+	\UCpaso Despliega la lista de actores registrados con opciones de búsqueda, edición y registro de nuevos.
+	\UCpaso[\UCactor] Presiona \IUbutton{Registrar nuevo actor} o selecciona un actor existente para editar.
+	\UCpaso Despliega el formulario de registro o edición del actor con todas sus secciones.
+	\UCpaso[\UCactor] Captura el nombre, tipo y giro del actor.
+	\UCpaso[\UCactor] Registra la información de contacto: página web, correo, teléfonos y redes sociales.
+	\UCpaso[\UCactor] Captura el domicilio usando el mecanismo de validación SEPOMEX (\hyperlink{CU-31}{CU-31}).
+	\UCpaso[\UCactor] Ingresa el horario de atención y las coordenadas geográficas si las tiene disponibles.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Actor}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{A}.
+	\UCpaso Almacena o actualiza el actor en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-33
+\begin{UseCase}{CU-33}{Registrar servicios del actor en materia de derechos}{
+	Permite al Coordinador registrar los servicios que ofrece un actor del catálogo, especificando el derecho que restituye, el tipo de beneficio, el costo, la disponibilidad y los requisitos de acceso.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Detallar las capacidades de cada actor para facilitar la búsqueda por derecho vulnerado y municipio al elaborar el PRD.}
+	\UCitem{Entradas}{Nombre del servicio, derecho que restituye (catálogo), tipo de beneficio (servicio, producto, beca, donativo, asesoría, otro), tiene costo (booleano), descripción del costo, duración estimada, disponibilidad, requisitos o trámites.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Servicio registrado y vinculado al actor, mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de detalle del actor, sección Servicios.}
+	\UCitem{Precondiciones}{El actor debe estar registrado en el catálogo.}
+	\UCitem{Postcondiciones}{El servicio queda almacenado en la tabla SERVICIO\_ACTOR y disponible para búsqueda al elaborar el PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del servicio vacíos (nombre y derecho que restituye).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{El campo derecho que restituye es la clave para el motor de búsqueda del PRD.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al detalle de un actor en el catálogo y selecciona la sección \IUbutton{Servicios}.
+	\UCpaso Despliega la lista de servicios del actor y el botón \IUbutton{Agregar servicio}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Agregar servicio}.
+	\UCpaso Despliega el formulario de registro del servicio.
+	\UCpaso[\UCactor] Ingresa el nombre del servicio y selecciona el derecho que restituye del catálogo.
+	\UCpaso[\UCactor] Selecciona el tipo de beneficio e indica si tiene costo, capturando la descripción del mismo si aplica.
+	\UCpaso[\UCactor] Captura la duración estimada, disponibilidad y requisitos de acceso al servicio.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Servicio}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{A}.
+	\UCpaso Registra el servicio en la base de datos vinculado al actor.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-34
+\begin{UseCase}{CU-34}{Consultar catálogo de actores en materia de derechos}{
+	Permite a cualquier usuario autenticado consultar el directorio de actores, buscando por nombre y filtrando por tipo de actor, derecho que restituyen y municipio de ubicación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Facilitar la localización de actores disponibles para apoyar la restitución de derechos según la necesidad específica de cada NNA.}
+	\UCitem{Entradas}{Texto de búsqueda por nombre, filtro por tipo de actor, filtro por derecho que restituye, filtro por municipio.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Lista filtrada de actores activos con su información de contacto y servicios disponibles.}
+	\UCitem{Destino}{Pantalla del catálogo de actores.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El usuario visualiza los actores sin modificar ningún dato del catálogo.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se encontraron actores que coincidan con los criterios de búsqueda.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Catálogo de Actores} desde el menú principal.
+	\UCpaso Despliega la lista de actores activos con barra de búsqueda y controles de filtrado por tipo, derecho y municipio.
+	\UCpaso[\UCactor] Ingresa texto de búsqueda y/o aplica filtros.
+	\UCpaso Actualiza la lista en tiempo real mostrando los actores que coinciden con los criterios. \Trayref{A}.
+	\UCpaso[\UCactor] Selecciona un actor para ver el detalle completo con sus servicios, contactos y horarios.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin resultados}
+	\UCpaso Muestra el mensaje \textbf{MSG-01} indicando que no hay actores que coincidan.
+	\UCpaso[\UCactor] Ajusta los criterios de búsqueda.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-35
+\begin{UseCase}{CU-35}{Registrar contactos del actor en materia de derechos}{
+	Permite al Coordinador registrar las personas de enlace de un actor del catálogo, incluyendo nombre, cargo, teléfono, correo y si es el contacto principal con la Fundación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Registrar los datos de las personas de contacto de cada actor para facilitar la comunicación y coordinación en la ejecución de medidas del PRD.}
+	\UCitem{Entradas}{Nombre completo, cargo, teléfono, correo, es contacto principal (booleano), notas sobre la disponibilidad.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Contacto registrado en el actor y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de detalle del actor, sección Contactos.}
+	\UCitem{Precondiciones}{El actor debe estar registrado en el catálogo.}
+	\UCitem{Postcondiciones}{El contacto queda almacenado en la tabla CONTACTO\_ACTOR vinculado al actor.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El campo de nombre del contacto está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al detalle del actor y selecciona la sección \IUbutton{Contactos}.
+	\UCpaso Despliega la lista de contactos del actor y el botón \IUbutton{Agregar contacto}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Agregar contacto}.
+	\UCpaso Despliega el formulario de registro de contacto.
+	\UCpaso[\UCactor] Captura el nombre, cargo, teléfono, correo y notas del contacto.
+	\UCpaso[\UCactor] Marca si es el contacto principal con la Fundación.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Contacto}.
+	\UCpaso Valida que el nombre del contacto no esté vacío. \Trayref{A}.
+	\UCpaso Registra el contacto en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Nombre del contacto vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-36
+\begin{UseCase}{CU-36}{Vincular actor a medida del PRD}{
+	Permite al Coordinador asociar uno o más actores en materia de derechos como responsables de ejecutar una medida de protección específica dentro del PRD vigente del NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Formalizar la responsabilidad de ejecución de cada medida del PRD asignando los actores institucionales o comunitarios que la llevarán a cabo.}
+	\UCitem{Entradas}{Selección de la medida del PRD, búsqueda y selección del actor a vincular.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Actor vinculado a la medida del PRD y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del PRD, sección de medidas de protección.}
+	\UCitem{Precondiciones}{El PRD debe estar en estatus Vigente o Borrador y el Coordinador debe pertenecer al equipo del expediente.}
+	\UCitem{Postcondiciones}{La relación entre el actor y la medida queda registrada en la tabla de vinculación y disponible para seguimiento.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] No se seleccionó ningún actor antes de guardar la vinculación.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.2. Un mismo actor puede vincularse a múltiples medidas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al PRD del NNA y selecciona la medida de protección a la que desea vincular un actor.
+	\UCpaso Presiona el botón \IUbutton{Vincular actor} en la fila de la medida.
+	\UCpaso Despliega el panel de búsqueda del catálogo de actores con filtro por derecho y municipio.
+	\UCpaso[\UCactor] Busca y selecciona el actor a vincular de los resultados.
+	\UCpaso[\UCactor] Presiona \IUbutton{Confirmar vinculación}.
+	\UCpaso Valida que se haya seleccionado al menos un actor. \Trayref{A}.
+	\UCpaso Registra la vinculación en la base de datos.
+	\UCpaso Actualiza la vista de la medida mostrando el actor asignado.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Sin actor seleccionado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que debe seleccionar al menos un actor.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-37
+\begin{UseCase}{CU-37}{Exportar PRD en PDF}{
+	Permite al Coordinador generar y descargar el Plan de Restitución de Derechos del NNA en formato PDF con membrete de la Fundación, datos del menor y cuadro guía completo de medidas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Generar el documento oficial del PRD para compartirlo con las instituciones responsables de ejecutar las medidas de protección.}
+	\UCitem{Entradas}{Identificador del expediente con PRD vigente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Archivo PDF del PRD disponible para descarga.}
+	\UCitem{Destino}{Navegador del usuario (descarga directa).}
+	\UCitem{Precondiciones}{El PRD del expediente debe estar en estatus Vigente.}
+	\UCitem{Postcondiciones}{El documento PDF queda generado y descargado en el equipo del usuario.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El PRD no está en estatus Vigente.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al PRD del expediente y presiona el botón \IUbutton{Exportar PRD en PDF}.
+	\UCpaso Verifica que el PRD se encuentre en estatus Vigente. \Trayref{A}.
+	\UCpaso Genera el documento PDF con el membrete de la Fundación, datos del NNA, cuadro guía completo y firmas digitales.
+	\UCpaso Inicia la descarga del PDF en el navegador del usuario.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{PRD no vigente}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que solo se pueden exportar PRD en estatus Vigente.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-38
+\begin{UseCase}{CU-38}{Consultar historial del expediente}{
+	Permite a los miembros del equipo y al Director consultar la bitácora cronológica de todas las acciones, modificaciones y valoraciones registradas en el expediente de un NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Garantizar la trazabilidad completa del expediente, permitiendo conocer qué se hizo, quién lo hizo y cuándo en cada etapa del proceso de restitución de derechos.}
+	\UCitem{Entradas}{Identificador del expediente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Bitácora cronológica de acciones del expediente.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Historial.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo del expediente o ser Director.}
+	\UCitem{Postcondiciones}{El usuario visualiza el historial sin modificar datos del expediente.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{El historial es de solo lectura y no puede ser modificado por ningún usuario.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al expediente del NNA y selecciona la pestaña \IUbutton{Historial}.
+	\UCpaso Consulta en la base de datos la bitácora de auditoría del expediente, incluyendo tipo de acción, usuario, fecha y hora.
+	\UCpaso Despliega la bitácora cronológica en pantalla con los registros más recientes primero.
+	\UCpaso[\UCactor] Revisa el historial y puede desplazarse por los registros.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-39
+\begin{UseCase}{CU-39}{Consultar dashboard del Director}{
+	Permite al Director visualizar un tablero de control con indicadores globales del estado de todos los expedientes activos, número de equipos operativos, alertas pendientes totales y casos por estado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Proporcionar al Director una visión global y en tiempo real del estado operativo de la Fundación para la toma de decisiones de supervisión.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Tablero con indicadores: expedientes por estado, equipos activos, alertas pendientes, casos cerrados en el mes.}
+	\UCitem{Destino}{Pantalla del Dashboard del Director.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El Director visualiza el tablero sin modificar ningún dato del sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al módulo \IUbutton{Dashboard} desde el menú principal.
+	\UCpaso Consulta en la base de datos los indicadores globales: totales por estado de expediente, equipos activos, alertas vigentes y cierres del mes.
+	\UCpaso Despliega el tablero con tarjetas de indicadores, gráfica de distribución por estado y listado de alertas críticas.
+	\UCpaso[\UCactor] Presiona el indicador de un estado para ver la lista de expedientes correspondientes.
+	\UCpaso El sistema redirige al panel de expedientes filtrado por el estado seleccionado.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-40
+\begin{UseCase}{CU-40}{Mantener catálogos del sistema}{
+	Permite al Director agregar, editar y desactivar los valores de los catálogos del sistema: derechos del NNA, tipos de discapacidad, parentescos, tipos de detector, niveles de idioma y grados de negación o afectación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Mantener actualizados los catálogos de valores del sistema para que reflejen fielmente las clasificaciones institucionales y normativas vigentes.}
+	\UCitem{Entradas}{Nombre del catálogo a gestionar, valor a agregar o modificar, estado activo/inactivo.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Catálogo actualizado y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de administración de catálogos.}
+	\UCitem{Precondiciones}{El Director debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El catálogo modificado queda actualizado y sus nuevos valores disponibles en los formularios del sistema.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El nombre del valor del catálogo está vacío.
+			\item[E2:] Intento de desactivar un valor que está siendo usado en expedientes activos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.3.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Administración de Catálogos} desde el panel del Director.
+	\UCpaso Despliega la lista de catálogos disponibles para gestión.
+	\UCpaso[\UCactor] Selecciona el catálogo a gestionar.
+	\UCpaso Despliega los valores actuales del catálogo con opciones de agregar, editar y desactivar.
+	\UCpaso[\UCactor] Realiza una de las siguientes acciones:
+		\begin{itemize}
+			\item \textbf{Agregar:} Ingresa el nuevo valor y presiona \IUbutton{Agregar}.
+			\item \textbf{Editar:} Modifica el nombre del valor y presiona \IUbutton{Guardar}.
+			\item \textbf{Desactivar:} Presiona \IUbutton{Desactivar} en el valor correspondiente. \Trayref{B}.
+		\end{itemize}
+	\UCpaso Valida que el nombre del valor no esté vacío. \Trayref{A}.
+	\UCpaso Guarda el cambio en la base de datos y refresca la lista del catálogo.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Nombre del valor vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el nombre del valor es obligatorio.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Valor en uso por expedientes activos}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que el valor está siendo utilizado y no puede desactivarse hasta liberar las referencias.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal sin realizar el cambio.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-41
+\begin{UseCase}{CU-41}{Cargar documentos oficiales del NNA}{
+	Permite al personal autorizado cargar los documentos oficiales digitalizados del NNA al expediente: acta de nacimiento, CURP, cartilla de vacunación y otros documentos relevantes, en formatos PDF, JPG o PNG con un límite de 5MB por archivo.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tMedico}{Médico}}
+	\UCitem{Propósito}{Centralizar los documentos oficiales del NNA en el expediente digital para facilitar su consulta y la validación jurídica.}
+	\UCitem{Entradas}{Tipo de documento (catálogo), archivo digitalizado (PDF, JPG, PNG, máximo 5MB).}
+	\UCitem{Origen}{Archivo digital.}
+	\UCitem{Salidas}{Documento almacenado en el servidor y vinculado al expediente, mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Documentos.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{El documento queda almacenado en el servidor de archivos y referenciado en la tabla de documentos del expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El archivo supera los 5MB o tiene un formato no soportado.
+			\item[E2:] No se seleccionó el tipo de documento.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-10}{BR-10}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la pestaña \IUbutton{Documentos} del expediente único.
+	\UCpaso Despliega la lista de documentos cargados y el botón \IUbutton{Cargar documento}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Cargar documento}.
+	\UCpaso Despliega el formulario de carga con el selector de tipo de documento y el campo de archivo.
+	\UCpaso[\UCactor] Selecciona el tipo de documento del catálogo y adjunta el archivo digitalizado.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar documento}.
+	\UCpaso Valida el tipo de documento seleccionado. \Trayref{B}.
+	\UCpaso Valida el formato y tamaño del archivo adjunto. \Trayref{A}.
+	\UCpaso Almacena el archivo en el servidor y registra la referencia en la base de datos.
+	\UCpaso Actualiza la lista de documentos en pantalla y despliega el mensaje \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Formato o tamaño inválido}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser PDF, JPG o PNG y no superar los 5MB.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Tipo de documento no seleccionado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de documento es obligatorio.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-42 a CU-57 (resumen compacto por espacio, misma estructura)
+
+\begin{UseCase}{CU-42}{Visualizar documentos adjuntos del expediente}{
+	Permite al personal autorizado visualizar en línea, directamente en el navegador, los documentos adjuntos al expediente del NNA sin necesidad de descargarlos.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Agilizar la consulta documental sin requerir la descarga de archivos al equipo local del usuario.}
+	\UCitem{Entradas}{Selección del documento a visualizar.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Visor en línea del documento seleccionado.}
+	\UCitem{Destino}{Panel de visor de documentos en la pantalla del expediente.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo del expediente o ser Director.}
+	\UCitem{Postcondiciones}{El documento se muestra en línea sin ser descargado.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El archivo no puede cargarse en el visor (formato incompatible para visualización en línea).\end{description}}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la pestaña \IUbutton{Documentos} del expediente y presiona el ícono de vista del documento.
+	\UCpaso Carga el archivo desde el servidor de archivos. \Trayref{A}.
+	\UCpaso Muestra el documento en el visor en línea integrado en la pantalla.
+	\UCpaso[\UCactor] Revisa el documento y presiona \IUbutton{Cerrar visor} para volver a la lista.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Archivo no compatible con el visor}
+	\UCpaso Muestra el mensaje \textbf{MSG-03} y ofrece la opción de descarga directa.
+	\UCpaso[\UCactor] Oprime \IUbutton{Descargar}.
+	\UCpaso Inicia la descarga del archivo.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-43
+\begin{UseCase}{CU-43}{Validar acta de nacimiento del NNA}{
+	Permite al Abogado marcar el acta de nacimiento cargada en el expediente como verificada, dejando constancia de la autenticidad del documento tras su revisión.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}}
+	\UCitem{Propósito}{Certificar dentro del sistema que el acta de nacimiento del NNA ha sido revisada y es auténtica, como requisito para la elaboración del PRD.}
+	\UCitem{Entradas}{Identificador del documento de acta de nacimiento.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Estado del acta actualizado a Verificada y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Documentos.}
+	\UCitem{Precondiciones}{El acta de nacimiento debe estar cargada en el expediente y el Abogado pertenecer al equipo asignado.}
+	\UCitem{Postcondiciones}{El indicador de verificación del acta queda en estado Verificada en el expediente.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El acta de nacimiento no ha sido cargada en el expediente.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por RF-23.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la pestaña \IUbutton{Documentos} y localiza el acta de nacimiento.
+	\UCpaso Verifica que el acta esté cargada en el expediente. \Trayref{A}.
+	\UCpaso[\UCactor] Revisa el documento en el visor en línea (\hyperlink{CU-42}{CU-42}).
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Marcar como Verificada}.
+	\UCpaso Actualiza el estado del acta a Verificada, registrando el usuario y la fecha de verificación.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Acta no cargada}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que no hay acta de nacimiento cargada para verificar.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-44
+\begin{UseCase}{CU-44}{Consultar panel de casos del Coordinador}{
+	Permite al Coordinador visualizar sus expedientes activos agrupados por estado, con indicadores de alertas, valoraciones pendientes y medidas vencidas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Dar al Coordinador una visión operativa de su carga de trabajo actual y los casos que requieren atención inmediata.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Panel con lista de expedientes activos, estado, alertas y valoraciones pendientes.}
+	\UCitem{Destino}{Pantalla del Dashboard del Coordinador.}
+	\UCitem{Precondiciones}{El Coordinador debe haber iniciado sesión.}
+	\UCitem{Postcondiciones}{El Coordinador visualiza su panel sin modificar datos.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al \IUbutton{Panel de Control} desde el menú.
+	\UCpaso Consulta los expedientes asignados al Coordinador, agrupados por estado, con sus alertas activas.
+	\UCpaso Despliega el panel con tarjetas de estado, lista de expedientes y contadores de alertas.
+	\UCpaso[\UCactor] Presiona el folio de un expediente para acceder a su detalle.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-45
+\begin{UseCase}{CU-45}{Consultar panel de casos del especialista}{
+	Permite a cada especialista (Abogado, Médico, Psicólogo, Trabajador Social) visualizar únicamente los expedientes del equipo al que pertenece, con indicadores de sus valoraciones pendientes.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Mostrar al especialista su carga de trabajo y los expedientes con valoraciones pendientes de su área.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Lista de expedientes del equipo con indicadores de valoraciones pendientes.}
+	\UCitem{Destino}{Pantalla del panel del especialista.}
+	\UCitem{Precondiciones}{El especialista debe haber iniciado sesión y pertenecer a al menos un equipo activo.}
+	\UCitem{Postcondiciones}{El especialista visualiza su panel sin modificar datos.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al \IUbutton{Panel de Control}.
+	\UCpaso Consulta los expedientes del equipo al que pertenece el especialista.
+	\UCpaso Despliega la lista con indicadores de valoración pendiente según la especialidad del usuario.
+	\UCpaso[\UCactor] Selecciona un expediente para acceder a su detalle y registrar su valoración.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-46
+\begin{UseCase}{CU-46}{Registrar indicadores de riesgo emocional del NNA}{
+	Permite al Psicólogo seleccionar del catálogo los indicadores de riesgo emocional observados en el NNA durante la entrevista: aislamiento, regresión conductual, hipervigilancia, comportamiento sexualizado, omnipotencia defensiva u otros.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Estructurar los indicadores de riesgo emocional observados para su uso como insumo en el PRD y el seguimiento terapéutico.}
+	\UCitem{Entradas}{Selección múltiple de indicadores del catálogo, observaciones específicas por indicador.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Indicadores registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, subsección Indicadores de Riesgo.}
+	\UCitem{Precondiciones}{El Psicólogo debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{Los indicadores quedan almacenados y disponibles para la elaboración del PRD.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El usuario no pertenece al equipo asignado al expediente.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en la sección de indicadores de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Indicadores de Riesgo} dentro de la valoración psicológica.
+	\UCpaso Verifica que el Psicólogo pertenezca al equipo asignado. \Trayref{A}.
+	\UCpaso Despliega el catálogo de indicadores con casillas de verificación.
+	\UCpaso[\UCactor] Selecciona los indicadores observados y captura observaciones específicas para cada uno.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar indicadores}.
+	\UCpaso Almacena la selección en la base de datos.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario sin permisos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-47
+\begin{UseCase}{CU-47}{Registrar datos de contacto del NNA}{
+	Permite al personal del equipo registrar los datos de contacto del NNA, del cuidador principal y de un contacto de emergencia alternativo, incluyendo preferencias de contacto y horario disponible.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Centralizar los datos de contacto del NNA y su red de apoyo para garantizar la comunicación efectiva durante el proceso de restitución.}
+	\UCitem{Entradas}{Teléfono del cuidador, WhatsApp (booleano), correo del cuidador, nombre y teléfono del contacto de emergencia, parentesco del contacto de emergencia, horario disponible, medio de contacto preferido.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos de contacto registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Datos de Contacto.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{Los datos de contacto quedan almacenados y disponibles para el equipo.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El teléfono del cuidador está vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Datos de Contacto} en el expediente único.
+	\UCpaso Despliega el formulario de contacto con sus secciones.
+	\UCpaso[\UCactor] Captura el teléfono del cuidador e indica si tiene WhatsApp.
+	\UCpaso[\UCactor] Ingresa el correo del cuidador si aplica.
+	\UCpaso[\UCactor] Registra el contacto de emergencia alternativo con nombre, parentesco y teléfono.
+	\UCpaso[\UCactor] Captura el horario disponible y el medio de contacto preferido.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Datos de Contacto}.
+	\UCpaso Valida que el teléfono del cuidador no esté vacío. \Trayref{A}.
+	\UCpaso Almacena los datos de contacto en la base de datos.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Teléfono del cuidador vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-48 a CU-57 (últimos CU del lote)
+
+\begin{UseCase}{CU-48}{Registrar escolaridad del NNA}{
+	Permite capturar el nivel educativo, grado actual, asistencia escolar, clase favorita y clase que más le cuesta al NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar la situación educativa del NNA para identificar vulneración del derecho a la educación.}
+	\UCitem{Entradas}{Nivel educativo, grado, asistencia (booleano), clase favorita, clase difícil, desempeño general.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos de escolaridad almacenados en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares del expediente único.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos de escolaridad registrados.}
+	\UCitem{Errores}{\begin{description}\item[E1:] Campo de asistencia escolar vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme al checklist §4.3.3 de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección \IUbutton{Escolaridad} dentro de la pestaña Datos Familiares.
+	\UCpaso Despliega el formulario de datos escolares.
+	\UCpaso[\UCactor] Indica si el NNA asiste actualmente a la escuela.
+	\UCpaso[\UCactor] Captura el nivel educativo, grado, clase favorita, clase difícil y desempeño general.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar datos de escolaridad}.
+	\UCpaso Valida que el indicador de asistencia esté respondido. \Trayref{A}.
+	\UCpaso Almacena los datos y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo obligatorio vacío}
+	\UCpaso Muestra \textbf{MSG-04}. \UCpaso[\UCactor] Oprime \IUbutton{Aceptar}. \UCpaso Regresa al paso 3.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-49
+\begin{UseCase}{CU-49}{Registrar composición del núcleo familiar}{
+	Permite al Trabajador Social registrar el número de personas en el hogar, quiénes conviven con el NNA y si algún hermano vive fuera del hogar.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar la composición del núcleo familiar para insumar el diagnóstico sociofamiliar y el PRD.}
+	\UCitem{Entradas}{Número de personas en el hogar, descripción textual de convivientes, indicador de hermanos fuera del hogar, narración del entorno.}
+	\UCitem{Origen}{Teclado.}
+	\UCitem{Salidas}{Composición familiar registrada en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares, subsección Núcleo familiar.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos del núcleo familiar almacenados.}
+	\UCitem{Errores}{\begin{description}\item[E1:] Campo de número de personas vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Complementa el familiograma (\hyperlink{CU-27}{CU-27}).}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Núcleo Familiar}.
+	\UCpaso Despliega el formulario de composición.
+	\UCpaso[\UCactor] Ingresa el número de personas en el hogar y la descripción de quiénes conviven.
+	\UCpaso[\UCactor] Indica si hay hermanos que viven fuera del hogar y captura la narración del entorno.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar composición familiar}.
+	\UCpaso Valida campo de número de personas. \Trayref{A}.
+	\UCpaso Almacena y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo vacío}
+	\UCpaso Muestra \textbf{MSG-04}. \UCpaso[\UCactor] Oprime \IUbutton{Aceptar}. \UCpaso Regresa al paso 3.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-50
+\begin{UseCase}{CU-50}{Exportar expediente completo en PDF}{
+	Permite al Coordinador o Director generar un PDF con el expediente completo del NNA: datos personales, hecho victimal, valoraciones, PRD y bitácoras de seguimiento.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Generar un documento consolidado del expediente para archivo institucional o presentación ante autoridades.}
+	\UCitem{Entradas}{Identificador del expediente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Archivo PDF del expediente completo disponible para descarga.}
+	\UCitem{Destino}{Navegador del usuario.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Seguimiento o Cerrado.}
+	\UCitem{Postcondiciones}{PDF generado y descargado.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El expediente está en estado Detección y no tiene información suficiente para generar el reporte.\end{description}}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al expediente y presiona \IUbutton{Exportar expediente en PDF}.
+	\UCpaso Verifica que el expediente tenga estado suficiente para exportar. \Trayref{A}.
+	\UCpaso Genera el PDF consolidado con todos los módulos del expediente.
+	\UCpaso Inicia la descarga en el navegador.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Estado insuficiente}
+	\UCpaso Muestra \textbf{MSG-03} indicando que el expediente no tiene información suficiente para exportar.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-51
+\begin{UseCase}{CU-51}{Registrar vida cotidiana y recreación del NNA}{
+	Permite capturar el horario de juego, actividades recreativas, deportes practicados y si el NNA se junta con amigos.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar la vida cotidiana del NNA para evaluar la vulneración del derecho al descanso y esparcimiento.}
+	\UCitem{Entradas}{Horario de juego, actividades a las que juega, práctica de deporte (booleano y cuál), frecuencia de convivencia con amigos, indicador si ha dejado de ver a alguien que quiere.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos de vida cotidiana almacenados en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares, subsección Vida cotidiana.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos registrados.}
+	\UCitem{Errores}{Ninguno específico.}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme al checklist §4.3.3 y §4.3.6 de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Vida Cotidiana} dentro de Datos Familiares.
+	\UCpaso Despliega el formulario de actividades cotidianas.
+	\UCpaso[\UCactor] Captura el horario de juego, actividades, práctica de deporte y convivencia con amigos.
+	\UCpaso[\UCactor] Indica si el NNA ha dejado de ver a alguien que quiere.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar vida cotidiana}.
+	\UCpaso Almacena los datos y despliega \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-52
+\begin{UseCase}{CU-52}{Registrar contexto indígena o rural del NNA}{
+	Permite capturar el nivel de bilingüismo de la familia, la participación en asambleas comunitarias y el parentesco con autoridades locales cuando el NNA vive en comunidad indígena o rural.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar el contexto cultural e institucional del NNA en comunidades indígenas o rurales para adaptar el PRD a la realidad comunitaria.}
+	\UCitem{Entradas}{Nivel de bilingüismo de la familia (texto), participación en asambleas (texto), cargos desempeñados en la comunidad, parentesco con autoridades locales.}
+	\UCitem{Origen}{Teclado.}
+	\UCitem{Salidas}{Contexto comunitario registrado en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares, subsección Contexto comunitario.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos del contexto comunitario almacenados.}
+	\UCitem{Errores}{Ninguno específico.}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme a §4.3.3 de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Contexto Comunitario}.
+	\UCpaso Despliega el formulario de contexto indígena o rural.
+	\UCpaso[\UCactor] Captura el nivel de bilingüismo de la familia, participación comunitaria, cargos y parentesco con autoridades.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar contexto comunitario}.
+	\UCpaso Almacena los datos y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-53
+\begin{UseCase}{CU-53}{Notificar vencimiento de medida del PRD}{
+	Permite al sistema generar alertas automáticas cuando una medida de protección del PRD se encuentra a 7 días o menos de su fecha límite (alerta preventiva) o la ha superado sin ser cumplida (alerta urgente).
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Garantizar el seguimiento oportuno de las medidas del PRD evitando que venzan sin atención.}
+	\UCitem{Entradas}{Fecha límite de cada medida del PRD y fecha actual del sistema.}
+	\UCitem{Origen}{Proceso interno del sistema (cron job diario).}
+	\UCitem{Salidas}{Alertas visuales en la bandeja de notificaciones de los miembros del equipo y del Director.}
+	\UCitem{Destino}{Bandeja de notificaciones de todos los usuarios con acceso al expediente.}
+	\UCitem{Precondiciones}{Deben existir medidas del PRD con fechas límite registradas y en estado Pendiente o En proceso.}
+	\UCitem{Postcondiciones}{Las alertas quedan registradas y visibles en la bandeja de notificaciones del sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta automáticamente una vez al día.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema ejecuta el proceso de verificación de fechas límite diariamente.
+	\UCpaso Consulta en la base de datos las medidas del PRD en estado Pendiente o En proceso con fecha límite próxima o vencida.
+	\UCpaso Para cada medida con fecha a 7 días o menos, genera una alerta preventiva (amarilla) en la bandeja del equipo asignado.
+	\UCpaso Para cada medida con fecha vencida, genera una alerta urgente (roja) en la bandeja del equipo y del Director.
+	\UCpaso Registra las alertas en la tabla de notificaciones del sistema.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-54
+\begin{UseCase}{CU-54}{Notificar valoración pendiente de especialista}{
+	Permite al sistema generar una alerta al Coordinador cuando han transcurrido más de 5 días hábiles desde la asignación del expediente sin que algún especialista haya registrado su valoración.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Evitar que los expedientes permanezcan sin valoración durante periodos prolongados que retrasen la elaboración del PRD.}
+	\UCitem{Entradas}{Fecha de asignación del expediente al equipo y estado de completitud de valoraciones.}
+	\UCitem{Origen}{Proceso interno del sistema.}
+	\UCitem{Salidas}{Alerta informativa en la bandeja del Coordinador del equipo.}
+	\UCitem{Destino}{Bandeja de notificaciones del Coordinador.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{Alerta registrada y visible para el Coordinador.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta en el proceso diario junto con CU-53.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema ejecuta el proceso de verificación de valoraciones diariamente.
+	\UCpaso Consulta expedientes en estado En Diagnóstico con más de 5 días hábiles desde la asignación.
+	\UCpaso Para cada expediente con valoraciones incompletas, genera una alerta informativa en la bandeja del Coordinador.
+	\UCpaso Registra la alerta en la tabla de notificaciones.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-55
+\begin{UseCase}{CU-55}{Registrar auditoría automática del expediente}{
+	Permite al sistema registrar automáticamente cada modificación realizada en el expediente en una bitácora de auditoría, indicando el usuario, fecha, hora, módulo y campo modificado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Garantizar la trazabilidad completa de todas las modificaciones realizadas al expediente sin intervención manual.}
+	\UCitem{Entradas}{Identificador del usuario, identificador del expediente, módulo afectado, datos anteriores y nuevos del campo modificado, fecha y hora del sistema.}
+	\UCitem{Origen}{Trigger del sistema en cada operación de escritura sobre el expediente.}
+	\UCitem{Salidas}{Registro de auditoría almacenado en la bitácora del expediente.}
+	\UCitem{Destino}{Tabla de auditoría de la base de datos.}
+	\UCitem{Precondiciones}{El usuario debe estar autenticado y realizar una operación de escritura sobre el expediente.}
+	\UCitem{Postcondiciones}{El registro de auditoría queda almacenado y disponible para consulta en \hyperlink{CU-38}{CU-38}.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta de forma transparente ante cualquier operación de guardado sobre el expediente.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema detecta una operación de escritura sobre cualquier tabla del expediente.
+	\UCpaso Captura el identificador del usuario autenticado, la fecha y hora del sistema y el módulo afectado.
+	\UCpaso Registra el valor anterior y el nuevo valor del campo modificado.
+	\UCpaso Almacena el registro en la tabla de auditoría del expediente.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-56
+\begin{UseCase}{CU-56}{Cerrar sesión}{
+	Permite a cualquier usuario autenticado finalizar su sesión activa en el sistema, destruyendo las variables de sesión locales y redirigiendo a la pantalla de inicio de sesión.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Garantizar el cierre seguro de la sesión del usuario para proteger la información del sistema.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Sesión destruida y redirección a pantalla de inicio de sesión.}
+	\UCitem{Destino}{Pantalla de inicio de sesión.}
+	\UCitem{Precondiciones}{El usuario debe tener una sesión activa.}
+	\UCitem{Postcondiciones}{La sesión queda completamente destruida y el usuario debe autenticarse nuevamente para acceder al sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Cerrar Sesión} en el menú de navegación superior.
+	\UCpaso Destruye todas las variables de sesión activas del usuario en el servidor.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión de Taimotla.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-57
+\begin{UseCase}{CU-57}{Bloqueo automático de sesión por inactividad}{
+	Permite al sistema cerrar automáticamente la sesión de un usuario cuando no ha registrado actividad durante 30 minutos consecutivos, protegiendo la confidencialidad de la información del expediente.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Proteger la información confidencial de los expedientes ante situaciones de abandono no intencional de la sesión.}
+	\UCitem{Entradas}{Tiempo de última actividad del usuario en sesión.}
+	\UCitem{Origen}{Proceso automático del servidor de sesión.}
+	\UCitem{Salidas}{Sesión expirada y redirección a pantalla de inicio de sesión con mensaje de aviso.}
+	\UCitem{Destino}{Pantalla de inicio de sesión.}
+	\UCitem{Precondiciones}{El usuario debe tener una sesión activa con inactividad mayor a 30 minutos.}
+	\UCitem{Postcondiciones}{La sesión queda destruida y el usuario debe autenticarse nuevamente.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se muestra un mensaje de advertencia 2 minutos antes del cierre automático.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema detecta que el usuario lleva 28 minutos sin registrar actividad.
+	\UCpaso Muestra un mensaje de advertencia \textbf{MSG-03} indicando que la sesión se cerrará en 2 minutos por inactividad.
+	\UCpaso[\UCactor] Si el usuario retoma la actividad, el contador se reinicia. De lo contrario, el sistema continúa al paso 4.
+	\UCpaso Transcurridos los 30 minutos totales, destruye la sesión del usuario.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión mostrando el mensaje de sesión expirada.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}

@@ -1,0 +1,47 @@
+\begin{UseCase}{CU-32}{Gestionar catálogo de actores en materia de derechos}{
+	Permite al Coordinador registrar nuevos actores (organizaciones gubernamentales, no gubernamentales o personas físicas), actualizar su información y desactivarlos cuando ya no estén disponibles para apoyar la restitución de derechos.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Mantener actualizado el directorio de actores disponibles para vincularlos a medidas del PRD de los NNA atendidos.}
+	\UCitem{Entradas}{Nombre, tipo de actor (gubernamental, no gubernamental, persona física), giro, descripción, página web, correo, teléfonos, redes sociales, domicilio, horario de atención, coordenadas geográficas (opcionales).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Actor registrado, actualizado o desactivado en el catálogo y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de gestión del catálogo de actores.}
+	\UCitem{Precondiciones}{El Coordinador debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{El catálogo de actores queda actualizado y disponible para búsqueda y vinculación al PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del actor vacíos (nombre y tipo).
+			\item[E2:] Código postal del domicilio inválido.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por Requerimientos §5.2.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al módulo \IUbutton{Actores en Materia de Derechos} desde el menú principal.
+	\UCpaso Despliega la lista de actores registrados con opciones de búsqueda, edición y registro de nuevos.
+	\UCpaso[\UCactor] Presiona \IUbutton{Registrar nuevo actor} o selecciona un actor existente para editar.
+	\UCpaso Despliega el formulario de registro o edición del actor con todas sus secciones.
+	\UCpaso[\UCactor] Captura el nombre, tipo y giro del actor.
+	\UCpaso[\UCactor] Registra la información de contacto: página web, correo, teléfonos y redes sociales.
+	\UCpaso[\UCactor] Captura el domicilio usando el mecanismo de validación SEPOMEX (\hyperlink{CU-31}{CU-31}).
+	\UCpaso[\UCactor] Ingresa el horario de atención y las coordenadas geográficas si las tiene disponibles.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Actor}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{A}.
+	\UCpaso Almacena o actualiza el actor en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-33

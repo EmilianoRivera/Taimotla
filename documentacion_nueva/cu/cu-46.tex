@@ -1,0 +1,36 @@
+\begin{UseCase}{CU-46}{Registrar indicadores de riesgo emocional del NNA}{
+	Permite al Psicólogo seleccionar del catálogo los indicadores de riesgo emocional observados en el NNA durante la entrevista: aislamiento, regresión conductual, hipervigilancia, comportamiento sexualizado, omnipotencia defensiva u otros.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tPsicologo}{Psicólogo}}
+	\UCitem{Propósito}{Estructurar los indicadores de riesgo emocional observados para su uso como insumo en el PRD y el seguimiento terapéutico.}
+	\UCitem{Entradas}{Selección múltiple de indicadores del catálogo, observaciones específicas por indicador.}
+	\UCitem{Origen}{Mouse y teclado.}
+	\UCitem{Salidas}{Indicadores registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, subsección Indicadores de Riesgo.}
+	\UCitem{Precondiciones}{El Psicólogo debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{Los indicadores quedan almacenados y disponibles para la elaboración del PRD.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El usuario no pertenece al equipo asignado al expediente.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Sustentado en la sección de indicadores de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la subsección \IUbutton{Indicadores de Riesgo} dentro de la valoración psicológica.
+	\UCpaso Verifica que el Psicólogo pertenezca al equipo asignado. \Trayref{A}.
+	\UCpaso Despliega el catálogo de indicadores con casillas de verificación.
+	\UCpaso[\UCactor] Selecciona los indicadores observados y captura observaciones específicas para cada uno.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar indicadores}.
+	\UCpaso Almacena la selección en la base de datos.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Usuario sin permisos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-47

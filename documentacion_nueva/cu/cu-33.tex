@@ -1,0 +1,45 @@
+\begin{UseCase}{CU-33}{Registrar servicios del actor en materia de derechos}{
+	Permite al Coordinador registrar los servicios que ofrece un actor del catálogo, especificando el derecho que restituye, el tipo de beneficio, el costo, la disponibilidad y los requisitos de acceso.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Detallar las capacidades de cada actor para facilitar la búsqueda por derecho vulnerado y municipio al elaborar el PRD.}
+	\UCitem{Entradas}{Nombre del servicio, derecho que restituye (catálogo), tipo de beneficio (servicio, producto, beca, donativo, asesoría, otro), tiene costo (booleano), descripción del costo, duración estimada, disponibilidad, requisitos o trámites.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Servicio registrado y vinculado al actor, mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de detalle del actor, sección Servicios.}
+	\UCitem{Precondiciones}{El actor debe estar registrado en el catálogo.}
+	\UCitem{Postcondiciones}{El servicio queda almacenado en la tabla SERVICIO\_ACTOR y disponible para búsqueda al elaborar el PRD.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] Campos obligatorios del servicio vacíos (nombre y derecho que restituye).
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{El campo derecho que restituye es la clave para el motor de búsqueda del PRD.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al detalle de un actor en el catálogo y selecciona la sección \IUbutton{Servicios}.
+	\UCpaso Despliega la lista de servicios del actor y el botón \IUbutton{Agregar servicio}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Agregar servicio}.
+	\UCpaso Despliega el formulario de registro del servicio.
+	\UCpaso[\UCactor] Ingresa el nombre del servicio y selecciona el derecho que restituye del catálogo.
+	\UCpaso[\UCactor] Selecciona el tipo de beneficio e indica si tiene costo, capturando la descripción del mismo si aplica.
+	\UCpaso[\UCactor] Captura la duración estimada, disponibilidad y requisitos de acceso al servicio.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Servicio}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{A}.
+	\UCpaso Registra el servicio en la base de datos vinculado al actor.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-34

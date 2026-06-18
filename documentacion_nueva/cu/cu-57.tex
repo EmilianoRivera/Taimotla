@@ -1,0 +1,27 @@
+\begin{UseCase}{CU-57}{Bloqueo automático de sesión por inactividad}{
+	Permite al sistema cerrar automáticamente la sesión de un usuario cuando no ha registrado actividad durante 30 minutos consecutivos, protegiendo la confidencialidad de la información del expediente.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Proteger la información confidencial de los expedientes ante situaciones de abandono no intencional de la sesión.}
+	\UCitem{Entradas}{Tiempo de última actividad del usuario en sesión.}
+	\UCitem{Origen}{Proceso automático del servidor de sesión.}
+	\UCitem{Salidas}{Sesión expirada y redirección a pantalla de inicio de sesión con mensaje de aviso.}
+	\UCitem{Destino}{Pantalla de inicio de sesión.}
+	\UCitem{Precondiciones}{El usuario debe tener una sesión activa con inactividad mayor a 30 minutos.}
+	\UCitem{Postcondiciones}{La sesión queda destruida y el usuario debe autenticarse nuevamente.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se muestra un mensaje de advertencia 2 minutos antes del cierre automático.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema detecta que el usuario lleva 28 minutos sin registrar actividad.
+	\UCpaso Muestra un mensaje de advertencia \textbf{MSG-03} indicando que la sesión se cerrará en 2 minutos por inactividad.
+	\UCpaso[\UCactor] Si el usuario retoma la actividad, el contador se reinicia. De lo contrario, el sistema continúa al paso 4.
+	\UCpaso Transcurridos los 30 minutos totales, destruye la sesión del usuario.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión mostrando el mensaje de sesión expirada.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}

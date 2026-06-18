@@ -1,0 +1,51 @@
+\begin{UseCase}{CU-24}{Registrar valoración jurídica}{
+	Permite al Abogado del equipo multidisciplinario capturar la valoración jurídica del caso del NNA en el expediente: delitos identificados, instancias legales involucradas, estado del expediente jurídico, validación del acta de nacimiento y medidas penales recomendadas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}}
+	\UCitem{Propósito}{Documentar la situación jurídica del caso para identificar derechos vulnerados con sustento legal e insumar el PRD con medidas de protección de tipo penal o familiar.}
+	\UCitem{Entradas}{Delitos identificados (texto), instancias legales involucradas, estado procesal del expediente jurídico, número de expediente de fiscalía, medidas penales recomendadas, validación del acta de nacimiento (verificada / no verificada).}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Valoración jurídica registrada en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Valoración Jurídica.}
+	\UCitem{Precondiciones}{El Abogado debe pertenecer al equipo asignado al expediente. El expediente debe estar en estado En Diagnóstico.}
+	\UCitem{Postcondiciones}{La valoración jurídica queda almacenada y el indicador de valoración jurídica se actualiza a completada en el expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El usuario no pertenece al equipo asignado al expediente.
+			\item[E2:] Campos obligatorios de la valoración jurídica vacíos.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Incluye la acción de validación del acta de nacimiento definida en RF-23.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Valoración Jurídica} en el expediente único del NNA.
+	\UCpaso Verifica que el Abogado pertenezca al equipo asignado al expediente. \Trayref{A}.
+	\UCpaso Despliega el formulario de valoración jurídica con campos de delitos, instancias, estado procesal y documentos.
+	\UCpaso[\UCactor] Captura los delitos identificados y las instancias legales involucradas en el caso.
+	\UCpaso[\UCactor] Ingresa el número de expediente de fiscalía y el estado procesal actual del caso.
+	\UCpaso[\UCactor] Registra las medidas penales o de juzgado familiar recomendadas.
+	\UCpaso[\UCactor] Verifica el acta de nacimiento adjunta y la marca como \IUbutton{Verificada} si está completa y es auténtica.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Jurídica}.
+	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
+	\UCpaso Almacena la valoración en la base de datos y actualiza el indicador jurídico en el expediente.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Abogado no pertenece al equipo}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Termina la ejecución del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos pendientes.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 4 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-25

@@ -1,0 +1,342 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  cdtUsecases.sty                                                               %
+%  2017/05/30, v1.0 CDT-USECASES Comandos para especificar Casos de uso.         %
+%  Autor: Ulises Vélez Saldaña.                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{cdtRequerimientos}
+\RequirePackage{chapterfolder}
+\RequirePackage[usenames,dvipsnames]{color}
+\RequirePackage{listings}
+\RequirePackage{keystroke}
+\RequirePackage{pgfkeys}
+
+%=====================================================
+% Definición de Colores
+\definecolor{UCInterfaceColor}{rgb}{0.5, 0.5, 0.5}
+\definecolor{UCCommandColor}{rgb}{0.5, 0.5, 0.5}
+\definecolor{UCExtensionPointColor}{rgb}{0, 0, 0.7}
+\definecolor{UCRealizationColor}{rgb}{0, 0, 0.7}
+\definecolor{UCBussinesRuleColor}{rgb}{0, 0.5, 0}
+\definecolor{RFReferenceColor}{rgb}{0, 0, 0.7}
+\definecolor{FRMColor}{rgb}{0.3, 0.3, 1}
+\definecolor{ComentarioColor}{rgb}{0.7, 0.7, 0.7}
+
+%-----------------------------------------------------
+% Documentación de problemas
+% Usar: \comentario{comentario}
+\newcommand{\comentario}[1]{\tiny\textcolor{ComentarioColor}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comandos para la descripción de Use Cases
+
+%-----------------------------------------------------
+% Agrega una referencia a un caso de uso
+% use \UCref{Id}{nombre}
+\newcommand{\UCref}[2]{%
+	\hypersetup{linkcolor=UCExtensionPointColor}%
+	\hyperlink{#1}{#1~{}#2}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Referencia para una Regla de Negocio
+% use \BRref{Id}{nombre}
+\newcommand{\BRref}[2]{%
+	\hypersetup{linkcolor=UCBussinesRuleColor}%
+	\hyperlink{#1}{#1~{}#2}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Referencia para un Mensaje
+% use \MSGref{Id}{nombre}
+\newcommand{\MSGref}[2]{%
+	\hypersetup{linkcolor=UCBussinesRuleColor}%
+	\hyperlink{#1}{#1~{}#2}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Referencia a una trayectoria alternativa
+% use \Trayref{Id}
+\newcommand{\Trayref}[1]{$[$Trayectoria #1$]$}
+
+
+%-----------------------------------------------------
+% Referencia a un requerimiento funcional
+% use \Trayref{Id}{Nombre}
+\newcommand{\RFref}[2]{%
+\hypersetup{linkcolor=RFReferenceColor}%
+\hyperlink{#1}{#1~{}#2}%
+\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Referencia a una Interfaz de usuario
+% use \IUref{Id}{Nombre}
+\newcommand{\IUref}[2]{%
+\includegraphics[height=10pt]{theme/uc/iu}~%
+\hypersetup{linkcolor=UCInterfaceColor}%
+\hyperlink{#1}{#1~{}#2}%
+\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Referencia a un comando
+% use \CMDref{Id}{Nombre}
+\newcommand{\CMDref}[2]{%
+\includegraphics[height=10pt]{theme/cmd}~%
+\hypersetup{linkcolor=UCCommandColor}%
+\hyperlink{#1}{#1~{}#2}%
+\hypersetup{linkcolor=refColor}%
+}
+
+%-----------------------------------------------------
+% Para definir una Interfaz de usuario
+% use \IUfig[width]{imagefile}{IU1}{Nombre de la pnatalla}
+\newcommand{\IUfig}[4][0.7]{%
+	\begin{figure}[ht!]%
+		\begin{center}%
+			\hypertarget{#3}{\includegraphics[width=#1\textwidth]{images/#2}}%
+			\caption{#3~{}#4}%
+			\label{#3}%
+		\end{center}%
+	\end{figure}%
+}
+
+%-----------------------------------------------------
+% Item de descripción de un Use Case
+% use \UCitem{item}{descripción}
+\newcommand{\UCitem}[2]{{\bf {#1:}} & {#2} \\ \hline}
+
+
+%-----------------------------------------------------
+% Comando para describir un Use Cases
+% usar:
+% \begin{UseCase}[fileImagenUC]{idUC}{nomUC}{descripcion completa}
+%   \UCitem{Actor}{Vendedor}
+%   ...
+% \end{UseCase}
+\newenvironment{UseCase}[4][default]%
+{%
+	\newpage%
+	\noindent\hypertarget{#2}{\includegraphics[width=1.1\textwidth]{theme/uc/#1}}%
+	\section{#2 #3}%
+	\subsection{Descripción completa}%
+	#4%
+	\subsection{Atributos importantes}%
+	\par\begin{longtable}{| p{.17\textwidth} | p{.75\textwidth} |}%
+		\arrayrulecolor{white}%
+		\rowcolor{black}%
+		\UCitem{\color{white}Caso de Uso}{\color{white}#2 #3}%
+		\endhead%
+		\arrayrulecolor{black}%
+}{
+	\end{longtable}%
+	\subsection{Trayectorias del Caso de Uso}%
+}
+
+%-----------------------------------------------------
+% Ejemplo:
+% \begin{UseCase}[fileImagenUC]{idUC}{nomUC}
+%	{
+%		Descripción larga e informal del Use Case
+%	}
+%	\UCitem{Version}{Version del Use Case}
+%	\UCitem{Super UC}{Use Case del que hereda}
+%	\UCitem[\Actor]{Principal}{Actor principal y sus deseos o motivaciones para el Use Case}
+%	\UCitem[\ActorS]{Secundarios}{Actor secundario y sus necesidades o afectaciones por el sistema} % poner tantos como se requiera
+%	\UCitem{Propósito o Justificación}{Razón del use case del Use Case}
+%	\UCitem{Objetivo}{Objetivo final del Use Case}
+%	\UCitem{Precondiciones}{Estado inicial necesario para ejecutar el Use Case}
+%	\UCitem{Entradas}{Datos de entrada: Nombre, tipo y descripción}
+%	\UCitem{Salidas}{Datos de salida o resultados esperados}
+%	\UCitem{Resumen}{Se identifica al usuario por medio de su Login y Password}
+%	\UCitem{Postcondiciones}{Estado final del sistema después del Use Case}
+%	\UCitem{Restricciones}{Requerimientos no funcionales que debe cumplir}
+%	\UCitem{Prioridad}{\Square Alta \CheckedBox Media \S \itemquare Baja}
+%	\UCitem{Suposiciones}{Hechos que se consideran reales para la descripción de este Use Case}
+%	\UCitem{Área}{Area o grupo a la que pertenece el Use Case}
+%	\UCitem{Referencias}{Documentos, personas o especificaciones que proporcionaron información para la especificación de este UseCase}Message
+%	\UCitem{Autor}{Nombre del responsable de la especificación del Use Case o de las modificaciones de la versión}
+%	\UCitem{Fecha}{Fecha de el último cambio al Use Case}
+% \end{UseCase}
+
+
+%-----------------------------------------------------
+% Referencia a un Punto de Extensión
+% use \UCExtensionPoint{Condición}{región}{Caso de uso al que se extiende}
+\newcommand{\UCExtenssionPoint}[3]{%
+\begin{description}\addtolength{\itemsep}{-0.5\baselineskip}%
+	\item[Cuando:] #1%
+	\item[Durante la región:] #2%
+	\item[La operación se puede extender a:] #3%
+\end{description}%
+}%
+
+%-----------------------------------------------------
+% Comando para describir una trayectoria principal
+% use: 
+% \begin{UCtrayectoria}
+%    \UCpaso[\UCActor] El actor oprime el boton buscar
+%    \UCpaso[\UCsist] El sistema ...
+%    ...
+% \end{UCtrayectoria}
+% Al final se agrega automáticamente el paso de fin.
+\newenvironment{UCtrayectoria}
+{%
+	\bigskip\noindent {\large {\bf Trayectoria principal}\\}%
+	\renewcommand{\labelenumi}{\textcolor{black}{\bf \theenumi}}%
+	\begin{enumerate}\addtolength{\itemsep}{-0.5\baselineskip}%
+}
+{%
+		\item[- -] - - {\em Fin del caso de uso}.%
+	\end{enumerate}%
+	\renewcommand{\labelenumi}{\theenumi}%
+}
+
+%-----------------------------------------------------
+% Comando para describir trayectorias Alternativas
+% use: 
+% \begin{UCtrayectoriaA}{Id}{Condicion}
+%    \UCpaso[\UCActor] El actor oprime el boton buscar
+%    \UCpaso[\UCsist] El sistema ...
+%    ...
+% \end{UCtrayectoria}
+% Al final se agrega automáticamente el paso de fin.
+\newenvironment{UCtrayectoriaA}[2]
+{%
+	\bigskip\noindent {\large {\bf Trayectoria alternativa {#1}:}}\\%
+	{\small{\bf Condición:} {#2}}%
+	\renewcommand{\labelenumi}{\textcolor{black}{\bf {#1}\theenumi}}%
+	\begin{enumerate}\addtolength{\itemsep}{-0.5\baselineskip}%
+}
+{%
+		\item[- -] - - {\em {Fin de la trayectoria}}.%
+	\end{enumerate}%
+	\renewcommand{\labelenumi}{\theenumi}%
+}
+
+
+%-----------------------------------------------------
+% Definición de los iconos para usar en los pasos
+% de una trayectoria actor o sistema.
+\newcommand\UCactor{\includegraphics[height=11pt]{theme/uc/actor}}
+\newcommand\UCsist{\includegraphics[height=11pt]{theme/uc/usecase}}
+
+
+%-----------------------------------------------------
+% Comandos para agregar un paso a una trayectoria, el paso puede ser 
+% dado por el actor \UCactor o por el sistema \UCsist, por defecto el 
+% paso es dado por el sistema.
+% usar \UCpaso[\UCactor]
+\newcommand{\UCpaso}[1][\UCsist]{\item #1~{}}
+
+
+
+%-----------------------------------------------------
+% Comando para describir trayectorias Alternativas
+% use: 
+% \begin{cdtEntidad}{AlumnoExtranjero}{Alumno Extranjero}
+%	\brAttr{idAtributo}{Nombre atributo}{Tipo}{Descripcion del atributo}{requerido: si/no}
+%   ...
+%	\cdtEntityRelSection
+%	\brRel{Tipo de relación}{Entidad con la que está relacionada}{Descripción de la relación}	
+%	...
+% \end{cdtEntidad}
+\newenvironment{cdtEntidad}[2]{%
+	\def \varBusinessEntityId{#2}%
+	\hypertarget{#1}{\hspace{1pt}}%
+	\newline%
+	\noindent{\includegraphics[width=\textwidth]{theme/uc/classRule}}%
+	\vspace{-25pt}%
+	\subsection{Entidad: #2}%
+	\noindent\begin{longtable}{|p{.2\textwidth}| p{.15\textwidth} | p{.46\textwidth} |p{.08\textwidth} |}%
+	\hline%
+	\multicolumn{4}{|c|}{{\cellcolor{colorSecundario}\color{white}Atributos}}\\ \hline%
+	{\cellcolor{colorAgua}Nombre} &%
+	{\cellcolor{colorAgua}Tipo} &%
+	{\cellcolor{colorAgua}Descripción} &%
+	{\cellcolor{colorAgua}Requerido}%
+	\\ \hline%
+	\endhead%
+}{%
+	\end{longtable}%
+}
+
+\newcommand{\brAttr}[5]{%
+	{\bf\hypertarget{\varBusinessEntityId:#1}{#2}} & {\em{#3}} & {#4} & #5 \\\hline
+}
+
+\newcommand{\cdtEntityRelSection}{%
+	\multicolumn{4}{|c|}{{\cellcolor{colorSecundario}\color{white}Relaciones}}\\ \hline%
+	{\cellcolor{colorAgua}Tipo de relación} &%
+	{\cellcolor{colorAgua}Entidad} &%
+	\multicolumn{2}{|c|}{{\cellcolor{colorAgua}Rol}}
+	\\ \hline%
+}
+
+%-----------------------------------------------------
+% Son los tipos de relaciones reconedados
+\newcommand{\brRelComposition}{{\color{colorPrincipal}$\Diamondblack$\hspace{-1pt}---Composición}}
+\newcommand{\brRelAgregation}{{\color{colorPrincipal}$\Diamond$\hspace{-1pt}---Agregación}}
+\newcommand{\brRelGeneralization}{{\color{colorPrincipal}$\lhd$\hspace{-1pt}---Generalización}}
+
+\newcommand{\brRel}[3]{%
+	{\em{#1}} & {\bf{#2}} & \multicolumn{2}{|l|}{#3}\\\hline
+}
+
+%-----------------------------------------------------
+% Definir una Regla de negocio
+% use:
+% \begin{BusinessRule}{Id}{Condicion}
+%    \BRitem[Campo:] Información del campo.
+%    ...
+% \end{BusinessRule}
+\newenvironment{BussinesRule}[2]%
+{%
+	\hypertarget{#1}{}%
+	\noindent{\large{\bf Regla de Negocio:} #1~#2}%
+	\begin{description}\addtolength{\itemsep}{-0.5\baselineskip}%
+}{%
+	\end{description}%
+}
+\newcommand{\BRitem}[1][]{\item[#1]}
+
+ 
+%-----------------------------------------------------
+% Definir un botón
+% use: \IUbutton{Aceptar}
+\newcommand{\IUbutton}[1]{\keystroke{#1}}
+
+%-----------------------------------------------------
+% Definir unas viñetas que ocupen poco espacio
+% use:
+% \begin{Citemize}
+%    \item ...
+%    ...
+% \end{Citemize}
+\newenvironment{Citemize}%
+{%
+	\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}%
+}{%
+	\end{itemize}%
+}%
+
+%-----------------------------------------------------
+% Definir unas viñetas que ocupen poco espacio
+% use: \Revisión
+\newcommand{\Revision}%
+{\vspace{10cm}\normalsize\flushleft{\bf Revisión:} %
+\Square Aprovado \Square Rechazado \Square Corregir\\\bigskip%
+Comentarios:\bigskip\\%
+%\begin{tabular}{p{\textwidth}} \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \end{tabular}%
+%\frame{\makebox[5cm]{asdas}}%
+\begin{tabular}{|p{\textwidth}|} \hline \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\  \\ \hline \end{tabular}%
+}
+
+%-----------------------------------------------------
+% Definir unas viñetas que ocupen poco espacio
+% use: \defSistema{nombre del sistema}
+\newcommand{\Sistema}{}
+\newcommand{\defSistema}[1]{\renewcommand{\Sistema}{#1}}

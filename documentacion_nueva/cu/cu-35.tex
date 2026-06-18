@@ -1,0 +1,44 @@
+\begin{UseCase}{CU-35}{Registrar contactos del actor en materia de derechos}{
+	Permite al Coordinador registrar las personas de enlace de un actor del catálogo, incluyendo nombre, cargo, teléfono, correo y si es el contacto principal con la Fundación.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Registrar los datos de las personas de contacto de cada actor para facilitar la comunicación y coordinación en la ejecución de medidas del PRD.}
+	\UCitem{Entradas}{Nombre completo, cargo, teléfono, correo, es contacto principal (booleano), notas sobre la disponibilidad.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Contacto registrado en el actor y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla de detalle del actor, sección Contactos.}
+	\UCitem{Precondiciones}{El actor debe estar registrado en el catálogo.}
+	\UCitem{Postcondiciones}{El contacto queda almacenado en la tabla CONTACTO\_ACTOR vinculado al actor.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El campo de nombre del contacto está vacío.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al detalle del actor y selecciona la sección \IUbutton{Contactos}.
+	\UCpaso Despliega la lista de contactos del actor y el botón \IUbutton{Agregar contacto}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Agregar contacto}.
+	\UCpaso Despliega el formulario de registro de contacto.
+	\UCpaso[\UCactor] Captura el nombre, cargo, teléfono, correo y notas del contacto.
+	\UCpaso[\UCactor] Marca si es el contacto principal con la Fundación.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Contacto}.
+	\UCpaso Valida que el nombre del contacto no esté vacío. \Trayref{A}.
+	\UCpaso Registra el contacto en la base de datos.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Nombre del contacto vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-36

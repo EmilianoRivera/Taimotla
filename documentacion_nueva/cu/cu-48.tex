@@ -1,0 +1,35 @@
+\begin{UseCase}{CU-48}{Registrar escolaridad del NNA}{
+	Permite capturar el nivel educativo, grado actual, asistencia escolar, clase favorita y clase que más le cuesta al NNA.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Documentar la situación educativa del NNA para identificar vulneración del derecho a la educación.}
+	\UCitem{Entradas}{Nivel educativo, grado, asistencia (booleano), clase favorita, clase difícil, desempeño general.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos de escolaridad almacenados en el expediente.}
+	\UCitem{Destino}{Pestaña Datos Familiares del expediente único.}
+	\UCitem{Precondiciones}{Usuario pertenece al equipo asignado.}
+	\UCitem{Postcondiciones}{Datos de escolaridad registrados.}
+	\UCitem{Errores}{\begin{description}\item[E1:] Campo de asistencia escolar vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Conforme al checklist §4.3.3 de la Caja de Herramientas.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la sección \IUbutton{Escolaridad} dentro de la pestaña Datos Familiares.
+	\UCpaso Despliega el formulario de datos escolares.
+	\UCpaso[\UCactor] Indica si el NNA asiste actualmente a la escuela.
+	\UCpaso[\UCactor] Captura el nivel educativo, grado, clase favorita, clase difícil y desempeño general.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar datos de escolaridad}.
+	\UCpaso Valida que el indicador de asistencia esté respondido. \Trayref{A}.
+	\UCpaso Almacena los datos y muestra \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo obligatorio vacío}
+	\UCpaso Muestra \textbf{MSG-04}. \UCpaso[\UCactor] Oprime \IUbutton{Aceptar}. \UCpaso Regresa al paso 3.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-49

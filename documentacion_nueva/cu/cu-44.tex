@@ -1,0 +1,28 @@
+\begin{UseCase}{CU-44}{Consultar panel de casos del Coordinador}{
+	Permite al Coordinador visualizar sus expedientes activos agrupados por estado, con indicadores de alertas, valoraciones pendientes y medidas vencidas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Dar al Coordinador una visión operativa de su carga de trabajo actual y los casos que requieren atención inmediata.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Panel con lista de expedientes activos, estado, alertas y valoraciones pendientes.}
+	\UCitem{Destino}{Pantalla del Dashboard del Coordinador.}
+	\UCitem{Precondiciones}{El Coordinador debe haber iniciado sesión.}
+	\UCitem{Postcondiciones}{El Coordinador visualiza su panel sin modificar datos.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al \IUbutton{Panel de Control} desde el menú.
+	\UCpaso Consulta los expedientes asignados al Coordinador, agrupados por estado, con sus alertas activas.
+	\UCpaso Despliega el panel con tarjetas de estado, lista de expedientes y contadores de alertas.
+	\UCpaso[\UCactor] Presiona el folio de un expediente para acceder a su detalle.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-45

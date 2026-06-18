@@ -1,0 +1,37 @@
+\begin{UseCase}{CU-37}{Exportar PRD en PDF}{
+	Permite al Coordinador generar y descargar el Plan de Restitución de Derechos del NNA en formato PDF con membrete de la Fundación, datos del menor y cuadro guía completo de medidas.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Generar el documento oficial del PRD para compartirlo con las instituciones responsables de ejecutar las medidas de protección.}
+	\UCitem{Entradas}{Identificador del expediente con PRD vigente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Archivo PDF del PRD disponible para descarga.}
+	\UCitem{Destino}{Navegador del usuario (descarga directa).}
+	\UCitem{Precondiciones}{El PRD del expediente debe estar en estatus Vigente.}
+	\UCitem{Postcondiciones}{El documento PDF queda generado y descargado en el equipo del usuario.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El PRD no está en estatus Vigente.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al PRD del expediente y presiona el botón \IUbutton{Exportar PRD en PDF}.
+	\UCpaso Verifica que el PRD se encuentre en estatus Vigente. \Trayref{A}.
+	\UCpaso Genera el documento PDF con el membrete de la Fundación, datos del NNA, cuadro guía completo y firmas digitales.
+	\UCpaso Inicia la descarga del PDF en el navegador del usuario.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{PRD no vigente}
+	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que solo se pueden exportar PRD en estatus Vigente.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-38

@@ -1,0 +1,28 @@
+\begin{UseCase}{CU-45}{Consultar panel de casos del especialista}{
+	Permite a cada especialista (Abogado, Médico, Psicólogo, Trabajador Social) visualizar únicamente los expedientes del equipo al que pertenece, con indicadores de sus valoraciones pendientes.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Mostrar al especialista su carga de trabajo y los expedientes con valoraciones pendientes de su área.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Lista de expedientes del equipo con indicadores de valoraciones pendientes.}
+	\UCitem{Destino}{Pantalla del panel del especialista.}
+	\UCitem{Precondiciones}{El especialista debe haber iniciado sesión y pertenecer a al menos un equipo activo.}
+	\UCitem{Postcondiciones}{El especialista visualiza su panel sin modificar datos.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Inicia sesión o navega al \IUbutton{Panel de Control}.
+	\UCpaso Consulta los expedientes del equipo al que pertenece el especialista.
+	\UCpaso Despliega la lista con indicadores de valoración pendiente según la especialidad del usuario.
+	\UCpaso[\UCactor] Selecciona un expediente para acceder a su detalle y registrar su valoración.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-46

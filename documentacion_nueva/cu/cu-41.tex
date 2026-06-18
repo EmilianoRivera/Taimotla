@@ -1,0 +1,51 @@
+\begin{UseCase}{CU-41}{Cargar documentos oficiales del NNA}{
+	Permite al personal autorizado cargar los documentos oficiales digitalizados del NNA al expediente: acta de nacimiento, CURP, cartilla de vacunación y otros documentos relevantes, en formatos PDF, JPG o PNG con un límite de 5MB por archivo.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tAbogado}{Abogado}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tMedico}{Médico}}
+	\UCitem{Propósito}{Centralizar los documentos oficiales del NNA en el expediente digital para facilitar su consulta y la validación jurídica.}
+	\UCitem{Entradas}{Tipo de documento (catálogo), archivo digitalizado (PDF, JPG, PNG, máximo 5MB).}
+	\UCitem{Origen}{Archivo digital.}
+	\UCitem{Salidas}{Documento almacenado en el servidor y vinculado al expediente, mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Documentos.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{El documento queda almacenado en el servidor de archivos y referenciado en la tabla de documentos del expediente.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] El archivo supera los 5MB o tiene un formato no soportado.
+			\item[E2:] No se seleccionó el tipo de documento.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Regido por la regla de negocio \hyperlink{BR-10}{BR-10}.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la pestaña \IUbutton{Documentos} del expediente único.
+	\UCpaso Despliega la lista de documentos cargados y el botón \IUbutton{Cargar documento}.
+	\UCpaso[\UCactor] Presiona \IUbutton{Cargar documento}.
+	\UCpaso Despliega el formulario de carga con el selector de tipo de documento y el campo de archivo.
+	\UCpaso[\UCactor] Selecciona el tipo de documento del catálogo y adjunta el archivo digitalizado.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar documento}.
+	\UCpaso Valida el tipo de documento seleccionado. \Trayref{B}.
+	\UCpaso Valida el formato y tamaño del archivo adjunto. \Trayref{A}.
+	\UCpaso Almacena el archivo en el servidor y registra la referencia en la base de datos.
+	\UCpaso Actualiza la lista de documentos en pantalla y despliega el mensaje \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Formato o tamaño inválido}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser PDF, JPG o PNG y no superar los 5MB.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Tipo de documento no seleccionado}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de documento es obligatorio.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 5 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-42 a CU-57 (resumen compacto por espacio, misma estructura)

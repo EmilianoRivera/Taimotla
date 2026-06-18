@@ -1,0 +1,40 @@
+\begin{UseCase}{CU-47}{Registrar datos de contacto del NNA}{
+	Permite al personal del equipo registrar los datos de contacto del NNA, del cuidador principal y de un contacto de emergencia alternativo, incluyendo preferencias de contacto y horario disponible.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tTSocial}{Trabajador Social}, \hyperlink{tCoordinador}{Coordinador}}
+	\UCitem{Propósito}{Centralizar los datos de contacto del NNA y su red de apoyo para garantizar la comunicación efectiva durante el proceso de restitución.}
+	\UCitem{Entradas}{Teléfono del cuidador, WhatsApp (booleano), correo del cuidador, nombre y teléfono del contacto de emergencia, parentesco del contacto de emergencia, horario disponible, medio de contacto preferido.}
+	\UCitem{Origen}{Teclado y mouse.}
+	\UCitem{Salidas}{Datos de contacto registrados en el expediente y mensaje de confirmación.}
+	\UCitem{Destino}{Pantalla del expediente único, pestaña Datos de Contacto.}
+	\UCitem{Precondiciones}{El usuario debe pertenecer al equipo asignado al expediente.}
+	\UCitem{Postcondiciones}{Los datos de contacto quedan almacenados y disponibles para el equipo.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El teléfono del cuidador está vacío.\end{description}}
+	\UCitem{Tipo}{Caso de uso primario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Selecciona la pestaña \IUbutton{Datos de Contacto} en el expediente único.
+	\UCpaso Despliega el formulario de contacto con sus secciones.
+	\UCpaso[\UCactor] Captura el teléfono del cuidador e indica si tiene WhatsApp.
+	\UCpaso[\UCactor] Ingresa el correo del cuidador si aplica.
+	\UCpaso[\UCactor] Registra el contacto de emergencia alternativo con nombre, parentesco y teléfono.
+	\UCpaso[\UCactor] Captura el horario disponible y el medio de contacto preferido.
+	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Datos de Contacto}.
+	\UCpaso Valida que el teléfono del cuidador no esté vacío. \Trayref{A}.
+	\UCpaso Almacena los datos de contacto en la base de datos.
+	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Teléfono del cuidador vacío}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-48 a CU-57 (últimos CU del lote)

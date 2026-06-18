@@ -1,0 +1,29 @@
+\begin{UseCase}{CU-53}{Notificar vencimiento de medida del PRD}{
+	Permite al sistema generar alertas automáticas cuando una medida de protección del PRD se encuentra a 7 días o menos de su fecha límite (alerta preventiva) o la ha superado sin ser cumplida (alerta urgente).
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Garantizar el seguimiento oportuno de las medidas del PRD evitando que venzan sin atención.}
+	\UCitem{Entradas}{Fecha límite de cada medida del PRD y fecha actual del sistema.}
+	\UCitem{Origen}{Proceso interno del sistema (cron job diario).}
+	\UCitem{Salidas}{Alertas visuales en la bandeja de notificaciones de los miembros del equipo y del Director.}
+	\UCitem{Destino}{Bandeja de notificaciones de todos los usuarios con acceso al expediente.}
+	\UCitem{Precondiciones}{Deben existir medidas del PRD con fechas límite registradas y en estado Pendiente o En proceso.}
+	\UCitem{Postcondiciones}{Las alertas quedan registradas y visibles en la bandeja de notificaciones del sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta automáticamente una vez al día.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema ejecuta el proceso de verificación de fechas límite diariamente.
+	\UCpaso Consulta en la base de datos las medidas del PRD en estado Pendiente o En proceso con fecha límite próxima o vencida.
+	\UCpaso Para cada medida con fecha a 7 días o menos, genera una alerta preventiva (amarilla) en la bandeja del equipo asignado.
+	\UCpaso Para cada medida con fecha vencida, genera una alerta urgente (roja) en la bandeja del equipo y del Director.
+	\UCpaso Registra las alertas en la tabla de notificaciones del sistema.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-54

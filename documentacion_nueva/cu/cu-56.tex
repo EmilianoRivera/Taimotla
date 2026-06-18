@@ -1,0 +1,27 @@
+\begin{UseCase}{CU-56}{Cerrar sesión}{
+	Permite a cualquier usuario autenticado finalizar su sesión activa en el sistema, destruyendo las variables de sesión locales y redirigiendo a la pantalla de inicio de sesión.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Garantizar el cierre seguro de la sesión del usuario para proteger la información del sistema.}
+	\UCitem{Entradas}{Ninguna.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Sesión destruida y redirección a pantalla de inicio de sesión.}
+	\UCitem{Destino}{Pantalla de inicio de sesión.}
+	\UCitem{Precondiciones}{El usuario debe tener una sesión activa.}
+	\UCitem{Postcondiciones}{La sesión queda completamente destruida y el usuario debe autenticarse nuevamente para acceder al sistema.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Presiona la opción \IUbutton{Cerrar Sesión} en el menú de navegación superior.
+	\UCpaso Destruye todas las variables de sesión activas del usuario en el servidor.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión de Taimotla.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-57

@@ -1,0 +1,33 @@
+\begin{UseCase}{CU-50}{Exportar expediente completo en PDF}{
+	Permite al Coordinador o Director generar un PDF con el expediente completo del NNA: datos personales, hecho victimal, valoraciones, PRD y bitácoras de seguimiento.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Supervisa}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Actor}{\hyperlink{tCoordinador}{Coordinador}, \hyperlink{tDirector}{Director}}
+	\UCitem{Propósito}{Generar un documento consolidado del expediente para archivo institucional o presentación ante autoridades.}
+	\UCitem{Entradas}{Identificador del expediente.}
+	\UCitem{Origen}{Mouse.}
+	\UCitem{Salidas}{Archivo PDF del expediente completo disponible para descarga.}
+	\UCitem{Destino}{Navegador del usuario.}
+	\UCitem{Precondiciones}{El expediente debe estar en estado En Seguimiento o Cerrado.}
+	\UCitem{Postcondiciones}{PDF generado y descargado.}
+	\UCitem{Errores}{\begin{description}\item[E1:] El expediente está en estado Detección y no tiene información suficiente para generar el reporte.\end{description}}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede al expediente y presiona \IUbutton{Exportar expediente en PDF}.
+	\UCpaso Verifica que el expediente tenga estado suficiente para exportar. \Trayref{A}.
+	\UCpaso Genera el PDF consolidado con todos los módulos del expediente.
+	\UCpaso Inicia la descarga en el navegador.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Estado insuficiente}
+	\UCpaso Muestra \textbf{MSG-03} indicando que el expediente no tiene información suficiente para exportar.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-51

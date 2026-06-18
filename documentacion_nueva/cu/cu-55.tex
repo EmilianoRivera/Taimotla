@@ -1,0 +1,28 @@
+\begin{UseCase}{CU-55}{Registrar auditoría automática del expediente}{
+	Permite al sistema registrar automáticamente cada modificación realizada en el expediente en una bitácora de auditoría, indicando el usuario, fecha, hora, módulo y campo modificado.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Guerra Salinas Edgar Rafael}
+	\UCitem{Actor}{Sistema (proceso automático)}
+	\UCitem{Propósito}{Garantizar la trazabilidad completa de todas las modificaciones realizadas al expediente sin intervención manual.}
+	\UCitem{Entradas}{Identificador del usuario, identificador del expediente, módulo afectado, datos anteriores y nuevos del campo modificado, fecha y hora del sistema.}
+	\UCitem{Origen}{Trigger del sistema en cada operación de escritura sobre el expediente.}
+	\UCitem{Salidas}{Registro de auditoría almacenado en la bitácora del expediente.}
+	\UCitem{Destino}{Tabla de auditoría de la base de datos.}
+	\UCitem{Precondiciones}{El usuario debe estar autenticado y realizar una operación de escritura sobre el expediente.}
+	\UCitem{Postcondiciones}{El registro de auditoría queda almacenado y disponible para consulta en \hyperlink{CU-38}{CU-38}.}
+	\UCitem{Errores}{Ninguno.}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Se ejecuta de forma transparente ante cualquier operación de guardado sobre el expediente.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso El sistema detecta una operación de escritura sobre cualquier tabla del expediente.
+	\UCpaso Captura el identificador del usuario autenticado, la fecha y hora del sistema y el módulo afectado.
+	\UCpaso Registra el valor anterior y el nuevo valor del campo modificado.
+	\UCpaso Almacena el registro en la tabla de auditoría del expediente.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- CU-56

@@ -1,0 +1,56 @@
+\begin{UseCase}{CU-20}{Cambiar contraseña}{
+	Permite a cualquier usuario autenticado actualizar su contraseña de acceso al sistema desde la pantalla de su perfil de cuenta.
+}
+	\UCitem{Versión}{\color{Gray}1.0}
+	\UCitem{Autor}{\color{Gray}Ramírez Cuevas Emiliano}
+	\UCitem{Supervisa}{\color{Gray}Rivera Segura José Emiliano}
+	\UCitem{Actor}{\hyperlink{tDirector}{Director}, \hyperlink{tCoordinador}{Coordinador}, \hyperlink{tAbogado}{Abogado}, \hyperlink{tMedico}{Médico}, \hyperlink{tPsicologo}{Psicólogo}, \hyperlink{tTSocial}{Trabajador Social}}
+	\UCitem{Propósito}{Permitir al usuario actualizar su contraseña de forma segura sin requerir intervención del administrador.}
+	\UCitem{Entradas}{Contraseña actual, nueva contraseña y confirmación de nueva contraseña.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Mensaje de confirmación del cambio exitoso.}
+	\UCitem{Destino}{Pantalla de perfil de cuenta.}
+	\UCitem{Precondiciones}{El usuario debe haber iniciado sesión con credenciales válidas.}
+	\UCitem{Postcondiciones}{La contraseña del usuario queda actualizada en la base de datos y la sesión activa se mantiene.}
+	\UCitem{Errores}{
+		\begin{description}
+			\item[E1:] La contraseña actual ingresada es incorrecta.
+			\item[E2:] La nueva contraseña y su confirmación no coinciden.
+			\item[E3:] La nueva contraseña no cumple con los requisitos mínimos de seguridad.
+		\end{description}
+	}
+	\UCitem{Tipo}{Caso de uso secundario}
+	\UCitem{Observaciones}{Ninguna.}
+\end{UseCase}
+
+\begin{UCtrayectoria}
+	\UCpaso[\UCactor] Accede a la opción \IUbutton{Cambiar Contraseña} desde la pantalla de su perfil de cuenta.
+	\UCpaso Despliega el formulario con campos para la contraseña actual, nueva contraseña y confirmación.
+	\UCpaso[\UCactor] Ingresa la contraseña actual, la nueva contraseña y la confirmación, y presiona \IUbutton{Guardar cambios}.
+	\UCpaso Verifica que la contraseña actual ingresada coincida con la almacenada. \Trayref{A}.
+	\UCpaso Verifica que la nueva contraseña y su confirmación sean idénticas. \Trayref{B}.
+	\UCpaso Verifica que la nueva contraseña cumpla con al menos 8 caracteres, incluyendo mayúsculas, minúsculas y un número. \Trayref{C}.
+	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave.
+	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el cambio.
+	\UCpaso[] -- -- Fin del caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Contraseña actual incorrecta}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que la contraseña actual ingresada es incorrecta.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Nueva contraseña y confirmación no coinciden}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que los campos de nueva contraseña no coinciden.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Contraseña no cumple requisitos de seguridad}
+	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los requisitos mínimos de la contraseña.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+%-------------------------------------- CU-21
