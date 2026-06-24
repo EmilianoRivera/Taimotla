@@ -1,15 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.15)  17 JUN 2026 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.6)  23 JUN 2026 21:44
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Emiliano/Escuela/Universidad/Cuarto semestre/Análisis y diseño de sistemas/Tercer parcial/Documentacion/Taimotla/documentacion_nueva/ejemplo.tex"
-(d:/Emiliano/Escuela/Universidad/Cuarto semestre/Análisis y diseño de sistemas/Tercer parcial/Documentacion/Taimotla/documentacion_nueva/ejemplo.tex
+**./ejemplo.tex
+(ejemplo.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
-(C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
 Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
 File: bk10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -24,25 +23,38 @@ File: bk10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (cdtUsecases.sty (cdtRequerimientos.sty (cdtBook.sty
-Package: cdtBook 2010/05/30, v1.0 CDT-ESCOM-IPN Plantilla para reportes de la Coordinación
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+)
+(cdtUsecases.sty (cdtRequerimientos.sty (cdtBook.sty
+Package: cdtBook 2010/05/30, v1.0 CDT-ESCOM-IPN Plantilla para reportes de la C
+oordinación
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
 \babel@savecnt=\count284
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2068.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2070.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2072.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2073.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2074.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2076.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2101.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2068.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2070.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2072.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2073.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2074.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2076.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2101.
 \U@D=\dimen149
 \l@unhyphenated=\language79
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count285
 Package babel Info: Configuration files are deprecated, as
@@ -52,12 +64,16 @@ Package babel Info: Configuration files are deprecated, as
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-sp
+anish.tex)
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 4320.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks19
 \es@quotdepth=\count286
@@ -66,9 +82,11 @@ Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
-LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) on input line 12.
-LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1) on input line 12.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\cmbright.sty
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
+on input line 12.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
+ on input line 12.
+ (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\cmbright.sty
 Package: cmbright 2005/04/13 v8.1 (WaS)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -133,40 +151,53 @@ LaTeX Font Info:    Redeclaring math symbol \varsigma on input line 64.
 LaTeX Font Info:    Redeclaring math symbol \varphi on input line 65.
 LaTeX Info: Redefining \LaTeX on input line 129.
 LaTeX Info: Redefining \LaTeXe on input line 139.
-LaTeX Font Info:    Trying to load font information for OT1+cmbr on input line 144.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\ot1cmbr.fd
+LaTeX Font Info:    Trying to load font information for OT1+cmbr on input line 
+144.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/cmbright\ot1cmbr.fd
 File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
-)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen150
 \Gin@req@width=\dimen151
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/wallpaper\wallpaper.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/wallpaper\wallpaper.sty
 Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count287
 \calc@Bcount=\count288
@@ -178,8 +209,9 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count289
 \calc@Cskip=\skip53
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
-Package: eso-pic 2026/05/31 v3.0e eso-pic (RN)
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen154
 \ESO@tempdimb=\dimen155
 )
@@ -191,8 +223,10 @@ Package: eso-pic 2026/05/31 v3.0e eso-pic (RN)
 \tileheight=\skip59
 \tileX=\skip60
 \tileY=\skip61
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
 \f@nch@headwidth=\skip62
 \f@nch@offset@elh=\skip63
 \f@nch@offset@erh=\skip64
@@ -208,11 +242,14 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip74
 \f@nch@widthR=\skip75
 \@temptokenb=\toks21
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count290
@@ -227,7 +264,9 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen162
 \Gm@layoutvoffset=\dimen163
 \Gm@dimlist=\toks22
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip76
 \mylen=\skip77
@@ -236,9 +275,11 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \py=\skip80
 \pyy=\skip81
 \pxx=\skip82
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/marvosym\marvosym.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/marvosym\marvosym.sty
 Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
-)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip83
 \LTright=\skip84
@@ -256,54 +297,73 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \c@LT@tables=\count296
 \c@LT@chunks=\count297
 \LT@p@ftn=\toks23
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekey
+s.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.st
+y
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitles
+tring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count298
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+) (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count299
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
 )
 \@linkdim=\dimen165
 \Hy@linkcounter=\count300
 \Hy@pagecounter=\count301
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count302
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -318,16 +378,21 @@ Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count303
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen166
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.st
+y
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count304
 \Field@Width=\dimen167
@@ -344,21 +409,28 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 \c@Hfootnote=\count307
 )
 Package hyperref Info: Driver: hpdftex.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+ (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
 \Fld@listcount=\count308
 \c@bookmark@seq@number=\count309
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilech
+eck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecoun
+ter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
 )
 \Hy@SectionHShift=\skip87
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks24
 \symAMSa=\mathgroup4
@@ -366,9 +438,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
-Package: colortbl 2026/05/01 v1.0l Color table columns (DPC)
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen169
 \ar@mcellbox=\box58
@@ -381,16 +455,20 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \everycr=\toks26
 \minrowclearance=\skip90
 \rownum=\count310
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip91
 \multirow@cntb=\count311
 \multirow@dima=\skip92
 \bigstrutjot=\dimen171
-)) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/chapterfolder\chapterfolder.sty
+))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/chapterfolder\chapterfolde
+r.sty
 Package: chapterfolder 2005/11/24 v2.0 Package for dealing with folder
 \c@@cf@currentpos=\count312
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count313
 \lst@gtempboxa=\box60
 \lst@token=\toks27
@@ -403,14 +481,17 @@ Package: chapterfolder 2005/11/24 v2.0 Package for dealing with folder
 \lst@newlines=\count317
 \lst@lineno=\count318
 \lst@maxwidth=\dimen175
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count319
 \lst@skipnumbers=\count320
 \lst@framebox=\box61
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
@@ -421,7 +502,7 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/keystroke\keystroke.sty
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/keystroke\keystroke.sty
 Package: keystroke 2010/04/23 v1.6 3D keystrokes (SuSE GmbH/RN)
 \suse@key=\box62
 \keystroke@left=\box63
@@ -442,12 +523,18 @@ File: keystroke_right.pdf Graphic file (type pdf)
 <use keystroke_right.pdf>
 Package pdftex.def Info: keystroke_right.pdf  used on input line 173.
 (pdftex.def)             Requested size: 42.15738pt x 195.73076pt.
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.co
+de.tex
 \pgfkeys@pathtoks=\toks28
 \pgfkeys@temptoks=\toks29
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslib
+raryfiltered.code.tex
 \pgfkeys@tmptoks=\toks30
-)))) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
+))))
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -530,19 +617,26 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \symlargesymbolsA=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 (Font)                  U/txexa/m/n --> U/txexa/bx/n on input line 129.
-LaTeX Encoding Info:    Redeclaring text symbol \L (encoding OT1) on input line 160.
-LaTeX Encoding Info:    Redeclaring text symbol \l (encoding OT1) on input line 161.
-LaTeX Encoding Info:    Redeclaring text symbol \textsterling (encoding OT1) on input line 163.
+LaTeX Encoding Info:    Redeclaring text symbol \L (encoding OT1) on input line
+ 160.
+LaTeX Encoding Info:    Redeclaring text symbol \l (encoding OT1) on input line
+ 161.
+LaTeX Encoding Info:    Redeclaring text symbol \textsterling (encoding OT1) on
+ input line 163.
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
 LaTeX Info: Redefining \not on input line 1043.
 )
-LaTeX Font Info:    Trying to load font information for OT1+txss on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txss.fd
+LaTeX Font Info:    Trying to load font information for OT1+txss on input line 
+13.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 9.49997pt on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
+.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count321
 ) (ejemplo.aux
@@ -550,18 +644,24 @@ LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 11.
- (projectCharter.aux) (1introduccion.aux) (2ModeloDelAlcance.aux) (3ModeloDelNegocio.aux) (4ModeloDinamico.aux) (5ModeloDeInteraccion.aux))
+ (projectCharter.aux) (1introduccion.aux)
+(2ModeloDelAlcance.aux) (3ModeloDelNegocio.aux) (4ModeloDinamico.aux)
+(5ModeloDeInteraccion.aux))
 \openout1 = `ejemplo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 13.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
+13.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 13.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
+13.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 13.
@@ -572,14 +672,18 @@ LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 13.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
+13.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 13.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 1
+3.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 13.
@@ -589,7 +693,8 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count322
 \scratchdimen=\dimen176
@@ -602,10 +707,14 @@ LaTeX Info: Redefining \% on input line 13.
 \MPnumerator=\count326
 \makeMPintoPDFobject=\count327
 \everyMPtoPDFconversion=\toks32
-) (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+)
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
+.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 *geometry* driver: auto-detecting
@@ -654,35 +763,48 @@ LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 17.
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 17.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
+7.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 17.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsya.fd
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 1
+7.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 17.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyb.fd
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 1
+7.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 17.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
+7.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 17.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
+7.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-<theme/bannerAzul.png, id=1314, 711.1368pt x 336.7782pt>
+<theme/bannerAzul.png, id=1386, 711.1368pt x 336.7782pt>
 File: theme/bannerAzul.png Graphic file (type png)
 <use theme/bannerAzul.png>
 Package pdftex.def Info: theme/bannerAzul.png  used on input line 17.
 (pdftex.def)             Requested size: 614.30019pt x 290.91858pt.
- [1
+
+[1
 
 
-{C:/Users/Emiliano/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./theme/bannerAzul.png>] [2
+{C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PC/AppD
+ata/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./theme/bannerAzul.png>
+] [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
@@ -693,42 +815,46 @@ LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
 (Font)              scaled to size 9.49997pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/txss/m/sc' will be
-(Font)              scaled to size 9.49997pt on input line 32.
+(Font)              scaled to size 9.49997pt on input line 41.
  [1
 
 ]
-<theme/headerPar.png, id=1411, 1204.5pt x 200.75pt>
+<theme/headerPar.png, id=1483, 1204.5pt x 200.75pt>
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 79.
+Package pdftex.def Info: theme/headerPar.png  used on input line 88.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 79.
+(Font)              scaled to size 7.59998pt on input line 88.
 LaTeX Font Info:    Font shape `OT1/txss/m/sc' will be
-(Font)              scaled to size 7.59998pt on input line 79.
+(Font)              scaled to size 7.59998pt on input line 88.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 79.
+(Font)              scaled to size 4.74998pt on input line 88.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <5> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 79.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 88.
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 4.74998pt on input line 79.
-LaTeX Font Info:    Trying to load font information for U+mvs on input line 79.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/marvosym\umvs.fd) [2 <./theme/headerPar.png>]
-<theme/headerInp.png, id=1466, 1204.5pt x 200.75pt>
+(Font)              scaled to size 4.74998pt on input line 88.
+LaTeX Font Info:    Trying to load font information for U+mvs on input line 88.
+
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/marvosym\umvs.fd) [2 <./th
+eme/headerPar.png>]
+<theme/headerInp.png, id=1538, 1204.5pt x 200.75pt>
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 126.
+Package pdftex.def Info: theme/headerInp.png  used on input line 135.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
  [3 <./theme/headerInp.png>]
+Overfull \hbox (1.12093pt too wide) detected at line 171
+ []\OT1/txss/m/n/10 100
+ []
+
+
 Overfull \hbox (1.12093pt too wide) detected at line 172
  []\OT1/txss/m/n/10 100
  []
 
-File: theme/headerPar.png Graphic file (type png)
-<use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 173.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-[4]
+
 Overfull \hbox (1.12093pt too wide) detected at line 173
  []\OT1/txss/m/n/10 100
  []
@@ -740,7 +866,7 @@ Overfull \hbox (1.12093pt too wide) detected at line 174
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 175
- []\OT1/txss/m/n/10 100
+ []\OT1/txss/m/n/10 102
  []
 
 
@@ -760,291 +886,295 @@ Overfull \hbox (1.12093pt too wide) detected at line 178
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 179
- []\OT1/txss/m/n/10 102
+ []\OT1/txss/m/n/10 104
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 180
- []\OT1/txss/m/n/10 103
+ []\OT1/txss/m/n/10 104
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 181
- []\OT1/txss/m/n/10 103
+ []\OT1/txss/m/n/10 104
  []
 
-
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 182.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+[4]
 Overfull \hbox (1.12093pt too wide) detected at line 182
- []\OT1/txss/m/n/10 103
+ []\OT1/txss/m/n/10 104
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 183
- []\OT1/txss/m/n/10 103
+ []\OT1/txss/m/n/10 106
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 184
- []\OT1/txss/m/n/10 105
+ []\OT1/txss/m/n/10 106
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 185
- []\OT1/txss/m/n/10 105
+ []\OT1/txss/m/n/10 106
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 186
- []\OT1/txss/m/n/10 105
+ []\OT1/txss/m/n/10 106
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 187
- []\OT1/txss/m/n/10 105
+ []\OT1/txss/m/n/10 108
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 188
- []\OT1/txss/m/n/10 107
+ []\OT1/txss/m/n/10 108
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 189
- []\OT1/txss/m/n/10 107
+ []\OT1/txss/m/n/10 108
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 190
- []\OT1/txss/m/n/10 107
+ []\OT1/txss/m/n/10 108
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 191
- []\OT1/txss/m/n/10 107
+ []\OT1/txss/m/n/10 110
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 192
- []\OT1/txss/m/n/10 109
+ []\OT1/txss/m/n/10 110
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 193
- []\OT1/txss/m/n/10 109
+ []\OT1/txss/m/n/10 110
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 194
- []\OT1/txss/m/n/10 109
+ []\OT1/txss/m/n/10 110
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 195
- []\OT1/txss/m/n/10 109
+ []\OT1/txss/m/n/10 112
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 196
- []\OT1/txss/m/n/10 111
+ []\OT1/txss/m/n/10 112
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 197
- []\OT1/txss/m/n/10 111
+ []\OT1/txss/m/n/10 112
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 198
- []\OT1/txss/m/n/10 111
+ []\OT1/txss/m/n/10 112
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 199
- []\OT1/txss/m/n/10 111
+ []\OT1/txss/m/n/10 114
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 200
- []\OT1/txss/m/n/10 113
+ []\OT1/txss/m/n/10 114
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 201
- []\OT1/txss/m/n/10 113
+ []\OT1/txss/m/n/10 114
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 202
- []\OT1/txss/m/n/10 113
+ []\OT1/txss/m/n/10 114
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 203
- []\OT1/txss/m/n/10 113
+ []\OT1/txss/m/n/10 116
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 204
- []\OT1/txss/m/n/10 114
+ []\OT1/txss/m/n/10 116
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 205
- []\OT1/txss/m/n/10 114
+ []\OT1/txss/m/n/10 116
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 206
- []\OT1/txss/m/n/10 114
+ []\OT1/txss/m/n/10 116
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 207
- []\OT1/txss/m/n/10 114
+ []\OT1/txss/m/n/10 117
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 208
- []\OT1/txss/m/n/10 115
+ []\OT1/txss/m/n/10 117
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 209
- []\OT1/txss/m/n/10 115
+ []\OT1/txss/m/n/10 117
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 210
- []\OT1/txss/m/n/10 115
+ []\OT1/txss/m/n/10 117
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 211
- []\OT1/txss/m/n/10 115
+ []\OT1/txss/m/n/10 119
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 212
- []\OT1/txss/m/n/10 117
+ []\OT1/txss/m/n/10 119
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 213
- []\OT1/txss/m/n/10 117
+ []\OT1/txss/m/n/10 119
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 214
- []\OT1/txss/m/n/10 117
+ []\OT1/txss/m/n/10 119
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 215
- []\OT1/txss/m/n/10 117
+ []\OT1/txss/m/n/10 121
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 216
- []\OT1/txss/m/n/10 119
+ []\OT1/txss/m/n/10 121
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 217
- []\OT1/txss/m/n/10 119
+ []\OT1/txss/m/n/10 121
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 218
- []\OT1/txss/m/n/10 119
+ []\OT1/txss/m/n/10 121
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 219
- []\OT1/txss/m/n/10 119
+ []\OT1/txss/m/n/10 123
  []
 
-File: theme/headerInp.png Graphic file (type png)
-<use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 220.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-[5]
+
 Overfull \hbox (1.12093pt too wide) detected at line 220
- []\OT1/txss/m/n/10 121
+ []\OT1/txss/m/n/10 123
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 221
- []\OT1/txss/m/n/10 121
+ []\OT1/txss/m/n/10 123
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 222
- []\OT1/txss/m/n/10 121
+ []\OT1/txss/m/n/10 123
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 223
- []\OT1/txss/m/n/10 121
+ []\OT1/txss/m/n/10 125
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 224
- []\OT1/txss/m/n/10 123
+ []\OT1/txss/m/n/10 125
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 225
- []\OT1/txss/m/n/10 123
+ []\OT1/txss/m/n/10 125
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 226
- []\OT1/txss/m/n/10 123
+ []\OT1/txss/m/n/10 125
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 227
- []\OT1/txss/m/n/10 123
+ []\OT1/txss/m/n/10 127
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 228
- []\OT1/txss/m/n/10 125
+ []\OT1/txss/m/n/10 127
  []
 
-
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 229.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+[5]
 Overfull \hbox (1.12093pt too wide) detected at line 229
- []\OT1/txss/m/n/10 125
+ []\OT1/txss/m/n/10 127
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 230
- []\OT1/txss/m/n/10 125
+ []\OT1/txss/m/n/10 127
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 231
- []\OT1/txss/m/n/10 125
+ []\OT1/txss/m/n/10 128
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 232
- []\OT1/txss/m/n/10 127
+ []\OT1/txss/m/n/10 128
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 233
- []\OT1/txss/m/n/10 127
+ []\OT1/txss/m/n/10 128
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 234
- []\OT1/txss/m/n/10 127
+ []\OT1/txss/m/n/10 128
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 235
- []\OT1/txss/m/n/10 127
+ []\OT1/txss/m/n/10 129
  []
 
 
@@ -1064,7 +1194,7 @@ Overfull \hbox (1.12093pt too wide) detected at line 238
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 239
- []\OT1/txss/m/n/10 129
+ []\OT1/txss/m/n/10 131
  []
 
 
@@ -1084,435 +1214,570 @@ Overfull \hbox (1.12093pt too wide) detected at line 242
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 243
- []\OT1/txss/m/n/10 131
+ []\OT1/txss/m/n/10 133
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 244
- []\OT1/txss/m/n/10 132
+ []\OT1/txss/m/n/10 133
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 245
- []\OT1/txss/m/n/10 132
+ []\OT1/txss/m/n/10 133
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 246
- []\OT1/txss/m/n/10 132
+ []\OT1/txss/m/n/10 133
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 247
- []\OT1/txss/m/n/10 132
+ []\OT1/txss/m/n/10 135
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 248
- []\OT1/txss/m/n/10 134
+ []\OT1/txss/m/n/10 135
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 249
- []\OT1/txss/m/n/10 134
+ []\OT1/txss/m/n/10 135
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 250
- []\OT1/txss/m/n/10 134
+ []\OT1/txss/m/n/10 135
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 251
- []\OT1/txss/m/n/10 134
+ []\OT1/txss/m/n/10 137
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 252
- []\OT1/txss/m/n/10 135
+ []\OT1/txss/m/n/10 137
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 253
- []\OT1/txss/m/n/10 135
+ []\OT1/txss/m/n/10 137
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 254
- []\OT1/txss/m/n/10 135
+ []\OT1/txss/m/n/10 137
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 255
- []\OT1/txss/m/n/10 135
+ []\OT1/txss/m/n/10 139
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 256
+ []\OT1/txss/m/n/10 139
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 257
- []\OT1/txss/m/n/10 137
+ []\OT1/txss/m/n/10 139
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 258
- []\OT1/txss/m/n/10 137
+ []\OT1/txss/m/n/10 139
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 259
- []\OT1/txss/m/n/10 137
+ []\OT1/txss/m/n/10 141
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 260
- []\OT1/txss/m/n/10 137
+ []\OT1/txss/m/n/10 141
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 261
- []\OT1/txss/m/n/10 139
+ []\OT1/txss/m/n/10 141
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 262
- []\OT1/txss/m/n/10 139
+ []\OT1/txss/m/n/10 141
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 263
- []\OT1/txss/m/n/10 139
+ []\OT1/txss/m/n/10 143
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 264
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 143
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 265
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 143
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 266
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 143
  []
 
-File: theme/headerPar.png Graphic file (type png)
-<use theme/headerPar.png>
-Package pdftex.def Info: theme/headerPar.png  used on input line 267.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-[6]
+
 Overfull \hbox (1.12093pt too wide) detected at line 267
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 145
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 268
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 145
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 269
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 145
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 270
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 145
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 271
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 146
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 272
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 146
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 273
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 146
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 274
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 146
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 275
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 148
  []
 
-
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 276.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+[6]
 Overfull \hbox (1.12093pt too wide) detected at line 276
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 148
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 277
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 148
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 278
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 148
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 279
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 149
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 280
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 149
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 281
- []\OT1/txss/m/n/10 142
+ []\OT1/txss/m/n/10 149
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 282
- []\OT1/txss/m/n/10 142
- []
-
-
-Overfull \hbox (1.12093pt too wide) detected at line 283
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 149
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 284
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 151
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 285
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 151
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 286
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 151
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 287
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 151
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 288
- []\OT1/txss/m/n/10 144
+ []\OT1/txss/m/n/10 153
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 289
- []\OT1/txss/m/n/10 144
+ []\OT1/txss/m/n/10 153
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 290
- []\OT1/txss/m/n/10 144
+ []\OT1/txss/m/n/10 153
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 291
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 292
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 293
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 294
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 295
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 296
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 297
- []\OT1/txss/m/n/10 145
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 298
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 299
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 300
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 301
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 302
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 303
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 304
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 305
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 306
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 307
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 308
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 309
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 156
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 310
- []\OT1/txss/m/n/10 148
+ []\OT1/txss/m/n/10 157
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 311
- []\OT1/txss/m/n/10 148
+ []\OT1/txss/m/n/10 157
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 312
- []\OT1/txss/m/n/10 148
+ []\OT1/txss/m/n/10 157
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 313
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 157
  []
 
-File: theme/headerInp.png Graphic file (type png)
-<use theme/headerInp.png>
-Package pdftex.def Info: theme/headerInp.png  used on input line 314.
-(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
-[7]
+
 Overfull \hbox (1.12093pt too wide) detected at line 314
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 157
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 315
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 158
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 316
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 158
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 317
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 158
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 318
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 319
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 320
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 321
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 322
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 159
  []
 
-
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 323.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+[7]
 Overfull \hbox (1.12093pt too wide) detected at line 323
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 324
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 159
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 325
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 160
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 326
- []\OT1/txss/m/n/10 151
+ []\OT1/txss/m/n/10 160
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 327
- []\OT1/txss/m/n/10 151
+ []\OT1/txss/m/n/10 160
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 328
- []\OT1/txss/m/n/10 151
+ []\OT1/txss/m/n/10 160
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 329
+ []\OT1/txss/m/n/10 160
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 330
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 331
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 332
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 333
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 334
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 335
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 336
+ []\OT1/txss/m/n/10 161
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 337
+ []\OT1/txss/m/n/10 162
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 338
+ []\OT1/txss/m/n/10 162
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 339
+ []\OT1/txss/m/n/10 162
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 340
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 341
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 342
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 343
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 344
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 345
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 346
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 347
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 348
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 349
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 350
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 351
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 352
+ []\OT1/txss/m/n/10 164
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 353
+ []\OT1/txss/m/n/10 165
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 354
+ []\OT1/txss/m/n/10 165
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 355
+ []\OT1/txss/m/n/10 165
  []
 
 )
@@ -1527,58 +1792,58 @@ Package pdftex.def Info: theme/headerPar.png  used on input line 22.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-Overfull \hbox (1.12093pt too wide) detected at line 10
- []\OT1/txss/m/n/10 138
- []
-
-
-Overfull \hbox (1.12093pt too wide) detected at line 11
- []\OT1/txss/m/n/10 139
- []
-
-
 Overfull \hbox (1.12093pt too wide) detected at line 12
- []\OT1/txss/m/n/10 140
+ []\OT1/txss/m/n/10 152
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 13
- []\OT1/txss/m/n/10 141
+ []\OT1/txss/m/n/10 153
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 14
- []\OT1/txss/m/n/10 143
+ []\OT1/txss/m/n/10 154
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 15
- []\OT1/txss/m/n/10 144
+ []\OT1/txss/m/n/10 155
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 16
- []\OT1/txss/m/n/10 146
+ []\OT1/txss/m/n/10 157
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 17
- []\OT1/txss/m/n/10 147
+ []\OT1/txss/m/n/10 158
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 18
- []\OT1/txss/m/n/10 148
+ []\OT1/txss/m/n/10 160
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 19
- []\OT1/txss/m/n/10 149
+ []\OT1/txss/m/n/10 161
  []
 
 
 Overfull \hbox (1.12093pt too wide) detected at line 20
- []\OT1/txss/m/n/10 150
+ []\OT1/txss/m/n/10 162
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 21
+ []\OT1/txss/m/n/10 163
+ []
+
+
+Overfull \hbox (1.12093pt too wide) detected at line 22
+ []\OT1/txss/m/n/10 164
  []
 
 )
@@ -1613,8 +1878,10 @@ Package pdftex.def Info: theme/headerPar.png  used on input line 10.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+txss on input line 40.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txss.fd
+LaTeX Font Info:    Trying to load font information for TS1+txss on input line 
+40.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txss.fd
 File: ts1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `TS1/txss/m/n' will be
@@ -1650,17 +1917,18 @@ Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
 (Font)              scaled to size 13.67995pt on input line 9.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.18 	\item \textbf
                    {Área Psicológica (Psicólogo):} Dedicada a la contenci...
-<theme/plecaAyD.png, id=1758, 1085.0136pt x 155.6214pt>
+<theme/plecaAyD.png, id=1856, 1085.0136pt x 155.6214pt>
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 18.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [1
+[1
 
 
 
@@ -1674,7 +1942,8 @@ File: theme/headerPar.png Graphic file (type png)
 Package pdftex.def Info: theme/headerPar.png  used on input line 44.
 (pdftex.def)             Requested size: 210.00035pt x 35.0pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.44 	\item[Capítulo 3: Modelo del negocio.]
@@ -1683,7 +1952,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 44.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [2]
+[2]
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 72.
@@ -1709,35 +1978,768 @@ Package pdftex.def Info: theme/plecaAyD.png  used on input line 33.
  [4]
 \openout2 = `2ModeloDelAlcance.aux'.
 
-
-No file 2ModeloDelAlcance.tex.
-\openout2 = `3ModeloDelNegocio.aux'.
-
-(3ModeloDelNegocio.tex
+ (2ModeloDelAlcance.tex
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <10> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 5.
-LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 5.
 File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
-Package pdftex.def Info: theme/plecaAyD.png  used on input line 25.
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 19.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
 [5
 
 
 
 
+]
+LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <10> not available
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 25.
+LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
+(Font)              scaled to size 9.49997pt on input line 25.
+
+Underfull \hbox (badness 1158) in paragraph at lines 35--35
+[]|\OT1/txss/m/n/10 Interrupci[]on en el se-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\OT1/txss/m/n/10 Sobrecarga ope-ra-ti-va
+ []
+
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 47.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 47.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[6]
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 68.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 68.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [7]
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 101.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 101.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [8]
+<images/organigrama_fundacion.png, id=1892, 1003.75pt x 602.25pt>
+File: images/organigrama_fundacion.png Graphic file (type png)
+<use images/organigrama_fundacion.png>
+Package pdftex.def Info: images/organigrama_fundacion.png  used on input line 1
+14.
+(pdftex.def)             Requested size: 450.43253pt x 270.26563pt.
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 122.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 122.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [9 <./images/organigrama_fundacion.png (PNG copy)>]
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 163.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 163.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [10]
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 209.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 209.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [11]
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 252.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 252.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+
+[12]
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 281.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 281.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [13]
+Overfull \hbox (0.87947pt too wide) in paragraph at lines 286--286
+[]|\OT1/txss/m/n/10 Iter.[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 287--287
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 287--287
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 288--288
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 288--288
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 289--289
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 289--289
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 290--290
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 290--290
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 291--291
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+[]|\OT1/txss/m/n/10 Gesti[]on de equi-pos
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 291--291
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 292--292
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 292--292
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 293--293
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 293--293
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 294--294
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 294--294
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 295--295
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 295--295
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 296--296
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
+[]|\OT1/txss/m/n/10 Registro del his-to-rial
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 296--296
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 297--297
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 297--297
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 298--298
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--298
+[]|\OT1/txss/m/n/10 Mantenimiento de
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 298--298
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 299--299
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 299--299
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 300--300
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 300--300
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 301--301
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 301--301
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 302--302
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 2865) in paragraph at lines 302--302
+[]|\OT1/txss/m/n/10 Diagn[]osti-co so-cio-fa-mi-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 302--302
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 303--303
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 303--303
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 304--304
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 304--304
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 305--305
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 305--305
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 306--306
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 306--306
+[]|\OT1/txss/m/n/10 Seguimiento de me-di-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 306--306
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 307--307
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 307--307
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 308--308
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 308--308
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 309--309
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 309--309
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 310--310
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 310--310
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 311--311
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 311--311
+[]|\OT1/txss/m/n/10 Alertas de fe-chas im-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 311--311
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 312--312
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 312--312
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 313--313
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 313--313
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 314--314
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (2.03964pt too wide) in paragraph at lines 314--314
+[]|\OT1/txss/b/n/10 TODO[]| 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 316.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 316.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [14]
+Overfull \hbox (4.28049pt too wide) in paragraph at lines 324--324
+[]|\OT1/txss/m/n/10 Prio.[]| 
+ []
+
+
+Overfull \hbox (2.124pt too wide) in paragraph at lines 324--324
+[]|\OT1/txss/m/n/10 Ref.[]| 
+ []
+
+
+Overfull \hbox (7.34637pt too wide) in alignment at lines 324--324
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 325--325
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 325--325
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 326--326
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 326--326
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 327--327
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 327--327
+[]|\OT1/txss/m/n/10 Recuperaci[]on de con-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 327--327
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 328--328
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 328--328
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 329--329
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 329--329
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 330--330
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 330--330
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 331--331
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 331--331
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 332--332
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 332--332
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 333--333
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 333--333
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 334--334
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 334--334
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 335--335
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 335--335
+[]|\OT1/txss/m/n/10 Captura de va-lo-ra-cio-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 335--335
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 336--336
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 336--336
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 337--337
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\OT1/txss/m/n/10 Asignaci[]on de ex-pe-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 337--337
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 338--338
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 338--338
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 339--339
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 339--339
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 340--340
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 340--340
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 341--341
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 341--341
+[]|\OT1/txss/m/n/10 Modificaci[]on de ex-pe-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 341--341
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 342--342
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 342--342
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 343--343
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 343--343
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 344--344
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 344--344
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 345--345
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 345--345
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 346--346
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 346--346
+[]|\OT1/txss/m/n/10 Consulta de da-tos de
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 346--346
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (0.81303pt too wide) in paragraph at lines 347--347
+[]|\OT1/txss/m/n/10 RF-
+ []
+
+
+Overfull \hbox (1.48753pt too wide) in paragraph at lines 347--347
+[]|\OT1/txss/m/n/10 RU-
+ []
+
+
+Overfull \hbox (7.34637pt too wide) in alignment at lines 324--349
+ [] [] [] [] [] 
+ []
+
+ignored error: Infinite glue shrinkage found in box being split
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 349.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 349.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [15]
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 363.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 363.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [16])
+File: theme/headerInp.png Graphic file (type png)
+<use theme/headerInp.png>
+Package pdftex.def Info: theme/headerInp.png  used on input line 36.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 36.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+
+[17]
+\openout2 = `3ModeloDelNegocio.aux'.
+
+ (3ModeloDelNegocio.tex
+File: theme/headerPar.png Graphic file (type png)
+<use theme/headerPar.png>
+Package pdftex.def Info: theme/headerPar.png  used on input line 2.
+(pdftex.def)             Requested size: 210.00035pt x 35.0pt.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 2.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+ [18
+
 
 
 
 ]
-<images/modelo_dominio_fundacion.png, id=1784, 1104.125pt x 752.8125pt>
+Cap\'{\i }tulo 3.
+File: theme/plecaAyD.png Graphic file (type png)
+<use theme/plecaAyD.png>
+Package pdftex.def Info: theme/plecaAyD.png  used on input line 25.
+(pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
+[19]
+<images/modelo_dominio_fundacion.png, id=1954, 1104.125pt x 752.8125pt>
 File: images/modelo_dominio_fundacion.png Graphic file (type png)
 <use images/modelo_dominio_fundacion.png>
-Package pdftex.def Info: images/modelo_dominio_fundacion.png  used on input line 46.
+Package pdftex.def Info: images/modelo_dominio_fundacion.png  used on input lin
+e 46.
 (pdftex.def)             Requested size: 475.45825pt x 324.17403pt.
-<theme/uc/classRule.png, id=1785, 1930.5726pt x 130.086pt>
+<theme/uc/classRule.png, id=1955, 1930.5726pt x 130.086pt>
 File: theme/uc/classRule.png Graphic file (type png)
 <use theme/uc/classRule.png>
 Package pdftex.def Info: theme/uc/classRule.png  used on input line 54.
@@ -1747,7 +2749,7 @@ Overfull \hbox (3.92613pt too wide) in paragraph at lines 54--54
 []|\OT1/txss/m/n/10 Requerido| 
  []
 
-3ModeloDelNegocio.tex:64: ignored error: Infinite glue shrinkage found in box being split
+ignored error: Infinite glue shrinkage found in box being split
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 64.
@@ -1756,7 +2758,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 64.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [6 <./theme/uc/classRule.png>]
+ [20 <./theme/uc/classRule.png>]
 File: theme/uc/classRule.png Graphic file (type png)
 <use theme/uc/classRule.png>
 Package pdftex.def Info: theme/uc/classRule.png  used on input line 66.
@@ -1785,7 +2787,7 @@ Overfull \hbox (60.17923pt too wide) in alignment at lines 74--80
  [] [] [] [] 
  []
 
-3ModeloDelNegocio.tex:80: ignored error: Infinite glue shrinkage found in box being split
+ignored error: Infinite glue shrinkage found in box being split
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 80.
@@ -1794,7 +2796,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 80.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [7]
+ [21]
 File: theme/uc/classRule.png Graphic file (type png)
 <use theme/uc/classRule.png>
 Package pdftex.def Info: theme/uc/classRule.png  used on input line 82.
@@ -1813,7 +2815,7 @@ Overfull \hbox (3.92613pt too wide) in paragraph at lines 91--91
 []|\OT1/txss/m/n/10 Requerido| 
  []
 
-3ModeloDelNegocio.tex:98: ignored error: Infinite glue shrinkage found in box being split
+ignored error: Infinite glue shrinkage found in box being split
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 98.
@@ -1822,7 +2824,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 98.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [8]
+ [22]
 File: theme/uc/classRule.png Graphic file (type png)
 <use theme/uc/classRule.png>
 Package pdftex.def Info: theme/uc/classRule.png  used on input line 100.
@@ -1853,7 +2855,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 120.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[9]
+[23]
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 120.
@@ -1862,7 +2864,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 120.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [10 <./images/modelo_dominio_fundacion.png (PNG copy)>]
+ [24 <./images/modelo_dominio_fundacion.png (PNG copy)>]
 Overfull \hbox (3.92613pt too wide) in paragraph at lines 120--120
 []|\OT1/txss/m/n/10 Requerido| 
  []
@@ -1876,7 +2878,7 @@ Overfull \hbox (3.92613pt too wide) in paragraph at lines 132--132
 []|\OT1/txss/m/n/10 Requerido| 
  []
 
-3ModeloDelNegocio.tex:140: ignored error: Infinite glue shrinkage found in box being split
+ignored error: Infinite glue shrinkage found in box being split
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 140.
@@ -1885,7 +2887,8 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 140.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [11] (3-1-reglas.tex
+ [25]
+(3-1-reglas.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 34.
@@ -1894,7 +2897,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 34.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [12]
+ [26]
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 67.
@@ -1903,9 +2906,11 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 67.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [13]
-LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 68.
- (C:\Users\Emiliano\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txtt.fd
+ [27]
+LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
+68.
+
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
 File: theme/headerPar.png Graphic file (type png)
@@ -1916,11 +2921,13 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 111.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [14])
-<images/maquina_estados_expediente.png, id=1950, 903.375pt x 451.6875pt>
+
+[28])
+<images/maquina_estados_expediente.png, id=2121, 903.375pt x 451.6875pt>
 File: images/maquina_estados_expediente.png Graphic file (type png)
 <use images/maquina_estados_expediente.png>
-Package pdftex.def Info: images/maquina_estados_expediente.png  used on input line 157.
+Package pdftex.def Info: images/maquina_estados_expediente.png  used on input l
+ine 157.
 (pdftex.def)             Requested size: 475.45825pt x 237.73221pt.
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
@@ -1930,7 +2937,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 170.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [15])
+ [29])
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 39.
@@ -1939,17 +2946,18 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 39.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [16 <./images/maquina_estados_expediente.png (PNG copy)>]
+ [30 <./images/maquina_estados_expediente.png (PNG copy)>]
 \openout2 = `4ModeloDinamico.aux'.
 
- (4ModeloDinamico.tex
-Cap\'{\i }tulo 3.
-<images/casosDeUso.png, id=1966, 702.625pt x 451.6875pt>
+
+(4ModeloDinamico.tex
+Cap\'{\i }tulo 4.
+<images/casosDeUso.png, id=2136, 702.625pt x 451.6875pt>
 File: images/casosDeUso.png Graphic file (type png)
 <use images/casosDeUso.png>
 Package pdftex.def Info: images/casosDeUso.png  used on input line 9.
 (pdftex.def)             Requested size: 400.38872pt x 257.40251pt.
-<images/casosDeUsoDetalle.png, id=1967, 903.375pt x 602.25pt>
+<images/casosDeUsoDetalle.png, id=2137, 903.375pt x 602.25pt>
 File: images/casosDeUsoDetalle.png Graphic file (type png)
 <use images/casosDeUsoDetalle.png>
 Package pdftex.def Info: images/casosDeUsoDetalle.png  used on input line 17.
@@ -1958,13 +2966,13 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 21.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[17
+[31
 
 
 
 
  <./images/casosDeUso.png (PNG copy)>]
-<theme/uc/actorRule.png, id=1972, 1401.0744pt x 130.086pt>
+<theme/uc/actorRule.png, id=2142, 1401.0744pt x 130.086pt>
 File: theme/uc/actorRule.png Graphic file (type png)
 <use theme/uc/actorRule.png>
 Package pdftex.def Info: theme/uc/actorRule.png  used on input line 30.
@@ -1977,7 +2985,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 42.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [18 <./images/casosDeUsoDetalle.png (PNG copy)> <./theme/uc/actorRule.png>]
+ [32 <./images/casosDeUsoDetalle.png (PNG copy)> <./theme/uc/actorRule.png>]
 File: theme/uc/actorRule.png Graphic file (type png)
 <use theme/uc/actorRule.png>
 Package pdftex.def Info: theme/uc/actorRule.png  used on input line 47.
@@ -1994,7 +3002,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 78.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [19]
+ [33]
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 78.
@@ -2003,7 +3011,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 78.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [20
+ [34
 
 ] (cu/cu-01.tex
 File: theme/headerInp.png Graphic file (type png)
@@ -2014,8 +3022,8 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [21]
-<theme/uc/default.png, id=1994, 926.46124pt x 57.21375pt>
+ [35]
+<theme/uc/default.png, id=2164, 926.46124pt x 57.21375pt>
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2030,12 +3038,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
-<theme/uc/actor.png, id=2002, 96.36pt x 74.2775pt>
+<theme/uc/actor.png, id=2172, 96.36pt x 74.2775pt>
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-<theme/uc/usecase.png, id=2003, 91.34125pt x 61.22874pt>
+<theme/uc/usecase.png, id=2174, 91.34125pt x 61.22874pt>
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -2056,7 +3064,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 32.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[22 <./theme/uc/default.png> <./theme/uc/actor.png> <./theme/uc/usecase.png>]
+[36 <./theme/uc/default.png> <./theme/uc/actor.png> <./theme/uc/usecase.png>]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 32.
@@ -2109,7 +3117,12 @@ File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 53.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-) (cu/cu-02.tex
+File: theme/uc/usecase.png Graphic file (type png)
+<use theme/uc/usecase.png>
+Package pdftex.def Info: theme/uc/usecase.png  used on input line 57.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+)
+(cu/cu-02.tex
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 4.
@@ -2118,7 +3131,10 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [23 <C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/keystroke_left.pdf> <C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/keystroke_middle.pdf> <C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/keystroke_right.pdf>]
+ [37 <C:/Users/PC/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/keystroke_l
+eft.pdf> <C:/Users/PC/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/keystro
+ke_middle.pdf> <C:/Users/PC/AppData/Local/Programs/MiKTeX/tex/latex/keystroke/k
+eystroke_right.pdf>]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2157,7 +3173,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 31.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[24]
+[38]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 31.
@@ -2215,7 +3231,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [25]
+ [39]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2238,7 +3254,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[26]
+[40]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -2320,7 +3336,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [27]
+ [41]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2359,7 +3375,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 31.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[28]
+[42]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 31.
@@ -2409,7 +3425,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [29]
+ [43]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2436,7 +3452,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[30]
+[44]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -2445,7 +3461,7 @@ File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 30.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-<theme/uc/iu.png, id=2151, 61.22874pt x 55.20625pt>
+<theme/uc/iu.png, id=2332, 61.22874pt x 55.20625pt>
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 30.
@@ -2535,7 +3551,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [31 <./theme/uc/iu.png>]
+ [45 <./theme/uc/iu.png>]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2566,7 +3582,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[32]
+[46]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -2639,7 +3655,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 62.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [33]
+ [47]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 62.
@@ -2669,7 +3685,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [34]
+ [48]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2716,7 +3732,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[35]
+[49]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 35.
@@ -2738,7 +3754,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [36]
+ [50]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2761,7 +3777,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[37]
+[51]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -2808,7 +3824,10 @@ Package pdftex.def Info: theme/uc/usecase.png  used on input line 43.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 
 Overfull \hbox (34.51215pt too wide) in paragraph at lines 43--44
-[][] \OT1/txss/m/n/10 Guar-da la in-for-ma-ci[]on en la ba-se de da-tos (ta-blas \OT1/txtt/m/n/10 hecho[]victimal\OT1/txss/m/n/10 , \OT1/txtt/m/n/10 nna[]padecimientos\OT1/txss/m/n/10 , \OT1/txtt/m/n/10 tutores\OT1/txss/m/n/10 , \OT1/txtt/m/n/10 documentos[]nna\OT1/txss/m/n/10 ,
+[][] \OT1/txss/m/n/10 Guar-da la in-for-ma-ci[]on en la ba-se de da-tos (ta-bla
+s \OT1/txtt/m/n/10 hecho[]victimal\OT1/txss/m/n/10 , \OT1/txtt/m/n/10 nna[]pade
+cimientos\OT1/txss/m/n/10 , \OT1/txtt/m/n/10 tutores\OT1/txss/m/n/10 , \OT1/txt
+t/m/n/10 documentos[]nna\OT1/txss/m/n/10 ,
  []
 
 File: theme/uc/usecase.png Graphic file (type png)
@@ -2843,7 +3862,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 59.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[38]
+[52]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 60.
@@ -2865,7 +3884,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [39]
+ [53]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2900,7 +3919,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[40]
+[54]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 29.
@@ -2966,7 +3985,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [41]
+ [55]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -2989,7 +4008,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[42]
+[56]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -3086,7 +4105,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 59.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [43]) (cu/cu-11.tex
+ [57]) (cu/cu-11.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 4.
@@ -3095,7 +4114,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [44]
+ [58]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3118,7 +4137,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[45]
+[59]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -3220,7 +4239,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [46]
+ [60]
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 4.
@@ -3229,7 +4248,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [47]
+ [61]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3260,7 +4279,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[48]
+[62]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -3334,7 +4353,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [49]
+ [63]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3377,7 +4396,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[50]
+[64]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 26.
@@ -3395,7 +4414,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [51]
+ [65]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3418,7 +4437,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[52]
+[66]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -3511,7 +4530,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 59.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [53]
+ [67]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 59.
@@ -3525,7 +4544,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [54]
+ [68]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3548,14 +4567,15 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[55]
+[69]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
 
 Overfull \hbox (10.80586pt too wide) in paragraph at lines 28--29
-[][]  \OT1/txss/m/n/10 Ac-ce-de al ex-pe-dien-te del NNA des-de su pa-nel de ca-sos asig-na-dos y se-lec-cio-na la pes-ta[]na  [][][][]
+[][]  \OT1/txss/m/n/10 Ac-ce-de al ex-pe-dien-te del NNA des-de su pa-nel de ca
+-sos asig-na-dos y se-lec-cio-na la pes-ta[]na  [][][][]
  []
 
 File: theme/uc/usecase.png Graphic file (type png)
@@ -3643,7 +4663,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [56]
+ [70]
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 4.
@@ -3652,7 +4672,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [57]
+ [71]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3675,7 +4695,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[58]
+[72]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 27.
@@ -3741,7 +4761,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [59]
+ [73]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3772,7 +4792,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[60]
+[74]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -3814,7 +4834,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 4.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [61]
+ [75]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 4.
@@ -3841,7 +4861,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[62]
+[76]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -3911,7 +4931,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [63]
+ [77]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -3958,7 +4978,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 31.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[64]
+[78]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 31.
@@ -4008,7 +5028,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [65]
+ [79]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4043,7 +5063,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[66]
+[80]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 30.
@@ -4109,7 +5129,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [67]
+ [81]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4148,7 +5168,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[68]
+[82]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 29.
@@ -4174,7 +5194,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [69]
+ [83]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4197,7 +5217,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[70]
+[84]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 26.
@@ -4279,7 +5299,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [71]
+ [85]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4310,7 +5330,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[72]
+[86]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -4372,7 +5392,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [73]
+ [87]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4399,7 +5419,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[74]
+[88]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 27.
@@ -4469,7 +5489,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [75]
+ [89]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4492,7 +5512,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[76]
+[90]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 26.
@@ -4582,7 +5602,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [77]
+ [91]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4613,7 +5633,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[78]
+[92]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -4687,7 +5707,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [79]
+ [93]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4722,7 +5742,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[80]
+[94]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 29.
@@ -4776,7 +5796,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [81]
+ [95]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4811,7 +5831,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[82]
+[96]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 28.
@@ -4853,7 +5873,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [83]
+ [97]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4888,7 +5908,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[84]
+[98]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -4938,7 +5958,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [85]
+ [99]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -4973,7 +5993,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[86]
+[100]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 28.
@@ -5023,7 +6043,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [87]
+ [101]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5058,7 +6078,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[88]
+[102]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -5100,7 +6120,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [89]
+ [103]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5135,7 +6155,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[90]
+[104]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -5193,7 +6213,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [91]
+ [105]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5232,7 +6252,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[92]
+[106]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 29.
@@ -5282,7 +6302,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [93]
+ [107]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5325,7 +6345,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[94]
+[108]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 34.
@@ -5347,7 +6367,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [95]
+ [109]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5394,7 +6414,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 31.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[96]
+[110]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 31.
@@ -5432,7 +6452,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [97]
+ [111]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5475,7 +6495,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[98]
+[112]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 30.
@@ -5513,7 +6533,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [99]
+ [113]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5552,7 +6572,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[100]
+[114]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 33.
@@ -5570,7 +6590,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [101]
+ [115]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5610,7 +6630,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [102]
+ [116]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5653,7 +6673,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[103]) (cu/cu-40.tex
+[117]) (cu/cu-40.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 3.
@@ -5662,7 +6682,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [104]
+ [118]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5705,7 +6725,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 32.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[105]
+[119]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 36.
@@ -5751,7 +6771,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [106]
+ [120]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5786,7 +6806,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 29.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[107]
+[121]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -5848,7 +6868,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [108]
+ [122]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5887,7 +6907,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[109]
+[123]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -5909,7 +6929,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [110]
+ [124]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -5956,7 +6976,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[111]
+[125]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 31.
@@ -5974,7 +6994,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [112]
+ [126]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6014,7 +7034,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [113]
+ [127]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6054,7 +7074,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [114]
+ [128]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6101,7 +7121,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[115]
+[129]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 27.
@@ -6123,7 +7143,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [116]
+ [130]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6166,7 +7186,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[117]
+[131]
 File: theme/uc/actor.png Graphic file (type png)
 <use theme/uc/actor.png>
 Package pdftex.def Info: theme/uc/actor.png  used on input line 26.
@@ -6208,7 +7228,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [118]
+ [132]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6259,7 +7279,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[119]
+[133]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 32.
@@ -6281,7 +7301,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [120]
+ [134]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6328,7 +7348,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[121]
+[135]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 27.
@@ -6354,7 +7374,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [122]
+ [136]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6393,7 +7413,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[123]
+[137]
 File: theme/uc/usecase.png Graphic file (type png)
 <use theme/uc/usecase.png>
 Package pdftex.def Info: theme/uc/usecase.png  used on input line 29.
@@ -6411,7 +7431,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [124]
+ [138]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6458,7 +7478,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[125]) (cu/cu-52.tex
+[139]) (cu/cu-52.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 3.
@@ -6467,7 +7487,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [126]
+ [140]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6510,7 +7530,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[127]) (cu/cu-53.tex
+[141]) (cu/cu-53.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 3.
@@ -6519,7 +7539,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [128]
+ [142]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6562,7 +7582,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 27.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[129]) (cu/cu-54.tex
+[143]) (cu/cu-54.tex
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 3.
@@ -6571,7 +7591,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [130]
+ [144]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6611,7 +7631,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [131]
+ [145]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6650,7 +7670,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
-[132]) (cu/cu-56.tex
+[146]) (cu/cu-56.tex
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 3.
@@ -6659,7 +7679,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [133]
+ [147]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6695,7 +7715,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 3.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [134]
+ [148]
 File: theme/uc/default.png Graphic file (type png)
 <use theme/uc/default.png>
 Package pdftex.def Info: theme/uc/default.png  used on input line 3.
@@ -6739,7 +7759,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 42.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [135]
+ [149]
 \openout2 = `5ModeloDeInteraccion.aux'.
 
  (5ModeloDeInteraccion.tex
@@ -6751,24 +7771,25 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 2.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [136
+ [150
 
 
 
 
 ]
-Cap\'{\i }tulo 4.
-<images/mapa_navegacion_taimotla.png, id=3559, 1003.75pt x 602.25pt>
+Cap\'{\i }tulo 5.
+<images/mapa_navegacion_taimotla.png, id=3740, 1003.75pt x 602.25pt>
 File: images/mapa_navegacion_taimotla.png Graphic file (type png)
 <use images/mapa_navegacion_taimotla.png>
-Package pdftex.def Info: images/mapa_navegacion_taimotla.png  used on input line 14.
+Package pdftex.def Info: images/mapa_navegacion_taimotla.png  used on input lin
+e 14.
 (pdftex.def)             Requested size: 450.43253pt x 270.26563pt.
 (iu/iu23.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/Login.png, id=3562, 422.57875pt x 504.88625pt>
+<images/Login.png, id=3743, 422.57875pt x 504.88625pt>
 File: images/Login.png Graphic file (type png)
 <use images/Login.png>
 Package pdftex.def Info: images/Login.png  used on input line 10.
@@ -6777,7 +7798,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 16.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [137]
+ [151]
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 16.
@@ -6786,7 +7807,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 16.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [138 <./images/mapa_navegacion_taimotla.png (PNG copy)>]
+ [152 <./images/mapa_navegacion_taimotla.png (PNG copy)>]
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 37.
@@ -6795,12 +7816,13 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 37.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [139 <./images/Login.png>]) (iu/iu24.tex
+
+[153 <./images/Login.png>]) (iu/iu24.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/24.png, id=3579, 1206.5075pt x 599.23875pt>
+<images/24.png, id=3760, 1206.5075pt x 599.23875pt>
 File: images/24.png Graphic file (type png)
 <use images/24.png>
 Package pdftex.def Info: images/24.png  used on input line 11.
@@ -6813,12 +7835,12 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 23.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [140 <./images/24.png>]) (iu/iu25.tex
+ [154 <./images/24.png>]) (iu/iu25.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/default.png, id=3591, 926.46124pt x 57.21375pt>
+<images/default.png, id=3771, 926.46124pt x 57.21375pt>
 File: images/default.png Graphic file (type png)
 <use images/default.png>
 Package pdftex.def Info: images/default.png  used on input line 15.
@@ -6831,7 +7853,8 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [141 <./images/default.png>]
+
+[155 <./images/default.png>]
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 6.64998pt on input line 31.
 ) (iu/iu26.tex
@@ -6839,7 +7862,7 @@ File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/26.png, id=3606, 1179.40625pt x 686.565pt>
+<images/26.png, id=3785, 1179.40625pt x 686.565pt>
 File: images/26.png Graphic file (type png)
 <use images/26.png>
 Package pdftex.def Info: images/26.png  used on input line 17.
@@ -6852,7 +7875,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 26.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [142]) (iu/iu27.tex
+ [156]) (iu/iu27.tex
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 7.
@@ -6861,12 +7884,12 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 7.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [143 <./images/26.png>]
+ [157 <./images/26.png>]
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/27.png, id=3620, 1196.47pt x 658.46pt>
+<images/27.png, id=3799, 1196.47pt x 658.46pt>
 File: images/27.png Graphic file (type png)
 <use images/27.png>
 Package pdftex.def Info: images/27.png  used on input line 18.
@@ -6879,12 +7902,12 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 38.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [144 <./images/27.png>]) (iu/iu28.tex
+ [158 <./images/27.png>]) (iu/iu28.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/28.png, id=3629, 1164.35pt x 419.5675pt>
+<images/28.png, id=3808, 1164.35pt x 419.5675pt>
 File: images/28.png Graphic file (type png)
 <use images/28.png>
 Package pdftex.def Info: images/28.png  used on input line 20.
@@ -6897,7 +7920,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 34.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [145]) (iu/iu29.tex
+ [159]) (iu/iu29.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
@@ -6910,7 +7933,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 16.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [146 <./images/28.png>]
+ [160 <./images/28.png>]
 File: images/default.png Graphic file (type png)
 <use images/default.png>
 Package pdftex.def Info: images/default.png  used on input line 20.
@@ -6920,7 +7943,7 @@ File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
 (pdftex.def)             Requested size: 11.09076pt x 10.0pt.
-<images/30.png, id=3644, 1180.41pt x 654.445pt>
+<images/30.png, id=3824, 1180.41pt x 654.445pt>
 File: images/30.png Graphic file (type png)
 <use images/30.png>
 Package pdftex.def Info: images/30.png  used on input line 15.
@@ -6933,7 +7956,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 15.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [147]
+ [161]
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 43.
@@ -6942,7 +7965,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 43.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [148 <./images/30.png>]) (iu/iu31.tex
+ [162 <./images/30.png>]) (iu/iu31.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
@@ -6963,7 +7986,8 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 30.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [149]) (iu/iu32.tex
+ [163])
+(iu/iu32.tex
 File: theme/uc/iu.png Graphic file (type png)
 <use theme/uc/iu.png>
 Package pdftex.def Info: theme/uc/iu.png  used on input line 8.
@@ -6984,7 +8008,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 28.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [150])
+ [164])
 File: theme/headerInp.png Graphic file (type png)
 <use theme/headerInp.png>
 Package pdftex.def Info: theme/headerInp.png  used on input line 74.
@@ -6993,7 +8017,7 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 74.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [151])
+ [165])
 File: theme/headerPar.png Graphic file (type png)
 <use theme/headerPar.png>
 Package pdftex.def Info: theme/headerPar.png  used on input line 45.
@@ -7002,29 +8026,45 @@ File: theme/plecaAyD.png Graphic file (type png)
 <use theme/plecaAyD.png>
 Package pdftex.def Info: theme/plecaAyD.png  used on input line 45.
 (pdftex.def)             Requested size: 614.29208pt x 88.1067pt.
- [152] (ejemplo.aux
+ [166] (ejemplo.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (projectCharter.aux) (1introduccion.aux) (2ModeloDelAlcance.aux) (3ModeloDelNegocio.aux) (4ModeloDinamico.aux) (5ModeloDeInteraccion.aux))
+ (projectCharter.aux)
+(1introduccion.aux) (2ModeloDelAlcance.aux) (3ModeloDelNegocio.aux)
+(4ModeloDinamico.aux) (5ModeloDeInteraccion.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `ejemplo.out' has not changed.
-(rerunfilecheck)             Checksum: 2E9DE10F51C1792FFB13ECE2812D824E;61649.
+(rerunfilecheck)             Checksum: 9E0124069066099E88166F22EA68052A;65083.
  ) 
 Here is how much of TeX's memory you used:
- 18587 strings out of 467870
- 304595 string characters out of 5416903
- 703043 words of memory out of 5000000
- 45421 multiletter control sequences out of 15000+600000
+ 18673 strings out of 467871
+ 293978 string characters out of 5419829
+ 726583 words of memory out of 5000000
+ 45460 multiletter control sequences out of 15000+600000
  688085 words of font info for 163 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,16n,107p,881b,795s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/marvosym/marvosym.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxss.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxsssc.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsya.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Emiliano/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ejemplo.pdf (168 pages, 1709179 bytes).
+ 105i,16n,107p,770b,795s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/marvosym/marvos
+ym.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rt
+cxss.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/
+rtxmi.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts
+/rtxr.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts
+/rtxsssc.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfo
+nts/txsy.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfo
+nts/txsya.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/txf
+onts/txsyc.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/tx
+fonts/txtt.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helve
+tic/uhvb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helve
+tic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helve
+tic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times
+/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on ejemplo.pdf (182 pages, 1808630 bytes).
 PDF statistics:
- 4058 PDF objects out of 4296 (max. 8388607)
- 1499 named destinations out of 1728 (max. 500000)
- 2742 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4246 PDF objects out of 4296 (max. 8388607)
+ 1545 named destinations out of 1728 (max. 500000)
+ 2891 words of extra memory for PDF output out of 10000 (max. 10000000)
 

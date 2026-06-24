@@ -25,31 +25,35 @@
 \end{UseCase}
 
 \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Ingresa a la página de inicio de sesión de Taimotla.
+	\UCpaso[\UCactor] Ingresa a la página de \hyperlink{IU23}{inicio de sesión de Taimotla}.
 	\UCpaso Solicita al usuario que introduzca su correo electrónico y contraseña.
 	\UCpaso[\UCactor] Introduce sus credenciales y presiona el botón \IUbutton{Ingresar}.
 	\UCpaso Valida que ninguno de los campos de entrada esté vacío. \Trayref{A}.
 	\UCpaso Verifica en la base de datos si el correo electrónico corresponde a un usuario registrado. \Trayref{B}.
 	\UCpaso Valida si la cuenta del usuario está habilitada (estado activo). \Trayref{C}.
 	\UCpaso Verifica que la contraseña ingresada coincida con la firma hash almacenada para ese usuario. \Trayref{B}.
-	\UCpaso Inicializa la sesión del usuario guardando sus datos en el contexto y redirige a la pantalla del módulo correspondiente según su rol (Director, Coordinador o Especialista).
+	\UCpaso Inicializa la sesión del usuario guardando sus datos en el contexto y redirige a la pantalla del módulo correspondiente según su rol \Trayref{D}
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Faltan datos de entrada obligatorios}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos requeridos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos requeridos.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Credenciales de acceso incorrectas}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} (Usuario no registrado) o {\bf MSG-04} (Error de inicio de sesión).
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} (Usuario no registrado) o {\bf MSG-04} (Error de inicio de sesión).
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Cuenta de usuario deshabilitada}
-	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} (Cuenta inactiva).
+	\UCpaso Muestra el mensaje de advertencia \hyperlink{mMSG03}{\bf MSG-03} (Cuenta inactiva).
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar} y regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{El usuario es administrador}
+	\UCpaso Muestra la \hyperlink{IU24}{\bf IU-24} (Cuenta inactiva).
 \end{UCtrayectoriaA}
 %-------------------------------------- TERMINA descripción del caso de uso.
