@@ -31,12 +31,12 @@
 	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Contacto}.
 	\UCpaso Valida que el nombre del contacto no esté vacío. \Trayref{A}.
 	\UCpaso Registra el contacto en la base de datos.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Nombre del contacto vacío}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04}.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}

@@ -32,18 +32,18 @@
 	\UCpaso Valida que se haya seleccionado tanto un menor como un equipo de especialistas. \Trayref{A}.
 	\UCpaso Verifica que el Coordinador tenga permisos válidos en el sistema. \Trayref{B}.
 	\UCpaso Asocia en la base de datos el ID del equipo con el expediente del NNA y actualiza el estado del expediente a ``En Diagnóstico''.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} indicando que el caso fue asignado exitosamente al equipo.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} indicando que el caso fue asignado exitosamente al equipo.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Falta selección de caso o de equipo}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} alertando que debe seleccionar un expediente y un equipo multidisciplinario obligatoriamente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} alertando que debe seleccionar un expediente y un equipo multidisciplinario obligatoriamente.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Usuario no autorizado}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no cuenta con el rol de Coordinador de Caso.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que no cuenta con el rol de Coordinador de Caso.
 	\UCpaso Termina el caso de uso.
 \end{UCtrayectoriaA}
 %-------------------------------------- TERMINA descripción del caso de uso.

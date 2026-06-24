@@ -27,22 +27,22 @@
 	\UCpaso[\UCactor] Ingresa su correo y presiona el botón \IUbutton{Enviar enlace de recuperación}.
 	\UCpaso Verifica que el correo corresponda a una cuenta registrada y activa en el sistema. \Trayref{A}.
 	\UCpaso Genera un token de restablecimiento de un solo uso con expiración de 60 minutos.
-	\UCpaso Envía un correo electrónico al usuario con el enlace de restablecimiento y muestra el mensaje de confirmación \textbf{MSG-09}.
+	\UCpaso Envía un correo electrónico al usuario con el enlace de restablecimiento y muestra el mensaje de confirmación \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[\UCactor] Accede al enlace desde su correo, ingresa y confirma la nueva contraseña, y presiona \IUbutton{Restablecer contraseña}.
 	\UCpaso Valida que el token sea válido y no haya expirado. \Trayref{B}.
 	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave e invalida el token.
-	\UCpaso Redirige al usuario a la pantalla de inicio de sesión con el mensaje \textbf{MSG-09}.
+	\UCpaso Redirige al usuario a la pantalla de inicio de sesión con el mensaje \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Correo no registrado en el sistema}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el correo no corresponde a ninguna cuenta activa.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que el correo no corresponde a ninguna cuenta activa.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Token expirado o ya utilizado}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando que el enlace de recuperación ha expirado o ya fue utilizado.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que el enlace de recuperación ha expirado o ya fue utilizado.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Redirige al paso 1 de la trayectoria principal para solicitar un nuevo enlace.
 \end{UCtrayectoriaA}

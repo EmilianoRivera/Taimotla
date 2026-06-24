@@ -35,17 +35,17 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Observaciones de Entrevista}.
 	\UCpaso Valida que los campos obligatorios estén completos. \Trayref{B}.
 	\UCpaso Almacena las observaciones en la base de datos.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Usuario no pertenece al equipo}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando falta de permisos.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos requeridos.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal.
 \end{UCtrayectoriaA}

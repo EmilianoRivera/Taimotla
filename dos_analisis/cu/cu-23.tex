@@ -32,17 +32,17 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Valoración Psicológica}.
 	\UCpaso Valida que el campo de notas terapéuticas no esté vacío. \Trayref{B}.
 	\UCpaso Almacena la valoración en la base de datos y actualiza el indicador de valoración psicológica en el expediente.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el guardado.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Psicólogo no pertenece al equipo}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando falta de permisos.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Notas terapéuticas vacías}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que las notas terapéuticas son obligatorias.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que las notas terapéuticas son obligatorias.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal.
 \end{UCtrayectoriaA}

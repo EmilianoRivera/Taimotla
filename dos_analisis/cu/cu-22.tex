@@ -35,17 +35,17 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Datos Médicos}.
 	\UCpaso Valida que los campos obligatorios del formulario estén completos. \Trayref{B}.
 	\UCpaso Almacena los datos médicos en las tablas correspondientes y actualiza el indicador de valoración médica en el expediente.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el guardado.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el guardado.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Médico no pertenece al equipo asignado}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02} indicando falta de permisos de edición.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando falta de permisos de edición.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los campos requeridos pendientes.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos requeridos pendientes.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos capturados.
 \end{UCtrayectoriaA}

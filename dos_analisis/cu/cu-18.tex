@@ -34,18 +34,18 @@
 	\UCpaso[\UCactor] Revisa la información y presiona el botón \IUbutton{Autorizar Cierre} o \IUbutton{Rechazar Cierre}.
 	\UCpaso Verifica que el expediente se encuentre en estatus ``Cierre Solicitado''. \Trayref{B}.
 	\UCpaso Actualiza el estatus del expediente a ``Cerrado'' (o lo regresa a ``En Seguimiento'' en caso de rechazo, registrando la observación del Director).
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando la resolución del cierre.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando la resolución del cierre.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Medidas de protección pendientes o no cumplidas}
-	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} indicando las medidas de protección que aún no se encuentran en estatus ``Cumplida''.
+	\UCpaso Muestra el mensaje de advertencia \hyperlink{mMSG03}{\bf MSG-03} indicando las medidas de protección que aún no se encuentran en estatus ``Cumplida''.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Expediente sin solicitud de cierre previa}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que el expediente no cuenta con una solicitud de cierre pendiente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que el expediente no cuenta con una solicitud de cierre pendiente.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 %-------------------------------------- TERMINA descripción del caso de uso.

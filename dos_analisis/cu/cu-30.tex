@@ -31,12 +31,12 @@
 	\UCpaso[\UCactor] Presiona \IUbutton{Guardar idioma}.
 	\UCpaso Verifica que el idioma seleccionado no esté ya registrado para la misma persona. \Trayref{A}.
 	\UCpaso Registra el idioma en la tabla correspondiente y actualiza la lista en pantalla.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Idioma duplicado}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que ese idioma ya está registrado para la persona.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que ese idioma ya está registrado para la persona.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}

@@ -37,24 +37,24 @@
 	\UCpaso Valida en el servidor que los campos obligatorios del tutor contengan información válida. \Trayref{B}.
 	\UCpaso Verifica que la CURP cumpla con el formato válido y no se encuentre duplicada en la base de datos. \Trayref{C}.
 	\UCpaso Guarda la información del tutor en la tabla \texttt{tutores} y crea la relación correspondiente con el NNA.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y refresca la vista del expediente.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y refresca la vista del expediente.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Usuario sin autorización para el expediente}
 	\UCpaso El sistema bloquea el formulario e impide realizar operaciones de guardado.
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no pertenece al equipo asignado.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que no pertenece al equipo asignado.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios incompletos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario del tutor.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos vacíos en el formulario del tutor.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Error en validación de CURP}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} alertando que la CURP tiene un formato inválido o ya pertenece a otro tutor registrado en la plataforma.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} alertando que la CURP tiene un formato inválido o ya pertenece a otro tutor registrado en la plataforma.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal para corregir la CURP.
 \end{UCtrayectoriaA}

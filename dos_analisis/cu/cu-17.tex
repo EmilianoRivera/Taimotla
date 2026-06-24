@@ -29,12 +29,12 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Registro de Detección}.
 	\UCpaso Valida que los campos obligatorios del formato hayan sido completados. \Trayref{A}.
 	\UCpaso Asigna de forma automática un número de reporte consecutivo y almacena el registro de detección en la base de datos.
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} mostrando el número de reporte asignado y la opción de continuar hacia la apertura del expediente del NNA.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} mostrando el número de reporte asignado y la opción de continuar hacia la apertura del expediente del NNA.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Campos obligatorios vacíos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos requeridos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos requeridos.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Mantiene la información capturada y regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}

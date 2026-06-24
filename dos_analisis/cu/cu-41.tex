@@ -32,18 +32,18 @@
 	\UCpaso Valida el tipo de documento seleccionado. \Trayref{B}.
 	\UCpaso Valida el formato y tamaño del archivo adjunto. \Trayref{A}.
 	\UCpaso Almacena el archivo en el servidor y registra la referencia en la base de datos.
-	\UCpaso Actualiza la lista de documentos en pantalla y despliega el mensaje \textbf{MSG-09}.
+	\UCpaso Actualiza la lista de documentos en pantalla y despliega el mensaje \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Formato o tamaño inválido}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser PDF, JPG o PNG y no superar los 5MB.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el archivo debe ser PDF, JPG o PNG y no superar los 5MB.
 	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Tipo de documento no seleccionado}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de documento es obligatorio.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el tipo de documento es obligatorio.
 	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}

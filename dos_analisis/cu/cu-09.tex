@@ -39,18 +39,18 @@
 	\UCpaso Verifica que el correo, RFC y CURP no estén duplicados y cumplan el formato requerido conforme a las reglas \hyperlink{BR-06}{BR-06} y \hyperlink{BR-07}{BR-07}. \Trayref{B}.
 	\UCpaso Encripta la contraseña provisional de acceso.
 	\UCpaso Guarda la información en la base de datos vinculando al empleado con su rol y especialidad.
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando la operación realizada.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando la operación realizada.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Datos obligatorios incompletos o con formato inválido}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos o con formato inválido.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos vacíos o con formato inválido.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Duplicidad de datos de identidad en el sistema}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} alertando que la CURP o el correo electrónico ya existen en otro registro de cuenta activa.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} alertando que la CURP o el correo electrónico ya existen en otro registro de cuenta activa.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}

@@ -41,23 +41,23 @@
 	\UCpaso Valida en el servidor que los campos obligatorios contengan información estructurada. \Trayref{B}.
 	\UCpaso Valida que los archivos digitales cargados (como el acta de nacimiento) cumplan con la regla de negocio \hyperlink{BR-10}{BR-10} (PDF/PNG/JPG menor a 5MB). \Trayref{C}.
 	\UCpaso Guarda la información en la base de datos (tablas \texttt{hecho\_victimal}, \texttt{nna\_padecimientos}, \texttt{tutores}, \texttt{documentos\_nna}, etc.) y actualiza el estado del expediente.
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando el guardado de la información.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el guardado de la información.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Especialista no pertenece al equipo asignado}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos o incorrectos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} detallando qué campos requeridos de la pestaña activa no fueron capturados correctamente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} detallando qué campos requeridos de la pestaña activa no fueron capturados correctamente.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Mantiene la información capturada en pantalla y regresa al paso 6 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Fallo en archivo digital cargado}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que el archivo no cuenta con una extensión compatible o supera el peso permitido.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el archivo no cuenta con una extensión compatible o supera el peso permitido.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 6 de la trayectoria principal para corregir el archivo adjunto.
 \end{UCtrayectoriaA}

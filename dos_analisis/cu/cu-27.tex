@@ -31,17 +31,17 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Familiograma}.
 	\UCpaso Valida el formato y tamaño del archivo adjunto si se cargó uno. \Trayref{B}.
 	\UCpaso Almacena la descripción textual y el archivo en el servidor.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Trabajador Social sin permisos}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-02}.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02}.
 	\UCpaso Termina el caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Archivo con formato inválido o tamaño excedido}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el archivo debe ser JPG, PNG o PDF menor a 5MB.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el archivo debe ser JPG, PNG o PDF menor a 5MB.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}

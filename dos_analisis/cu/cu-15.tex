@@ -36,23 +36,23 @@
 	\UCpaso Valida el formato y tamaño del archivo de evidencia digital cargado. \Trayref{C}.
 	\UCpaso Guarda el registro en la bitácora de la medida y actualiza su estatus.
 	\UCpaso Verifica si todas las medidas del PRD alcanzaron el estatus ``Cumplida'' y, de ser así, habilita la opción de cierre de expediente para el Coordinador.
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando el registro de la bitácora.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el registro de la bitácora.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Expediente sin PRD vigente}
-	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} indicando que el expediente no cuenta con un Plan de Restitución vigente.
+	\UCpaso Muestra el mensaje de advertencia \hyperlink{mMSG03}{\bf MSG-03} indicando que el expediente no cuenta con un Plan de Restitución vigente.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios de la bitácora vacíos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos requeridos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos requeridos.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Mantiene la información capturada y regresa al paso 6 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Fallo en archivo de evidencia cargado}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que el archivo no cuenta con una extensión compatible o supera el peso permitido.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el archivo no cuenta con una extensión compatible o supera el peso permitido.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 6 de la trayectoria principal para corregir el archivo adjunto.
 \end{UCtrayectoriaA}

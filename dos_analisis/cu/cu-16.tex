@@ -32,17 +32,17 @@
 	\UCpaso Valida que todos los elementos de evaluación obligatorios hayan sido respondidos. \Trayref{B}.
 	\UCpaso Almacena la ficha de verificación en el expediente del NNA, asociada al especialista y a la fecha de captura.
 	\UCpaso Genera de forma automática la lista de derechos marcados como ``No'' y los incorpora como sugerencias de derechos vulnerados en el cuadro guía del PRD (\hyperlink{CU-14}{CU-14}).
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando el registro de la ficha.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el registro de la ficha.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Especialista no pertenece al equipo asignado}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que no cuenta con autorización para visualizar o editar el expediente.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Elementos de evaluación sin responder}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando las categorías de derecho con elementos pendientes de respuesta.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando las categorías de derecho con elementos pendientes de respuesta.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Mantiene la información capturada y regresa al paso 4 de la trayectoria principal.
 \end{UCtrayectoriaA}

@@ -37,7 +37,7 @@
 	\UCpaso Valida que el equipo tenga como mínimo 2 integrantes y como máximo 4. \Trayref{C}.
 	\UCpaso Registra el equipo en la base de datos relacionando al coordinador y establece su estado como ``Activo''.
 	\UCpaso Registra a cada uno de los integrantes del equipo en la tabla de composición de equipo asociando la fecha de inicio actual.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y redirige al Dashboard del Director.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y redirige al Dashboard del Director.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
@@ -48,13 +48,13 @@
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos incompletos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando los campos vacíos en el formulario.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los campos vacíos en el formulario.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Equipo con tamaño inválido en servidor}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} alertando que el equipo debe poseer entre 2 y 4 especialistas integrados.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} alertando que el equipo debe poseer entre 2 y 4 especialistas integrados.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 6 de la trayectoria principal.
 \end{UCtrayectoriaA}

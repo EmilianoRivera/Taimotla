@@ -29,12 +29,12 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Diagnóstico}.
 	\UCpaso Valida que ambos campos de grado estén seleccionados. \Trayref{A}.
 	\UCpaso Almacena el diagnóstico en la tabla de diagnóstico del expediente con la fecha del día.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Campos de grado vacíos}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el grado de peligro y el de coerción son obligatorios.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el grado de peligro y el de coerción son obligatorios.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}

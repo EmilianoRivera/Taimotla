@@ -39,7 +39,7 @@
 
 \begin{UCtrayectoriaA}{A}{Error al reasignar coordinador}
 	\UCpaso Ocurre un fallo en la conexión con la base de datos o el coordinador no es válido.
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando el fallo de actualización.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando el fallo de actualización.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Revierte visualmente el cambio y regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
@@ -48,13 +48,13 @@
 	\UCpaso El sistema solicita confirmación mediante un cuadro de diálogo: ``¿Quitar a este miembro del equipo?''.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Actualiza en la tabla de composición la fecha de término (\texttt{fecha\_fin}) con la fecha del día actual para darlo de baja del equipo.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Especialidad duplicada en el equipo}
 	\UCpaso Verifica que el rol del especialista que se desea agregar no coincida con el rol de un miembro actual del equipo. \Trayref{C1}.
 	\UCpaso Agrega al miembro a la composición del equipo con la fecha de inicio actual.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y continúa en el paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C1}{El rol ya existe en el equipo}
@@ -66,6 +66,6 @@
 	\UCpaso El sistema solicita confirmación: ``¿Estás seguro de querer eliminar el equipo seleccionado?''.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Cambia el estado del equipo a ``Inactivo'' e ingresa la fecha de término (\texttt{fecha\_fin}) para todos sus miembros activos actuales en la base de datos.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y regresa al paso 2 de la trayectoria principal.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y regresa al paso 2 de la trayectoria principal.
 \end{UCtrayectoriaA}
 %-------------------------------------- TERMINA descripción del caso de uso.

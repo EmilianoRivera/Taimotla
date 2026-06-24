@@ -31,24 +31,24 @@
 	\UCpaso Verifica que la nueva contraseña y su confirmación sean idénticas. \Trayref{B}.
 	\UCpaso Verifica que la nueva contraseña cumpla con al menos 8 caracteres, incluyendo mayúsculas, minúsculas y un número. \Trayref{C}.
 	\UCpaso Actualiza la contraseña del usuario con el hash de la nueva clave.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09} confirmando el cambio.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando el cambio.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Contraseña actual incorrecta}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que la contraseña actual ingresada es incorrecta.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que la contraseña actual ingresada es incorrecta.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Nueva contraseña y confirmación no coinciden}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que los campos de nueva contraseña no coinciden.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que los campos de nueva contraseña no coinciden.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Contraseña no cumple requisitos de seguridad}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando los requisitos mínimos de la contraseña.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando los requisitos mínimos de la contraseña.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}

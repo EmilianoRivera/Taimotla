@@ -35,18 +35,18 @@
 		\end{itemize}
 	\UCpaso Valida que el nombre del valor no esté vacío. \Trayref{A}.
 	\UCpaso Guarda el cambio en la base de datos y refresca la lista del catálogo.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Nombre del valor vacío}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el nombre del valor es obligatorio.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el nombre del valor es obligatorio.
 	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Valor en uso por expedientes activos}
-	\UCpaso Muestra el mensaje de advertencia \textbf{MSG-03} indicando que el valor está siendo utilizado y no puede desactivarse hasta liberar las referencias.
+	\UCpaso Muestra el mensaje de advertencia \hyperlink{mMSG03}{\bf MSG-03} indicando que el valor está siendo utilizado y no puede desactivarse hasta liberar las referencias.
 	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal sin realizar el cambio.
 \end{UCtrayectoriaA}

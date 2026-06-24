@@ -36,24 +36,24 @@
 	\UCpaso Valida en el servidor que los campos obligatorios no estén vacíos. \Trayref{B}.
 	\UCpaso Valida que la fecha de detención no sea posterior a la fecha del día de hoy. \Trayref{C}.
 	\UCpaso Registra la información en la tabla \texttt{hecho\_victimal} vinculando el registro a la NNA correspondiente.
-	\UCpaso Muestra el mensaje de éxito {\bf MSG-09} y refresca la pestaña mostrando la información guardada.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} y refresca la pestaña mostrando la información guardada.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Usuario no pertenece al equipo asignado}
 	\UCpaso El sistema deshabilita los campos de edición del formulario e impide el guardado de datos.
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando la falta de permisos de edición sobre el caso.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando la falta de permisos de edición sobre el caso.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios vacíos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} detallando que el número de reporte, nombre del caso, fecha de detención y el nombre de la madre víctima son requeridos.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} detallando que el número de reporte, nombre del caso, fecha de detención y el nombre de la madre víctima son requeridos.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 4 de la trayectoria principal manteniendo los datos ya capturados.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Fecha de detención inválida}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando que la fecha de detención ingresada no puede ser una fecha futura.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que la fecha de detención ingresada no puede ser una fecha futura.
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal para corregir la fecha.
 \end{UCtrayectoriaA}

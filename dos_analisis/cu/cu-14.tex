@@ -37,24 +37,24 @@
 	\UCpaso[\UCactor] Revisa el contenido y presiona el botón \IUbutton{Firmar y Aprobar PRD}.
 	\UCpaso Verifica que el PRD cuente con la pre-autorización del Coordinador. \Trayref{C}.
 	\UCpaso Registra la firma digital del Director, actualiza el estatus del PRD a ``Vigente'' y el estatus del expediente del NNA a ``En Seguimiento''.
-	\UCpaso Despliega el mensaje de éxito {\bf MSG-09} confirmando la aprobación del PRD.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09} confirmando la aprobación del PRD.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Valoraciones incompletas del equipo}
-	\UCpaso Muestra el mensaje de advertencia {\bf MSG-03} indicando qué especialistas tienen valoraciones pendientes.
+	\UCpaso Muestra el mensaje de advertencia \hyperlink{mMSG03}{\bf MSG-03} indicando qué especialistas tienen valoraciones pendientes.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Campos obligatorios del cuadro guía vacíos}
-	\UCpaso Muestra el mensaje de error {\bf MSG-04} indicando las filas del cuadro guía que requieren información.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando las filas del cuadro guía que requieren información.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Mantiene la información capturada y regresa al paso 4 de la trayectoria principal.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{PRD sin pre-autorización del Coordinador}
-	\UCpaso Muestra el mensaje de error {\bf MSG-02} indicando que el documento no puede firmarse sin la pre-autorización correspondiente.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG02}{\bf MSG-02} indicando que el documento no puede firmarse sin la pre-autorización correspondiente.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Termina la ejecución del caso de uso.
 \end{UCtrayectoriaA}

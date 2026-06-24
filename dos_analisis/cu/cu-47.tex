@@ -27,12 +27,12 @@
 	\UCpaso[\UCactor] Presiona \IUbutton{Guardar Datos de Contacto}.
 	\UCpaso Valida que el teléfono del cuidador no esté vacío. \Trayref{A}.
 	\UCpaso Almacena los datos de contacto en la base de datos.
-	\UCpaso Muestra el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Muestra el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Teléfono del cuidador vacío}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04}.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04}.
 	\UCpaso[\UCactor] Oprime \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 3 de la trayectoria principal.
 \end{UCtrayectoriaA}

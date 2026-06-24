@@ -31,12 +31,12 @@
 	\UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Medidas Urgentes}.
 	\UCpaso Valida que los campos de tipo y justificación no estén vacíos cuando el indicador sea afirmativo. \Trayref{A}.
 	\UCpaso Almacena el registro en la base de datos.
-	\UCpaso Despliega el mensaje de éxito \textbf{MSG-09}.
+	\UCpaso Despliega el mensaje de éxito \hyperlink{mMSG09}{\bf MSG-09}.
 	\UCpaso[] -- -- Fin del caso de uso.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Campos requeridos vacíos con medidas activas}
-	\UCpaso Muestra el mensaje de error \textbf{MSG-04} indicando que el tipo de medida y la justificación son obligatorios cuando se solicitaron medidas urgentes.
+	\UCpaso Muestra el mensaje de error \hyperlink{mMSG04}{\bf MSG-04} indicando que el tipo de medida y la justificación son obligatorios cuando se solicitaron medidas urgentes.
 	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
 	\UCpaso Regresa al paso 5 de la trayectoria principal.
 \end{UCtrayectoriaA}
