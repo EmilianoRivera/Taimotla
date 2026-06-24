@@ -11,38 +11,7 @@ El inicio de sesión permite autenticar de forma segura a los colaboradores y di
 
 \begin{figure}[htbp!]
 \centering
-\begin{tikzpicture}[
-    node distance=1cm and 1.8cm,
-    actor/.style={rectangle, draw, fill=blue!15, text width=2.5cm, text centered, rounded corners, minimum height=1cm, font=\sffamily\small},
-    lifeline/.style={draw, dashed, thick},
-    arrow/.style={thick,->,>=stealth,font=\sffamily\scriptsize},
-    rarrow/.style={thick,->,>=stealth,dashed,font=\sffamily\scriptsize}
-]
-    % Lifelines / Objects
-    \node (user) [actor] {Usuario \\ (Browser)};
-    \node (router) [actor, right=of user] {Controlador \\ (routes.main)};
-    \node (model) [actor, right=of router] {Modelo \\ (models.auth)};
-    \node (db) [actor, right=of model] {Base de Datos \\ (PostgreSQL)};
-    % Lines
-    \draw [lifeline] (user.south) -- ($(user.south) - (0,7cm)$);
-    \draw [lifeline] (router.south) -- ($(router.south) - (0,7cm)$);
-    \draw [lifeline] (model.south) -- ($(model.south) - (0,7cm)$);
-    \draw [lifeline] (db.south) -- ($(db.south) - (0,7cm)$);
-    % Sequence steps
-    % 1. Submit login form
-    \draw [arrow] ($(user.south) - (0,0.5cm)$) -- node[above] {1. POST /login (email, pwd)} ($(router.south) - (0,0.5cm)$);
-    % 2. Verify account in model
-    \draw [arrow] ($(router.south) - (0,1.5cm)$) -- node[above] {2. verify\_director(email)} ($(model.south) - (0,1.5cm)$);
-    % 3. Query DB
-    \draw [arrow] ($(model.south) - (0,2.5cm)$) -- node[above] {3. SELECT ... WHERE correo = \%s} ($(db.south) - (0,2.5cm)$);
-    % 4. DB Data returns
-    \draw [rarrow] ($(db.south) - (0,3.5cm)$) -- node[above] {4. Retorna (CURP, nombre, hash, estado)} ($(model.south) - (0,3.5cm)$);
-    % 5. Model returns to controller
-    \draw [rarrow] ($(model.south) - (0,4.5cm)$) -- node[above] {5. Retorna tupla de datos / None} ($(router.south) - (0,4.5cm)$);
-    % 6. Validate password and redirect
-    \draw [arrow] ($(router.south) - (0,5.5cm)$) -- node[above] {6. Verifica hash y estado} ($(router.south) - (0,5.9cm)$);
-    \draw [rarrow] ($(router.south) - (0,6.5cm)$) -- node[above] {7. Redireccion / Mensaje de bienvenida} ($(user.south) - (0,6.5cm)$);
-\end{tikzpicture}
+\includegraphics[width=0.85\textwidth]{CU/CU1.jpeg}
 \caption{Diagrama de secuencia dinámico para el Caso de Uso de Inicio de Sesión (Login).}
 \label{fig:secuenciaLogin}
 \end{figure}
@@ -217,31 +186,7 @@ Permite al Trabajador Social capturar e integrar la información del cuidador o 
 
 \begin{figure}[htbp!]
 \centering
-\begin{tikzpicture}[
-    node distance=1cm and 1.8cm,
-    actor/.style={rectangle, draw, fill=blue!15, text width=2.5cm, text centered, rounded corners, minimum height=1cm, font=\sffamily\small},
-    lifeline/.style={draw, dashed, thick},
-    arrow/.style={thick,->,>=stealth,font=\sffamily\scriptsize},
-    rarrow/.style={thick,->,>=stealth,dashed,font=\sffamily\scriptsize}
-]
-    % Lifelines / Objects
-    \node (user) [actor] {Trabajador Social \\ (Browser)};
-    \node (router) [actor, right=of user] {Controlador \\ (routes.director)};
-    \node (model) [actor, right=of router] {Modelo \\ (models.nna)};
-    \node (db) [actor, right=of model] {Base de Datos \\ (PostgreSQL)};
-    % Lines
-    \draw [lifeline] (user.south) -- ($(user.south) - (0,6cm)$);
-    \draw [lifeline] (router.south) -- ($(router.south) - (0,6cm)$);
-    \draw [lifeline] (model.south) -- ($(model.south) - (0,6cm)$);
-    \draw [lifeline] (db.south) -- ($(db.south) - (0,6cm)$);
-    % Steps
-    \draw [arrow] ($(user.south) - (0,0.5cm)$) -- node[above] {1. POST /expediente/guardar (tutor\_data)} ($(router.south) - (0,0.5cm)$);
-    \draw [arrow] ($(router.south) - (0,1.5cm)$) -- node[above] {2. guardar\_nna\_db(datos)} ($(model.south) - (0,1.5cm)$);
-    \draw [arrow] ($(model.south) - (0,2.5cm)$) -- node[above] {3. INSERT INTO personas\_expediente, tutores} ($(db.south) - (0,2.5cm)$);
-    \draw [rarrow] ($(db.south) - (0,3.5cm)$) -- node[above] {4. Retorna éxito / transac\_ok} ($(model.south) - (0,3.5cm)$);
-    \draw [rarrow] ($(model.south) - (0,4.5cm)$) -- node[above] {5. Retorna True, mensaje} ($(router.south) - (0,4.5cm)$);
-    \draw [rarrow] ($(router.south) - (0,5.5cm)$) -- node[above] {6. Redirección con flash success} ($(user.south) - (0,5.5cm)$);
-\end{tikzpicture}
+\includegraphics[width=0.85\textwidth]{CU/CU11.jpeg}
 \caption{Diagrama de secuencia para el Caso de Uso de Registrar Cuidador / Tutor.}
 \label{fig:secuenciaCU11}
 \end{figure}
@@ -599,31 +544,7 @@ Permite a cualquier usuario registrado solicitar el restablecimiento de su contr
 
 \begin{figure}[htbp!]
 \centering
-\begin{tikzpicture}[
-    node distance=1cm and 1.8cm,
-    actor/.style={rectangle, draw, fill=blue!15, text width=2.5cm, text centered, rounded corners, minimum height=1cm, font=\sffamily\small},
-    lifeline/.style={draw, dashed, thick},
-    arrow/.style={thick,->,>=stealth,font=\sffamily\scriptsize},
-    rarrow/.style={thick,->,>=stealth,dashed,font=\sffamily\scriptsize}
-]
-    % Lifelines / Objects
-    \node (user) [actor] {Usuario \\ (Browser)};
-    \node (router) [actor, right=of user] {Controlador \\ (routes.main)};
-    \node (model) [actor, right=of router] {Modelo \\ (models.auth)};
-    \node (db) [actor, right=of model] {Base de Datos \\ (PostgreSQL)};
-    % Lines
-    \draw [lifeline] (user.south) -- ($(user.south) - (0,6cm)$);
-    \draw [lifeline] (router.south) -- ($(router.south) - (0,6cm)$);
-    \draw [lifeline] (model.south) -- ($(model.south) - (0,6cm)$);
-    \draw [lifeline] (db.south) -- ($(db.south) - (0,6cm)$);
-    % Steps
-    \draw [arrow] ($(user.south) - (0,0.5cm)$) -- node[above] {1. POST /forgot-password} ($(router.south) - (0,0.5cm)$);
-    \draw [arrow] ($(router.south) - (0,1.5cm)$) -- node[above] {2. generate\_reset\_token(email)} ($(model.south) - (0,1.5cm)$);
-    \draw [arrow] ($(model.south) - (0,2.5cm)$) -- node[above] {3. SELECT FROM correos, personal} ($(db.south) - (0,2.5cm)$);
-    \draw [rarrow] ($(db.south) - (0,3.5cm)$) -- node[above] {4. Retorna datos\_usuario} ($(model.south) - (0,3.5cm)$);
-    \draw [rarrow] ($(model.south) - (0,4.5cm)$) -- node[above] {5. Retorna Token} ($(router.south) - (0,4.5cm)$);
-    \draw [rarrow] ($(router.south) - (0,5.5cm)$) -- node[above] {6. Envía correo con token} ($(user.south) - (0,5.5cm)$);
-\end{tikzpicture}
+\includegraphics[width=0.85\textwidth]{CU/CU19.jpeg}
 \caption{Diagrama de secuencia para el Caso de Uso de Recuperar contraseña.}
 \label{fig:secuenciaCU19}
 \end{figure}
@@ -646,31 +567,7 @@ Permite a cualquier usuario autenticado actualizar su contraseña de acceso al s
 
 \begin{figure}[htbp!]
 \centering
-\begin{tikzpicture}[
-    node distance=1cm and 1.8cm,
-    actor/.style={rectangle, draw, fill=blue!15, text width=2.5cm, text centered, rounded corners, minimum height=1cm, font=\sffamily\small},
-    lifeline/.style={draw, dashed, thick},
-    arrow/.style={thick,->,>=stealth,font=\sffamily\scriptsize},
-    rarrow/.style={thick,->,>=stealth,dashed,font=\sffamily\scriptsize}
-]
-    % Lifelines / Objects
-    \node (user) [actor] {Usuario \\ (Browser)};
-    \node (router) [actor, right=of user] {Controlador \\ (routes.main)};
-    \node (model) [actor, right=of router] {Modelo \\ (models.auth)};
-    \node (db) [actor, right=of model] {Base de Datos \\ (PostgreSQL)};
-    % Lines
-    \draw [lifeline] (user.south) -- ($(user.south) - (0,6cm)$);
-    \draw [lifeline] (router.south) -- ($(router.south) - (0,6cm)$);
-    \draw [lifeline] (model.south) -- ($(model.south) - (0,6cm)$);
-    \draw [lifeline] (db.south) -- ($(db.south) - (0,6cm)$);
-    % Steps
-    \draw [arrow] ($(user.south) - (0,0.5cm)$) -- node[above] {1. POST /change-password} ($(router.south) - (0,0.5cm)$);
-    \draw [arrow] ($(router.south) - (0,1.5cm)$) -- node[above] {2. update\_password(new\_pwd)} ($(model.south) - (0,1.5cm)$);
-    \draw [arrow] ($(model.south) - (0,2.5cm)$) -- node[above] {3. UPDATE personal SET contrasena = \%s} ($(db.south) - (0,2.5cm)$);
-    \draw [rarrow] ($(db.south) - (0,3.5cm)$) -- node[above] {4. Retorna ok} ($(model.south) - (0,3.5cm)$);
-    \draw [rarrow] ($(model.south) - (0,4.5cm)$) -- node[above] {5. Retorna True} ($(router.south) - (0,4.5cm)$);
-    \draw [rarrow] ($(router.south) - (0,5.5cm)$) -- node[above] {6. Muestra éxito} ($(user.south) - (0,5.5cm)$);
-\end{tikzpicture}
+\includegraphics[width=0.85\textwidth]{CU/CU20.jpeg}
 \caption{Diagrama de secuencia para el Caso de Uso de Cambiar contraseña.}
 \label{fig:secuenciaCU20}
 \end{figure}
