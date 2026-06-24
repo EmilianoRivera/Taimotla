@@ -1,10 +1,10 @@
-# ⚖️ Sistema de Gestión - Fundación Futuro con Derechos
+# Sistema de Gestión - Fundación Futuro con Derechos
 
 Este sistema es una aplicación web integral desarrollada para la **Fundación Futuro con Derechos**. Permite el registro y la consulta centralizada del personal multidisciplinario (Abogados, Médicos, Psicólogos y Trabajadores Sociales) encargados de la restitución de derechos de Niñas, Niños y Adolescentes (NNA).
 
 ---
 
-## 🛠️ Tecnologías y Herramientas
+## Tecnologías y Herramientas
 
 * **Lenguaje:** [Python 3.x](https://www.python.org/)
 * **Framework Web:** [Flask](https://flask.palletsprojects.com/)
@@ -15,11 +15,11 @@ Este sistema es una aplicación web integral desarrollada para la **Fundación F
 
 ---
 
-## 🚀 Guía de Instalación y Ejecución
+## Guía de Instalación y Ejecución
 
 Sigue detalladamente estos pasos para configurar y poner en marcha el sistema en tu entorno local.
 
-### 📋 1. Requisitos Previos
+### 1. Requisitos Previos
 
 Asegúrate de tener instalados los siguientes componentes en tu sistema:
 * **Python (v3.8 o superior):** Puedes descargarlo desde [python.org](https://www.python.org/).
@@ -28,7 +28,7 @@ Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
 ---
 
-### 📂 2. Configurar el Entorno de Desarrollo
+### 2. Configurar el Entorno de Desarrollo
 
 1. **Navega al directorio del proyecto:**
    Abre tu terminal en la carpeta raíz del proyecto.
@@ -58,18 +58,18 @@ Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
 ---
 
-### 🗄️ 3. Configuración de la Base de Datos
+### 3. Configuración de la Base de Datos
 
 1. **Crear la Base de Datos:**
    * Abre **pgAdmin 4** (o la herramienta de tu preferencia para PostgreSQL).
-   * Crea una nueva base de datos llamada `GestionFundacion` (o el nombre que prefieras).
+   * Crea una nueva base de datos llamada `GestionFundacion` (el nombre es opcional).
 2. **Ejecutar el Script SQL:**
    * Abre la herramienta de consultas (**Query Tool**) sobre la base de datos creada.
    * Carga y ejecuta el contenido del script de la base de datos: [bd_nna.sql](file:///c:/Users/Edgar/Documents/UNI/IV%20Semestre/ADS/Taimotla/script_bd/bd_nna.sql). Este script creará todas las tablas y relaciones necesarias.
 
 ---
 
-### ⚙️ 4. Configurar Variables de Envío (.env)
+### 4. Configurar Variables de Envío (.env)
 
 1. En la raíz del proyecto encontrarás el archivo de plantilla [.env.example](file:///c:/Users/Edgar/Documents/UNI/IV%20Semestre/ADS/Taimotla/.env.example).
 2. Copia este archivo y renombralo a `.env`:
@@ -92,7 +92,7 @@ Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
 ---
 
-### 🌱 5. Sembrado de Datos Iniciales (Seeders)
+### 5. Sembrado de Datos Iniciales (Seeders)
 
 Para poder iniciar sesión, es necesario poblar la base de datos con los roles iniciales y catálogos. Ejecuta los siguientes scripts desde **la raíz del proyecto** usando el flag `-m` para que Python resuelva las rutas de importación relativas hacia el módulo `models`:
 
@@ -116,7 +116,7 @@ Para poder iniciar sesión, es necesario poblar la base de datos con los roles i
 
 ---
 
-### 💻 6. Ejecución de la Aplicación
+### 6. Ejecución de la Aplicación
 
 Una vez configurada la base de datos y poblados los registros iniciales, arranca el servidor web local de desarrollo:
 
@@ -133,7 +133,7 @@ Una vez configurada la base de datos y poblados los registros iniciales, arranca
 
 ---
 
-### 🔐 7. Credenciales de Acceso para Pruebas
+### 7. Credenciales de Acceso para Pruebas
 
 Utiliza las siguientes cuentas iniciales de prueba para validar el funcionamiento del sistema:
 
